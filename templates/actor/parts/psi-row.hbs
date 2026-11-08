@@ -1,0 +1,15 @@
+<tr data-item-id="{{id}}" class="{{#if active}}psi-active{{/if}}">
+  <td class="left">
+    <a class="attack-link" data-action="psiUse" title="{{#if active}}Stop{{else}}Use: pay the cost from attack and defense points{{/if}}">{{name}}</a>
+    {{#if active}}<span class="sub-note tag">active</span>{{/if}}
+  </td>
+  <td>{{#if (adnd-eq system.kind "major")}}Major{{else}}Minor{{/if}}</td>
+  <td class="num" title="Level of mastery">{{mastery}}</td>
+  <td>{{system.range}}</td><td>{{system.cost}}</td><td>{{duration}}</td>
+  <td class="row-tools">
+    {{#if payable}}<button type="button" class="mini-text" data-action="psiPay" title="Charge one more period (outside combat)">Pay</button>{{/if}}
+    <button type="button" class="icon-btn" data-action="itemChat" title="Show in chat"><i class="fa-solid fa-comment"></i></button>
+    <button type="button" class="icon-btn" data-action="itemEdit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+    <button type="button" class="icon-btn" data-action="itemDelete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+  </td>
+</tr>

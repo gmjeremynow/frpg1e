@@ -1,0 +1,6 @@
+<div class="frpg1e-card percent-card">
+  <div class="card-title">{{title}}</div>
+  <div class="roll-line"><span class="adnd-big">{{roll}}</span><span class="vs">vs {{chance}}{{#unless d6}}%{{/unless}}</span></div>
+  <div class="result {{#if success}}hit{{else}}miss{{/if}}">{{#if success}}SUCCESS{{else}}FAILURE{{/if}}</div>
+  {{#if note}}<div class="hint">{{note}}</div>{{/if}}
+</div>

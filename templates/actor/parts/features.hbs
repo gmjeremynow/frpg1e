@@ -1,0 +1,23 @@
+{{#each features}}
+    <div class="box feature">
+      <h3 class="box-title">{{title}}{{#if sub}} <span class="hint">{{sub}}</span>{{/if}}</h3>
+      {{#if rows.length}}
+      <div class="feature-grid">
+        {{#each rows}}
+        {{#if action}}
+        <button type="button" class="feature-cell rollable" data-action="{{action}}" title="{{hint}}">
+          <span class="cell-label">{{label}}</span><span class="cell-val">{{value}}</span>
+        </button>
+        {{else if roll}}
+        <button type="button" class="feature-cell rollable" data-action="pct" data-label="{{roll.label}}" data-chance="{{roll.chance}}" data-note="{{roll.note}}" title="Roll d%{{#if roll.note}}: {{roll.note}}{{/if}}">
+          <span class="cell-label">{{label}}</span><span class="cell-val">{{value}}</span>
+        </button>
+        {{else}}
+        <div class="feature-cell"><span class="cell-label">{{label}}</span><span class="cell-val">{{value}}</span></div>
+        {{/if}}
+        {{/each}}
+      </div>
+      {{/if}}
+      {{#if notes.length}}<ul class="feature-notes">{{#each notes}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+    </div>
+    {{/each}}

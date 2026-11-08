@@ -1,0 +1,10 @@
+<div class="frpg1e-card damage-card">
+  <div class="card-title">{{title}}</div>
+  <div class="roll-line"><span class="adnd-big">{{total}}</span><span class="hint">{{formula}}</span></div>
+  <div class="card-buttons">
+    <button type="button" data-card-action="apply" title="Apply to selected tokens, or to the targets that were hit">Apply</button>
+    <button type="button" data-card-action="apply-half" title="Half damage (successful save)">½</button>
+    <button type="button" data-card-action="heal" title="Heal this amount">Heal</button>
+  </div>
+  {{#if targets}}<div class="hint">{{targets}} target{{#unless (adnd-eq targets 1)}}s{{/unless}} hit. Select tokens to apply elsewhere.</div>{{/if}}
+</div>

@@ -1,0 +1,506 @@
+/* =====================================================================
+   1e FRPG: a printed record sheet, not a web app.
+   Ink on cream stock, boxed sections, small-caps headings, oxblood rules.
+   ===================================================================== */
+@font-face { font-family: "IM Fell English SC"; src: url("../fonts/IMFeENsc28P.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "IM Fell English"; src: url("../fonts/IMFeENrm28P.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "IM Fell English"; font-style: italic; src: url("../fonts/IMFeENit28P.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; src: url("../fonts/AlegreyaSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Alegreya Sans"; font-style: italic; src: url("../fonts/AlegreyaSans-Italic.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+
+.frpg1e, .frpg1e-card, .frpg1e-dialog, .frpg1e-encounter {
+  --paper: #f2ead8;
+  --paper-2: #e9dec6;
+  --wash: #e4d6b7;
+  --ink: #221b14;
+  --ink-2: #5a4e40;
+  --ink-3: #8a7b66;
+  --rule: #b8a582;
+  --rule-strong: #3a2f24;
+  --blood: #8b1e1e;
+  --blood-2: #a8382f;
+  --hit: #2f5d34;
+  --adnd-font-head: "IM Fell English SC", "IM Fell English", Georgia, serif;
+  --adnd-font-serif: "IM Fell English", Georgia, serif;
+  --adnd-font-body: "Alegreya Sans", "Signika", sans-serif;
+}
+
+/* ---------- window ---------- */
+.application.frpg1e .window-content {
+  background: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.45), transparent 60%),
+    radial-gradient(ellipse at 100% 100%, rgba(120,90,40,.10), transparent 55%);
+  color: var(--ink);
+  font-family: var(--adnd-font-body);
+  font-size: 13px;
+  padding: 0;
+}
+.application.frpg1e .window-header { background: #2b221a; color: #efe6d2; border-bottom: 2px solid var(--blood); }
+.frpg1e .adnd-sheet { display: flex; flex-direction: column; height: 100%; }
+.frpg1e .tab-scroll { flex: 1; overflow-y: auto; padding: 10px 14px 16px; }
+
+/* ---------- inputs: underline-on-paper ---------- */
+.frpg1e input[type="text"], .frpg1e input[type="number"], .frpg1e select {
+  background: transparent; color: var(--ink); border: none; border-bottom: 1px solid var(--rule);
+  border-radius: 0; height: 22px; padding: 0 2px; font-family: var(--adnd-font-body); font-size: 13px; box-shadow: none;
+}
+.frpg1e input:focus, .frpg1e select:focus { outline: none; border-bottom-color: var(--blood); background: rgba(255,255,255,.4); box-shadow: none; }
+.frpg1e input[type="number"] { text-align: center; }
+.frpg1e input[type="number"]::-webkit-inner-spin-button { display: none; }
+.frpg1e select option { color: #111; background: #fff; }
+.frpg1e input[type="checkbox"] { accent-color: var(--blood); margin: 0; width: 14px; height: 14px; }
+.frpg1e .w3 { width: 3em !important; }
+.frpg1e .w4 { width: 4.5em !important; }
+.frpg1e :where(.window-content button:not([class*="fa-"])) { font-family: var(--adnd-font-body); }   /* window header controls are Font Awesome icon buttons: leave their font alone */
+
+/* ---------- header ---------- */
+.frpg1e .sheet-head {
+  display: grid; grid-template-columns: 92px 1fr auto; gap: 14px; align-items: center;
+  padding: 12px 14px 10px; border-bottom: 3px double var(--rule-strong);
+  background: linear-gradient(var(--paper-2), var(--paper));
+}
+.frpg1e .portrait { width: 92px; height: 92px; object-fit: cover; border: 1px solid var(--rule-strong); outline: 3px solid var(--paper); outline-offset: -5px; cursor: pointer; background: var(--wash); }
+.frpg1e .portrait.small { width: 56px; height: 56px; }
+.frpg1e .item-head { grid-template-columns: 56px 1fr; }
+.frpg1e .title-line { display: flex; align-items: baseline; gap: 12px; }
+.frpg1e .char-name { font-family: var(--adnd-font-head) !important; font-size: 26px !important; height: 34px !important; flex: 1; letter-spacing: .02em; border-bottom: 1px solid var(--rule-strong) !important; }
+.frpg1e .record-mark { font-family: var(--adnd-font-serif); font-style: italic; color: var(--blood); font-size: 13px; white-space: nowrap; }
+.frpg1e .item-head .char-name { width: 100%; }
+.frpg1e .head-fields { display: flex; gap: 12px; margin-top: 6px; flex-wrap: wrap; }
+.frpg1e .fld { display: flex; flex-direction: column; min-width: 90px; flex: 1; }
+.frpg1e .fld.narrow { flex: 0 0 76px; min-width: 76px; }
+.frpg1e .fld.wide { flex-basis: 100%; }
+.frpg1e .fld > span { font-family: var(--adnd-font-head); font-size: 11px; color: var(--ink-2); letter-spacing: .06em; order: 2; border-top: 0; }
+.frpg1e .fld > input, .frpg1e .fld > select, .frpg1e .fld > output { order: 1; }
+.frpg1e .fld output { height: 22px; line-height: 22px; border-bottom: 1px solid var(--rule); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.frpg1e .vitals { display: flex; gap: 10px; }
+.frpg1e .vital { border: 1.5px solid var(--rule-strong); background: var(--paper); text-align: center; padding: 4px 8px 6px; min-width: 92px; position: relative; }
+.frpg1e .vital-label { display: block; font-family: var(--adnd-font-head); font-size: 11px; letter-spacing: .08em; color: var(--blood); border-bottom: 1px solid var(--rule); margin-bottom: 4px; }
+.frpg1e .vital.hp { display: flex; flex-direction: column; }
+.frpg1e .hp-pair { display: flex; align-items: center; justify-content: center; flex: 1 1 auto; gap: 2px; }
+.frpg1e .hp-pair input { width: 56px; font-size: 30px !important; line-height: 30px; height: 32px !important; font-weight: 700; border: none !important; text-align: center; padding: 0; }
+.frpg1e .hp-pair .slash { color: var(--ink-3); font-size: 24px; }
+/* armor class: a shield, drawn so its whole outline shows */
+.frpg1e .vital.ac { border: none; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M1 1 H99 V72 L50 99 L1 72 Z' fill='%23f2ead8' stroke='%233a2f24' stroke-width='1.5' vector-effect='non-scaling-stroke'/></svg>") center / 100% 100% no-repeat; padding-bottom: 26px; }
+.frpg1e .ac-value, .frpg1e .ac-input { display: block; font-size: 30px !important; font-weight: 700; line-height: 30px; height: 32px !important; width: 100%; border: none !important; }
+.frpg1e .ac-sub { font-size: 10px; color: var(--ink-2); }
+.frpg1e .mini-link { color: var(--ink-2); margin-left: 4px; cursor: pointer; }
+
+/* ---------- tabs ---------- */
+.frpg1e .sheet-tabs { display: flex; gap: 0; padding: 0 14px; border-bottom: 1px solid var(--rule-strong); background: var(--paper-2); }
+.frpg1e .sheet-tabs button {
+  flex: 0 0 auto; background: none; border: none; border-radius: 0; color: var(--ink-2);
+  font-family: var(--adnd-font-head); font-size: 15px; letter-spacing: .04em; padding: 6px 14px 4px; line-height: 1.2;
+  border-bottom: 3px solid transparent; margin-bottom: -1px; cursor: pointer;
+}
+.frpg1e .sheet-tabs button:hover { color: var(--ink); box-shadow: none; }
+.frpg1e .sheet-tabs button.active { color: var(--blood); border-bottom-color: var(--blood); }
+.frpg1e .tab-body { display: none; }
+.frpg1e .tab-body.active { display: block; }
+
+/* ---------- boxes ---------- */
+.frpg1e .box { border: 1px solid var(--rule-strong); background: rgba(255,255,255,.22); padding: 8px 10px 10px; margin-bottom: 12px; position: relative; }
+.frpg1e .box-title {
+  font-family: var(--adnd-font-head); font-weight: normal; font-size: 17px; letter-spacing: .05em; color: var(--ink);
+  margin: -8px -10px 8px; padding: 3px 10px 2px; border-bottom: 1px solid var(--rule-strong);
+  background: linear-gradient(90deg, var(--wash), transparent 75%); display: flex; align-items: center; gap: 8px;
+}
+.frpg1e .box-title .hint { font-family: var(--adnd-font-serif); font-size: 12px; text-transform: none; letter-spacing: 0; }
+.frpg1e .box-title .mini { margin-left: auto; }
+.frpg1e .hint { font-family: var(--adnd-font-serif); font-style: italic; color: var(--ink-2); font-size: 12px; }
+.frpg1e .hint.empty { padding: 20px; text-align: center; }
+
+.frpg1e .mini, .frpg1e .tiny, .frpg1e .icon-btn, .frpg1e .roll-btn, .frpg1e .cast-btn, .frpg1e .mini-text {
+  background: transparent; border: 1px solid var(--rule); color: var(--ink-2); border-radius: 2px; cursor: pointer;
+  line-height: 1; padding: 0; height: 20px; min-width: 20px; flex: 0 0 auto; width: auto;
+}
+.frpg1e .mini { width: 22px; }
+.frpg1e .mini-text { padding: 0 8px; font-size: 12px; }
+.frpg1e .icon-btn { border-color: transparent; color: var(--ink-3); font-size: 11px; }
+.frpg1e .icon-btn:hover, .frpg1e .mini:hover, .frpg1e .tiny:hover { color: var(--blood); border-color: var(--blood); box-shadow: none; }
+.frpg1e .roll-btn { padding: 0 6px; font-weight: 700; color: var(--blood); border-color: var(--blood); }
+.frpg1e .roll-btn:hover, .frpg1e .cast-btn:hover:not(:disabled) { background: var(--blood); color: var(--paper); box-shadow: none; }
+.frpg1e .cast-btn { padding: 0 8px; color: var(--blood); border-color: var(--blood); font-family: var(--adnd-font-head); font-size: 13px; }
+.frpg1e .cast-btn:disabled { opacity: .35; cursor: default; }
+
+/* ---------- record: abilities + saves ---------- */
+.frpg1e .record-grid { display: grid; grid-template-columns: 1fr 196px; gap: 12px; }
+.frpg1e .ability-row { display: grid; grid-template-columns: 82px 1fr; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px dotted var(--rule); }
+.frpg1e .ability-row:last-child { border-bottom: none; }
+.frpg1e .ab-score { display: flex; align-items: center; gap: 2px; }
+.frpg1e .ab-letter { font-family: var(--adnd-font-head); font-size: 15px; width: 20px; color: var(--blood); }
+.frpg1e .ab-score input { width: 34px; height: 30px; font-size: 20px; font-weight: 700; border: 1.5px solid var(--rule-strong); background: var(--paper); }
+.frpg1e .ab-score .pct input { width: 30px; height: 22px; font-size: 13px; border-width: 1px; }
+.frpg1e .ab-score .pct { color: var(--ink-3); display: flex; align-items: center; }
+.frpg1e .ab-name { font-family: var(--adnd-font-head); font-size: 14px; letter-spacing: .03em; }
+.frpg1e .ab-cells { display: flex; flex-wrap: wrap; gap: 4px; }
+.frpg1e .ab-cell { display: flex; flex-direction: column; min-width: 62px; border-left: 1px solid var(--rule); padding: 0 6px; }
+.frpg1e .cell-label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); white-space: nowrap; }
+.frpg1e .cell-val { font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.frpg1e .rollable { cursor: pointer; }
+.frpg1e .rollable:hover .cell-val { color: var(--blood); text-decoration: underline; }
+
+.frpg1e .saves .save-row {
+  display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none;
+  border-bottom: 1px dotted var(--rule); padding: 4px 2px; cursor: pointer; color: var(--ink); text-align: left; border-radius: 0; height: auto;
+}
+.frpg1e .save-row:hover { background: rgba(139,30,30,.06); box-shadow: none; }
+.frpg1e .save-label { font-size: 12px; line-height: 1.15; }
+.frpg1e .save-circle {
+  width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--rule-strong); display: grid; place-items: center;
+  font-size: 17px; font-weight: 700; background: var(--paper); flex: 0 0 34px;
+}
+.frpg1e .save-row:hover .save-circle { border-color: var(--blood); color: var(--blood); }
+.frpg1e .save-line { display: flex; align-items: center; gap: 6px; }
+.frpg1e .save-line .save-row { flex: 1 1 auto; min-width: 0; }
+.frpg1e .save-adj { display: flex; flex-direction: column; align-items: center; flex: 0 0 42px; font-family: var(--adnd-font-head); font-size: 10px; color: var(--ink-3); line-height: 1; }
+.frpg1e .save-adj input { width: 40px; height: 24px; line-height: 22px; padding: 0 2px; font-size: 14px; text-align: center; }
+.frpg1e .racial { margin: 6px 0 0; }
+
+/* ---------- ledgers ---------- */
+.frpg1e table.ledger { width: 100%; border-collapse: collapse; margin: 0; background: transparent; border: none; font-variant-numeric: tabular-nums; }
+.frpg1e .ledger th { font-family: var(--adnd-font-head); font-weight: normal; font-size: 11px; letter-spacing: .05em; color: var(--ink-2); border-bottom: 1px solid var(--rule-strong); padding: 2px 3px; text-align: center; background: none; }
+.frpg1e .ledger td { border-bottom: 1px solid var(--rule); padding: 3px 3px; text-align: center; vertical-align: middle; }
+.frpg1e .ledger tr:nth-child(even) td { background: rgba(255,255,255,.18); }
+.frpg1e .ledger thead tr { background: none; }
+.frpg1e .ledger .left { text-align: left; }
+.frpg1e .ledger .num { font-variant-numeric: tabular-nums; }
+.frpg1e .ledger td input[type="number"] { width: 4.5em; }
+.frpg1e .ledger tr.sub td { border-bottom: 1px solid var(--rule-strong); text-align: left; padding: 1px 3px 5px; background: none; }
+.frpg1e .ledger tr.sub select { font-size: 11px; height: 18px; max-width: 220px; }
+.frpg1e .ledger tr.sub .hint { margin: 0 4px 0 6px; }
+.frpg1e .classes select { min-width: 120px; }
+
+.frpg1e .weapon-table .acn { width: 25px; font-size: 12px; }
+.frpg1e .weapon-table th.acn { color: var(--blood); }
+.frpg1e .weapon-table td.need { border-left: 1px solid var(--rule); font-weight: 700; }
+.frpg1e .weapon-table .ac-head-label th { border: none; font-family: var(--adnd-font-serif); font-style: italic; text-transform: none; color: var(--ink-3); }
+.frpg1e .row-img { width: 22px; height: 22px; border: none; }
+.frpg1e .attack-link { font-weight: 700; cursor: pointer; color: var(--ink); }
+.frpg1e .attack-link:hover { color: var(--blood); text-decoration: underline; text-shadow: none; }
+.frpg1e .sub-note { display: block; font-size: 10px; color: var(--ink-3); }
+.frpg1e .dmg { white-space: nowrap; font-size: 12px; }
+.frpg1e .row-tools { white-space: nowrap; }
+.frpg1e .to-hit-strip { margin-top: 8px; }
+.frpg1e .to-hit-strip td.need { font-weight: 700; }
+
+/* ---------- combat top ---------- */
+.frpg1e .combat-top { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.frpg1e .ac-line { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; border-bottom: 1px dotted var(--rule); }
+.frpg1e .ac-line strong { font-size: 15px; }
+.frpg1e .ac-line input { width: 4em; }
+
+/* ---------- thief ---------- */
+.frpg1e .thief-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.frpg1e .thief-cell { display: flex; align-items: stretch; border: 1px solid var(--rule); }
+.frpg1e .thief-roll { flex: 1; display: flex; flex-direction: column; align-items: flex-start; background: none; border: none; padding: 3px 6px; cursor: pointer; color: var(--ink); height: auto; border-radius: 0; }
+.frpg1e .thief-roll:hover { background: rgba(139,30,30,.06); box-shadow: none; }
+.frpg1e .thief-roll:hover .cell-val { color: var(--blood); }
+.frpg1e .thief-cell input { width: 32px; border-left: 1px solid var(--rule); border-bottom: none; height: auto; font-size: 11px; }
+
+.frpg1e .detail-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 14px; }
+.frpg1e .detail-grid .fld.wide { grid-column: span 3; }
+
+/* ---------- turning ---------- */
+.frpg1e .turn-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.frpg1e .turn-cell { display: flex; flex-direction: column; align-items: center; background: var(--paper); border: 1px solid var(--rule); border-radius: 0; padding: 4px 2px; cursor: pointer; color: var(--ink); height: auto; }
+.frpg1e .turn-cell .cell-val { font-size: 16px; }
+.frpg1e .turn-cell:hover:not(:disabled) { border-color: var(--blood); box-shadow: none; }
+.frpg1e .turn-cell:hover:not(:disabled) .cell-val { color: var(--blood); }
+.frpg1e .turn-cell:disabled { opacity: .35; cursor: default; }
+
+/* ---------- spells ---------- */
+.frpg1e .spell-level { margin-bottom: 8px; }
+.frpg1e .spell-level-head { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--rule-strong); padding: 2px 0; }
+.frpg1e .spell-level-head .lvl { font-family: var(--adnd-font-head); font-size: 15px; color: var(--blood); min-width: 80px; }
+.frpg1e .spell-level-head .slots { font-weight: 700; font-size: 14px; }
+.frpg1e .spell-level-head .slots.over { color: var(--blood); }
+.frpg1e .spell-level-head .extra { display: flex; align-items: center; gap: 2px; }
+.frpg1e .spell-level-head .extra input { height: 18px; font-size: 11px; }
+.frpg1e .spell-level-head .mini { margin-left: auto; }
+.frpg1e .spell-row { display: grid; grid-template-columns: 70px minmax(140px, 1.1fr) 2fr auto auto auto; align-items: center; gap: 6px; padding: 3px 0; border-bottom: 1px dotted var(--rule); }
+.frpg1e .mem { display: flex; align-items: center; gap: 3px; }
+.frpg1e .tiny { width: 18px; height: 18px; font-size: 12px; }
+.frpg1e .mem-count { width: 18px; text-align: center; font-weight: 700; font-size: 14px; }
+.frpg1e .spell-name { font-weight: 700; cursor: pointer; color: var(--ink); }
+.frpg1e .spell-name:hover { color: var(--blood); text-shadow: none; }
+.frpg1e .rev { font-family: var(--adnd-font-head); color: var(--blood); font-weight: normal; }
+.frpg1e .spell-stats { font-size: 11px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---------- wealth ---------- */
+.frpg1e .coin-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 8px; }
+.frpg1e .coin { display: flex; flex-direction: column; align-items: center; }
+.frpg1e .coin span { font-family: var(--adnd-font-head); font-size: 12px; color: var(--ink-2); }
+.frpg1e .coin input { width: 100%; font-size: 16px; font-weight: 700; height: 26px; }
+.frpg1e .enc { margin: 8px 0 0; }
+
+/* ---------- monster ---------- */
+.frpg1e .mon-fields { display: flex; gap: 12px; margin-bottom: 8px; }
+.frpg1e .routine { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.frpg1e .routine-btn { background: var(--paper); border: 1px solid var(--rule-strong); color: var(--ink); border-radius: 2px; padding: 2px 10px; height: 26px; font-weight: 700; width: auto; flex: 0 0 auto; cursor: pointer; }
+.frpg1e .routine-btn:hover { background: var(--blood); color: var(--paper); border-color: var(--blood); box-shadow: none; }
+.frpg1e .routine-item { display: inline-flex; gap: 4px; align-items: center; }
+.frpg1e .routine-or { align-self: center; font-style: italic; color: var(--ink-3); padding: 0 2px; }
+.frpg1e .routine-item a { color: var(--ink-3); font-size: 11px; cursor: pointer; }
+.frpg1e .mon-grid { display: grid; grid-template-columns: 210px 1fr; gap: 12px; }
+.frpg1e .particulars .fld { margin-bottom: 6px; }
+.frpg1e .save-as { display: flex; gap: 4px; align-items: center; margin-top: 6px; }
+.frpg1e .save-as select { flex: 1; min-width: 0; }
+.frpg1e .check { display: flex; gap: 6px; align-items: center; font-size: 12px; margin-top: 6px; }
+
+/* ---------- item sheet ---------- */
+.frpg1e .item-body { flex: 1; overflow-y: auto; padding: 10px 14px; }
+.frpg1e .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 16px; }
+.frpg1e .checks { display: flex; gap: 14px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+.frpg1e .ledger.acadj td input[type="number"] { width: 100%; min-width: 0; height: 22px; }
+.frpg1e .ledger.acadj td { padding: 2px 1px; }
+.frpg1e .acadj th { color: var(--blood); }
+
+.frpg1e prose-mirror { min-height: 180px; display: block; background: rgba(255,255,255,.35); color: var(--ink); }
+/* the editor inherits Foundry's theme text colour (near white in the dark theme), invisible on the paper background;
+   the theme rules are more specific than a plain sheet rule, hence !important */
+.frpg1e prose-mirror, .frpg1e prose-mirror .editor-content, .frpg1e prose-mirror .ProseMirror,
+.frpg1e prose-mirror .editor-content :where(p, li, td, th, h1, h2, h3, h4, span, strong, em, div) { color: var(--ink) !important; caret-color: var(--ink) !important; }
+.frpg1e prose-mirror.active .editor-content { background: rgba(255,255,255,.55) !important; }
+.frpg1e prose-mirror .editor-menu, .frpg1e prose-mirror .editor-menu * { color: #efe6d2 !important; }
+
+/* window header controls (menu, close...) are Font Awesome icons: make sure no sheet font reaches them */
+.application.frpg1e .window-header .header-control,
+.application.frpg1e .window-header .header-control::before,
+.application.frpg1e .window-header [class*="fa-"]::before {
+  font-family: var(--fa-family, "Font Awesome 7 Pro"), "Font Awesome 7 Pro", "Font Awesome 6 Pro", "Font Awesome 7 Free", "Font Awesome 6 Free" !important;
+  font-weight: 900 !important; font-style: normal !important;
+}
+.frpg1e .rich { min-height: 60px; }
+
+/* =====================================================================
+   Chat cards
+   ===================================================================== */
+.frpg1e-card {
+  background: var(--paper); color: var(--ink); border: 1px solid var(--rule-strong);
+  padding: 6px 8px 8px; font-family: var(--adnd-font-body); font-size: 13px;
+}
+.frpg1e-card .card-head { display: flex; gap: 8px; align-items: center; border-bottom: 1px solid var(--rule-strong); padding-bottom: 4px; margin-bottom: 6px; }
+.frpg1e-card .card-head img { width: 32px; height: 32px; border: 1px solid var(--rule); }
+.frpg1e-card .card-title { font-family: var(--adnd-font-head); font-size: 16px; letter-spacing: .03em; line-height: 1.1; }
+.frpg1e-card > .card-title { border-bottom: 1px solid var(--rule-strong); margin-bottom: 4px; padding-bottom: 2px; }
+.frpg1e-card .card-sub { font-family: var(--adnd-font-serif); font-style: italic; color: var(--ink-2); font-size: 12px; }
+.frpg1e-card .roll-line { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin: 4px 0; }
+.frpg1e-card .die { display: inline-grid; place-items: center; min-width: 26px; height: 26px; border: 1.5px solid var(--ink); font-weight: 700; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: var(--wash); padding: 0 4px; }
+.frpg1e-card .mod { color: var(--ink-2); }
+.frpg1e-card .eq { color: var(--ink-3); }
+.frpg1e-card .adnd-big, .frpg1e .adnd-big { font-size: 22px; font-weight: 700; }
+.frpg1e-card .vs { color: var(--ink-2); font-family: var(--adnd-font-serif); font-style: italic; }
+.frpg1e-card .mod-list, .frpg1e-card .hint { font-family: var(--adnd-font-serif); font-style: italic; font-size: 11px; color: var(--ink-2); }
+.frpg1e-card .target-line { display: grid; grid-template-columns: 1fr auto; gap: 0 6px; border-top: 1px dotted var(--rule); padding: 3px 0; align-items: center; }
+.frpg1e-card .t-name { font-weight: 700; }
+.frpg1e-card .t-need { grid-column: 1; grid-row: 2; font-size: 11px; color: var(--ink-2); }
+.frpg1e-card .verdict { grid-column: 2; grid-row: 1 / span 2; font-family: var(--adnd-font-head); font-size: 18px; letter-spacing: .06em; }
+.frpg1e-card .verdict.small { font-size: 12px; font-family: var(--adnd-font-serif); font-style: italic; letter-spacing: 0; }
+.frpg1e-card .hit .verdict, .frpg1e-card .result.hit { color: var(--hit); }
+.frpg1e-card .miss .verdict, .frpg1e-card .result.miss { color: var(--blood); }
+.frpg1e-card .result { font-family: var(--adnd-font-head); font-size: 17px; letter-spacing: .05em; margin-top: 2px; }
+.frpg1e-card p.verdict { font-family: var(--adnd-font-serif); font-size: 14px; margin: 6px 0 2px; }
+.frpg1e-card .card-buttons { display: flex; gap: 6px; margin-top: 6px; }
+.frpg1e-card .card-buttons button {
+  flex: 1; background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 2px;
+  font-family: var(--adnd-font-head); font-size: 13px; line-height: 1.1; padding: 3px 4px; height: auto;
+}
+.frpg1e-card .card-buttons button small { display: block; font-family: var(--adnd-font-body); font-size: 10px; color: var(--ink-2); }
+.frpg1e-card .card-buttons button.primary { background: var(--blood); color: var(--paper); border-color: var(--blood); }
+.frpg1e-card .card-buttons button.primary small { color: #f0d9cf; }
+.frpg1e-card .card-buttons button:hover { box-shadow: 0 0 0 1px var(--blood); }
+.frpg1e-card .init-list { list-style: none; margin: 4px 0; padding: 0; }
+.frpg1e-card .init-list li { display: flex; gap: 8px; align-items: baseline; border-bottom: 1px dotted var(--rule); padding: 2px 0; }
+.frpg1e-card .init-list em { color: var(--blood); }
+.frpg1e-card .stat-grid { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 1px 8px; font-size: 12px; }
+.frpg1e-card .stat-grid span:nth-child(odd) { font-family: var(--adnd-font-head); color: var(--ink-2); }
+.frpg1e-card details.desc summary { cursor: pointer; font-family: var(--adnd-font-head); color: var(--blood); margin-top: 6px; }
+.frpg1e-card details.desc p { margin: 4px 0; font-size: 12px; }
+
+/* dialogs */
+.frpg1e-dialog .window-content { background: var(--paper); color: var(--ink); font-family: var(--adnd-font-body); }
+.frpg1e-form .row { display: flex; gap: 12px; align-items: center; padding: 5px 0; border-bottom: 1px dotted var(--rule); flex-wrap: wrap; }
+.frpg1e-form .row.col { flex-direction: column; align-items: flex-start; gap: 4px; }
+.frpg1e-form .lbl { font-family: var(--adnd-font-head); min-width: 100px; color: var(--ink-2); }
+.frpg1e-form label { display: flex; gap: 6px; align-items: center; }
+.frpg1e-form .hint { font-family: var(--adnd-font-serif); font-style: italic; color: var(--ink-2); font-size: 12px; margin: 6px 0 0; }
+.frpg1e-form .w4 { width: 5em; }
+
+/* combat tracker */
+.frpg1e-encounter { display: flex; gap: 4px; padding: 4px 6px; }
+.frpg1e-encounter button { flex: 1; font-size: 12px; height: 26px; line-height: 1; }
+
+/* ---------- class features (bard, cavalier, barbarian, thief-acrobat) ---------- */
+.frpg1e .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.frpg1e .feature-cell { display: flex; flex-direction: column; align-items: flex-start; border: 1px solid var(--rule); padding: 3px 6px; background: none; color: var(--ink); height: auto; border-radius: 0; text-align: left; line-height: 1.25; }
+.frpg1e button.feature-cell { cursor: pointer; }
+.frpg1e button.feature-cell:hover { background: rgba(139,30,30,.06); box-shadow: none; }
+.frpg1e button.feature-cell:hover .cell-val { color: var(--blood); }
+.frpg1e .feature-cell .cell-val { font-weight: 700; font-size: 14px; }
+.frpg1e .feature-cell .cell-label { white-space: normal; }
+.frpg1e .feature-notes { margin: 8px 0 0; padding-left: 18px; font-family: var(--adnd-font-serif); font-size: 12.5px; color: var(--ink-2); }
+.frpg1e .feature-notes li { margin: 1px 0; }
+.frpg1e .dual { display: flex; align-items: center; gap: 6px; margin-top: 6px; }
+.frpg1e .sub-note.tag { color: var(--blood); font-style: italic; }
+
+/* ---------- psionics ---------- */
+.frpg1e .psi-stats { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; margin: 6px 0; }
+.frpg1e .psi-stat { display: flex; flex-direction: column; border: 1px solid var(--rule); padding: 3px 8px; min-width: 96px; }
+.frpg1e .psi-stat input { font-family: var(--adnd-font-head); font-size: 18px; height: 26px; width: 70px; border-bottom: none; }
+.frpg1e .psi-stat .cell-val { font-family: var(--adnd-font-head); font-size: 18px; line-height: 26px; }
+.frpg1e .psi-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.frpg1e .roll-btn.wide { padding: 2px 10px; font-weight: 400; font-family: var(--adnd-font-head); font-size: 13px; height: auto; flex: 0 0 auto; }
+.frpg1e .psi-modes { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
+.frpg1e .psi-modes-inline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 4px 0 6px; font-family: var(--adnd-font-head); }
+.frpg1e .psi-modes-inline .check { display: flex; gap: 3px; align-items: center; }
+.frpg1e .psi-modes-inline a { color: var(--blood); cursor: pointer; text-decoration: underline dotted; }
+.frpg1e .psi-modes-inline .sep { color: var(--ink-3); }
+.frpg1e-card.psi-card .init-list { margin: 4px 0; padding-left: 16px; }
+.frpg1e tr.psi-active td { background: rgba(139,30,30,.07); }
+.frpg1e .psi-bw { border-left: 3px solid var(--blood); padding: 4px 8px; margin: 6px 0; background: rgba(255,255,255,.3); }
+
+/* ---------- magic items and treasure ---------- */
+.frpg1e .magic-list tr.worn td { background: rgba(139,30,30,.06); }
+.frpg1e .magic-list .tiny { padding: 0 4px; height: 18px; line-height: 16px; }
+.frpg1e .vs-list { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.frpg1e .vs-row { display: flex; align-items: center; gap: 4px; }
+.frpg1e .vs-row input[type="text"] { flex: 1; }
+.frpg1e .item-value { font-family: var(--adnd-font-serif); font-style: italic; color: var(--ink-2); margin: 0 0 10px; }
+.frpg1e .rich p.rows, .frpg1e-card p.rows, .frpg1e prose-mirror p.rows { font-variant-numeric: tabular-nums; }
+.frpg1e .w5 { width: 70px; }
+.frpg1e-card .treasure-list { list-style: none; margin: 4px 0; padding: 0; }
+.frpg1e-card .treasure-list li { padding: 3px 0; border-bottom: 1px dotted #b8a582; }
+.frpg1e-card .usage { font-style: italic; margin: 4px 0; }
+.frpg1e-treasure { margin: 4px 0; width: 100%; }
+p.item-ref { font-style: italic; color: #5a4e40; font-size: 12px; }
+.frpg1e-card .heal-line .adnd-big { color: #2f5d34; }
+
+/* ---------- catalogued dice (spells and magic items) ---------- */
+.frpg1e-card .roll-results { display: flex; flex-direction: column; gap: 6px; margin: 6px 0; }
+.frpg1e-card .roll-result { border: 1px solid #b8a582; border-left: 3px solid #7a2a1d; padding: 4px 6px; background: rgba(255,255,255,.35); }
+.frpg1e-card .roll-result.kind-heal { border-left-color: #2f5d34; }
+.frpg1e-card .roll-result.kind-heal .adnd-big { color: #2f5d34; }
+.frpg1e-card .roll-result.kind-dur, .frpg1e-card .roll-result.kind-num, .frpg1e-card .roll-result.kind-other, .frpg1e-card .roll-result.kind-table { border-left-color: #5a4e40; }
+.frpg1e-card .rr-head { display: flex; justify-content: space-between; gap: 6px; font-weight: 600; font-size: 12px; }
+.frpg1e-card .rr-choice { font-weight: 400; font-style: italic; color: #5a4e40; }
+.frpg1e-card .rr-body { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.frpg1e-card .rr-row { margin-top: 2px; font-style: italic; }
+.frpg1e-card .rr-each { display: flex; gap: 4px; flex-wrap: wrap; margin: 2px 0; }
+.frpg1e-card .rr-each button.small, .frpg1e-card .rr-value { min-width: 28px; padding: 0 6px; height: 22px; line-height: 20px; font-size: 12px; flex: 0 0 auto; }
+.frpg1e-card .rr-value { border: 1px solid #b8a582; text-align: center; }
+.frpg1e-card .fn-label { font-weight: 600; margin-top: 4px; }
+.frpg1e-roll-options fieldset { border: 1px solid #b8a582; margin: 0 0 8px; padding: 4px 8px; }
+.frpg1e-roll-options .radio-line { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+.frpg1e .dice-table { width: 100%; border-collapse: collapse; }
+.frpg1e .dice-table td, .frpg1e .dice-table th { border-bottom: 1px dotted var(--rule); padding: 2px 4px; vertical-align: top; text-align: left; }
+.frpg1e .dice-table input[type="text"] { width: 100%; }
+.frpg1e .dice-table .choice-line { display: grid; grid-template-columns: 1fr 110px; gap: 4px; align-items: center; }
+.frpg1e .dice-table td.dim { color: var(--ink-3); font-size: 12px; width: 22%; }
+
+/* ---------- tables inside book descriptions ---------- */
+.frpg1e table.book-table, .frpg1e-card table.book-table { border-collapse: collapse; margin: 6px 0 10px; width: auto; max-width: 100%; font-size: 0.95em; background: transparent; border: none; }
+.frpg1e table.book-table th, .frpg1e-card table.book-table th { font-weight: 600; text-align: left; vertical-align: bottom; padding: 1px 10px 1px 0; border-bottom: 1px solid #b8a582; background: transparent; }
+.frpg1e table.book-table td, .frpg1e-card table.book-table td { padding: 1px 10px 1px 0; vertical-align: top; border-bottom: 1px dotted #d3c4a4; }
+.frpg1e table.book-table tr:last-child td, .frpg1e-card table.book-table tr:last-child td { border-bottom: none; }
+
+/* ---------- proficiencies ---------- */
+.frpg1e .slot-row { display: flex; gap: 18px; align-items: flex-end; flex-wrap: wrap; }
+.frpg1e .slot-stat { display: flex; flex-direction: column; border: 1px solid var(--rule); padding: 3px 10px; min-width: 120px; }
+.frpg1e .slot-stat .slot-big { font-family: var(--adnd-font-head); font-size: 22px; line-height: 26px; }
+.frpg1e p.warn { color: var(--blood); font-style: italic; margin: 4px 0; }
+.frpg1e .prof-weapons input[type="text"] { width: 100%; }
+.frpg1e .nwp-list td.num, .frpg1e .prof-weapons td.num { text-align: center; }
+.frpg1e-card.prof-card .roll-line .hint { margin-left: 8px; }
+.frpg1e .dice-box button[data-roll-add] { width: auto; flex: 0 0 auto; white-space: nowrap; padding: 2px 12px; height: auto; margin-top: 4px; }
+
+/* book headings inside descriptions (e.g. "DSG" on proficiencies) */
+.frpg1e-card .desc h3, .frpg1e .rich h3, .frpg1e prose-mirror h3 {
+  font-family: var(--adnd-font-head, serif); font-size: 1.05em; font-weight: 600; font-variant: small-caps; letter-spacing: .03em;
+  margin: 10px 0 4px; padding: 0 0 2px; border-bottom: 1px solid #b8a582; line-height: 1.3;
+}
+.frpg1e-card .desc h3:first-child, .frpg1e .rich h3:first-child, .frpg1e prose-mirror h3:first-child { margin-top: 2px; }
+
+/* ability checks: click the ability's name */
+.frpg1e a.ab-check { cursor: pointer; color: var(--blood); text-decoration: none; border-radius: 3px; text-align: center; }
+.frpg1e a.ab-check:hover { color: var(--paper); background: var(--blood); }
+
+/* Race box (Record tab) */
+.frpg1e .race-limits { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 6px; }
+.frpg1e .race-limits th { font-family: var(--adnd-font-head); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--rule); padding: 2px 4px; }
+.frpg1e .race-limits td { padding: 2px 4px; border-bottom: 1px dotted var(--rule); text-align: center; }
+.frpg1e .race-limits .left { text-align: left; }
+.frpg1e .race-limits tr.over td { color: var(--blood); font-weight: bold; }
+.frpg1e .race-warn { color: var(--blood); font-style: italic; margin: 3px 0; font-size: 13px; }
+.frpg1e .race-line { margin: 3px 0; font-size: 13px; }
+
+/* monster header: the name gets its own full-width row (long book names); fields and vitals share the row below */
+.frpg1e .monster-sheet .sheet-head { grid-template-columns: 92px minmax(0, 1fr) auto; grid-template-rows: auto auto; row-gap: 6px; }
+.frpg1e .monster-sheet .portrait { grid-row: 1 / span 2; align-self: start; }
+.frpg1e .monster-sheet .title-line { grid-column: 2 / span 2; grid-row: 1; min-width: 0; }
+.frpg1e .monster-sheet .char-name { width: 100%; min-width: 0; font-size: 22px !important; }
+.frpg1e .monster-sheet .head-main { grid-column: 2; grid-row: 2; min-width: 0; }
+.frpg1e .monster-sheet .head-fields { margin-top: 0; }
+.frpg1e .monster-sheet .vitals { grid-column: 3; grid-row: 2; flex: 0 0 auto; }
+.frpg1e .monster-sheet .vital.ac { flex: 0 0 104px; width: 104px; min-width: 0; }
+.frpg1e .monster-sheet .vital.ac .ac-input { width: 100% !important; min-width: 0; text-align: center; }
+
+/* open editor: Foundry sizes the editing area from a flex parent of fixed height; inside the sheet's scrolling tab
+   that height is 0, so the text was there but drawn in a zero-height box. Give the editing area its own height. */
+.frpg1e prose-mirror:has(.ProseMirror) { display: flex !important; flex-direction: column; height: auto !important; min-height: 420px; }
+.frpg1e prose-mirror:has(.ProseMirror) .editor-content,
+.frpg1e prose-mirror .editor-content.ProseMirror,
+.frpg1e prose-mirror .ProseMirror { flex: 1 1 auto; height: auto !important; min-height: 380px !important; max-height: none; overflow-y: auto; padding: 6px 10px; }
+
+.frpg1e .routine-reset { color: var(--ink-3); font-size: 11px; cursor: pointer; margin-left: 4px; }
+.frpg1e .routine-reset:hover { color: var(--blood); }
+.frpg1e-dialog .frpg1e-form .fld { margin-bottom: 8px; }
+.frpg1e-dialog .frpg1e-form .row-2 { display: flex; gap: 12px; }
+/* to-hit strip header: Foundry's theme gives table heads a dark band */
+.frpg1e .ledger thead, .frpg1e .ledger thead tr, .frpg1e .ledger thead th { background: none !important; color: var(--ink-2) !important; }
+
+.frpg1e .routine .mini-text { width: auto; padding: 0 8px; font-size: 12px; white-space: nowrap; }
+
+.frpg1e .box-title .brawl-btn { width: auto; padding: 0 8px; font-size: 12px; margin-left: 4px; text-transform: none; letter-spacing: 0; }
+.frpg1e-dialog .brawl-form .row { gap: 8px; align-items: center; flex-wrap: wrap; }
+
+/* quick rolls at the right of the tab row */
+.frpg1e .sheet-tabs { display: flex; align-items: center; flex-wrap: wrap; }
+.frpg1e .sheet-tabs .quick-rolls { order: 99; margin-left: auto; display: flex; gap: 4px; padding-right: 10px; }
+.frpg1e .sheet-tabs .quick-rolls .mini-text { width: auto; padding: 0 7px; height: 22px; font-size: 11px; border: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--ink-2); text-transform: none; letter-spacing: 0; font-family: var(--adnd-font-body); }
+.frpg1e .sheet-tabs .quick-rolls .mini-text:hover { color: var(--blood); border-color: var(--blood); }
+.frpg1e .surprise-fld .pair { display: flex; align-items: baseline; gap: 4px; order: 1; }
+.frpg1e .surprise-fld .pair input { width: 3em; }
+.morale-dialog .row .lbl { min-width: 16em; }
+
+/* monster Description tab: the text box fills the window (shown or being edited), scrolling inside */
+.frpg1e .tab-scroll:has(> .tab-body.desc-fill.active) { display: flex; flex-direction: column; }
+.frpg1e .tab-body.desc-fill.active { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; }
+.frpg1e .desc-fill > .box { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; margin-bottom: 0; }
+.frpg1e .desc-fill .pm-slot { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+.frpg1e .desc-fill prose-mirror { flex: 1 1 auto; display: flex !important; flex-direction: column; height: auto !important; min-height: 0 !important; }
+.frpg1e .desc-fill prose-mirror .editor-content { flex: 1 1 auto; height: auto !important; min-height: 0 !important; max-height: none !important; overflow-y: auto; }
+.frpg1e .desc-fill .rich { flex: 1 1 auto; overflow-y: auto; }
+
+/* ---------- NPC sheet ---------- */
+.frpg1e.npc .vital.loyalty .loyalty-roll { color: var(--ink, #2b2118); background: none; border: none; font-size: 1.6em; font-weight: bold; padding: 0; cursor: pointer; line-height: 1.1; width: auto; }
+.frpg1e.npc .npc-fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 4px 8px; }
+.frpg1e.npc .npc-fields .fld.narrow { max-width: 90px; }
+.frpg1e.npc .loyalty-line { margin: 6px 0 2px; }
+.frpg1e.npc .loyalty-mods summary { cursor: pointer; }
+.frpg1e.npc .loyalty-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 4px 8px; margin-top: 4px; }
+.frpg1e.npc .loyalty-grid select { width: 100%; }
+.frpg1e.npc .npc-zero button { width: auto; display: inline-block; margin-left: 6px; }
+.frpg1e.npc .npc-adj { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px 10px; }
+.frpg1e.npc details.npc-race > summary { cursor: pointer; }
+.frpg1e.npc details.npc-race > .box { border: none; margin: 0; padding: 0; }
+
+/* ability score roll card */
+.frpg1e-card .ability-roll-table { width: 100%; border-collapse: collapse; margin: 4px 0; }
+.frpg1e-card .ability-roll-table td, .frpg1e-card .ability-roll-table th { padding: 1px 4px; border-bottom: 1px solid #d8ccb0; }
+.frpg1e-card .ability-roll-table .num { text-align: right; }
+.frpg1e-card .ability-roll-table s.dropped { opacity: .5; }
+.frpg1e .abilities .box-title .mini-text { width: auto; margin-left: auto; }

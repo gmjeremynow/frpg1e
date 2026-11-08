@@ -1,0 +1,15 @@
+<div class="roll-results">
+  {{#each results}}
+  <div class="roll-result kind-{{kind}}">
+    <div class="rr-head"><span class="rr-label">{{label}}</span>{{#if choice}}<span class="rr-choice">{{choice}}</span>{{/if}}</div>
+    <div class="rr-body">
+      <span class="adnd-big">{{total}}</span>
+      <span class="hint">{{#if count}}{{count}} × {{/if}}{{text}}{{#if dice}}{{#unless count}} · {{dice}}{{/unless}}{{/if}}{{#if saveText}} · {{saveText}}{{/if}}</span>
+    </div>
+    {{#if values}}<div class="rr-each">{{#each perValue}}<button type="button" class="small" data-card-action="{{action}}" data-amount="{{v}}" data-factor="{{factor}}" title="Apply this one">{{v}}</button>{{else}}{{#each values}}<span class="rr-value">{{this}}</span>{{/each}}{{/each}}</div>{{/if}}
+    {{#if row}}<div class="rr-row">{{row}}{{#if sub}} <strong>{{sub.total}}</strong> <span class="hint">({{sub.text}})</span>{{/if}}</div>{{/if}}
+    {{#if note}}<div class="hint">{{note}}</div>{{/if}}
+    {{#if buttons.length}}<div class="card-buttons">{{#each buttons}}<button type="button" data-card-action="{{action}}" data-amount="{{amount}}" data-factor="{{factor}}" data-mode="{{mode}}"{{#if primary}} class="primary"{{/if}}>{{label}}</button>{{/each}}</div>{{/if}}
+  </div>
+  {{/each}}
+</div>

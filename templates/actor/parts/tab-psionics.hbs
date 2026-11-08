@@ -1,0 +1,76 @@
+    <div class="box psi-head">
+      <h3 class="box-title">Psionic Ability</h3>
+      <label class="dual"><input type="checkbox" name="system.psionics.has" {{adnd-checked psi.p.has}}> Has psionic ability</label>
+      {{#unless psi.has}}
+      <p class="hint">Intelligence, wisdom or charisma of 16 or more (unmodified) gives a chance of psionic ability.</p>
+      <div class="psi-buttons"><button type="button" class="roll-btn wide" data-action="psiPotential"><i class="fa-solid fa-dice-d20"></i> Roll psionic potential</button></div>
+      {{else}}
+      <div class="psi-stats">
+        <label class="psi-stat"><span class="cell-label">Strength</span><input type="number" name="system.psionics.strength" value="{{psi.p.strength}}" data-dtype="Number"></label>
+        <div class="psi-stat"><span class="cell-label">Ability</span><span class="cell-val">{{psi.ability}}</span></div>
+        <label class="psi-stat"><span class="cell-label">Attack points</span><input type="number" name="system.psionics.attack" value="{{psi.p.attack}}" data-dtype="Number"></label>
+        <label class="psi-stat"><span class="cell-label">Defense points</span><input type="number" name="system.psionics.defense" value="{{psi.p.defense}}" data-dtype="Number"></label>
+      </div>
+      <div class="psi-buttons">
+        {{#unless psi.p.strength}}<button type="button" class="roll-btn wide" data-action="psiStrength"><i class="fa-solid fa-dice-d20"></i> Roll psionic strength, modes &amp; disciplines</button>{{/unless}}
+        <button type="button" class="roll-btn wide" data-action="psiRecovery"><i class="fa-solid fa-bed"></i> Recovery</button>
+        <button type="button" class="roll-btn wide" data-action="psiReset" title="Set attack and defense points to full strength"><i class="fa-solid fa-rotate"></i> Full strength</button>
+      </div>
+      {{/unless}}
+    </div>
+
+    {{#if psi.has}}
+    <div class="psi-modes">
+      <div class="box">
+        <h3 class="box-title">Attack Modes <span class="hint">target a creature, then click</span></h3>
+        <table class="ledger">
+          <thead><tr><th>Known</th><th class="left">Mode</th><th>Cost</th><th>Range</th></tr></thead>
+          <tbody>
+          {{#each psi.attackModes}}
+          <tr><td><input type="checkbox" name="system.psionics.modes.{{key}}" {{adnd-checked known}}></td>
+            <td class="left">{{#if known}}<a class="attack-link" data-action="psiAttack" data-mode="{{key}}">{{key}}. {{label}}</a>{{else}}{{key}}. {{label}}{{/if}}</td>
+            <td class="num">{{cost}}</td><td class="num">{{rangeText}}&Prime;</td></tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div class="box">
+        <h3 class="box-title">Defense Modes</h3>
+        <table class="ledger">
+          <thead><tr><th>Known</th><th class="left">Mode</th><th>Cost</th></tr></thead>
+          <tbody>
+          {{#each psi.defenseModes}}
+          <tr><td><input type="checkbox" name="system.psionics.defenses.{{key}}" {{adnd-checked known}}></td><td class="left">{{key}}. {{label}}</td><td class="num">{{cost}}</td></tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <label class="dual hint"><input type="checkbox" name="system.psionics.mindBar" {{adnd-checked psi.p.mindBar}}> Mind bar</label>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3 class="box-title">Disciplines <span class="hint">drag from the Psionic Disciplines compendium</span>
+        <button type="button" class="mini" data-action="itemCreate" data-type="psionic" title="Add discipline"><i class="fa-solid fa-plus"></i></button></h3>
+      <table class="ledger">
+        <thead><tr><th class="left">Discipline</th><th>Kind</th><th title="Level of mastery: level of experience (PHB p.111); highest class level for multi-class characters (house ruling)">Mast.</th><th>Range</th><th>Cost</th><th>Duration</th><th></th></tr></thead>
+        <tbody>
+        {{#each psi.minor}}{{> "systems/frpg1e/templates/actor/parts/psi-row.hbs"}}{{/each}}
+        {{#each psi.major}}{{> "systems/frpg1e/templates/actor/parts/psi-row.hbs"}}{{/each}}
+        {{#unless psi.minor.length}}{{#unless psi.major.length}}<tr><td colspan="7" class="hint">No disciplines yet.</td></tr>{{/unless}}{{/unless}}
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Click a discipline to use it: each strength point of cost removes 1 attack and 1 defense point (PHB p.111). Click an active one to stop it.{{#if multiClass}} Mastery uses the highest class level (house ruling).{{/if}}</p>
+    {{#if psi.bw}}<p class="psi-bw">Body weaponry active (mastery {{psi.bw.mastery}}): {{#if psi.bw.noColumn}}no cleric, fighter or thief column applies to this character's classes{{else}}armor class {{psi.bw.ac}} while no armor or shield is worn (never added to worn armor){{/if}}; hands count as <strong>{{psi.bw.weapon}}</strong> while no weapon is used.</p>{{/if}}
+    {{#if psi.bodyWeaponry}}
+    <div class="box">
+      <h3 class="box-title">Body Weaponry <span class="hint">PHB p.111, by level of mastery</span></h3>
+      <table class="ledger">
+        <thead><tr><th>Level</th><th>AC (cleric)</th><th>AC (fighter)</th><th>AC (thief)</th><th class="left">Hands as weapon</th></tr></thead>
+        <tbody>{{#each psi.bodyWeaponry}}<tr><td class="num">{{@key}}</td><td class="num">{{this.[0]}}</td><td class="num">{{this.[1]}}</td><td class="num">{{this.[2]}}</td><td class="left">{{this.[3]}}</td></tr>{{/each}}</tbody>
+      </table>
+    </div>
+    {{/if}}
+    <p class="hint">Psionic combat uses DMG tables IV.A (psionic vs. psionic), IV.B (defenseless psionic) and IV.C (psionic blast vs. non-psionic). Use <em>Apply points</em> on the card to deduct costs and losses.</p>
+    {{/if}}
+  

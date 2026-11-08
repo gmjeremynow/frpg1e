@@ -1,0 +1,29 @@
+<div class="frpg1e-form">
+  {{#if both}}
+  <div class="row"><span class="lbl">Attack</span>
+    <label><input type="radio" name="mode" value="melee" checked> Melee</label>
+    <label><input type="radio" name="mode" value="missile"> Thrown</label></div>
+  {{else}}<input type="hidden" name="mode" value="{{#if canMelee}}melee{{else}}missile{{/if}}">{{/if}}
+  {{#if canMissile}}
+  <div class="row"><span class="lbl">Range</span>
+    {{#if pointBlank}}<label><input type="radio" name="range" value="pointblank"> Point blank (specialist: 6' to 30' for bows, 6' to 60' for crossbows)</label>{{/if}}
+    <label><input type="radio" name="range" value="short" checked> Short{{#if ranges.short}} ({{ranges.short}}&Prime;){{/if}}</label>
+    <label><input type="radio" name="range" value="medium"> Medium −2</label>
+    <label><input type="radio" name="range" value="long"> Long −5</label></div>
+  {{/if}}
+  {{#if ammoItems.length}}<div class="row"><span class="lbl">Ammunition</span><select name="ammo">{{#each ammoItems}}<option value="{{id}}">{{label}}</option>{{/each}}<option value="">Not counted</option></select></div>{{/if}}
+  {{#if ammoMissing}}<p class="warn">{{ammoMissing}}</p>{{/if}}
+  {{#if thrownStack}}<div class="row"><label><input type="checkbox" name="countThrown" checked> Count the thrown weapon ({{quantity}} carried; one is used when thrown)</label></div>{{/if}}
+  {{#if vsOptions.length}}<div class="row col"><span class="lbl">Magic bonus</span>
+    <label><input type="radio" name="vs" value="-1" checked> Normal ({{adnd-signed magicHit}})</label>
+    {{#each vsOptions}}<label><input type="radio" name="vs" value="{{i}}"> {{label}}</label>{{/each}}</div>{{/if}}
+  {{#if cavalier}}<div class="row"><label><input type="checkbox" name="mounted"> Mounted (lance bonuses; human cavaliers attack as 1 level higher)</label></div>{{/if}}
+  <div class="row col">
+    <label><input type="checkbox" name="rear"> Attack from rear or unseen (+2; ignores shield and dexterity)</label>
+    {{#if thief}}<label><input type="checkbox" name="backstab"> Back stab (+4, damage multiplied)</label>{{/if}}
+    <label><input type="checkbox" name="helpless"> Target stunned, prone or motionless (+4)</label>
+    <label><input type="checkbox" name="invisible"> Target invisible / cannot be seen (−4)</label>
+  </div>
+  <div class="row"><span class="lbl">Other modifier</span><input type="number" name="misc" value="0" class="w4"></div>
+  <p class="hint">Target tokens before rolling to see hit or miss. Spells like bless or prayer change armor class, so enter them as a modifier here.</p>
+</div>

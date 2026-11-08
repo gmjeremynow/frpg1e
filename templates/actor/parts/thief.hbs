@@ -1,0 +1,15 @@
+{{#if thief}}
+    <div class="box thief">
+      <h3 class="box-title">Thieving Skills <span class="hint">as a level {{system.thiefSkills.level}} thief{{#if thiefArmorLabel}} · {{thiefArmorLabel}}{{/if}}</span></h3>
+      <div class="thief-grid">
+        {{#each thief}}
+        <div class="thief-cell">
+          <button type="button" class="thief-roll" data-action="thief" data-skill="{{key}}" title="Base {{base}} · race {{race}} · dex {{dex}}">
+            <span class="cell-label">{{label}}</span><span class="cell-val">{{total}}%</span>
+          </button>
+          <input type="number" name="system.thief.{{key}}.misc" value="{{misc}}" data-dtype="Number" title="Misc. adjustment">
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}

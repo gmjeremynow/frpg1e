@@ -1,0 +1,21 @@
+<div class="box abilities">
+        <h3 class="box-title">Abilities
+          <button type="button" class="mini mini-text" data-action="rollAbilityScores" title="Roll 4d6, drop the lowest, six times and post the results to chat (DMG p.11, Method I)"><i class="fa-solid fa-dice"></i> Roll 4d6</button>
+        </h3>
+        {{#each ab}}
+        <div class="ability-row">
+          <div class="ab-score">
+            <a class="ab-letter ab-check" data-action="abilityCheck" data-ability="{{key}}" title="{{label}} Check: d20 at or under {{value}} (shift-click to skip options)">{{short}}</a>
+            <input type="number" name="system.abilities.{{key}}.value" value="{{value}}" data-dtype="Number" min="1" max="25">
+            {{#if (adnd-eq key "str")}}{{#if ../exceptional}}<span class="pct">/<input type="number" name="system.abilities.str.pct" value="{{../system.abilities.str.pct}}" data-dtype="Number" min="0" max="100" title="Exceptional strength (100 = 00); 0 for none"></span>{{/if}}{{/if}}
+          </div>
+          <div class="ab-cells">
+            {{#each cells}}
+            <div class="ab-cell{{#if this.[2]}} rollable{{/if}}" {{#if this.[2]}}data-action="{{this.[2]}}" title="Roll"{{/if}}>
+              <span class="cell-label">{{this.[0]}}</span><span class="cell-val">{{this.[1]}}</span>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+        {{/each}}
+      </div>

@@ -1,0 +1,733 @@
+[
+ {
+  "name": "Alertness",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character instinctively notices and recognizes signs of a disturbance nearby. On a successful Proficiency Check, his chance of being surprised drops by 1 in 6. If he can pass the information on to the rest of the party, their chance of being surprised drops by the same amount.</p>"
+  }
+ },
+ {
+  "name": "Animal Handling",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character has better than normal control over pack animals and beasts of burden. A successful Proficiency Check means he calms an excited or agitated animal. A character without this proficiency has only a 20% chance of doing so (see the section on Mounts and Beasts of Burden).</p>"
+  }
+ },
+ {
+  "name": "Animal Lore",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character can read the sounds and behavior of animals to foresee a coming threat or danger, such as a brewing storm, an approaching large predator (or the party itself, from the animals’ point of view), a forest fire, a volcano about to erupt, or an earthquake about to happen.</p><ul><li><strong>Success:</strong> the threat is correctly interpreted.</li><li><strong>Failed by 4 or less</strong> (modified roll): no information is gained.</li><li><strong>Failed by 5 or more:</strong> some wrong information is gained, either the direction the threat is coming from or the nature of the danger.</li></ul>"
+  }
+ },
+ {
+  "name": "Animal Noise",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13)",
+   "description": "<h3>DSG</h3><p>The character can imitate the noises made by various animals.</p><ul><li><strong>Success:</strong> only magic can tell the noise from that of the real animal.</li><li><strong>Failure:</strong> the sound differs slightly from the real one. This does not mean every listener knows it is fake. Creatures and humanoids very familiar with the noise know automatically; other creatures or characters within earshot make Wisdom Checks to see if they notice.</li></ul>"
+  }
+ },
+ {
+  "name": "Animal Trainer",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 0,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>When the proficiency is first gained, the character must declare the type of creature he specializes in. Common choices are horses, dogs, falcons, pigeons, or elephants; a more exotic species may be chosen if desired. Further proficiency slots can raise his Proficiency Check modifier with that animal, or add another type of animal he can train.</p><ul><li><strong>Typical training:</strong> three months, for a typical role such as guarding and attack (dogs), riding (horses), or heavy labor (elephants). A trainer can have up to six animals in training at once. This training gives a +10 modifier to the Proficiency Check at the end of the period.</li><li><strong>Additional training:</strong> animals already trained in their typical role can sometimes be taught more functions, such as war training for elephants, horses, or dogs, or training falcons to retrieve particular objects. This takes another three months, with no more than three animals at a time. At the end, make an unmodified Proficiency Check for each animal; success means it can perform the advanced tasks.</li><li>The DM decides the chance of success when a character tries to train an animal for a task at the very limits of possibility.</li></ul>"
+  }
+ },
+ {
+  "name": "Armorer",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 2,
+   "ability": "int",
+   "modifier": 2,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>Given the proper materials and facilities, the character can make every type of armor listed in the PHB and UA. The Proficiency Check is rolled at the end of the normal construction time.</p><ul><li><strong>Time:</strong> two weeks per level of AC below 10. A shield takes two weeks of work; a suit of full plate armor takes 18 weeks.</li><li><strong>Fitting:</strong> for field plate or full plate, the character who will wear it must be present at least once a week during its making, since these armors need very exact fittings.</li><li><strong>Flawed armor:</strong> if the check fails by four or less, the armor is usable but flawed. It works as one Armor Class worse than normal, though it looks like the intended armor. Only a character with armorer proficiency can detect the flaws, and only by careful, detailed inspection.</li><li><strong>Breaking:</strong> if flawed armor is struck in melee by a natural roll of 19 or 20, it breaks. The wearer’s AC at once worsens by four more classes (never above 10), and the broken armor hampers movement: until it is removed (which takes 1d4 rounds), the character moves at 1/2 his normal rate and has a −4 modifier on all attack rolls.</li></ul>"
+  }
+ },
+ {
+  "name": "Blacksmith",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "str",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The character can make tools and implements of iron. He needs a forge with a coal-fed fire and bellows, plus a hammer and anvil. He cannot make armor or most weapons, but can make crowbars, grappling hooks, horseshoes, nails, hinges, plows, and most other iron objects.</p><p>He can also make a limited range of weapons, mainly hammers and maces: any weapon without a sharp edge or point.</p>"
+  }
+ },
+ {
+  "name": "Blind-fighting",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character has trained to respond to sound, smell, and touch, and so is less hampered in complete darkness than others. Any race can take it, though it is most useful to those without infravision. It applies whenever the character cannot see, whether from darkness, a blindfold, or natural or magical blindness.</p><ul><li><strong>Penalties:</strong> only −2 on attack and damage rolls and saving throws, instead of the standard −4. No Armor Class penalty for darkness.</li><li><strong>Special abilities</strong> that would normally be lost in darkness are kept. A thief could still do extra backstab damage in the dark, and a ranger would still do extra damage to giant-class creatures.</li><li><strong>Falls:</strong> the chance of stumbling over a drop-off or falling from a sheer surface because of darkness is half that of a nonproficient character (the Dexterity reduction is only 1, and the Climbing Rating penalty only −5%).</li></ul><h3>WSG</h3><p>The character is less hampered by the absence of daylight than others.</p><ul><li><strong>Penalties:</strong> on attack and damage rolls, −2 instead of −4 in total darkness, and −1 instead of −3 in natural darkness; none in any brighter conditions. (See “Fighting in Poor Visibility” in the section on Combat Rules for Wilderness Play.)</li><li><strong>Armor class:</strong> no penalty for lack of light; he is as hard to hit as in daylight.</li><li><strong>Other abilities</strong> and proficiencies that would be lost in darkness are kept. With direction sense, he can still find his way on a long journey in the dark (if the direction sense check succeeds); with tracking, he can still follow a trail in total or natural darkness.</li><li><strong>Mishaps:</strong> in total or natural darkness, his chances of stumbling or falling over an obstacle, tumbling into a pit or over a cliff, or slipping and falling while climbing are half those of a character without this proficiency.</li><li><strong>Exceptions:</strong> it gives no ability to see far in the dark. The improved sight applies only to short-range uses such as tracking, melee, and fire-building. It does not let the character see to the maximum daylight range of visibility, or do anything that requires long-range vision.</li></ul>"
+  }
+ },
+ {
+  "name": "Boating",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": -1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>A character with boating proficiency is needed to guide a boat down a rapid stream and to reduce the risk of capsizing a canoe or kayak. He can also make sure a boat moves at its maximum speed. Exact uses are given in the section on Underground Waterways (page 43).</p><h3>WSG</h3><p>When this character pilots a boat, canoe, or other watercraft, it can move at its fastest possible rate. His presence also lowers the chance of the craft capsizing in rough water or in high winds. For details, see “Movement in Waterborne Vehicles” in the section on Encumbrance and Movement.</p>"
+  }
+ },
+ {
+  "name": "Boatwright",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The boatwright (boatbuilding) proficiency lets a character build all sorts of watercraft up to 60 feet long. Larger vessels need a character with shipbuilding proficiency, which is outside the scope of underground exploration.</p><ul><li><strong>Time:</strong> as a general guide, one week of construction per foot of length. Two boatwrights cut this in half, three to one third, etc. At most one boatwright per five feet of boat length can work on it at once.</li><li><strong>Helpers:</strong> characters without the proficiency can help, but it takes two of them to equal the time saved by one more skilled boatwright.</li><li><strong>Features:</strong> the basic boat includes hull, masts, deck, and benches as needed. Extras such as a cabin or a sealed hold add about a week each.</li></ul>"
+  }
+ },
+ {
+  "name": "Bowyer/Fletcher",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "dex",
+   "modifier": 1,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The character can make bows and arrows of the types in the PHB weapons lists on pages 37 and 38. A weaponsmith must make the arrowheads, but the bowyer/fletcher can do everything else.</p><ul><li><strong>Time:</strong> one week for a long or short bow; two weeks for a composite bow; 1d6 arrows per day.</li><li><strong>Quality:</strong> at the end of construction the player makes a Proficiency Check. Success means a fine weapon that will stand many years of normal use without breaking. Failure means it is usable but short-lived: an arrow breaks on its first shot, and a bow breaks if its user rolls an unmodified 1 on his d20 attack roll.</li><li><strong>Option (if the DM allows):</strong> to try for a weapon of truly fine quality, use this procedure instead. Any failure makes the weapon useless. Success lets the character apply Strength bonuses to attack and damage rolls with it. If the check is a natural 20, the bow’s or arrow’s range also increases by +2˝ in every range class.</li></ul>"
+  }
+ },
+ {
+  "name": "Carpenter",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "str",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>A carpenter is needed to build wooden shelters, towers, barricades, and other structures. One carpenter can build a wooden object the size of a 10-foot cube in a week. Helpers shorten this: seven characters, only one of whom must be a carpenter, can build a 10-foot cubic structure in a day. One carpenter is needed for every nine workers who are not carpenters.</p>"
+  }
+ },
+ {
+  "name": "Charioteering",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "dex",
+   "modifier": -2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character can safely drive a chariot over any terrain it can normally cross, at a rate one-third faster than a character without this proficiency. For chariot movement rates, see “Movement of Land-based Vehicles” in the section on Encumbrance and Movement. It does not let a chariot cross terrain it cannot traverse; even the best charioteer in the world cannot take one into the mountains.</p>"
+  }
+ },
+ {
+  "name": "Direction Sense",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": -1,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character has a chance of working out the correct direction the party is traveling underground. He must concentrate for 1d6 rounds before deciding. The DM always makes this Proficiency Check.</p><ul><li><strong>Success:</strong> the correct direction.</li><li><strong>Failure, but greater than 1:</strong> off by up to 90 degrees to the left or right (DM’s decision).</li><li><strong>A roll of 1:</strong> exactly the opposite of the true direction.</li></ul><h3>WSG</h3><p>A group with at least one character with direction sense is less likely to get lost or disoriented in any terrain. Whenever the DM decides the group might get lost, he makes a Proficiency Check in secret, with a +4 modifier in total darkness or +2 in partial darkness.</p><ul><li><strong>Success:</strong> the group cannot stray from its path or lose its sense of direction.</li><li><strong>Failure, but less than 20:</strong> the character senses a direction 90 degrees off to the left or right (DM’s decision).</li><li><strong>A roll of 20:</strong> exactly the opposite of the intended path.</li></ul><p>If several characters in the group have this proficiency, the DM checks for each. If they each sense a different direction, the party must decide whose sense to trust. If more than one reaches the same answer, both checks have probably succeeded, but they may also have made the same error.</p>"
+  }
+ },
+ {
+  "name": "Endurance",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 2,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character can keep up physical activity longer than normal without giving in to fatigue and exhaustion. The proficiency doubles the time he can exert himself before fatigue and exhaustion take effect.</p><h3>WSG</h3><p>The character can keep up continual strenuous physical activity for twice as long as a normal character before suffering fatigue and exhaustion. It does not extend how long he can go without food and/or water.</p>"
+  }
+ },
+ {
+  "name": "Fire-building",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character does not normally need a tinderbox, or flint and steel, to start a fire. With some dry wood and small pieces of tinder he can start one in 2d20 minutes. In wet wood, high winds, or other bad conditions, it takes 3d20 minutes and a successful Proficiency Check.</p><h3>WSG</h3><p>With a successful Proficiency Check, the character can start a fire without flint and steel or a tinderbox. If he does have that equipment, he starts a fire in half the time a character without this proficiency would need. For more on building and keeping fires, see the section on Camping and Campfires.</p>"
+  }
+ },
+ {
+  "name": "Fishing",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character is skilled at fishing with hook and line and with a net. He makes a Proficiency Check for each hour spent fishing.</p><ul><li><strong>Failure:</strong> no fish are caught.</li><li><strong>Success:</strong> at least one fish is caught; the number caught is his Wisdom score minus his d20 roll.</li><li><strong>Food value:</strong> one fish provides 1/2 of the daily rations for one character. The DM can adjust this for the size and type of fish. An area with no fish yields none, whatever the rolls.</li><li><strong>Frequency:</strong> the DM can change how often checks are made to reflect how many fish there are: every turn in a crowded pool, for example, or only after six hours where fish are few and far between.</li></ul><h3>WSG</h3><p>The character is generally more successful at netting or hooking a good catch. See “Fishing” in the section on Food and Water for how to decide the success of a fishing attempt.</p>"
+  }
+ },
+ {
+  "name": "Foraging",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>Like fishing, this skill lets the character find and gather edible plants more easily than a normal character. A successful Proficiency Check means he gathers twice as much food as a normal character in the same time, or gathers a given amount in half the time. See the section on Food and Water for how to decide the success of a foraging attempt.</p>"
+  }
+ },
+ {
+  "name": "Fungus Identification",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "int",
+   "modifier": -6,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13)",
+   "description": "<h3>DSG</h3><p>This is very useful on long underground expeditions where the characters plan to live off the land. Fungi are the only plants that commonly grow underground, and about 50% of the fungi found there are deadly poisonous, so gathering edible fungi is nearly impossible without a character who has this proficiency.</p><p>With plenty of light and a turn to study the fungus, no Proficiency Check is needed. If the character cannot see it clearly, or must decide quickly whether it is edible, he must make the check.</p>"
+  }
+ },
+ {
+  "name": "Gem Cutter",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 2,
+   "ability": "dex",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The character can finish rough gems found by mining at a rate of 1d10 stones per day. Help from nonproficient characters gives no benefit. A gem cutter needs a good light source and an assortment of chisels, small hammers, and specially hardened blades.</p>"
+  }
+ },
+ {
+  "name": "Healing",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 2,
+   "ability": "wis",
+   "modifier": -2,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>A character with this proficiency is valuable to any adventuring party, though it is no substitute for a cleric’s healing spells.</p><ul><li><strong>Immediate care:</strong> if the healer tends a character’s wounds immediately (within one round) after they are inflicted and makes a successful Proficiency Check, the wounded character recovers 1d3 hit points.</li><li><strong>Regular care:</strong> a character whose wounds are tended regularly recovers 1 hit point per day even without complete rest, or 2 per day at complete rest.</li><li><strong>Injected poison:</strong> if the healer can help immediately against venom injected through the skin (a poisonous snake’s bite, an assassin’s envenomed dagger), the victim gets +2 on his saving throw vs. poison. The victim must stay at complete rest for one turn, and the healer is fully occupied with him for five melee rounds, even if the save would have succeeded anyway. If the victim is forced to move or the healer is interrupted, the victim must make another (unmodified) saving throw vs. poison and abide by its result.</li></ul><h3>WSG</h3><p>The character knows how to use substances found in the wilderness to help a wounded or ill character or creature, and knows some “doctoring” techniques that speed the healing of wounds. To use the proficiency he must have, or have immediate access to, any needed materials or substances; see the section on First Aid and Medicine for the availability of medical equipment and medicines.</p><ul><li><strong>Immediate care:</strong> if he tends a wounded character within one round of the wound and makes a successful Proficiency Check, he restores up to 1d3 hit points at once. He cannot restore more than were lost in the round before treatment; if the wound did only 1 or 2 points, only 1 or 2 can be restored, whatever the roll.</li><li><strong>Continuous care:</strong> a wounded character in his care recovers 1 hit point per day even while traveling or doing nonstrenuous activity, or 2 per day if resting. This needs no Proficiency Check and applies as long as patient and healer stay in the same group, but it cannot be used on more than one character during the same day.</li><li><strong>Poison through a wound:</strong> if the victim is treated immediately (starting in the same round the poisoning occurs), he saves versus poison at +2. No Proficiency Check is needed. The bonus holds only if the victim stays at complete rest for one turn afterward and the healer keeps helping for at least five rounds after the round of poisoning. If either requirement is not met, the victim makes another saving throw versus poison with no bonus and abides by that result. Unless someone in the party has animal handling, it may be useless to try to help a poisoned horse (for instance), since no one is likely to keep the animal calm and resting for a turn.</li><li><strong>Disease:</strong> the healer can help a character who falls ill, from a disease caused by his condition or surroundings or from parasitic infestation (see pages 13-14 of the DMG for both types). If he begins treatment within three turns of the first symptoms and makes a successful Proficiency Check, the disease is one step less severe than rolled (terminal becomes severe, severe becomes mild). If it was already mild, it runs its course in half the normal time. These benefits continue only while the patient is treated at least twice a day at regular intervals until the disease runs its course. If two of these “medicine sessions” are missed in a row, or three in total during the illness, it returns to its original severity.</li></ul>"
+  }
+ },
+ {
+  "name": "Hunting",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": -1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>Like fishing and foraging, this proficiency lets the character find and kill wild game for food more easily than a normal character.</p><p>The hunter does best alone. For each extra character in the hunting party, his Proficiency Check roll is raised cumulatively: +1 for one extra character, +3 for two, +6 for three, +10 for four, and +15 for five. A hunting check automatically fails (and need not be rolled) when the party has six or more members besides the hunter. The penalty applies even if the others also have hunting proficiency.</p><p>See the section on Food and Water for how to decide the success of a hunting attempt.</p>"
+  }
+ },
+ {
+  "name": "Leatherworker",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>This proficiency lets a character tan and treat leather, and make clothing and other objects of leather. He can make leather armor, as well as backpacks, saddlebags, saddles, and all sorts of harnesses.</p>"
+  }
+ },
+ {
+  "name": "Miner",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 2,
+   "ability": "wis",
+   "modifier": 3,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The uses of this proficiency are mainly covered in the rules on mining (page 49). A character with it is needed to find a site for a mine and to supervise the mine’s operation.</p>"
+  }
+ },
+ {
+  "name": "Mountaineering",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character can climb using spikes driven into rock, as described in the climbing rules. He also gains +10% to his Climbing Rating for each slot spent on this proficiency.</p><h3>WSG</h3><p>The character can climb steep, rocky terrain by driving spikes into cracks in the rock face, letting him get up surfaces that normally cannot be climbed. He also gains other benefits described under Climbing in the section on Encumbrance and Movement.</p>"
+  }
+ },
+ {
+  "name": "Plant Lore",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character can more easily find and positively identify plants useful for something other than food, such as medicinal plants. If a medicinal plant is found and a Proficiency Check succeeds, the plant is certainly the right kind (no chance of misidentifying it). See the section on Medicine and First Aid for how to decide whether a search for a particular medicinal plant succeeds.</p>"
+  }
+ },
+ {
+  "name": "Potter",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "dex",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The character can make any type of clay vessel or container commonly used in the campaign world. He needs a wheel and a kiln, and a supply of clay and glaze.</p><ul><li><strong>Output:</strong> generally two small or medium items, or one large item, per day. The pieces must then be fired in the kiln for one more day.</li><li><strong>Materials:</strong> three cp for a small item, five cp for a medium item, and one sp for a large item.</li></ul>"
+  }
+ },
+ {
+  "name": "Riding, airborne",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 2,
+   "ability": "wis",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character is especially skilled at riding and handling a flying mount. When choosing this proficiency, the player names the type of mount it covers, from the categories of flying mounts in the section on Encumbrance and Movement. It can be taken more than once to cover more than one type of aerial mount. The character can perform these feats, some automatically and some needing a Proficiency Check:</p><ol><li><strong>Mounting.</strong> He can leap onto the back or neck of his mount when it rests on the ground, or drop onto it from no more than 10 feet above without harming himself or the mount. The first can be done in armor. The second fails if he wears armor heavier than leather: he takes falling damage, and the mount panics (and may take incidental damage from the impact). Neither needs a check, but a successful Proficiency Check is needed to get the mount airborne in the same segment he landed. A check is also needed to drop from above onto the neck or back of a mount hovering a short distance off the ground; failure means either the impact drove the mount to the ground (possibly damaging it), or the leap was mistimed and he ended up on the ground.</li><li><strong>Extra speed.</strong> He can spur the mount to add 1˝ to its flying movement rate for up to four consecutive turns, with a successful check at the start of each such turn. If the first check fails, no new attempt can be made for at least three turns, though the mount can still fly at its normal maximum. If the second or a later check fails, the mount is fatigued from overexertion: it immediately slows to 2/3 of its normal maximum rate and performs as one Maneuverability Class worse, until it lands and has at least two turns to recover. A mount pushed successfully for all four turns also slows and loses maneuverability this way, and must be landed and rested to regain its normal abilities.</li><li><strong>Hands free.</strong> He can guide the mount with knees or feet, leaving both hands free for weapons or equipment that need two hands. No check is needed unless he takes damage; then a check is required. On a failure he either drops what he holds and clutches the mount to stay on (if the damage is slight), or is knocked off and falls (if it is more than slight). With some exceptionally large mounts it may be wise or necessary to use a harness or straps; when one is used, this feat does not apply, though being strapped to a damaged mount plummeting toward the ground may prove perilous.</li><li><strong>Leaping attack.</strong> If the mount is hovering, he can leap from its back to the ground from 10 feet or less and, in the same round, make a melee attack on any character or creature within 10 feet of where he lands. This is risky and needs a successful Proficiency Check with a +4 modifier. On a failure he lands in a heap, takes 1d3 points of damage, and has a −4 penalty to armor class against melee attacks on him that round.</li></ol>"
+  }
+ },
+ {
+  "name": "Riding, land-based",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": -3,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character is skilled at riding and handling horses or another type of mount. When filling the slot, he declares which type, such as griffons, unicorns, dire wolves, or almost any creature humans, demihumans, or humanoids use as mounts. He can perform these feats, some automatically and some needing a Proficiency Check:</p><ol><li><strong>Vaulting into the saddle</strong> of a standing mount, even in armor, needs no check. A check is needed to get the mount moving in the same segment he lands in the saddle, or to vault into the saddle of a moving mount. Failure means he falls to the ground, presumably quite embarrassed.</li><li><strong>Jumping.</strong> No check is needed for obstacles three feet tall or less, or gaps less than 12 feet wide. With a check, the mount can leap obstacles up to seven feet high or gaps up to thirty feet across. Success means it jumps; failure means it balks, and he must make another check to keep his seat.</li><li><strong>Extra speed.</strong> He can add six feet per round to the mount’s movement rate for up to four turns, with a check each turn. If the first check fails, no further attempts can be made, but the mount moves normally. If the second or a later check fails, the mount slows to a walk at once, and he must dismount and lead it for a turn. In any case, after four turns of racing, the rider must dismount and walk the mount for a turn.</li><li><strong>Riding with the knees</strong> lets him use two-handed weapons (such as bows and two-handed swords) while mounted. No check is needed unless he takes damage while riding this way; then a check is required, and failure means he falls and takes an additional 1d6 points of damage.</li><li><strong>Shielding.</strong> He can drop down and hang alongside the mount, using it as a shield. He cannot attack or wear armor while doing so. His Armor Class gains +6, and any attack that would have hit his normal Armor Class hits the mount instead. No check is needed.</li><li><strong>Leaping attack.</strong> He can leap from the mount to the ground and make a melee attack on any character or creature within 10 feet. Because this is difficult, the check is made with a −4 modifier. On a failure he does not land on his feet, falls clumsily, and takes 1d3 points of damage.</li></ol><h3>WSG</h3><p>This is essentially the riding proficiency on page 28 of the DSG. The player must name the type of mount it covers, and may take it more than once to cover more than one type. The character can perform these feats, some automatically and some needing a Proficiency Check:</p><ol><li><strong>Vaulting on.</strong> He can vault into the saddle or onto the back of a standing mount, even in armor. A check is needed to get the mount moving in the same segment he lands. He can vault onto a moving mount with a successful check; on a failure he falls to the ground but takes no damage.</li><li><strong>Jumping.</strong> No check is needed for obstacles under three feet tall or gaps under 12 feet wide. With a check, the mount can leap obstacles up to seven feet high or clear gaps up to 30 feet wide. Success means it makes the leap; failure means it balks (stops short just in front of the obstacle), and another check decides whether he keeps his seat.</li><li><strong>Extra speed.</strong> He can add 1˝ per round to the mount’s maximum movement rate for up to four turns, with a check at the start of each turn. If the first check fails, no new attempt can be made for at least three turns, but the mount can still move at its maximum rate. If the second or a later check fails, the mount slows to a walk at once, and he must dismount and lead it for a turn. In any case, after four turns of racing, the rider must dismount and walk the mount for a turn.</li><li><strong>Riding with the knees</strong> lets him use equipment and weapons needing both hands. No check is needed unless he takes damage while riding this way; then a check is required, and failure means he falls and takes an additional 1d6 points of damage.</li><li><strong>Shielding.</strong> He can drop down and hang alongside the mount, using it as a shield, even at full speed, with no check needed. He cannot wear armor heavier than leather or make attacks while doing so. Against attacks from the side he is shielded from, his armor class improves by 6 steps (10 becomes 4, 8 becomes 2, etc.). Any attack on mount and rider that would have hit his normal armor class hits the mount instead.</li><li><strong>Leaping attack.</strong> He can leap from the mount to the ground and, in the same round, make a melee attack on any character or creature within 10 feet of where he lands. This is risky and needs a successful check with a +4 modifier. On a failure he lands in a heap, takes 1d3 points of damage, and needs 1-3 segments to get up. An opponent who attacks him before he is upright gets +2 to hit.</li></ol>"
+  }
+ },
+ {
+  "name": "Rope Use",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "dex",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>The character can do amazing things with rope. He knows all sorts of knots and can tie knots that slip, hold tight, slide slowly, or come loose with a quick tug.</p><ul><li><strong>Escaping:</strong> if his hands are bound with a knot, he can make a Proficiency Check (with a −6 penalty) to escape.</li><li><strong>Lasso:</strong> +2 on all attacks made with one.</li><li><strong>Climbing:</strong> +10% on all Climbing Checks made while using a rope, including belaying companions.</li></ul><h3>WSG</h3><p>The character has extraordinary knowledge of rope, especially tying and releasing knots.</p><ul><li><strong>Shelters:</strong> if building a temporary shelter involves rope (as it almost always does), he can put it up or take it down in half the normal time. A shelter he puts up is half as likely to be harmed by bad weather (high winds, heavy rain or snow). See the section on Camping and Campfires for weather effects on shelters.</li><li><strong>Escaping:</strong> if his hands are tied with rope or cord, he can escape with a successful Proficiency Check, made with a +3 modifier if his hands are tied in front of him, or +6 if tied behind his back.</li><li><strong>Lasso:</strong> +2 to hit on all attacks made with one.</li><li><strong>Climbing:</strong> a 10% bonus on all Climbing Checks made while using a rope, including belaying companions. See the section on Climbing for how to decide whether a climb succeeds.</li></ul>"
+  }
+ },
+ {
+  "name": "Running",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 2,
+   "ability": "con",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>This proficiency has two forms, sprinting and distance running. Either can be used, but not both at once. It is most common in characters raised in, or who have spent a long time in, high-altitude surroundings, though others can train to gain it.</p><p><strong>Sprinting</strong> is moving at high speed on foot for a fairly short time. A proficient character who is not encumbered and wears no armor heavier than leather can run at twice his normal maximum movement rate for five rounds, or at one and one-half times normal (round up to the nearest whole number) for one turn, as he chooses.</p><ul><li><strong>Extended sprinting:</strong> once that time runs out, he can keep going with a Proficiency Check each round. Each check after the first has a cumulative +3 modifier (+3 on round two, +6 on round three, etc.). Each success allows another round of sprinting. One failure means he is fatigued; he can keep sprinting, but risks exhaustion if he fails another check.</li><li><strong>Stopping:</strong> he can stop at any time. If he is fatigued when he stops, he stays fatigued and can still become exhausted from any other strenuous activity. If he becomes exhausted, he must stop sprinting at once and stays exhausted until he recovers. If he stops before becoming fatigued, he can move at his normal maximum rate for two turns and then sprint again, or sprint again after one turn if he slows to one-half his normal maximum rate.</li></ul><p><strong>Distance running</strong> is moving at normal running speed for longer than a normal character can without ill effects. For the fatigue and exhaustion rules, running is not especially strenuous for this character. All the time limits in the section on Fatigue and Exhaustion are doubled or halved, whichever favors him, during a long-distance run. For instance, he can avoid fatigue by resting one turn after eight turns of exertion. If he runs long-distance for twelve turns without a turn of rest, the player makes a Constitution Check; if it succeeds and he runs ten more turns, another check is needed, and so on.</p><ul><li>These altered time limits do not apply once he becomes fatigued or exhausted.</li><li>If he stops mid-run for any other strenuous activity (such as fighting or climbing), he loses the benefit and must at once follow the standard fatigue and exhaustion rules, as if he had just begun strenuous activity.</li></ul>"
+  }
+ },
+ {
+  "name": "Slow Respiration",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13)",
+   "description": "<h3>DSG</h3><p>The character can enter a deep trance that greatly reduces the air he needs to stay alive. He must be resting, sitting or lying down, and concentrate for one turn. His pulse and breathing then drop far below normal, and he uses air only 10% as fast as when resting. He is fully aware of what happens nearby during the trance, and can come out of it at will.</p>"
+  }
+ },
+ {
+  "name": "Smelter",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>This proficiency goes closely with miner, since between them they provide all the metal in the campaign world. The character can run a smelter, essentially an extremely hot forge. With it, and occasional use of certain liquids including water and acids, he separates metal from the rocky ore it is usually mined in.</p><ul><li><strong>Capacity</strong> depends more on the smelter’s size than on the character’s rate of work. A small smelter processes ore as fast as four miners produce it; a medium one handles the ore of up to 20 miners; a large one, up to 100 miners.</li><li><strong>Running costs:</strong> because of the materials it uses, a smelting operation costs money to run, on top of the cost of the equipment itself (listed on the new equipment tables): five gp per day for a small operation, 12 gp per day for a medium one, and 25 gp a day for a large one. It costs money only while operating, so it is common to stockpile ore first and then run the smelter at full efficiency until the stockpile is processed.</li></ul>"
+  }
+ },
+ {
+  "name": "Sound Analysis",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13)",
+   "description": "<h3>DSG</h3><p>The character can judge the size of underground areas by making a noise and listening to the returning echoes, out to distances of up to one mile. He can also tell the direction of a sound.</p><ul><li><strong>Conditions:</strong> he needs absolute silence, and the sound he makes must be sharp and somewhat staccato. A howl or wail does not work, but a clicking sound or a loud “hey” works well.</li><li><strong>Success:</strong> he correctly judges the area’s size within these margins: length + or − 30%, width + or − 25%, height + or − 25%.</li><li><strong>A check of 5 or less:</strong> he also learns more details. The DM tells the player which aspects can be learned this way, such as the number of side passages, whether the area runs straight or winds a lot, or even whether it contains a body of water.</li><li><strong>Failure:</strong> the echo is garbled. That character can never analyze that area successfully, though other proficient characters may still try.</li></ul><p><strong>Drawback:</strong> it is most useful in areas totally new to the PCs, but using it announces the party’s presence. Creatures who hear it will certainly be ready for some kind of intrusion and may even come looking. The proficiency can be used together with animal noise.</p>"
+  }
+ },
+ {
+  "name": "Stonemason",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "str",
+   "modifier": 2,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The character can build stone structures that last many years. The stones are often, though not always, mortared. With chisels, hammers, wedges, and a block and tackle, a stonemason can build a section of wall one foot thick, 10 feet long, and five feet high in a day.</p>"
+  }
+ },
+ {
+  "name": "Survival, cold",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character resists the ill effects of a cold climate better than others. For him, the effective temperature counts as 20 degrees warmer than for a character without this proficiency. It applies only when the effective temperature is 30 degrees or lower.</p>"
+  }
+ },
+ {
+  "name": "Survival, desert",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 2,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character can better foresee or avoid the hazards of the desert.</p><ul><li><strong>Water:</strong> his chance of finding a water hole on any given day is twice that of a normal character, perhaps the most important part of the skill.</li><li><strong>Foraging:</strong> he finds a given amount of edible plants in half the time a normal character needs.</li><li><strong>Other benefits</strong> may be given, at the DM’s discretion, to him and his party. For instance, he may better endure a long stretch without fresh water; not because he can go without water longer than anyone else, but because he knows how to conserve his supply.</li></ul>"
+  }
+ },
+ {
+  "name": "Survival, heat",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character resists the ill effects of a hot climate better than others. For him, the effective temperature counts as 20 degrees cooler than for a character without this proficiency. It applies only when the effective temperature is 80 degrees or higher.</p>"
+  }
+ },
+ {
+  "name": "Swimming",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "adventuring",
+   "slots": 1,
+   "ability": "str",
+   "modifier": 0,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.26 (Table 13); WSG p.12 (Table 2)",
+   "description": "<h3>DSG</h3><p>Swimming is fully covered in the swimming rules on page 12.</p><h3>WSG</h3><p>Swimming is a special case among the so-called “normal” proficiencies (as opposed to, say, a survival skill, which might be called a “special” proficiency). A character without hunting can still sometimes bring down game for dinner, and one without foraging can still gather plants he believes are edible. But a character without swimming proficiency cannot swim at all. He can hold his breath under water, and in the right circumstances float at the surface, but he cannot move through the water under his own power. Swimming rules are in the section on Encumbrance and Movement.</p>"
+  }
+ },
+ {
+  "name": "Tracking",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "",
+   "modifier": 0,
+   "check": false,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character can follow the trail of a character or creature as a ranger does (see UA, page 21), but with half a ranger’s base chance: 5% per level of the character, plus 5%, to a maximum of 55%. A character without tracking has a base chance of 0% to follow a trail, but may still track if the total of all modifiers that apply is a positive number.</p>"
+  }
+ },
+ {
+  "name": "Weaponsmith",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 3,
+   "ability": "int",
+   "modifier": 3,
+   "check": true,
+   "everyUse": true,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>This highly specialized proficiency covers the difficult, exacting work of making metal weapons, especially bladed ones. It combines some of the blacksmith’s skill with the ability to work fine detail, producing strong, sharp blades.</p><ul><li><strong>Time and cost:</strong> Table 12: Weapon Making lists the time to make various weapons and the approximate cost of materials. Times for weapons not listed can be estimated by comparison with listed ones.</li><li><strong>Quality:</strong> when the weapon is finished, the player makes a Proficiency Check. Success means a weapon of very fine quality that will last through many combats. Failure means it is usable but short-lived: it breaks and becomes useless if its wielder rolls an unmodified 1 on his d20 attack roll.</li><li><strong>Option (if the DM agrees):</strong> as with the bowyer proficiency, the character can risk trying for a weapon of truly fine quality. A failed check makes the weapon worthless. A successful check produces a nonmagical weapon that does +1 damage on every successful attack. If the unmodified check is a 20, it also gets +1 on all attack rolls.</li></ul><table class=\"book-table\"><tr><th>Weapon</th><th>Construction Time</th><th>Material Cost</th></tr><tr><td>Arrowhead</td><td>1-2/day</td><td>1 cp</td></tr><tr><td>Battle Axe</td><td>10 days</td><td>10 sp</td></tr><tr><td>Hand Axe</td><td>5 days</td><td>5 sp</td></tr><tr><td>Dagger</td><td>5 days</td><td>2 sp</td></tr><tr><td>Crossbow, heavy</td><td>20 days</td><td>10 sp</td></tr><tr><td>Crossbow, light</td><td>15 days</td><td>5 sp</td></tr><tr><td>Fork, trident</td><td>20 days</td><td>10 sp</td></tr><tr><td>Spear, lance</td><td>4 days</td><td>4 sp</td></tr><tr><td>Shortsword</td><td>20 days</td><td>5 sp</td></tr><tr><td>Longsword</td><td>30 days</td><td>10 sp</td></tr><tr><td>Two-handed sword</td><td>45 days</td><td>2 gp</td></tr></table>"
+  }
+ },
+ {
+  "name": "Weather sense",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "wilderness",
+   "slots": 1,
+   "ability": "wis",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "WSG p.12 (Table 2)",
+   "description": "<h3>WSG</h3><p>The character can tell something about the weather where he is over the next six hours.</p><ul><li><strong>Success:</strong> he correctly learns at least one general fact about the coming conditions: rain is on the way, rain is not on the way, it will get warmer, it will get cooler, conditions will stay about the same, and so forth. He learns whatever the DM thinks appropriate, and it must be at least generally true.</li><li><strong>Failure:</strong> no definite information, or (at the DM’s discretion) some wrong information.</li><li>The DM always rolls these checks and need not reveal the result.</li><li><strong>Repeated use:</strong> it can be used without penalty only once in every 24-hour period. Each further attempt that day has a cumulative +2 modifier to the roll, making it less likely that several checks in one day all succeed. After a failed check, any further check in the next 12 hours fails automatically.</li></ul><p>Sometimes the coming weather is so obvious that anyone can tell. Then the DM should not call for, or even acknowledge, a check, but simply describe what anyone who can see would notice. For instance, anyone ought to know that “a mass of dark clouds on the horizon, moving toward you” is a pretty clear sign a rainstorm is coming.</p>"
+  }
+ },
+ {
+  "name": "Weaver",
+  "type": "proficiency",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "group": "craftsman",
+   "slots": 1,
+   "ability": "int",
+   "modifier": 1,
+   "check": true,
+   "everyUse": false,
+   "improvements": 0,
+   "specialty": "",
+   "source": "DSG p.25 (Table 11)",
+   "description": "<h3>DSG</h3><p>The character can make garments, tapestries, and draperies from wool or cotton, using a spinning apparatus and a loom. A weaver can make two square yards of material per day.</p>"
+  }
+ }
+]

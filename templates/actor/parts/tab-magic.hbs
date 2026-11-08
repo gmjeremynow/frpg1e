@@ -1,0 +1,39 @@
+    {{#if turn}}
+    <div class="box turning">
+      <h3 class="box-title">Turning Undead <span class="hint">as a level {{turnLevel}} cleric</span></h3>
+      <div class="turn-grid">
+        {{#each turn}}
+        <button type="button" class="turn-cell" data-action="turn" data-undead="{{key}}" {{#unless possible}}disabled{{/unless}}>
+          <span class="cell-label">{{label}}</span><span class="cell-val">{{value}}</span>
+        </button>
+        {{/each}}
+      </div>
+      <p class="hint">T: turned automatically. D: destroyed. D*: destroyed, 7-12 affected.</p>
+    </div>
+    {{/if}}
+
+    {{#each spellLists}}
+    <div class="box spell-list">
+      <h3 class="box-title">{{label}} Spells</h3>
+      {{#each levels}}
+      <div class="spell-level">
+        <div class="spell-level-head">
+          <span class="lvl">{{ord}}</span>
+          {{#if cantrip}}
+          <span class="slots" title="Cantrips memorized">{{used}}</span>
+          <span class="hint">four cantrips in place of one 1st level spell{{#if slotsUsed}} (using {{slotsUsed}}){{/if}}</span>
+          {{else}}
+          <span class="slots{{#if over}} over{{/if}}" title="Memorized / spells usable at this level">{{used}} / {{max}}</span>
+          {{#if cantripNote}}<span class="hint">{{cantripNote}}</span>{{/if}}
+          <label class="extra hint" title="Extra spells at this level (rings, items, DM rulings)">+<input type="number" class="w3" data-extra-list="{{../list}}" data-extra-level="{{level}}" value="{{extra}}"></label>
+          {{/if}}
+          <button type="button" class="mini" data-action="itemCreate" data-type="spell" data-list="{{../list}}" data-level="{{level}}" title="Add spell"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        {{#each spells}}{{> "systems/frpg1e/templates/actor/parts/spell-row.hbs"}}{{/each}}
+      </div>
+      {{/each}}
+    </div>
+    {{else}}
+    {{#unless turn}}<p class="hint empty">No spell-casting classes. Drag spells here from the 1e FRPG Spells compendium to give a character spells anyway.</p>{{/unless}}
+    {{/each}}
+  

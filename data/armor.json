@@ -1,0 +1,295 @@
+[
+ {
+  "name": "Banded mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 4,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "bulky",
+   "weight": 350,
+   "baseMove": 9,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "banded"
+  }
+ },
+ {
+  "name": "Chain mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 5,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 300,
+   "baseMove": 9,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "chain"
+  }
+ },
+ {
+  "name": "Chain mail, elfin",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 5,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "non-bulky",
+   "weight": 150,
+   "baseMove": 12,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "elfin"
+  }
+ },
+ {
+  "name": "Leather armor",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 8,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "non-bulky",
+   "weight": 150,
+   "baseMove": 12,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "leather"
+  }
+ },
+ {
+  "name": "Padded armor",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 8,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 100,
+   "baseMove": 9,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "studded"
+  }
+ },
+ {
+  "name": "Plate mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 3,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "bulky",
+   "weight": 450,
+   "baseMove": 6,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "platemail"
+  }
+ },
+ {
+  "name": "Ring mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 7,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 250,
+   "baseMove": 9,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "chain"
+  }
+ },
+ {
+  "name": "Scale mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 6,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 400,
+   "baseMove": 6,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "banded"
+  }
+ },
+ {
+  "name": "Splint mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 4,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "bulky",
+   "weight": 400,
+   "baseMove": 6,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27"
+  }
+ },
+ {
+  "name": "Studded leather",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 7,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 200,
+   "baseMove": 9,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27",
+   "thiefArmor": "studded"
+  }
+ },
+ {
+  "name": "Shield, large",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "shield",
+   "baseAC": 10,
+   "shieldBonus": 1,
+   "magic": 0,
+   "bulk": "bulky",
+   "weight": 100,
+   "baseMove": 0,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27"
+  }
+ },
+ {
+  "name": "Shield, small",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "shield",
+   "baseAC": 10,
+   "shieldBonus": 1,
+   "magic": 0,
+   "bulk": "non-bulky",
+   "weight": 50,
+   "baseMove": 0,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27"
+  }
+ },
+ {
+  "name": "Shield, small, wooden",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "shield",
+   "baseAC": 10,
+   "shieldBonus": 1,
+   "magic": 0,
+   "bulk": "non-bulky",
+   "weight": 30,
+   "baseMove": 0,
+   "equipped": false,
+   "source": "PHB p.36; DMG p.27"
+  }
+ },
+ {
+  "name": "Bronze plate mail",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 4,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "bulky",
+   "weight": 450,
+   "baseMove": 6,
+   "equipped": false,
+   "source": "UA p.26, 75-76",
+   "thiefArmor": "",
+   "cost": "100 gp",
+   "description": "<p>Bronze plates over leather or padded armor. Immune to rust monsters and similar perils. Attacks from the rear are made at +2 “to hit” in addition to other bonuses (UA p.75).</p>"
+  }
+ },
+ {
+  "name": "Field plate armor",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 2,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 550,
+   "baseMove": 6,
+   "equipped": false,
+   "source": "UA p.26, 75-76",
+   "thiefArmor": "",
+   "cost": "2000 gp",
+   "description": "<p>Absorbs 1 point of damage per die of damage from any attack. After absorbing 12 points it is damaged: it absorbs no more and is one armor class worse until repaired (100 gp and one day per point restored). Must be fitted to its wearer (UA p.75).</p>"
+  }
+ },
+ {
+  "name": "Full plate armor",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "armor",
+   "baseAC": 1,
+   "shieldBonus": 0,
+   "magic": 0,
+   "bulk": "fairly",
+   "weight": 650,
+   "baseMove": 6,
+   "equipped": false,
+   "source": "UA p.26, 75-76",
+   "thiefArmor": "",
+   "cost": "4000 gp",
+   "description": "<p>Absorbs 2 points of damage per die of damage. After absorbing 26 points it is one armor class worse and absorbs no more until repaired (200 gp and two days per point restored). Must be fitted to its wearer (UA p.75-76).</p>"
+  }
+ },
+ {
+  "name": "Shield, buckler",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+   "kind": "shield",
+   "baseAC": 10,
+   "shieldBonus": 1,
+   "magic": 0,
+   "bulk": "non-bulky",
+   "weight": 30,
+   "baseMove": 0,
+   "equipped": false,
+   "source": "UA p.26, 75-76",
+   "thiefArmor": "",
+   "cost": "5 gp",
+   "description": "<p>Protects against only one opponent (of the user’s choice) each melee round. Small demi-humans such as halflings and gnomes treat it as a small shield (UA p.76).</p>"
+  }
+ }
+]

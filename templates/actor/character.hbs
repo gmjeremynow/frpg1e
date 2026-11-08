@@ -1,0 +1,128 @@
+<div class="adnd-sheet">
+  {{!-- ===================== HEADER ===================== --}}
+  <header class="sheet-head">
+    <img class="portrait" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}" title="Change portrait">
+    <div class="head-main">
+      <div class="title-line">
+        <input class="char-name" type="text" name="name" value="{{actor.name}}" placeholder="Character name">
+        <span class="record-mark">Player Character Record</span>
+      </div>
+      <div class="head-fields">
+        <label class="fld"><span>Race</span>
+          <select name="system.details.race">{{#each races}}<option value="{{value}}" {{adnd-selected value ../system.details.race}}>{{label}}</option>{{/each}}</select>
+        </label>
+        <label class="fld"><span>Alignment</span><input type="text" name="system.details.alignment" value="{{system.details.alignment}}"></label>
+        <label class="fld"><span>Class</span><output title="Change classes in the Class &amp; Level box">{{#each classes}}{{label}} {{level}}{{#unless @last}} / {{/unless}}{{else}}0-level{{/each}}</output></label>
+        <label class="fld narrow"><span>Move</span><output>{{system.move.value}}&Prime;</output></label>
+      </div>
+    </div>
+    <div class="vitals">
+      <div class="vital hp">
+        <span class="vital-label">Hit Points</span>
+        <div class="hp-pair">
+          <input type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number">
+          <span class="slash">/</span>
+          <input type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number">
+        </div>
+      </div>
+      <div class="vital ac" title="Armor class (front). Rear: {{system.ac.rear}}. Armor type: {{system.ac.type}}">
+        <span class="vital-label">Armor Class</span>
+        <span class="ac-value">{{system.ac.value}}</span>
+        <span class="ac-sub">rear {{system.ac.rear}} · type {{system.ac.type}}</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs">
+    <span class="quick-rolls">
+      <button type="button" class="mini mini-text" data-action="rollInitiative" title="Initiative: d6 for this actor's side (DMG p.62)"><i class="fa-solid fa-bolt"></i> Initiative</button>
+      <button type="button" class="mini mini-text" data-action="rollSurprise" title="Surprise roll for this actor (DMG p.61)"><i class="fa-solid fa-eye"></i> Surprise</button>
+      <button type="button" class="mini mini-text" data-action="rollMorale" title="Morale check (DMG p.67)"><i class="fa-solid fa-flag"></i> Morale</button>
+    </span>
+    <button type="button" data-action="sheetTab" data-tab="record">Record</button>
+    <button type="button" data-action="sheetTab" data-tab="combat">Combat</button>
+    <button type="button" data-action="sheetTab" data-tab="magic">Magic{{#if turn}} &amp; Turning{{/if}}</button>
+    {{#if psi.eligible}}<button type="button" data-action="sheetTab" data-tab="psionics">Psionics</button>{{else}}{{#if psi.has}}<button type="button" data-action="sheetTab" data-tab="psionics">Psionics</button>{{/if}}{{/if}}
+    <button type="button" data-action="sheetTab" data-tab="profs">Proficiencies</button>
+    <button type="button" data-action="sheetTab" data-tab="gear">Possessions</button>
+    <button type="button" data-action="sheetTab" data-tab="notes">Description</button>
+  </nav>
+
+  <div class="tab-scroll">
+  {{!-- ===================== RECORD ===================== --}}
+  <section class="tab-body" data-tab="record">
+    <div class="record-grid">
+      {{> "systems/frpg1e/templates/actor/parts/abilities.hbs"}}
+
+      {{> "systems/frpg1e/templates/actor/parts/saves.hbs"}}
+    </div>
+
+    {{> "systems/frpg1e/templates/actor/parts/classes.hbs"}}
+
+    {{> "systems/frpg1e/templates/actor/parts/thief.hbs"}}
+
+    {{> "systems/frpg1e/templates/actor/parts/features.hbs"}}
+
+    {{> "systems/frpg1e/templates/actor/parts/race.hbs"}}
+
+    <div class="box details">
+      <h3 class="box-title">Particulars</h3>
+      <div class="detail-grid">
+        <label class="fld"><span>Sex</span><input type="text" name="system.details.sex" value="{{system.details.sex}}"></label>
+        <label class="fld"><span>Age</span><input type="text" name="system.details.age" value="{{system.details.age}}"></label>
+        <label class="fld"><span>Height</span><input type="text" name="system.details.height" value="{{system.details.height}}"></label>
+        <label class="fld"><span>Weight</span><input type="text" name="system.details.weight" value="{{system.details.weight}}"></label>
+        <label class="fld"><span>Deity</span><input type="text" name="system.details.deity" value="{{system.details.deity}}"></label>
+        <label class="fld"><span>Player</span><input type="text" name="system.details.player" value="{{system.details.player}}"></label>
+        <label class="fld wide"><span>Languages</span><input type="text" name="system.details.languages" value="{{system.details.languages}}"></label>
+        <label class="fld"><span>Base Move</span><input type="number" name="system.move.base" value="{{system.move.base}}" data-dtype="Number"></label>
+      </div>
+    </div>
+  </section>
+
+  {{!-- ===================== COMBAT ===================== --}}
+  <section class="tab-body" data-tab="combat">
+    <div class="combat-top">
+      <div class="box ac-box">
+        <h3 class="box-title">Armor Class</h3>
+        <div class="ac-line"><span>Front</span><strong>{{system.ac.value}}</strong></div>
+        <div class="ac-line"><span>Rear (no shield, no dex)</span><strong>{{system.ac.rear}}</strong></div>
+        <div class="ac-line"><span>Armor type (weapon adj.)</span><strong>{{system.ac.type}}</strong></div>
+        {{#if system.bodyWeaponry}}<div class="ac-line"><span>Body weaponry (unarmored)</span><strong>{{#if system.bodyWeaponry.noColumn}}—{{else}}{{system.bodyWeaponry.ac}}{{/if}} · {{system.bodyWeaponry.weapon}}</strong></div>{{/if}}
+        {{#if system.protection.ac}}<div class="ac-line"><span>Ring / cloak of protection</span><strong>{{adnd-signed system.protection.ac}}</strong></div>{{/if}}
+        {{#if system.protection.bracers}}<div class="ac-line"><span>Bracers of defense</span><strong>AC {{system.protection.bracers}}</strong></div>{{/if}}
+        <div class="ac-line"><span>Dexterity adj.</span><strong>{{adnd-signed system.mods.dex.defense}}</strong></div>
+        <label class="ac-line"><span>Misc. adj.</span><input type="number" name="system.ac.misc" value="{{system.ac.misc}}" data-dtype="Number" title="Rings, cloaks, etc. Negative is better."></label>
+        <label class="ac-line"><span>Override</span><input type="number" name="system.ac.override" value="{{system.ac.override}}" data-dtype="Number" placeholder="—"></label>
+      </div>
+      <div class="box combat-adj">
+        <h3 class="box-title">Combat Adjustments</h3>
+        <div class="ac-line"><span>Strength to hit / damage</span><strong>{{adnd-signed system.mods.str.hit}} / {{adnd-signed system.mods.str.dmg}}</strong></div>
+        <div class="ac-line"><span>Dexterity missile</span><strong>{{adnd-signed system.mods.dex.reaction}}</strong></div>
+        <label class="ac-line"><span>Misc. to hit</span><input type="number" name="system.combat.hitMisc" value="{{system.combat.hitMisc}}" data-dtype="Number"></label>
+        <label class="ac-line"><span>Misc. missile to hit</span><input type="number" name="system.combat.missileMisc" value="{{system.combat.missileMisc}}" data-dtype="Number"></label>
+        <label class="ac-line"><span>Misc. damage</span><input type="number" name="system.combat.dmgMisc" value="{{system.combat.dmgMisc}}" data-dtype="Number"></label>
+        {{#if monk}}<div class="ac-line"><span>Monk open hand</span><strong>{{monk.attacks}}/rd · {{monk.damageRange}}</strong></div>{{/if}}
+      </div>
+    </div>
+
+    {{> "systems/frpg1e/templates/actor/parts/weapons.hbs"}}
+
+    {{> "systems/frpg1e/templates/actor/parts/armor-list.hbs"}}
+  </section>
+
+  {{!-- ===================== MAGIC ===================== --}}
+  <section class="tab-body" data-tab="magic">{{> "systems/frpg1e/templates/actor/parts/tab-magic.hbs"}}</section>
+
+  {{!-- ===================== PSIONICS ===================== --}}
+  <section class="tab-body" data-tab="psionics">{{> "systems/frpg1e/templates/actor/parts/tab-psionics.hbs"}}</section>
+
+  {{!-- ===================== POSSESSIONS ===================== --}}
+  <section class="tab-body" data-tab="profs">{{> "systems/frpg1e/templates/actor/parts/tab-profs.hbs"}}</section>
+
+  <section class="tab-body" data-tab="gear">{{> "systems/frpg1e/templates/actor/parts/tab-gear.hbs"}}</section>
+
+  {{!-- ===================== DESCRIPTION ===================== --}}
+  <section class="tab-body" data-tab="notes">{{> "systems/frpg1e/templates/actor/parts/tab-notes.hbs"}}</section>
+  </div>
+</div>

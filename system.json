@@ -1,0 +1,99 @@
+{
+  "id": "frpg1e",
+  "title": "1e FRPG (Table Edition)",
+  "description": "1e Fantasy RPG, run straight from the PHB, DMG and UA tables: attack matrices, saving throw matrices, weapon vs. armor type, side initiative, turning undead, thieving abilities and spell progression. Built for a private table.",
+  "version": "0.31.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Jeremy Clifford"
+    }
+  ],
+  "esmodules": [
+    "frpg1e.mjs"
+  ],
+  "styles": [
+    "styles/frpg1e-v0.31.0.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": [
+          "details.biography",
+          "details.notes"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "details.biography",
+          "details.notes"
+        ]
+      },
+      "monster": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    },
+    "Item": {
+      "weapon": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "armor": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "spell": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "gear": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "psionic": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "magic": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "treasure": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "proficiency": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    }
+  },
+  "grid": {
+    "distance": 10,
+    "units": "ft"
+  },
+  "primaryTokenAttribute": "hp",
+  "initiative": "1d6",
+  "background": "",
+  "flags": {}
+}

@@ -1,0 +1,3513 @@
+[
+ {
+  "name": "Aklys",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d3",
+    "smRange": "1-6",
+    "lRange": "1-3"
+   },
+   "speed": "(+1)",
+   "acAdj": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    1
+   ],
+   "missile": {
+    "rate": "1",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     -8,
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 35.0,
+   "weightText": "35",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Atlatl",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 3,
+    "medium": 6,
+    "long": 9,
+    "acAdj": [
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     1,
+     2
+    ]
+   },
+   "weight": 30.0,
+   "weightText": "30",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Axe, Battle",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d8",
+    "l": "1d8",
+    "smRange": "1-8",
+    "lRange": "1-8"
+   },
+   "speed": "7",
+   "acAdj": [
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 75.0,
+   "weightText": "75",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Axe, Hand",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d4",
+    "smRange": "1-6",
+    "lRange": "1-4"
+   },
+   "speed": "4",
+   "acAdj": [
+    -5,
+    -4,
+    -3,
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Bardiche",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "3d4",
+    "smRange": "2-8",
+    "lRange": "3-12"
+   },
+   "speed": "9",
+   "acAdj": [
+    -3,
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 125.0,
+   "weightText": "125",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Bec de Corbin",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d8",
+    "l": "1d6",
+    "smRange": "1-8",
+    "lRange": "1-6"
+   },
+   "speed": "9",
+   "acAdj": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 100.0,
+   "weightText": "100",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Bill-Guisarme",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "1d10",
+    "smRange": "2-8",
+    "lRange": "1-10"
+   },
+   "speed": "10",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 150.0,
+   "weightText": "150",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Blowgun",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1",
+    "l": "1",
+    "smRange": "1",
+    "lRange": "1"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -14,
+     -12,
+     -10,
+     -8,
+     -6,
+     -4,
+     -2,
+     -1,
+     -1,
+     1,
+     2
+    ]
+   },
+   "weight": 15.0,
+   "weightText": "15",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Bo Stick",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d3",
+    "smRange": "1-6",
+    "lRange": "1-3"
+   },
+   "speed": "3",
+   "acAdj": [
+    -13,
+    -11,
+    -9,
+    -7,
+    -5,
+    -3,
+    -1,
+    0,
+    1,
+    0,
+    3
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 15.0,
+   "weightText": "15",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Bow, Composite, Long",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 6,
+    "medium": 12,
+    "long": 21,
+    "acAdj": [
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     2,
+     3,
+     3
+    ]
+   },
+   "weight": 2.0,
+   "weightText": "2",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Arrow"
+  }
+ },
+ {
+  "name": "Bow, Composite, Short",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 5,
+    "medium": 10,
+    "long": 18,
+    "acAdj": [
+     -4,
+     -4,
+     -3,
+     -3,
+     -1,
+     0,
+     1,
+     2,
+     2,
+     2,
+     3
+    ]
+   },
+   "weight": 2.0,
+   "weightText": "2",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Arrow"
+  }
+ },
+ {
+  "name": "Bow, Long",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 7,
+    "medium": 14,
+    "long": 21,
+    "acAdj": [
+     -2,
+     -1,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     3,
+     3,
+     3,
+     3
+    ]
+   },
+   "weight": 2.0,
+   "weightText": "2",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Arrow"
+  }
+ },
+ {
+  "name": "Bow, Short",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 5,
+    "medium": 10,
+    "long": 15,
+    "acAdj": [
+     -7,
+     -6,
+     -5,
+     -4,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     2,
+     2
+    ]
+   },
+   "weight": 2.0,
+   "weightText": "2",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Arrow"
+  }
+ },
+ {
+  "name": "Caltrop",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1",
+    "l": "1d2",
+    "smRange": "1",
+    "lRange": "1-2"
+   },
+   "speed": "n/a",
+   "acAdj": [
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 3.0,
+   "weightText": "2-4",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Club",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d3",
+    "smRange": "1-6",
+    "lRange": "1-3"
+   },
+   "speed": "4",
+   "acAdj": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    1
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -9,
+     -8,
+     -7,
+     -5,
+     -3,
+     -2,
+     -1,
+     -1,
+     -1,
+     0,
+     0
+    ]
+   },
+   "weight": 30.0,
+   "weightText": "30",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Crossbow, Hand",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d3",
+    "l": "1d2",
+    "smRange": "1-3",
+    "lRange": "1-2"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 2,
+    "medium": 4,
+    "long": 6,
+    "acAdj": [
+     -6,
+     -4,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     1,
+     2,
+     2,
+     3
+    ]
+   },
+   "weight": 1.0,
+   "weightText": "1",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Quarrel (or Bolt), hand"
+  }
+ },
+ {
+  "name": "Crossbow, Heavy",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d4+1",
+    "l": "1d6+1",
+    "smRange": "2-5",
+    "lRange": "2-7"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "½",
+    "short": 8,
+    "medium": 16,
+    "long": 24,
+    "acAdj": [
+     -2,
+     -1,
+     -1,
+     0,
+     1,
+     2,
+     3,
+     3,
+     4,
+     4,
+     4
+    ]
+   },
+   "weight": 2.0,
+   "weightText": "2",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Quarrel (or Bolt), heavy"
+  }
+ },
+ {
+  "name": "Crossbow, Light",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d4",
+    "l": "1d4",
+    "smRange": "1-4",
+    "lRange": "1-4"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 6,
+    "medium": 12,
+    "long": 18,
+    "acAdj": [
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     3,
+     3,
+     3
+    ]
+   },
+   "weight": 1.0,
+   "weightText": "1",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Quarrel (or Bolt), light"
+  }
+ },
+ {
+  "name": "Dagger",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d4",
+    "l": "1d3",
+    "smRange": "1-4",
+    "lRange": "1-3"
+   },
+   "speed": "2",
+   "acAdj": [
+    -4,
+    -4,
+    -3,
+    -3,
+    -2,
+    -2,
+    0,
+    0,
+    1,
+    1,
+    3
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     -1,
+     0,
+     0,
+     1
+    ]
+   },
+   "weight": 10.0,
+   "weightText": "10",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Dart",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d3",
+    "l": "1d2",
+    "smRange": "1-3",
+    "lRange": "1-2"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "3",
+    "short": 1.5,
+    "medium": 3,
+    "long": 4.5,
+    "acAdj": [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1
+    ]
+   },
+   "weight": 5.0,
+   "weightText": "5",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Fauchard",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d8",
+    "smRange": "1-6",
+    "lRange": "1-8"
+   },
+   "speed": "8",
+   "acAdj": [
+    -3,
+    -3,
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 60.0,
+   "weightText": "60",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Fauchard-Fork",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d8",
+    "l": "1d10",
+    "smRange": "1-8",
+    "lRange": "1-10"
+   },
+   "speed": "8",
+   "acAdj": [
+    -2,
+    -2,
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 80.0,
+   "weightText": "80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Flail, Footman’s",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "2d4",
+    "smRange": "2-7",
+    "lRange": "2-8"
+   },
+   "speed": "7",
+   "acAdj": [
+    3,
+    3,
+    2,
+    2,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 150.0,
+   "weightText": "150",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Flail, Horseman’s",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d4+1",
+    "l": "1d4+1",
+    "smRange": "2-5",
+    "lRange": "2-5"
+   },
+   "speed": "6",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 35.0,
+   "weightText": "35",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Fork, Military",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d8",
+    "l": "2d4",
+    "smRange": "1-8",
+    "lRange": "2-8"
+   },
+   "speed": "7",
+   "acAdj": [
+    -3,
+    -3,
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 75.0,
+   "weightText": "75",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Garrot",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d4",
+    "l": "1d6",
+    "smRange": "1-4",
+    "lRange": "1-6"
+   },
+   "speed": "2",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 1.0,
+   "weightText": "1",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Glaive",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d10",
+    "smRange": "1-6",
+    "lRange": "1-10"
+   },
+   "speed": "8",
+   "acAdj": [
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 75.0,
+   "weightText": "75",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Glaive-Guisarme",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "2d6",
+    "smRange": "2-8",
+    "lRange": "2-12"
+   },
+   "speed": "9",
+   "acAdj": [
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 100.0,
+   "weightText": "100",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Guisarme",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "1d8",
+    "smRange": "2-8",
+    "lRange": "1-8"
+   },
+   "speed": "8",
+   "acAdj": [
+    -3,
+    -3,
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 80.0,
+   "weightText": "80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Guisarme-Voulge",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "2d4",
+    "smRange": "2-8",
+    "lRange": "2-8"
+   },
+   "speed": "10",
+   "acAdj": [
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 150.0,
+   "weightText": "150",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Halberd",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d10",
+    "l": "2d6",
+    "smRange": "1-10",
+    "lRange": "2-12"
+   },
+   "speed": "9",
+   "acAdj": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 175.0,
+   "weightText": "175",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Hammer",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d4+1",
+    "l": "1d4",
+    "smRange": "2-5",
+    "lRange": "1-4"
+   },
+   "speed": "4",
+   "acAdj": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Hammer, Lucern",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "1d6",
+    "smRange": "2-8",
+    "lRange": "1-6"
+   },
+   "speed": "9",
+   "acAdj": [
+    0,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 150.0,
+   "weightText": "150",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Harpoon",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "2d4",
+    "l": "2d6",
+    "smRange": "2-8",
+    "lRange": "2-12"
+   },
+   "speed": "6",
+   "acAdj": [
+    -3,
+    -2,
+    -2,
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "weight": 55.0,
+   "weightText": "50-60",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Hook Fauchard",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d4",
+    "l": "1d4",
+    "smRange": "1-4",
+    "lRange": "1-4"
+   },
+   "speed": "9",
+   "acAdj": [
+    -3,
+    -3,
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 80.0,
+   "weightText": "80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Javelin",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 2,
+    "medium": 4,
+    "long": 6,
+    "acAdj": [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1
+    ]
+   },
+   "weight": 20.0,
+   "weightText": "20",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Jo Stick",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d4",
+    "smRange": "1-6",
+    "lRange": "1-4"
+   },
+   "speed": "2",
+   "acAdj": [
+    -10,
+    -9,
+    -8,
+    -6,
+    -4,
+    -2,
+    -1,
+    0,
+    1,
+    0,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 40.0,
+   "weightText": "40",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Knife",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d3",
+    "l": "1d2",
+    "smRange": "1-3",
+    "lRange": "1-2"
+   },
+   "speed": "2",
+   "acAdj": [
+    -6,
+    -5,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    1,
+    3
+   ],
+   "missile": {
+    "rate": "2",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -8,
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     1
+    ]
+   },
+   "weight": 6.0,
+   "weightText": "6",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Lance (heavy horse)",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "3d3",
+    "l": "3d6",
+    "smRange": "3-9",
+    "lRange": "3-18"
+   },
+   "speed": "8",
+   "acAdj": [
+    4,
+    4,
+    3,
+    3,
+    2,
+    2,
+    2,
+    1,
+    1,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 150.0,
+   "weightText": "150",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Lance (light horse)",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d8",
+    "smRange": "1-6",
+    "lRange": "1-8"
+   },
+   "speed": "7",
+   "acAdj": [
+    -3,
+    -3,
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Lance (medium horse)",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "2d6",
+    "smRange": "2-7",
+    "lRange": "2-12"
+   },
+   "speed": "6",
+   "acAdj": [
+    -1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 100.0,
+   "weightText": "100",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Mace, Footman’s",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "1d6",
+    "smRange": "2-7",
+    "lRange": "1-6"
+   },
+   "speed": "7",
+   "acAdj": [
+    2,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 100.0,
+   "weightText": "100",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Mace, Horseman’s",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d4",
+    "smRange": "1-6",
+    "lRange": "1-4"
+   },
+   "speed": "6",
+   "acAdj": [
+    2,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Man Catcher",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d2",
+    "l": "1d2",
+    "smRange": "1-2",
+    "lRange": "1-2"
+   },
+   "speed": "7",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    -2,
+    -3
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 80.0,
+   "weightText": "80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Morning Star",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "1d6+1",
+    "smRange": "2-8",
+    "lRange": "2-7"
+   },
+   "speed": "7",
+   "acAdj": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 125.0,
+   "weightText": "125",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Partisan",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6+1",
+    "smRange": "1-6",
+    "lRange": "2-7"
+   },
+   "speed": "9",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 80.0,
+   "weightText": "80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Pick, Military, Footman’s",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "2d4",
+    "smRange": "2-7",
+    "lRange": "2-8"
+   },
+   "speed": "7",
+   "acAdj": [
+    3,
+    3,
+    2,
+    2,
+    1,
+    1,
+    0,
+    -1,
+    -1,
+    -1,
+    -2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 60.0,
+   "weightText": "60",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Pick, Military, Horseman’s",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d4+1",
+    "l": "1d4",
+    "smRange": "2-5",
+    "lRange": "1-4"
+   },
+   "speed": "5",
+   "acAdj": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    -1,
+    -1,
+    -1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 40.0,
+   "weightText": "40",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Pike, Awl",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d12",
+    "smRange": "1-6",
+    "lRange": "1-12"
+   },
+   "speed": "13",
+   "acAdj": [
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    -2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 80.0,
+   "weightText": "80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Ranseur",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "2d4",
+    "smRange": "2-8",
+    "lRange": "2-8"
+   },
+   "speed": "8",
+   "acAdj": [
+    -3,
+    -3,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sap",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d2",
+    "l": "1d2",
+    "smRange": "1-2",
+    "lRange": "1-2"
+   },
+   "speed": "2",
+   "acAdj": [
+    -14,
+    -13,
+    -12,
+    -10,
+    -8,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 10.0,
+   "weightText": "10",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Scimitar",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d8",
+    "l": "1d8",
+    "smRange": "1-8",
+    "lRange": "1-8"
+   },
+   "speed": "4",
+   "acAdj": [
+    -4,
+    -3,
+    -3,
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    3
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 40.0,
+   "weightText": "40",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sling (bullet)",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d4+1",
+    "l": "1d6+1",
+    "smRange": "2-5",
+    "lRange": "2-7"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 5,
+    "medium": 10,
+    "long": 20,
+    "acAdj": [
+     -3,
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     2,
+     1,
+     3
+    ]
+   },
+   "weight": 2.0,
+   "weightText": "2",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Sling Bullet"
+  }
+ },
+ {
+  "name": "Sling (stone)",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d4",
+    "l": "1d4",
+    "smRange": "1-4",
+    "lRange": "1-4"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 4,
+    "medium": 8,
+    "long": 16,
+    "acAdj": [
+     -7,
+     -6,
+     -5,
+     -4,
+     -2,
+     -1,
+     0,
+     0,
+     2,
+     1,
+     3
+    ]
+   },
+   "weight": 1.0,
+   "weightText": "1",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Sling Stone"
+  }
+ },
+ {
+  "name": "Spear",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "both",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d8",
+    "smRange": "1-6",
+    "lRange": "1-8"
+   },
+   "speed": "6-8",
+   "acAdj": [
+    -2,
+    -2,
+    -2,
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "1",
+    "short": 1,
+    "medium": 2,
+    "long": 3,
+    "acAdj": [
+     -4,
+     -4,
+     -3,
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "40-60",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Spetum",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "2d6",
+    "smRange": "2-7",
+    "lRange": "2-12"
+   },
+   "speed": "8",
+   "acAdj": [
+    -2,
+    -2,
+    -2,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Spiked Buckler",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d4",
+    "l": "1d3",
+    "smRange": "1-4",
+    "lRange": "1-3"
+   },
+   "speed": "4",
+   "acAdj": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    0,
+    0,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 35.0,
+   "weightText": "35",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Staff Sling (bullet)",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "2d4",
+    "l": "3d3",
+    "smRange": "2-8",
+    "lRange": "3-9"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "½",
+    "short": null,
+    "medium": null,
+    "long": 9,
+    "acAdj": [
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 5.0,
+   "weightText": "5",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Staff Sling Bullet"
+  }
+ },
+ {
+  "name": "Staff Sling (stone)",
+  "type": "weapon",
+  "img": "icons/svg/target.svg",
+  "system": {
+   "attackType": "missile",
+   "damage": {
+    "sm": "1d8",
+    "l": "2d4",
+    "smRange": "1-8",
+    "lRange": "2-8"
+   },
+   "speed": "",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "½",
+    "short": null,
+    "medium": null,
+    "long": 9,
+    "acAdj": [
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 4.0,
+   "weightText": "4",
+   "source": "UA p.27-29 (weapon tables)",
+   "ammo": "Staff Sling Stone"
+  }
+ },
+ {
+  "name": "Staff, Quarter",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d6",
+    "smRange": "1-6",
+    "lRange": "1-6"
+   },
+   "speed": "4",
+   "acAdj": [
+    -9,
+    -8,
+    -7,
+    -5,
+    -3,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Bastard",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "2d8",
+    "smRange": "2-8",
+    "lRange": "2-16"
+   },
+   "speed": "6",
+   "acAdj": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 100.0,
+   "weightText": "100",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Broad",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "1d6+1",
+    "smRange": "2-8",
+    "lRange": "2-7"
+   },
+   "speed": "5",
+   "acAdj": [
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 75.0,
+   "weightText": "75",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Falchion",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "2d4",
+    "smRange": "2-7",
+    "lRange": "2-8"
+   },
+   "speed": "5",
+   "acAdj": [
+    -3,
+    -2,
+    -2,
+    -1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 70.0,
+   "weightText": "60-80",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Khopesh",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "1d6",
+    "smRange": "2-8",
+    "lRange": "1-6"
+   },
+   "speed": "9",
+   "acAdj": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -2,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 75.0,
+   "weightText": "75",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Long",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d8",
+    "l": "1d12",
+    "smRange": "1-8",
+    "lRange": "1-12"
+   },
+   "speed": "5",
+   "acAdj": [
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 60.0,
+   "weightText": "60",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Short",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6",
+    "l": "1d8",
+    "smRange": "1-6",
+    "lRange": "1-8"
+   },
+   "speed": "3",
+   "acAdj": [
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 35.0,
+   "weightText": "35",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Sword, Two-handed",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d10",
+    "l": "3d6",
+    "smRange": "1-10",
+    "lRange": "3-18"
+   },
+   "speed": "10",
+   "acAdj": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    1,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 250.0,
+   "weightText": "250",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Trident",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d6+1",
+    "l": "3d4",
+    "smRange": "2-7",
+    "lRange": "3-12"
+   },
+   "speed": "6-8",
+   "acAdj": [
+    -4,
+    -3,
+    -3,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 50.0,
+   "weightText": "50",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Voulge",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "2d4",
+    "l": "2d4",
+    "smRange": "2-8",
+    "lRange": "2-8"
+   },
+   "speed": "10",
+   "acAdj": [
+    -2,
+    -2,
+    -1,
+    -1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 125.0,
+   "weightText": "125",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ },
+ {
+  "name": "Whip",
+  "type": "weapon",
+  "img": "icons/svg/sword.svg",
+  "system": {
+   "attackType": "melee",
+   "damage": {
+    "sm": "1d2",
+    "l": "1",
+    "smRange": "1-2",
+    "lRange": "1"
+   },
+   "speed": "5-8",
+   "acAdj": [
+    -14,
+    -12,
+    -10,
+    -8,
+    -6,
+    -4,
+    -2,
+    -1,
+    1,
+    0,
+    3
+   ],
+   "missile": {
+    "rate": "",
+    "short": null,
+    "medium": null,
+    "long": null,
+    "acAdj": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "weight": 30.0,
+   "weightText": "25-35",
+   "source": "UA p.27-29 (weapon tables)"
+  }
+ }
+]

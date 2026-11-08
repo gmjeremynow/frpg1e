@@ -1,0 +1,7 @@
+<div class="frpg1e-card hp-card">
+  <div class="card-title">{{title}}</div>
+  {{#if dice}}<div class="hint">{{dice}}: {{perDie}}, constitution {{con}} per die (minimum 1 per die)</div>{{else}}<div class="hint">{{#if note}}{{note}}{{else}}Fixed {{fixed}} hit points beyond the last hit die.{{/if}}</div>{{/if}}
+  {{#if divided}}<div class="hint">{{raw}} divided among {{divided}} classes.</div>{{/if}}
+  <div class="roll-line"><span class="adnd-big">+{{gained}}</span></div>
+  <div class="card-buttons"><button type="button" data-card-action="add-hp">Add to maximum</button></div>
+</div>

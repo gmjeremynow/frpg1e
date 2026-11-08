@@ -1,0 +1,19 @@
+<div class="box race-box">
+      <h3 class="box-title">Race: {{race.label}} <span class="hint">{{race.src}}</span></h3>
+      {{#if race.limits.length}}
+      <table class="race-limits">
+        <tr><th>Class</th><th>Level</th><th>Max. level</th><th class="left">Note</th></tr>
+        {{#each race.limits}}<tr class="{{#if warn}}over{{/if}}"><td>{{label}}</td><td>{{level}}</td><td>{{max}}</td><td class="left hint">{{note}}</td></tr>{{/each}}
+      </table>
+      {{/if}}
+      {{#if race.multiWarn}}<p class="race-warn">{{race.multiWarn}}</p>{{/if}}
+      {{#each race.abilityWarnings}}<p class="race-warn">{{../race.rangeSource}}: {{this}}.</p>{{/each}}
+      {{#unless race.human}}
+      <p class="race-line"><strong>Classes open:</strong> {{race.open}}</p>
+      {{#if race.multi}}<p class="race-line"><strong>Multi-class:</strong> {{race.multi}}</p>{{/if}}
+      {{/unless}}
+      <p class="race-line"><strong>Comeliness adjustment</strong> (toward other races, UA p.6): {{race.comeliness}}</p>
+      {{#if race.saveNote}}<p class="race-line hint">{{race.saveNote}}</p>{{/if}}
+      <ul class="feature-notes">{{#each race.facts}}<li>{{this}}</li>{{/each}}</ul>
+      {{#if system.settingNotes.length}}<ul class="feature-notes setting-notes">{{#each system.settingNotes}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+    </div>

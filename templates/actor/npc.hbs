@@ -1,0 +1,88 @@
+<div class="adnd-sheet npc-sheet">
+  {{!-- ===================== HEADER ===================== --}}
+  <header class="sheet-head">
+    <img class="portrait" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}" title="Change portrait">
+    <div class="head-main">
+      <div class="title-line">
+        <input class="char-name" type="text" name="name" value="{{actor.name}}" placeholder="NPC name">
+        <span class="record-mark">Non-Player Character</span>
+      </div>
+      <div class="head-fields">
+        <label class="fld"><span>Race</span>
+          <select name="system.details.race">{{#each races}}<option value="{{value}}" {{adnd-selected value ../system.details.race}}>{{label}}</option>{{/each}}</select>
+        </label>
+        <label class="fld"><span>Alignment</span><input type="text" name="system.details.alignment" value="{{system.details.alignment}}"></label>
+        <label class="fld"><span>Class</span><output title="Change classes in the Class &amp; Level box">{{#each classes}}{{label}} {{level}}{{#unless @last}} / {{/unless}}{{else}}0-level{{/each}}</output></label>
+        <label class="fld narrow"><span>Move</span><output>{{system.move.value}}&Prime;</output></label>
+      </div>
+    </div>
+    <div class="vitals">
+      <div class="vital hp">
+        <span class="vital-label">Hit Points</span>
+        <div class="hp-pair">
+          <input type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number">
+          <span class="slash">/</span>
+          <input type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number">
+        </div>
+      </div>
+      <div class="vital ac" title="Armor class (front). Rear: {{system.ac.rear}}. Armor type: {{system.ac.type}}">
+        <span class="vital-label">Armor Class</span>
+        <span class="ac-value">{{system.ac.value}}</span>
+        <span class="ac-sub">rear {{system.ac.rear}} · type {{system.ac.type}}</span>
+      </div>
+      {{#if npc.L}}<div class="vital loyalty" title="{{npc.L.band}}: {{npc.L.text}}">
+        <span class="vital-label">Loyalty</span>
+        <button type="button" class="ac-value loyalty-roll" data-action="loyalty" title="Loyalty check (DMG p.36)">{{npc.L.score}}%</button>
+        <span class="ac-sub">{{npc.L.band}}</span>
+      </div>{{/if}}
+    </div>
+  </header>
+
+  <nav class="sheet-tabs">
+    <span class="quick-rolls">
+      <button type="button" class="mini mini-text" data-action="rollInitiative" title="Initiative: d6 for this actor's side (DMG p.62)"><i class="fa-solid fa-bolt"></i> Initiative</button>
+      <button type="button" class="mini mini-text" data-action="rollSurprise" title="Surprise roll for this actor (DMG p.61)"><i class="fa-solid fa-eye"></i> Surprise</button>
+      <button type="button" class="mini mini-text" data-action="rollMorale" title="Morale check against the loyalty score (DMG p.67)"><i class="fa-solid fa-flag"></i> Morale</button>
+      {{#if npc.L}}<button type="button" class="mini mini-text" data-action="loyalty" title="Loyalty check (DMG p.36)"><i class="fa-solid fa-handshake"></i> Loyalty</button>{{/if}}
+    </span>
+    <button type="button" data-action="sheetTab" data-tab="record">NPC</button>
+    <button type="button" data-action="sheetTab" data-tab="magic">Magic{{#if turn}} &amp; Turning{{/if}}</button>
+    {{#if psi.has}}<button type="button" data-action="sheetTab" data-tab="psionics">Psionics</button>{{/if}}
+    <button type="button" data-action="sheetTab" data-tab="profs">Proficiencies</button>
+    <button type="button" data-action="sheetTab" data-tab="gear">Possessions</button>
+    <button type="button" data-action="sheetTab" data-tab="notes">Description</button>
+  </nav>
+
+  <div class="tab-scroll">
+  {{!-- ===================== NPC (one page) ===================== --}}
+  <section class="tab-body" data-tab="record">
+    {{> "systems/frpg1e/templates/actor/parts/npc-service.hbs"}}
+    <div class="record-grid">
+      {{> "systems/frpg1e/templates/actor/parts/abilities.hbs"}}
+      {{> "systems/frpg1e/templates/actor/parts/saves.hbs"}}
+    </div>
+    {{> "systems/frpg1e/templates/actor/parts/classes.hbs"}}
+    {{> "systems/frpg1e/templates/actor/parts/weapons.hbs"}}
+    {{> "systems/frpg1e/templates/actor/parts/armor-list.hbs"}}
+    <div class="box npc-ac">
+      <h3 class="box-title">Armor Class &amp; Combat Adjustments</h3>
+      <div class="npc-adj">
+        <label class="ac-line"><span>AC misc. adj.</span><input type="number" name="system.ac.misc" value="{{system.ac.misc}}" data-dtype="Number" title="Negative is better."></label>
+        <label class="ac-line"><span>AC override</span><input type="number" name="system.ac.override" value="{{system.ac.override}}" data-dtype="Number" placeholder="—"></label>
+        <label class="ac-line"><span>Misc. to hit</span><input type="number" name="system.combat.hitMisc" value="{{system.combat.hitMisc}}" data-dtype="Number"></label>
+        <label class="ac-line"><span>Misc. damage</span><input type="number" name="system.combat.dmgMisc" value="{{system.combat.dmgMisc}}" data-dtype="Number"></label>
+        <label class="ac-line"><span>Base move</span><input type="number" name="system.move.base" value="{{system.move.base}}" data-dtype="Number"></label>
+      </div>
+    </div>
+    {{> "systems/frpg1e/templates/actor/parts/thief.hbs"}}
+    {{> "systems/frpg1e/templates/actor/parts/features.hbs"}}
+    <details class="box npc-race"><summary class="box-title">Race: {{race.label}}</summary>{{> "systems/frpg1e/templates/actor/parts/race.hbs"}}</details>
+  </section>
+
+  <section class="tab-body" data-tab="magic">{{> "systems/frpg1e/templates/actor/parts/tab-magic.hbs"}}</section>
+  <section class="tab-body" data-tab="psionics">{{> "systems/frpg1e/templates/actor/parts/tab-psionics.hbs"}}</section>
+  <section class="tab-body" data-tab="profs">{{> "systems/frpg1e/templates/actor/parts/tab-profs.hbs"}}</section>
+  <section class="tab-body" data-tab="gear">{{> "systems/frpg1e/templates/actor/parts/tab-gear.hbs"}}</section>
+  <section class="tab-body" data-tab="notes">{{> "systems/frpg1e/templates/actor/parts/tab-notes.hbs"}}</section>
+  </div>
+</div>

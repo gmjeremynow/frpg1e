@@ -1,0 +1,7 @@
+<div class="frpg1e-card ability-card">
+  <div class="card-title">{{label}} Check</div>
+  <div class="roll-line"><span class="adnd-big">{{r.total}}</span><span class="vs">vs {{r.target}}</span>
+    <span class="hint">{{dice}} {{r.raw}}{{#if modifier}}; {{adnd-signed modifier}} modifier{{/if}}</span></div>
+  <div class="result {{#if r.success}}hit{{else}}miss{{/if}}">{{resultText}}</div>
+  <div class="hint">{{label}} {{score}}{{#if capped}} counts as 18{{/if}}.{{#if r.d20}} An unmodified 19 or 20 always fails (WSG).{{/if}}</div>
+</div>

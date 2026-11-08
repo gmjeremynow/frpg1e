@@ -1,0 +1,13 @@
+<div class="frpg1e-card prof-card">
+  <header class="card-head"><img src="{{item.img}}" alt=""><div><div class="card-title">{{item.name}}{{#if p.specialty}} ({{p.specialty}}){{/if}}</div>
+    <div class="card-sub">{{#if noCheck}}Nonweapon proficiency{{else}}Proficiency Check · {{abilityLabel}}{{/if}}{{#if secret}} · rolled for the DM{{/if}}</div></div></header>
+  {{#if noCheck}}
+    <div class="usage">This proficiency never calls for a Proficiency Check.</div>
+  {{else}}
+    <div class="roll-line"><span class="adnd-big">{{r.total}}</span><span class="vs">vs {{r.target}}</span>
+      <span class="hint">d20 {{r.raw}}{{#if mods}}; {{mods}}{{/if}}</span></div>
+    <div class="result {{#if r.success}}hit{{else}}miss{{/if}}">{{resultText}}</div>
+    <div class="hint">{{abilityLabel}} {{score}}{{#if capped}} counts as 18{{/if}}. Success: the d20 plus modifiers at or under the score; an unmodified 20{{#unless p.improvements}} or 19{{/unless}} always fails.</div>
+  {{/if}}
+  <details class="desc"><summary>Description</summary>{{{description}}}</details>
+</div>

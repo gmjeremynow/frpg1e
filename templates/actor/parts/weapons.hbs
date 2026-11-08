@@ -1,0 +1,18 @@
+<div class="box weapons">
+      <h3 class="box-title">Weapons
+        <button type="button" class="mini" data-action="itemCreate" data-type="weapon" title="Add weapon"><i class="fa-solid fa-plus"></i></button>
+        <button type="button" class="mini mini-text brawl-btn" data-action="brawl" title="Weaponless combat: pummel, grapple or overbear (UA Appendix Q)"><i class="fa-solid fa-hand-fist"></i> Brawl</button>
+      </h3>
+      <table class="ledger weapon-table">
+        <thead>
+          <tr class="ac-head-label"><th colspan="5"></th><th colspan="11">Score needed to hit armor class</th><th></th></tr>
+          <tr><th></th><th class="left">Weapon</th><th title="Proficient">Prof</th><th title="Speed factor">SF</th><th>Dmg S-M / L</th>
+            {{#each acHeader}}<th class="acn">{{this}}</th>{{/each}}<th></th></tr>
+        </thead>
+        <tbody>
+          {{#each weapons}}{{> "systems/frpg1e/templates/actor/parts/weapon-row.hbs"}}{{else}}
+          <tr><td colspan="17" class="hint">Drag weapons here from the 1e FRPG Weapons compendium.</td></tr>{{/each}}
+        </tbody>
+      </table>
+      <p class="hint">Click a weapon to attack (target tokens first). Shift-click skips the options. Numbers include strength or dexterity, magic, proficiency and weapon vs. armor type.</p>
+    </div>

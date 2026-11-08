@@ -1,0 +1,602 @@
+[
+ {
+  "name": "Animal Telepathy",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "Special",
+   "cost": "1/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "1” wide directional path",
+   "description": "<p>The possessor can communicate with various forms of living things. Which kinds, and at what range, depend on his or her level of mastery. Communication is clear, but it gives no command or influence beyond the possessor’s own persuasiveness.</p><table class=\"book-table\"><tr><th>Level of mastery</th><th>Range</th><th>Animal life that can be communicated with</th></tr><tr><td>first</td><td>6˝ + 1˝/level</td><td>mammals</td></tr><tr><td>third</td><td>5˝ + 1˝/level</td><td>marsupials, et al.</td></tr><tr><td>fifth</td><td>3˝ + 1˝/level</td><td>avians</td></tr><tr><td>sixth</td><td>2˝ + 1˝/level</td><td>reptiles</td></tr><tr><td>seventh</td><td>1˝ + 1˝/level</td><td>amphibians</td></tr><tr><td>eighth</td><td>1˝/level</td><td>fish and similar creatures</td></tr><tr><td>tenth</td><td>2˝ + 1˝/2 levels</td><td>arachnids and myriapodae</td></tr><tr><td>twelfth</td><td>1˝ + 1˝/2 levels</td><td>“monsters”</td></tr><tr><td>fourteenth+</td><td>1˝/2 levels</td><td>plants</td></tr></table><p><strong>Searching:</strong> the possessor can search for creatures at the rate of one path of area (1˝ wide × the range) per round.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Body Equilibrium",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "1/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The user can adjust his or her body weight to suit the surface underfoot, and so can walk on water, quicksand, mud, or anything similar. Against falling, it works like the magic-user spell <em>feather fall</em>.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Body Weaponry",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "1/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The possessor alters the molecules of his or her body as needed to use it as both weapon and armor. The table shows the equivalent armor class and weapon by level of mastery. Note the class distinctions. While the psionic wears armor and uses weapons, the body weaponry values do not apply, but they are not otherwise affected.</p><table><tr><th>Mastery</th><th>Cleric AC</th><th>Fighter AC</th><th>Thief AC</th><th>Weapon equivalent</th></tr><tr><td>1</td><td>9</td><td>9</td><td>9</td><td>club</td></tr><tr><td>2</td><td>8</td><td>8</td><td>8</td><td>dagger</td></tr><tr><td>3</td><td>7</td><td>7</td><td>7</td><td>axe, hand</td></tr><tr><td>4</td><td>6</td><td>6</td><td>7</td><td>mace</td></tr><tr><td>5</td><td>5</td><td>5</td><td>6</td><td>axe, battle</td></tr><tr><td>6</td><td>4</td><td>4</td><td>5</td><td>morning star</td></tr><tr><td>7</td><td>3</td><td>3</td><td>5</td><td>sword, broad</td></tr><tr><td>8</td><td>3</td><td>2</td><td>4</td><td>sword, long</td></tr><tr><td>9</td><td>2</td><td>1</td><td>4</td><td>sword, long +1</td></tr><tr><td>10</td><td>2</td><td>1</td><td>3</td><td>sword, long +2</td></tr><tr><td>11</td><td>1</td><td>0</td><td>3</td><td>sword, long +3</td></tr><tr><td>12</td><td>1</td><td>0</td><td>2</td><td>sword, long +4</td></tr></table><p>Level 12 and above use the last row.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Cell Adjustment",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "Special",
+   "duration": "Permanent",
+   "save": "None",
+   "aoe": "Creature touched",
+   "description": "<p>By attuning psionically to the cells of an injured creature, the possessor can heal or cure:</p><ul><li><strong>Wounds:</strong> 1 strength point per hit point healed.</li><li><strong>Disease:</strong> 20 strength points for a mild, early-stage disease, up to 70 for an advanced case of plague or leprosy.</li></ul><p>The maximum amount of healing/curing depends on the psionic’s class and level of mastery:</p><ul><li>Cleric: 5 points/level</li><li>Fighter: 4 points/level</li><li>Magic-User: 3 points/level</li><li>Thief: 2 points/level</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Clairaudience",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "Special",
+   "cost": "5/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>As the magic-user spell <em>clairaudience</em>, except that unknown areas up to 30’ away can be scanned.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Clairvoyance",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "Special",
+   "cost": "5/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>As the magic-user spell <em>clairvoyance</em>, except that unknown areas up to 20’ away can be scanned.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Detection of Good/Evil",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "3”",
+   "cost": "2/round",
+   "duration": "Time of concentration",
+   "save": "Special",
+   "aoe": "One creature or object",
+   "description": "<p>The possessor can view the aura of a creature or object. The higher the level of mastery, the better the chances, especially for reading objects and for learning a creature’s exact alignment.</p><table class=\"book-table\"><tr><th>Level of mastery</th><th>Creature</th><th>Exact alignment</th><th>Object</th></tr><tr><td>first</td><td>30%</td><td>0%</td><td>5%</td></tr><tr><td>second</td><td>40%</td><td>5%</td><td>10%</td></tr><tr><td>third</td><td>50%</td><td>10%</td><td>15%</td></tr><tr><td>fourth</td><td>60%</td><td>15%</td><td>20%</td></tr><tr><td>sixth</td><td>70%</td><td>25%</td><td>35%</td></tr><tr><td>eighth</td><td>80%</td><td>35%</td><td>50%</td></tr><tr><td>tenth</td><td>90%</td><td>45%</td><td>65%</td></tr><tr><td>twelfth</td><td>100%</td><td>55%</td><td>80%</td></tr><tr><td>fourteenth</td><td>100%</td><td>65%</td><td>95%</td></tr></table><p>The book lists only the levels shown; fifth, seventh, ninth, eleventh and thirteenth are not given.</p><ul><li><strong>Failure:</strong> an aura that is not read cannot be made out, and the possessor cannot try again on it until reaching the next level of mastery.</li><li><strong>Saving throw:</strong> creatures above 14th level or 14 hit dice may save versus magic against having their exact alignment determined.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Detection of Magic",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "3”",
+   "cost": "3/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "½” wide path",
+   "description": "<p>The possessor can detect the aura of magic, and also the type of spell (abjuration, conjuration/summoning, etc.) or magic detected. The chance of identifying the type is 5% per level of mastery; at 5th mastery level, for example, it is 25%.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Domination",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "3”",
+   "cost": "Special",
+   "duration": "Time of concentration",
+   "save": "Neg.",
+   "aoe": "One creature",
+   "description": "<p>The psionic forces another creature’s mind to accept signals from his or her own brain, making it do his or her will.</p><ul><li><strong>Contact:</strong> 5 strength points to contact the mind; the creature then saves versus magic.</li><li><strong>Control:</strong> if the save fails, the psionic spends further points each round equal to the creature’s level or hit dice. For creature races that are not character races, count +1 to +4 on its hit dice as 1 extra hit die, and +5 or more as 2 extra hit dice.</li><li><strong>Against its nature:</strong> if the creature is forced to do something totally against its nature or self-destructive, the cost is doubled or tripled accordingly.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Empathy",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "1“/level of mastery",
+   "cost": "3/use",
+   "duration": "1 turn/use",
+   "save": "None",
+   "aoe": "1“ wide path",
+   "description": "<p>The possessor can sense the basic needs, drives, and emotions coming from any unshielded sentient mind: thirst, hunger, fear, fatigue, pain, rage, hatred, uncertainty, curiosity, hostility, friendliness, love, and the like. It works along a path in the direction the possessor is facing.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "ESP",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "9”",
+   "cost": "2/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "1” wide path",
+   "description": "<p>The user can “tune in” to the unshielded thoughts of any creatures within range when the power is used. In most respects it is the same as the magic-user spell <em>ESP</em>. Thoughts in languages the user does not understand are meaningless, and non-intelligent creatures send only “pictures” or raw drives.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Expansion",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "5/round",
+   "duration": "1 turn/level of mastery",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The psionic makes his or her body larger, with a matching increase in mass and strength, up to 1’ of growth per level of mastery. Each 1’ of growth gives +1 to hit points of damage done.</p><table class=\"book-table\"><tr><th>Level of mastery</th><th>Maximum height increase</th><th>Damage bonus</th><th>Strength equivalent</th></tr><tr><td>first</td><td>1’</td><td>+1</td><td>(17)</td></tr><tr><td>second</td><td>2’</td><td>+2</td><td>(18)</td></tr><tr><td>third</td><td>3’</td><td>+3</td><td>(18/51)</td></tr><tr><td>fourth</td><td>4’</td><td>+4</td><td>(18/76)</td></tr><tr><td>fifth</td><td>5’</td><td>+5</td><td>(18/91)</td></tr><tr><td>sixth</td><td>6’</td><td>+6</td><td>(18/00) ogre</td></tr><tr><td>seventh</td><td>7’</td><td>+7</td><td>hill giant</td></tr><tr><td>eighth</td><td>8’</td><td>+8</td><td>stone giant</td></tr><tr><td>ninth</td><td>9’</td><td>+9</td><td>frost giant</td></tr><tr><td>tenth</td><td>10’</td><td>+10</td><td>fire giant</td></tr><tr><td>eleventh</td><td>11’</td><td>+11</td><td>cloud giant</td></tr><tr><td>twelfth</td><td>12’</td><td>+12</td><td>storm giant</td></tr></table><ul><li>If the possessor’s strength is already equal to what the growth would give, there is no bonus.</li><li>Clothing worn and weapons used can be made to grow with the body, but magic items treated this way have a 5% chance (1 in 20 on d20) of being destroyed.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Hypnosis",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "3”",
+   "cost": "Special",
+   "duration": "Special",
+   "save": "Special Level of Mastery Chance for Aura Reading Creature Exact Alignment Object first 30% 0% 5% second 40% 5% 10% third 50% 10% 15% fourth 60% 15% 20% sixth 70% 25% 35% eighth 80% 35% 50% tenth 90% 45% 65% twelfth 100% 55% 80% fourteenth 100% 65% 95%",
+   "aoe": "One level/hit die per level of mastery cumulative",
+   "description": "<p>Similar to the <em>suggestion</em> and <em>charm person</em>/<em>charm monster</em> spells. It affects only creatures with intelligence greater than 7 and less than 17; the stupid and the unusually bright cannot be hypnotized.</p><ul><li><strong>Instructions:</strong> the psionic can tell the creature to follow a course of action that seems reasonable (no orders to kill itself, friends, associates, etc.), and can also plant a post-hypnotic suggestion. The suggestion has a cumulative 5% chance per day of wearing off and no longer affecting the creature.</li><li><strong>Number affected:</strong> each level of mastery adds that many levels or hit dice of creatures. At 1st level, only a single 1st-level character or a monster of up to 1 hit die; at 2nd level, 2 more are added, for up to 3 levels/hit dice.</li></ul><table class=\"book-table\"><tr><th>Level of mastery</th><th>Levels/hit dice affected</th></tr><tr><td>first</td><td>1 = 1</td></tr><tr><td>second</td><td>1 + 2 = 3</td></tr><tr><td>third</td><td>1 + 2 + 3 = 6</td></tr><tr><td>fourth</td><td>1 + 2 + 3 + 4 = 10</td></tr><tr><td>fifth</td><td>1 + 2 + 3 + 4 + 5 = 15</td></tr><tr><td>...</td><td>etc.</td></tr></table><ul><li><strong>Cost:</strong> 1 strength point per level or hit die hypnotized.</li><li><strong>Saving throw:</strong> creatures with 15 or 16 intelligence, or over 10th level/10 hit dice, may save versus magic; success means the hypnosis has no effect.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Invisibility",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "3/turn",
+   "duration": "1 turn/expenditure",
+   "save": "None",
+   "aoe": "One level/hit die per level of mastery cumulative",
+   "description": "<p>Much like the <em>invisibility</em> spell, but weaker in some ways and stronger in others. The possessor becomes invisible to creatures with no more levels or hit dice than his or her cumulative levels of mastery: 1 at 1st level, 1 + 2 at 2nd level, 1 + 2 + 3 at 3rd level, etc.</p><p>Because the power affects minds, not light waves or other physical effects, no form of magic can detect it. Only a mind bar prevents it from working on that particular creature.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Levitation",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "3/turn",
+   "duration": "1 turn/level of mastery",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>Similar to the magic-user spell <em>levitate</em>. It need not be used in one continuous period; a 1st-level psionic, for example, can use it on several occasions as long as the total of all uses is 1 turn or less.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Mind Over Body",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "5/day",
+   "duration": "2 days/level of mastery",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The possessor can suppress or mentally satisfy the need for water, food, rest, and sleep for up to 2 consecutive days per level of mastery: 4 days at 2nd level, 6 at 3rd, etc. Eventually he or she must spend an equal number of days in complete rest to restore the power. This does no harm, but the discipline cannot be used again until the rest is taken.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Molecular Agitation",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "Sight",
+   "cost": "1/round",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "One item or creature",
+   "description": "<p>The possessor makes the molecules of an item move faster than normal. Only a small number of molecules can be affected, but continued use has these effects after 10 rounds:</p><table class=\"book-table\"><tr><th>Type of material</th><th>Effect</th></tr><tr><td>paper, parchment, straw</td><td>aflame, burning brightly</td></tr><tr><td>dry wood, heavy cloth</td><td>scorching and smouldering</td></tr><tr><td>water, wine</td><td>boiling (if a small amount)</td></tr><tr><td>flesh</td><td>blistering*</td></tr><tr><td>metal</td><td>hot to touch**</td></tr></table><p>* Each round after that, the victim takes cumulative damage: 1 hit point that round, 2 the next, 3 the next, etc.</p><p>** From this point the effect is the same as the druid spell <em>heat metal</em>.</p><p>The amount of material affected does not increase much with mastery, but the time needed drops by 1 round per level of mastery, so at 10th level and beyond the effects above take only 1 round. The item must be in the psionic’s view (clairvoyance counts).</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Object Reading",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "Touch",
+   "cost": "1/round",
+   "duration": "1 round",
+   "save": "None",
+   "aoe": "Object touched",
+   "description": "<p>The possessor can detect psychic impressions left on an object by its previous owner. Handling an artifact found in a dungeon, for example, the psionic might learn its owner’s race, alignment, and probably fate. If the object has a long and legendary history, he or she would have visions of its past, back through history. Not all objects give off these impressions, and certainly not all magical ones.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Precognition",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "Special",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>The possessor can estimate the best likely course of action, or the likely outcome of an undertaking, but only in the fairly immediate future. As long as the number of unknown factors stays the same, estimates become more accurate as the level of mastery rises.</p><p><strong>Chance of success</strong> depends on combined intelligence and wisdom and on difficulty (below). For each level the ability is possessed, the chance rises by a percentage equal to the level (2 levels, 2%; 3 levels, 3%; etc.), but never above 90%.</p><table class=\"book-table\"><tr><th>Total intelligence and wisdom</th><th>Low difficulty</th><th>Medium</th><th>High</th></tr><tr><td>under 30</td><td>40%</td><td>30%</td><td>20%</td></tr><tr><td>30-33</td><td>50%</td><td>35%</td><td>25%</td></tr><tr><td>34-35</td><td>65%</td><td>45%</td><td>35%</td></tr><tr><td>36 &amp; up</td><td>70%</td><td>50%</td><td>40%</td></tr></table><ul><li><strong>Difficulty:</strong> time is a factor. 1-4 turns is a short time and usually low difficulty; 5-30 turns is medium; anything beyond 30 turns (5 hours) is high. Unknown factors change this: a short-time precognition with many (basically unsolvable) unknowns becomes high difficulty.</li><li><strong>Cost:</strong> 1 strength point per basically solvable unknown factor (six unknowns cost 6 points). The precognating character does not learn the cost until afterward. To foresee the result of a melee, for example, each attack counts as an unknown, so a melee with several individuals and several monsters could easily cost 10 or more points per round.</li><li><strong>Running out:</strong> if the psionic does not have enough points to finish, the precognition stops at the point where he or she has no strength left to continue.</li></ul><p><strong>N.B.</strong> Precognition depends entirely on the referee, who must handle it with the utmost care.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Reduction",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "2/turn",
+   "duration": "1 turn/level of mastery",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The possessor can make his or her body up to 1’ shorter (and correspondingly less massive) per level of mastery. After 5th level of mastery, each further level reduces size by 50% of what remains. For example, a 6’ human at 7th level of mastery could shrink to 3 inches (−1’ per level to 5th, 50% of 1’ at 6th, and 50% of ½’ at 7th); to 1½ inches at 8th level; 3/4 inch at 9th; 3/8 inch at 10th; etc.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Suspend Animation",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "0",
+   "cost": "6",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The possessor can almost completely stop all life functions; to anything short of minute examination, he or she is dead. The psionic sets the body to wake after a chosen period, and normal functions then resume. The sleeper cannot be woken before the time he or she set.</p><ul><li><strong>Length:</strong> 1 week per level, cumulative (1 week at the 1st level of possession, 3 weeks at the 2nd, etc.).</li><li><strong>Recovery:</strong> for each week spent in suspended animation, the possessor must spend one day of normal activity before using it again.</li><li><strong>Conditions:</strong> no air is needed, and temperatures can be as low as 35 degrees Fahrenheit.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Sensitivity to Psychic Impressions",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "minor",
+   "range": "2” sphere",
+   "cost": "1/round",
+   "duration": "1 round",
+   "save": "None",
+   "aoe": "1” to every side",
+   "description": "<p>Deaths and other highly dramatic events leave a “psychic residue” in the very earth and stones where they happened, which may last for centuries. Just by standing in such a place for a moment, the possessor can sense the emotions of those who died or suffered some powerful emotion there, and perhaps see brief visions.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Astral Projection",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "Special",
+   "cost": "10",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>Very similar to the cleric spell <em>astral spell</em>, except that only the psionic can travel by this power; it does not take others along as the spell can. For astral travel, see APPENDIX IV, THE KNOWN PLANES OF EXISTENCE.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Aura Alteration",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "Touch",
+   "cost": "Special",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>This power has two uses:</p><ul><li><strong>Disguising one’s own aura:</strong> the possessor changes his or her aura to show an alignment other than the true one. Cost is 10 strength points per factor changed (good/evil, evil/good, neutral/evil, evil/neutral, neutral/good, good/neutral, lawful/chaotic, chaotic/lawful, etc.). A neutral character who wants to appear neutral evil pays 10 points; to appear chaotic evil costs 20. The change lasts 6 turns.</li><li><strong>Altering another’s unfavorable aura:</strong> the possessor can recognize and remove curses, geases, and quests on another.</li></ul><table class=\"book-table\"><tr><th>Aura</th><th>Strength point cost to recognize</th></tr><tr><td>curse</td><td>¼ point/level of curse</td></tr><tr><td>geas</td><td>½ point/level of magic-user</td></tr><tr><td>quest</td><td>1 point/level of cleric</td></tr></table><p>Round all fractions up to the nearest whole number. Actually removing the aura costs 8 times the recognition cost.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Body Control",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "2/turn",
+   "duration": "1 turn/level of mastery",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The possessor can survive in hostile environments or elements, and withstand substances or radiation that would harm the body: cold, heat, poisonous gases, acids, flame, etc.</p><ul><li><strong>Strength:</strong> per level of mastery, the possessor can withstand an exposure that would normally do 1 hit die of damage. So at 2nd level of mastery, burning oil would not affect him or her.</li><li><strong>Duration:</strong> at most 1 turn per level of mastery; the 2nd-level psionic above could withstand burning oil for 2 turns.</li><li>It allows breathing under water at 1st level.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Dimension Door",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "10",
+   "duration": "Instantaneous",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>Basically the same as the magic-user spell <em>dimension door</em>.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Dimension Walk",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "1/turn",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>The possessor moves through the dimensions, by inter-dimensional travel, rather than along them, covering great distances quickly. The base distance for 1 turn of dimension walking is 7 leagues (21 miles in 10 minutes). No hostile encounters occur during dimension walks.</p><ul><li><strong>Wrong direction:</strong> this travel is difficult for the inexperienced and can mislead even experienced travelers. There is a 10% chance of going the opposite way to that intended. This drops by 1% for each level of mastery above 1st, to a minimum of 1% at 10th level; there is always that 1% chance.</li><li><strong>Time:</strong> missteps change the time the trip takes, usually longer at low mastery and sometimes shorter at high mastery. Each level of mastery is based on 700 leagues of travel. At journey’s end, whether or not the traveler went the wrong way, roll percentile dice for the change in travel time:</li></ul><table class=\"book-table\"><tr><th>Level of mastery</th><th>01-20</th><th>21-45</th><th>46-75</th><th>76-90</th><th>91-00</th></tr><tr><td>first, second</td><td>+200%</td><td>+150%</td><td>+50%</td><td>0</td><td>0</td></tr><tr><td>third through fifth</td><td>+150%</td><td>+100%</td><td>+25%</td><td>0</td><td>0</td></tr><tr><td>sixth, seventh</td><td>+100%</td><td>+50%</td><td>+10%</td><td>0</td><td>0</td></tr><tr><td>eighth</td><td>+50%</td><td>+25%</td><td>0</td><td>0</td><td>−10%</td></tr><tr><td>ninth</td><td>+25%</td><td>+10%</td><td>0</td><td>−10%</td><td>−25%</td></tr><tr><td>tenth</td><td>+10%</td><td>0</td><td>0</td><td>−25%</td><td>−50%</td></tr></table><p><strong>Example:</strong> a psionic at 4th level of mastery wants to dimension walk to an island 600 miles east. 600 miles is 200 leagues, about 29 turns of travel. The 2d20 are rolled twice: once for direction (a 7% chance of going west), and once for the time taken. A result of 38 means the trip took 100% longer than the base rate, so 58 turns (580 minutes, or 9 hours and 40 minutes).</p><p><em>The source text of this entry also contained the Molecular Manipulation table (level of mastery and what can be manipulated); it is given under Molecular Manipulation.</em></p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Energy Control",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "Special",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "10’ radius of individual",
+   "description": "<p>The possessor can channel energies aimed at, or present around, his or her body so that they become harmless or dissipate. A spell or energy weapon (fiery breath, lightning, cold, etc.) directed at the psionic’s area does not harm him or her if 1 strength point is spent per spell level (or per die of damage the energy would normally do).</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Etherealness",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "6/turn",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Individual + special",
+   "description": "<p>The psionic can shift his or her physical body into an ethereal state, and functions on the Ethereal Plane (see APPENDIX IV: THE KNOWN PLANES OF EXISTENCE).</p><ul><li><strong>Carried material:</strong> up to 50 gold pieces weight of material the possessor is touching also becomes ethereal per level of mastery: 50 g.p. weight at 1st level, 100 at 2nd, 150 at 3rd, etc.</li><li><strong>Other planes:</strong> the possessor can likewise change bodily vibrations to materialize in the planes the Ethereal touches (the Elemental and Positive and Negative Material Planes).</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Mass Domination",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "3”",
+   "cost": "Special",
+   "duration": "Special",
+   "save": "Neg.",
+   "aoe": "Special",
+   "description": "<p>The possessor can dominate (see MINOR DEVOTIONS, Domination) up to 5 creatures at once, for extended periods.</p><ul><li><strong>Strength of creatures:</strong> each level of mastery adds one level or hit die to the creatures affected; at 1st level of mastery it affects up to 5 creatures of 2nd level or 2 hit dice, etc.</li><li><strong>Duration:</strong> 5 turns per level of mastery, reduced by 1 turn for every point of intelligence, wisdom, and/or charisma over 14 that each affected creature has.</li><li><strong>Cost:</strong> 10 strength points to contact the minds, plus 1 point per level or hit die of the creatures dominated to establish command. No further points are spent while the domination lasts.</li><li><strong>Saving throw:</strong> each creature saves versus magic at −4 to resist.</li><li>Dominated creatures will never act in any way that is obviously self-destructive or against their basic nature.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Mind Bar",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "5/day",
+   "duration": "As set by individual",
+   "save": "Special",
+   "aoe": "Individual",
+   "description": "<p>A mind bar protects the possessor from magical attacks such as <em>charm</em>, <em>confusion</em>, <em>ESP</em>, <em>fear</em>, <em>feeblemind</em>, <em>magic jar</em>, <em>sleep</em>, and <em>suggestion</em>, and from telepathic influence or possession by creatures such as demons or devils.</p><ul><li>Psionic or magical domination (any form), empathy, hypnosis, or telepathy do not work against someone with a mind bar, and he or she can see a psionic using the invisibility discipline.</li><li>A mind bar can be placed on the physical body while the possessor is astrally projecting.</li><li><strong>Chance of success:</strong> 10% per level of mastery (100% at 10th level).</li><li><strong>11th level and beyond:</strong> a 10% per level chance of locating the source of any attack on the possessor’s mind the instant it is made. This includes psionic attacks and attempts to magic jar or possess him or her; in those last two cases, it identifies the magic jar or amulet of the being making the attempt.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Molecular Manipulation",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "1”",
+   "cost": "50",
+   "duration": "Permanent",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>The possessor can change the molecular arrangement of an item to make it weak, fragile, and easily broken. It takes 1 round to use. Magic items attacked this way may save versus magical fire, each basic +1 of the item giving +1 on the save. The ability grows with each level of mastery:</p><table class=\"book-table\"><tr><th>Level of mastery</th><th>Able to manipulate the equivalent of</th></tr><tr><td>first</td><td>thin cord</td></tr><tr><td>second</td><td>thick cord, leather thong</td></tr><tr><td>third</td><td>thick rope, leather strop, thin wire</td></tr><tr><td>fourth</td><td>thick wire, 1/12’ thick wooden board</td></tr><tr><td>fifth</td><td>light iron chain, 1/6’ thick wooden board</td></tr><tr><td>sixth</td><td>heavy iron chain, light steel chain</td></tr><tr><td>seventh</td><td>stock and shackles, 1’ thick wooden board</td></tr><tr><td>eighth</td><td>iron bar of 1/12’ diameter, heavy steel chain</td></tr><tr><td>ninth</td><td>iron bar of 1/6’ diameter, steel bar of 1/12’ diameter</td></tr><tr><td>tenth</td><td>2’ thick stone wall (man-sized hole)</td></tr><tr><td>eleventh</td><td>magical chain armor, magical dagger</td></tr><tr><td>twelfth</td><td>magical splint armor, magical mace</td></tr><tr><td>thirteenth</td><td>magical shield, magical axe or flail</td></tr><tr><td>fourteenth</td><td>magical plate armor, magical sword</td></tr></table><p><em>This table appeared inside the Dimension Walk text in the source and has been moved here.</em></p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Molecular Rearrangement",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "Touch",
+   "cost": "Special",
+   "duration": "Permanent",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>The possessor can rearrange the molecules of metals to change one metal into another, up to 10 gold piece weight per level of mastery. Which metals can be changed depends on their relative softness and on the psionic’s level of mastery:</p><table class=\"book-table\"><tr><th>Level of mastery</th><th>Metals that can be affected</th></tr><tr><td>first through third</td><td>gold, lead, and others very soft</td></tr><tr><td>fourth through sixth</td><td>copper, silver, tin, zinc, et al. (brass)</td></tr><tr><td>seventh through ninth</td><td>platinum, nickel, iron, et al. (bronze)</td></tr><tr><td>tenth through twelfth</td><td>steel</td></tr><tr><td>thirteenth through fifteenth</td><td>Mithril, steel alloys</td></tr><tr><td>sixteenth and up</td><td>adamantite</td></tr></table><p>The cost is 1 strength point per gold piece weight changed. The science is so demanding that it can be used only once per month.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Probability Travel",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "Special",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>A form of astral projection that actually takes the traveler’s body, and possibly 1 or more others, to the planes outside the Prime Material. The traveler can cross into parallel worlds or various planes, including those normally reached through the Ethereal Plane (the Ethereal can be reached and then used to get to the planes it touches).</p><ul><li><strong>Cost:</strong> 10 strength points per world or plane entered or crossed.</li><li><strong>Companions:</strong> at 5th level of mastery, up to 2 others can be brought along at an extra 5 points per person per world or plane; at 10th level, up to 8 others at 2 points apiece.</li><li><strong>Hazard:</strong> there is a chance of ending up somewhere not intended: 20% at 1st level of mastery, dropping by 1% per level after that.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Telekinesis",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "3” + 1“/level of mastery",
+   "cost": "3/round",
+   "duration": "Special",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>Similar to the magic-user spell <em>telekinesis</em>. The psionic can mentally move objects up to a maximum weight that increases cumulatively by 30 gold piece weight per level of mastery: 30 g.p. weight at 1st level, 90 (30 + 60) at 2nd, 180 (30 + 60 + 90) at 3rd, 300 (30 + 60 + 90 + 120) at 4th, 450 (30 + 60 + 90 + 120 + 150) at 5th, etc. Duration depends on the individual’s psionic strength. The object must be in clear sight of the psionic.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Telempathic Projection",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "1”",
+   "cost": "Special",
+   "duration": "1 round/level of mastery",
+   "save": "Special",
+   "aoe": "1” wide path",
+   "description": "<p>The PHB says only that this science is similar to the devotion empathy, except that the possessor is able to send an emotion, et al. It reaches along a path 1˝ wide to a range of 1˝, and lasts 1 round per level of mastery. Its strength point cost and saving throw are both listed as Special, with no further explanation in the book.</p><h4>House ruling</h4><p><em>Not in the book. Adopted for this table to fill the gaps above.</em></p><ul><li><strong>Two modes:</strong> the possessor can either sense emotions or send one, along the 1˝ path.</li><li><strong>Sensing:</strong> works as empathy (basic needs, drives, and emotions of unshielded sentient minds). Cost 3 strength points; no saving throw.</li><li><strong>Sending:</strong> the possessor sends an emotion, need, or drive of the kinds empathy can sense (fear, hunger, friendliness, hostility, and the like) to creatures in the path. Cost, as for telepathic projection’s suggestion: 1 point per level or hit die of the creatures to make contact, plus 1 point per level or hit die to send. Each target may save versus magic to resist.</li><li><strong>Effect of a sent emotion:</strong> decided by the DM.</li><li><strong>Range, area, and duration:</strong> as printed.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Telepathy",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "Special",
+   "cost": "1/round",
+   "duration": "Time of concentration",
+   "save": "None",
+   "aoe": "Special",
+   "description": "<p>The possessor can communicate mind to mind with any other creature of intelligence 5 or greater, with no need to know its language. Several minds can communicate together by telepathy. Ordinary communication is possible, but telepathy gives no special influence over others.</p><ul><li>The other creature must be in sight, or be well known mentally to the possessor.</li><li>In the second case distance does not matter, as long as both are on the same plane of existence and no more than 186,000 miles (1 light second) apart. Telepathy can reach farther only if everyone involved is telepathic.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Telepathic Projection",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "Special",
+   "cost": "Special",
+   "duration": "Time of Concentration",
+   "save": "Neg.",
+   "aoe": "Special",
+   "description": "<p>This science allows two things: telepathic communication, but only with other creatures that have telepathy or ESP (compare Telepathy), and telepathic influence.</p><p><strong>Communication</strong> costs the same strength points as telepathy.</p><p><strong>Influence</strong> lets the possessor either implant a suggestion (exactly as the spell <em>suggestion</em>) in one or more creatures’ minds, or try to actually possess the mind of a single creature.</p><ul><li><strong>Range:</strong> every creature contacted must be within sight of the psionic, or, if their minds are known, within 6˝ plus a cumulative 1˝ per level: 7˝ at 1st level, 9˝ at 2nd, 12˝ at 3rd, etc. (6 + 1, 6 + 1 + 2, 6 + 1 + 2 + 3, 6 + 1 + 2 + 3 + 4, and so on).</li><li><strong>Number:</strong> 1 level or hit die of creatures per level of the psionic, cumulative: 1 at 1st level, 3 at 2nd, 6 at 3rd, etc.</li><li><strong>Cost of suggestion:</strong> 1 point per level or hit die for contact, plus 1 point per level or hit die to implant the suggestion.</li><li><strong>Cost of possession:</strong> 2 points for every point of the target’s intelligence, plus 1 for every point of its wisdom and charisma.</li><li><strong>Saving throw:</strong> every creature influenced may save versus magic; if it succeeds, neither suggestion nor possession works.</li></ul>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Shape Alteration",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "Special",
+   "duration": "Until again altered",
+   "save": "None",
+   "aoe": "Individual",
+   "description": "<p>This science closely resembles the magic-user spell <em>polymorph self</em>; see that spell for details. The individual can change his or her body’s size, form, and composition to almost any other, and the clothing and equipment worn and carried change to become parts of the new body.</p><ul><li><strong>What is gained:</strong> the new form’s normal means of breathing and moving, and strength in proportion to its size and nature. No other special abilities of that life form are gained; taking the shape of a red dragon gives no fiery breath weapon.</li><li><strong>Limits:</strong> the new shape may prevent the use of weapons, spells, etc.</li></ul><p><strong>Cost:</strong> 3 strength points, plus any of the following:</p><table class=\"book-table\"><tr><th>Alteration</th><th>Strength point cost</th></tr><tr><td>each +/−1,000 g.p. weight equivalent in body</td><td>1/1,000 g.p. weight equivalent</td></tr><tr><td>vegetable material to animal material, or vice versa*</td><td>1/100 g.p. weight equivalent</td></tr><tr><td>mineral material to vegetable material, or vice versa*</td><td>2/100 g.p. weight equivalent</td></tr><tr><td>mineral material to animal material, or vice versa*</td><td>3/100 g.p. weight equivalent</td></tr></table><p>* Includes changing garments and equipment, if any class of them exceeds 50 g.p. weight.</p><p><strong>Example:</strong> a fighter carrying 200 g.p. weight equivalent of vegetable material and 500 g.p. weight equivalent of mineral material wants to become a red dragon. The equipment adds 19 points to the basic 3, for 19 + 3 = 22 (as printed; by the rates above it would be 2 + 15 = 17). The dragon is assumed to be about 5 tons, or 10,000 pounds, or 100,000 g.p. weight equivalent, which needs 100 more points, for a total of 122 points. If the individual has that much strength, the equipment becomes parts of the dragon: the armor its scales, the weapons its claws, etc.</p>",
+   "source": "PHB Appendix I"
+  }
+ },
+ {
+  "name": "Teleportation",
+  "type": "psionic",
+  "img": "icons/svg/daze.svg",
+  "system": {
+   "kind": "major",
+   "range": "0",
+   "cost": "20",
+   "duration": "Instantaneous",
+   "save": "None",
+   "aoe": "Individual + special",
+   "description": "<p>Very similar to the magic-user spell <em>teleport</em>. The main difference is that psionic strength points must be spent to use it. If points beyond the required 20 are spent, each extra point lowers the chance of a mis-teleport (arriving too low or too high) by 1%, applied to the low and/or high chance.</p><h4>Psionic combat</h4><p>Creatures in psionic combat can do nothing else.</p><ol><li>Each combatant chooses its defense mode, its attack mode, and its opponent (if several creatures are on a side).</li><li>These choices are recorded, and the defenses and attacks are cross-referenced on the matrix to find the results.</li><li>Points spent on defense and attack, and points lost in combat, are noted and subtracted from each creature’s totals.</li></ol><ul><li><strong>Rate:</strong> 1 exchange per segment, 10 exchanges per melee round.</li><li><strong>Distraction:</strong> a creature whose attention is distracted by physical attack or by a spell’s damage or effect (such as <em>charm</em>, <em>hold</em>, etc.) cannot attack, though its defenses remain.</li><li><strong>Non-psionic creatures</strong> can be attacked psionically only with attack mode A, psionic blast, and a distracted creature (as above) cannot use this mode.</li></ul><h4>Multiple psionic operations</h4><ul><li><strong>Range:</strong> psionic creatures can link minds to increase the range of a discipline where range matters and an increase is otherwise possible. This adds a cumulative 50% to the range, so 2 individuals working together have 200% of the normal range (as printed). The base range is always that of the weakest individual in the group.</li><li><strong>Combat strength:</strong> 2 or more creatures can link “in series” to increase psionic combat power. Each additional creature adds 20% of its total strength (fractions rounded up) to the next individual in the chain. Example: creature A has 100 points, so it passes 20 to creature B, bringing B’s total to 140. B passes 28 points to creature C, whose base of 130 becomes 158. C passes 158 × .20, or 32 points, to creature D. A series should always feed from weakest to strongest.</li><li>Only the final link in the series can attack or be attacked, and it attacks and defends for all of them, but every creature in the series is affected by whatever happens to it.</li></ul><h4>Use of psionic powers</h4><p>Using psionic powers, or related magic spells (such as <em>clairaudience</em>, <em>clairvoyance</em>, <em>ESP</em>, detection, <em>levitation</em>, etc.), does not draw the attention of psionic creatures or monsters unless they are within range and attuned to such activity. The MM shows which creatures to expect and guard against when psionic powers are used.</p>",
+   "source": "PHB Appendix I"
+  }
+ }
+]

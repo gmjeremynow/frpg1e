@@ -1,0 +1,36 @@
+<div class="box npc-service">
+  <h3 class="box-title">Role &amp; Service <span class="hint">loyalty for those who serve a liege, DMG p.28-37</span></h3>
+  <div class="npc-fields">
+    <label class="fld"><span>Role</span><select name="system.npc.role">{{#each npc.roles}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label class="fld"><span>Occupation</span><input type="text" name="system.npc.occupation" value="{{npc.n.occupation}}" placeholder="e.g. heavy footman, sage, smith"></label>
+    {{#if npc.serving}}<label class="fld"><span>Wages</span><input type="text" name="system.npc.wages" value="{{npc.n.wages}}" placeholder="e.g. 2 gp/month"></label>
+    <label class="fld"><span>Liege</span><select name="system.npc.liegeId">{{#each npc.lieges}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    {{#if npc.byHand}}
+    <label class="fld"><span>Liege name</span><input type="text" name="system.npc.liegeName" value="{{npc.n.liegeName}}"></label>
+    <label class="fld narrow"><span>Liege cha.</span><input type="number" name="system.npc.liegeCha" value="{{npc.n.liegeCha}}" data-dtype="Number" min="3" max="25"></label>
+    <label class="fld"><span>Liege alignment</span><input type="text" name="system.npc.liegeAlignment" value="{{npc.n.liegeAlignment}}" placeholder="e.g. lawful good"></label>
+    {{/if}}{{/if}}
+  </div>
+  {{#if npc.zero}}
+  <p class="hint npc-zero">0-level: attacks and saves on the fighter 0 row (normal men such as men-at-arms are level 0, PHB p.105). To give the NPC a class, use the + in the Class &amp; Level box below.
+    <button type="button" class="mini mini-text" data-action="zeroHP" title="Roll 1d4+3"><i class="fa-solid fa-heart"></i> Man-at-arms hit points (4-7)</button></p>
+  {{else}}
+  <p class="hint npc-zero"><button type="button" class="mini mini-text" data-action="makeZero" title="Remove every class row"><i class="fa-solid fa-user"></i> Make 0-level</button></p>
+  {{/if}}
+  {{#if npc.L}}
+  <div class="loyalty-line">
+    <strong>Loyalty {{npc.L.score}}%: {{npc.L.band}}</strong> <span class="hint">{{npc.L.text}}</span>
+    {{#unless npc.L.alignKnown}}<span class="race-warn">Liege alignment not recognized: write it out, e.g. "lawful good".</span>{{/unless}}
+  </div>
+  <details class="loyalty-mods">
+    <summary>Loyalty modifiers <span class="hint">{{#each npc.L.parts}}{{label}} {{adnd-signed value}}{{#unless @last}} · {{/unless}}{{/each}}</span></summary>
+    <div class="loyalty-grid">
+      {{#each npc.groups}}
+      <label class="fld"><span>{{label}}</span><select name="system.npc.loyalty.{{key}}">{{#each choices}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+      {{/each}}
+      <label class="fld narrow"><span>Other</span><input type="number" name="system.npc.loyaltyMisc" value="{{npc.n.loyaltyMisc}}" data-dtype="Number"></label>
+    </div>
+    <p class="hint">Base 50% plus the liege's charisma loyalty adjustment, then the DMG p.36-37 modifiers; the alignment of the liege is added from the liege's alignment. Racial preference counts only for the liege and the most liked or disliked associated group. Cruel and domineering treatment applies only when the liege is absent, incapacitated or dead; with the liege near and in power, minuses count as pluses (fear). Only one special penalty and one special bonus apply.</p>
+  </details>
+  {{else}}<p class="hint">No loyalty score: this role does not serve a liege. Morale uses the 50% base (DMG p.67).</p>{{/if}}
+</div>

@@ -1,0 +1,237 @@
+<div class="adnd-sheet item-sheet">
+  <header class="sheet-head item-head">
+    <img class="portrait small" src="{{item.img}}" data-action="editImage" data-edit="img" alt="">
+    <div class="head-main">
+      <input class="char-name" type="text" name="name" value="{{item.name}}">
+      <span class="record-mark">{{#if isWeapon}}Weapon{{/if}}{{#if isArmor}}Armor{{/if}}{{#if isSpell}}{{listLabel}} {{#if system.level}}spell, {{ordLevel}} level{{else}}cantrip{{/if}}{{/if}}{{#if isGear}}Equipment{{#if system.category}}: {{system.category}}{{/if}}{{/if}}{{#if isMagic}}Magic item{{/if}}{{#if isTreasure}}Treasure{{/if}}{{#if isProficiency}}Nonweapon proficiency{{/if}}{{#if isPsionic}}{{#if (adnd-eq system.kind "major")}}Major{{else}}Minor{{/if}} psionic discipline{{/if}}{{#if system.source}} · {{system.source}}{{/if}}</span>
+    </div>
+  </header>
+
+  <div class="item-body">
+  {{#if isWeapon}}
+    <div class="box">
+      <h3 class="box-title">Weapon</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Use</span><select name="system.attackType">{{#each attackTypes}}<option value="{{value}}" {{adnd-selected value ../system.attackType}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Speed factor</span><input type="text" name="system.speed" value="{{system.speed}}"></label>
+        <label class="fld"><span>Damage S-M</span><input type="text" name="system.damage.sm" value="{{system.damage.sm}}"></label>
+        <label class="fld"><span>Damage L</span><input type="text" name="system.damage.l" value="{{system.damage.l}}"></label>
+        <label class="fld"><span>Printed S-M</span><input type="text" name="system.damage.smRange" value="{{system.damage.smRange}}"></label>
+        <label class="fld"><span>Printed L</span><input type="text" name="system.damage.lRange" value="{{system.damage.lRange}}"></label>
+        <label class="fld"><span>Magic to hit</span><input type="number" name="system.magic.hit" value="{{system.magic.hit}}" data-dtype="Number"></label>
+        <label class="fld"><span>Magic damage</span><input type="number" name="system.magic.dmg" value="{{system.magic.dmg}}" data-dtype="Number"></label>
+        <label class="fld"><span>Other to hit</span><input type="number" name="system.bonus.hit" value="{{system.bonus.hit}}" data-dtype="Number"></label>
+        <label class="fld"><span>Other damage</span><input type="number" name="system.bonus.dmg" value="{{system.bonus.dmg}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
+      </div>
+      <div class="checks">
+        <label class="check"><input type="checkbox" name="system.proficient" {{adnd-checked system.proficient}}> Proficient</label>
+        <label class="check"><input type="checkbox" name="system.natural" {{adnd-checked system.natural}}> Natural attack (no weapon vs. armor adjustment)</label>
+        <label class="fld"><span>Specialization</span><select name="system.specialized">{{#each specOptions}}<option value="{{value}}" {{adnd-selected value ../system.specialized}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Cavalier weapon of choice</span><select name="system.choice">{{#each choiceOptions}}<option value="{{value}}" {{adnd-selected value ../system.choice}}>{{label}}</option>{{/each}}</select></label>
+        <button type="button" class="mini-text" data-action="fillDamage" title="Convert the printed ranges to dice">Ranges → dice</button>
+      </div>
+      <div class="vs-list">
+        <span class="lbl">Special bonuses</span>
+        {{#each system.magic.vs}}
+        <div class="vs-row"><span>+</span><input type="number" class="w3" data-vs-index="{{@index}}" data-vs-field="bonus" value="{{bonus}}"> <span>vs.</span>
+          <input type="text" data-vs-index="{{@index}}" data-vs-field="text" value="{{text}}"> <button type="button" class="icon-btn" data-vs-remove="{{@index}}"><i class="fa-solid fa-xmark"></i></button></div>
+        {{/each}}
+        <button type="button" class="mini-text" data-vs-add>Add “+N vs. …”</button>
+        <p class="hint">Chosen in the attack dialog; replaces the normal magic bonus to hit and damage.</p>
+      </div>
+      <p class="hint">Damage takes a dice formula (1d8, 2d4) or a printed range (2-8). The books print ranges; hover the damage on the character sheet to see the printed range.</p>
+    </div>
+    {{#if (adnd-eq system.attackType "missile")}}{{else}}
+    <div class="box">
+      <h3 class="box-title">Melee: to hit adjustment by armor type</h3>
+      <table class="ledger acadj"><thead><tr>{{#each acCols}}<th>{{this}}</th>{{/each}}</tr></thead>
+        <tbody><tr>{{#each acCols}}<td><input type="number" data-acadj="system.acAdj" data-index="{{this}}" value="{{lookup ../system.acAdj this}}"></td>{{/each}}</tr></tbody></table>
+    </div>
+    {{/if}}
+    {{#if (adnd-eq system.attackType "melee")}}{{else}}
+    <div class="box">
+      <h3 class="box-title">Missile</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Rate of fire</span><input type="text" name="system.missile.rate" value="{{system.missile.rate}}"></label>
+        <label class="fld"><span>Short (&Prime;)</span><input type="number" name="system.missile.short" value="{{system.missile.short}}" data-dtype="Number"></label>
+        <label class="fld"><span>Medium (&Prime;)</span><input type="number" name="system.missile.medium" value="{{system.missile.medium}}" data-dtype="Number"></label>
+        <label class="fld"><span>Long (&Prime;)</span><input type="number" name="system.missile.long" value="{{system.missile.long}}" data-dtype="Number"></label>
+      </div>
+      <table class="ledger acadj"><thead><tr>{{#each acCols}}<th>{{this}}</th>{{/each}}</tr></thead>
+        <tbody><tr>{{#each acCols}}<td><input type="number" data-acadj="system.missile.acAdj" data-index="{{this}}" value="{{lookup ../system.missile.acAdj this}}"></td>{{/each}}</tr></tbody></table>
+      <p class="hint">Adjustments are for short range; medium range is −2 and long range −5.{{#if system.ammo}} Damage is for {{system.ammo}}.{{/if}}</p>
+    </div>
+    {{/if}}
+  {{/if}}
+
+  {{#if isArmor}}
+    <div class="box">
+      <h3 class="box-title">Armor</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Kind</span><select name="system.kind">{{#each kinds}}<option value="{{value}}" {{adnd-selected value ../system.kind}}>{{label}}</option>{{/each}}</select></label>
+        {{#if (adnd-eq system.kind "shield")}}
+        <label class="fld"><span>AC improvement</span><input type="number" name="system.shieldBonus" value="{{system.shieldBonus}}" data-dtype="Number"></label>
+        {{else}}
+        <label class="fld"><span>Base AC</span><input type="number" name="system.baseAC" value="{{system.baseAC}}" data-dtype="Number"></label>
+        <label class="fld"><span>Base move (&Prime;)</span><input type="number" name="system.baseMove" value="{{system.baseMove}}" data-dtype="Number"></label>
+        {{/if}}
+        <label class="fld"><span>Magic bonus</span><input type="number" name="system.magic" value="{{system.magic}}" data-dtype="Number"></label>
+        <label class="fld"><span>Bulk</span><input type="text" name="system.bulk" value="{{system.bulk}}"></label>
+        {{#unless (adnd-eq system.kind "shield")}}<label class="fld"><span>Thieving category</span><select name="system.thiefArmor">{{#each thiefArmorOptions}}<option value="{{value}}" {{adnd-selected value ../system.thiefArmor}}>{{label}}</option>{{/each}}</select></label>{{/unless}}
+        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="check"><input type="checkbox" name="system.equipped" {{adnd-checked system.equipped}}> Worn</label>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isSpell}}
+    <div class="box">
+      <h3 class="box-title">Spell</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Class</span><select name="system.list">{{#each lists}}<option value="{{value}}" {{adnd-selected value ../system.list}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Level</span><input type="number" name="system.level" value="{{system.level}}" data-dtype="Number" min="0" max="9" title="0 for a cantrip"></label>
+        <label class="fld"><span>School</span><input type="text" name="system.school" value="{{system.school}}"></label>
+        <label class="fld"><span>Components</span><input type="text" name="system.components" value="{{system.components}}"></label>
+        <label class="fld"><span>Range</span><input type="text" name="system.range" value="{{system.range}}"></label>
+        <label class="fld"><span>Casting time</span><input type="text" name="system.castingTime" value="{{system.castingTime}}"></label>
+        <label class="fld"><span>Duration</span><input type="text" name="system.duration" value="{{system.duration}}"></label>
+        <label class="fld"><span>Area of effect</span><input type="text" name="system.aoe" value="{{system.aoe}}"></label>
+        <label class="fld"><span>Saving throw</span><input type="text" name="system.save" value="{{system.save}}"></label>
+        <label class="fld"><span>Damage roll</span><input type="text" name="system.damage" value="{{system.damage}}" placeholder="e.g. 1d4+1"></label>
+        <label class="fld"><span>Healing roll</span><input type="text" name="system.heal" value="{{system.heal}}" placeholder="e.g. 1d8"></label>
+        <label class="fld"><span>Healing type</span><select name="system.healMode"><option value="" {{adnd-selected "" system.healMode}}>Up to maximum</option><option value="allBut" {{adnd-selected "allBut" system.healMode}}>All but the roll (heal)</option><option value="temp" {{adnd-selected "temp" system.healMode}}>May exceed maximum (aid)</option></select></label>
+        <label class="fld"><span>Memorized</span><input type="number" name="system.memorized" value="{{system.memorized}}" data-dtype="Number" min="0"></label>
+        <label class="check"><input type="checkbox" name="system.reversible" {{adnd-checked system.reversible}}> Reversible</label>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isMagic}}
+    <div class="box">
+      <h3 class="box-title">Magic Item</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Kind</span><select name="system.category">{{#each magicCategories}}<option value="{{value}}" {{adnd-selected value ../system.category}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Usable by</span><input type="text" name="system.usable" value="{{system.usable}}" placeholder="all classes"></label>
+        <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        {{#if (adnd-eq system.category "ammunition")}}
+        <label class="fld"><span>Fired from</span><select name="system.ammo">{{#each ammoKinds}}<option value="{{value}}" {{adnd-selected value ../system.ammo}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>To hit bonus</span><input type="number" name="system.bonus.hit" value="{{system.bonus.hit}}" data-dtype="Number"></label>
+        <label class="fld"><span>Damage bonus</span><input type="number" name="system.bonus.dmg" value="{{system.bonus.dmg}}" data-dtype="Number"></label>
+        {{else}}
+        <label class="fld"><span>Charges</span><input type="number" name="system.charges.value" value="{{system.charges.value}}" data-dtype="Number"></label>
+        <label class="fld"><span>Maximum charges</span><input type="number" name="system.charges.max" value="{{system.charges.max}}" data-dtype="Number"></label>
+        <label class="fld"><span>Protection</span><select name="system.protection.kind">{{#each protectionKinds}}<option value="{{value}}" {{adnd-selected value ../system.protection.kind}}>{{label}}</option>{{/each}}</select></label>
+        {{#if system.protection.kind}}
+        <label class="fld"><span>{{#if (adnd-eq system.protection.kind "bracers")}}Armor class{{else}}AC bonus{{/if}}</span><input type="number" name="system.protection.ac" value="{{system.protection.ac}}" data-dtype="Number"></label>
+        {{#unless (adnd-eq system.protection.kind "bracers")}}<label class="fld"><span>Save bonus</span><input type="number" name="system.protection.save" value="{{system.protection.save}}" data-dtype="Number"></label>{{/unless}}
+        {{/if}}
+        <label class="check"><input type="checkbox" name="system.equipped" {{adnd-checked system.equipped}}> Worn / in use</label>
+        <label class="fld"><span>Healing roll</span><input type="text" name="system.heal" value="{{system.heal}}" placeholder="e.g. 2d4+2"></label>
+        <label class="fld"><span>Heals</span><select name="system.healTarget"><option value="self" {{adnd-selected "self" system.healTarget}}>The user (potions)</option><option value="touch" {{adnd-selected "touch" system.healTarget}}>Whoever it is applied to</option></select></label>
+        {{/if}}
+      </div>
+      {{#if system.protection.kind}}<p class="hint">Applied while worn. The description's table gives this item's actual bonus; set it above. Ring: no armor class bonus with magic armor, and only the strongest ring counts. Cloak: not with magic armor, armor other than leather, or a shield. Bracers: not with body armor.</p>{{/if}}
+      {{#if system.quantityRoll}}<p class="hint">Found in groups of {{system.quantityRoll}} (rolled by the treasure roller).</p>{{/if}}
+    </div>
+  {{/if}}
+
+  {{#if hasDice}}
+    <div class="box dice-box">
+      <h3 class="box-title">Dice from the description</h3>
+      {{#if system.rolls.length}}
+      <table class="dice-table">
+        <thead><tr>{{#if isMagic}}<th>Function</th>{{/if}}<th>Roll</th><th>Formula</th><th></th></tr></thead>
+        <tbody>
+        {{#each system.rolls as |r i|}}
+          <tr>
+            {{#if ../isMagic}}<td class="dim">{{r.fn}}{{#if r.charges}} ({{r.charges}}){{/if}}</td>{{/if}}
+            <td><input type="text" value="{{r.label}}" data-roll-index="{{i}}" data-roll-field="label">{{#if r.note}}<div class="hint">{{r.note}}</div>{{/if}}</td>
+            <td>{{#if r.choices.length}}{{#each r.choices as |c j|}}<div class="choice-line"><span>{{c.label}}</span><input type="text" value="{{c.formula}}" data-roll-index="{{i}}" data-roll-choice="{{j}}"></div>{{/each}}
+                {{else}}{{#if (adnd-eq r.kind "table")}}<input type="text" value="{{r.table.formula}}" data-roll-index="{{i}}" data-roll-field="table.formula"> <span class="hint">table, {{r.table.rows.length}} entries</span>
+                {{else}}<input type="text" value="{{r.formula}}" data-roll-index="{{i}}" data-roll-field="formula">{{#if r.each}} <span class="hint">× {{r.each}}</span>{{/if}}{{/if}}{{/if}}
+                {{#if (adnd-eq r.save "half")}}<span class="hint">save ½</span>{{/if}}{{#if (adnd-eq r.save "neg")}}<span class="hint">save negates</span>{{/if}}</td>
+            <td><a class="tiny" data-roll-remove="{{i}}" title="Remove this roll"><i class="fa-solid fa-xmark"></i></a></td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+      <p class="hint">@L is the caster's (or user's) level, asked for when the roll is made. NdSminK counts each die as at least K. Printed ranges with no dice are rolled with dice that reproduce the range exactly.</p>
+      {{else}}<p class="hint">No dice are catalogued for this {{#if isSpell}}spell{{else}}item{{/if}}.</p>{{/if}}
+      <button type="button" class="tiny" data-roll-add>Add a roll</button>
+    </div>
+  {{/if}}
+
+  {{#if isProficiency}}
+    <div class="box">
+      <h3 class="box-title">Nonweapon Proficiency</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Group</span><select name="system.group">{{#each profGroups}}<option value="{{value}}" {{adnd-selected value ../system.group}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Slots required</span><input type="number" name="system.slots" value="{{system.slots}}" data-dtype="Number" min="0"></label>
+        <label class="fld"><span>Appropriate ability</span><select name="system.ability">{{#each abilityOptions}}<option value="{{value}}" {{adnd-selected value ../system.ability}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Die roll modifier</span><input type="number" name="system.modifier" value="{{system.modifier}}" data-dtype="Number" title="Added to the d20 (WSG convention): negative is easier"></label>
+        <label class="fld"><span>Improvements (−2 each)</span><input type="number" name="system.improvements" value="{{system.improvements}}" data-dtype="Number" min="0"></label>
+        <label class="fld"><span>Specialty</span><input type="text" name="system.specialty" value="{{system.specialty}}" placeholder="animal, mount…"></label>
+        <label class="check"><input type="checkbox" name="system.check" {{adnd-checked system.check}}> Uses Proficiency Checks</label>
+        <label class="check"><input type="checkbox" name="system.everyUse" {{adnd-checked system.everyUse}}> Check every use (DSG *)</label>
+      </div>
+      <p class="hint">Modifiers are stored as the WSG prints them: added to the d20 roll, so negative is easier. The DSG prints the same numbers with the opposite sign, as an addition to the ability score.</p>
+    </div>
+  {{/if}}
+
+  {{#if isTreasure}}
+    <div class="box">
+      <h3 class="box-title">Treasure</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Kind</span><select name="system.kind">{{#each treasureKinds}}<option value="{{value}}" {{adnd-selected value ../system.kind}}>{{label}}</option>{{/each}}</select></label>
+        <label class="fld"><span>Value each (gp)</span><input type="number" name="system.value" value="{{system.value}}" data-dtype="Number"></label>
+        <label class="fld"><span>Base value (gp)</span><input type="number" name="system.baseValue" value="{{system.baseValue}}" data-dtype="Number"></label>
+        <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+      </div>
+      {{#if system.property}}<p class="hint">Reputed property: {{system.property}}</p>{{/if}}
+    </div>
+  {{/if}}
+
+  {{#if hasValue}}<p class="item-value">Experience points {{#if system.xp}}{{system.xp}}{{else}}—{{/if}} · Sale value {{#if system.gpValue}}{{system.gpValue}} gp{{else}}—{{/if}}</p>{{/if}}
+
+  {{#if isPsionic}}
+    <div class="box">
+      <h3 class="box-title">Discipline</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Kind</span><select name="system.kind"><option value="minor" {{adnd-selected "minor" system.kind}}>Minor</option><option value="major" {{adnd-selected "major" system.kind}}>Major</option></select></label>
+        <label class="fld"><span>Range</span><input type="text" name="system.range" value="{{system.range}}"></label>
+        <label class="fld"><span>Strength cost</span><input type="text" name="system.cost" value="{{system.cost}}"></label>
+        <label class="fld"><span>Duration</span><input type="text" name="system.duration" value="{{system.duration}}"></label>
+        <label class="fld"><span>Area of effect</span><input type="text" name="system.aoe" value="{{system.aoe}}"></label>
+        <label class="fld"><span>Saving throw</span><input type="text" name="system.save" value="{{system.save}}"></label>
+        <label class="fld"><span>Level of mastery</span><input type="number" name="system.mastery" value="{{system.mastery}}" data-dtype="Number" placeholder="character level"></label>
+      </div>
+      <p class="hint">Level of mastery: blank uses the character's level of experience (PHB p.111). For multi-class characters the highest class level is used: <strong>house ruling</strong>, the PHB does not say which class counts.</p>
+      <p class="hint">Cost as a number ("10") or per period ("3/turn") is charged automatically; anything else asks for the amount when used.</p>
+    </div>
+  {{/if}}
+
+  {{#if isGear}}
+    <div class="box">
+      <h3 class="box-title">Item</h3>
+      <div class="form-grid">
+        <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight each (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="fld"><span>Cost / notes</span><input type="text" name="system.cost" value="{{system.cost}}"></label>
+        <label class="fld"><span>Ammunition for</span><select name="system.ammo">{{#each gearAmmoKinds}}<option value="{{value}}" {{adnd-selected value ../system.ammo}}>{{label}}</option>{{/each}}</select></label>
+      </div>
+      {{#if system.ammo}}<p class="hint">Counted down by one each time a matching launcher fires it.</p>{{/if}}
+    </div>
+  {{/if}}
+
+    <div class="box">
+      <h3 class="box-title">Description</h3>
+      {{#if editable}}
+      <div class="pm-slot" data-pm-name="system.description" data-pm-enriched="descriptionHTML"><prose-mirror name="system.description" value="{{system.description}}" document-uuid="{{item.uuid}}" toggled>{{{descriptionHTML}}}</prose-mirror></div>
+      {{else}}<div class="rich">{{{descriptionHTML}}}</div>{{/if}}
+    </div>
+  </div>
+</div>

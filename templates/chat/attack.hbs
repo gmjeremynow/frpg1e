@@ -1,0 +1,29 @@
+<div class="frpg1e-card attack-card">
+  <header class="card-head"><img src="{{img}}" alt=""><div><div class="card-title">{{title}}</div><div class="card-sub">{{mode}}{{#if backstab}} · back stab ×{{backstab}}{{/if}}</div></div></header>
+  <div class="roll-line">
+    <span class="die" title="Natural d20">{{natural}}</span>
+    {{#each mods}}<span class="mod" title="{{label}}">{{text}}</span>{{/each}}
+    <span class="eq">=</span><span class="adnd-big">{{total}}</span>
+  </div>
+  {{#if mods.length}}<div class="mod-list">{{#each mods}}{{label}} {{text}}{{#unless @last}}, {{/unless}}{{/each}}</div>{{/if}}
+  {{#each results}}
+  <div class="target-line {{#if hit}}hit{{else}}miss{{/if}}">
+    <span class="t-name">{{name}}</span>
+    <span class="gm-only t-need">AC {{ac}} needs {{need}}{{#if adjText}} · weapon vs. armor {{adjText}} → {{total}}{{/if}}</span>
+    <span class="verdict">{{#if hit}}HIT{{else}}MISS{{/if}}</span>
+  </div>
+  {{/each}}
+  {{#if untargeted}}<div class="target-line"><span class="t-name">No target</span><span class="verdict small">{{#if (adnd-eq bestAC null)}}hits no armor class{{else}}hits AC {{bestAC}} or worse{{/if}}</span></div>
+  {{#if armorAdjNote}}<div class="hint">{{armorAdjNote}}</div>{{/if}}{{/if}}
+  {{#if specNote}}<div class="hint">{{specNote}}</div>{{/if}}
+  {{#if ammoNote}}<div class="hint">{{ammoNote}}</div>{{/if}}
+  {{#if dmg.weapon}}
+  <div class="hint">Damage by the weapon used{{#if dmg.bonus}}, {{dmg.bonus}}{{/if}}. Add the weapon (+ Weapon) to roll its damage.</div>
+  {{else}}
+  <div class="card-buttons">
+    <button type="button" data-card-action="damage-sm" {{#unless largeTarget}}class="primary"{{/unless}}>Damage S/M <small>{{dmg.sm}}</small></button>
+    <button type="button" data-card-action="damage-l" {{#if largeTarget}}class="primary"{{/if}}>Damage L <small>{{dmg.l}}</small></button>
+  </div>
+  {{#if dmg.bonus}}<div class="hint">Includes {{dmg.bonus}}{{#if (adnd-eq dmg.mult 1)}}{{else}}; weapon dice ×{{dmg.mult}}{{/if}}.</div>{{/if}}
+  {{/if}}
+</div>

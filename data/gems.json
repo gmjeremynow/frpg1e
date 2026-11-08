@@ -1,0 +1,956 @@
+[
+ {
+  "name": "Azurite",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "mottled deep blue",
+   "opaque": true,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Mottled deep blue.</p><p>Opaque.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Banded Agate",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "striped brown and blue and white and reddish",
+   "opaque": false,
+   "property": "Restful and safe sleep",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Striped brown and blue and white and reddish.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property (listed for agate): Restful and safe sleep. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Blue Quartz",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "pale blue",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Pale blue.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Eye Agate",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "circles of gray, white, brown, blue and/or green",
+   "opaque": false,
+   "property": "Restful and safe sleep",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Circles of gray, white, brown, blue and/or green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property (listed for agate): Restful and safe sleep. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Hematite",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "gray-black",
+   "opaque": true,
+   "property": "Aids fighters, heals wounds",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Gray-black.</p><p>Opaque.</p><p>Reputed property: Aids fighters, heals wounds. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Lapis Lazuli",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "light and dark blue with yellow flecks",
+   "opaque": true,
+   "property": "Raises morale, courage",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Light and dark blue with yellow flecks.</p><p>Opaque.</p><p>Reputed property: Raises morale, courage. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Malachite",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "striated light and dark green",
+   "opaque": true,
+   "property": "Protection from falling",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Striated light and dark green.</p><p>Opaque.</p><p>Reputed property: Protection from falling. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Moss Agate",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "pink or yellow-white with grayish or greenish “moss markings”",
+   "opaque": false,
+   "property": "Restful and safe sleep",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Pink or yellow-white with grayish or greenish “moss markings”.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property (listed for agate): Restful and safe sleep. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Obsidian",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "black",
+   "opaque": true,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Black.</p><p>Opaque.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Rhodochrosite",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "light pink",
+   "opaque": true,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Light pink.</p><p>Opaque.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Tiger Eye",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "rich brown with golden center under-hue",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Rich brown with golden center under-hue.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Turquoise",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "ornamental",
+   "baseValue": 10,
+   "value": 10,
+   "quantity": 1,
+   "weight": 1,
+   "color": "light blue-green",
+   "opaque": true,
+   "property": "Aids horses in all ways (but stone shatters when it operates)",
+   "source": "DMG",
+   "description": "<p>Ornamental stone, base value 10 gp. Light blue-green.</p><p>Opaque.</p><p>Reputed property: Aids horses in all ways (but stone shatters when it operates). The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Bloodstone",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "dark gray with red flecks",
+   "opaque": true,
+   "property": "Weather control",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Dark gray with red flecks.</p><p>Opaque.</p><p>Reputed property: Weather control. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Carnelian",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "orange to reddish brown (also called Sard)",
+   "opaque": true,
+   "property": "Protection from evil",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Orange to reddish brown (also called Sard).</p><p>Opaque.</p><p>Reputed property: Protection from evil. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Chalcedony",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "white",
+   "opaque": true,
+   "property": "Wards off undead",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. White.</p><p>Opaque.</p><p>Reputed property: Wards off undead. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Chrysoprase",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "apple green to emerald green",
+   "opaque": false,
+   "property": "Invisibility",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Apple green to emerald green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Invisibility. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Citrine",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "pale yellow brown",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Pale yellow brown.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Jasper",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "blue, black to brown",
+   "opaque": true,
+   "property": "Protection from venom",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Blue, black to brown.</p><p>Opaque.</p><p>Reputed property: Protection from venom. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Moonstone",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "white with pale blue glow",
+   "opaque": false,
+   "property": "Causes lycanthropy",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. White with pale blue glow.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Causes lycanthropy. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Onyx",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "bands of black and white or pure black or white",
+   "opaque": true,
+   "property": "Causes discord amongst enemies",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Bands of black and white or pure black or white.</p><p>Opaque.</p><p>Reputed property: Causes discord amongst enemies. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Rock Crystal",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "clear",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Clear.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Sardonyx",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "bands of sard (red) and onyx (white) or sard*",
+   "opaque": true,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Bands of sard (red) and onyx (white) or sard*.</p><p>Opaque.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Smoky Quartz",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "gray, yellow, or blue (Cairngorm), all light",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Gray, yellow, or blue (Cairngorm), all light.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Star Rose Quartz",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "translucent rosy stone with white “star” center",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Translucent rosy stone with white “star” center.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Zircon",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "semi-precious",
+   "baseValue": 50,
+   "value": 50,
+   "quantity": 1,
+   "weight": 1,
+   "color": "clear pale blue-green",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Semi-precious stone, base value 50 gp. Clear pale blue-green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Amber",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "watery gold to rich gold",
+   "opaque": false,
+   "property": "Wards off diseases",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Watery gold to rich gold.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Wards off diseases. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Alexandrite",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "dark green",
+   "opaque": false,
+   "property": "Good omens",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Dark green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Good omens. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Amethyst",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "deep purple",
+   "opaque": false,
+   "property": "Prevents drunkenness or drugging",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Deep purple.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Prevents drunkenness or drugging. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Aquamarine",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 500,
+   "value": 500,
+   "quantity": 1,
+   "weight": 1,
+   "color": "pale blue green",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 500 gp. Pale blue green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Chrysoberyl",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "yellow green to green",
+   "opaque": false,
+   "property": "Protection from possession",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Yellow green to green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Protection from possession. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Coral",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "crimson",
+   "opaque": true,
+   "property": "Calms weather, safety in river crossing, cures madness, stanches bleeding",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Crimson.</p><p>Opaque.</p><p>Reputed property: Calms weather, safety in river crossing, cures madness, stanches bleeding. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Garnet",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "red, brown-green, or violet (the most prized)",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp (500 gp for the most prized variety). Red, brown-green, or violet (the most prized).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Jade",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "light green, deep green, green and white, white",
+   "opaque": false,
+   "property": "Skill at music and musical instruments",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Light green, deep green, green and white, white.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Skill at music and musical instruments. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Jet",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "deep black",
+   "opaque": true,
+   "property": "Soul object material",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Deep black.</p><p>Opaque.</p><p>Reputed property: Soul object material. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Pearl",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "lustrous white, yellowish, pinkish, etc. to pure black (the most prized)",
+   "opaque": true,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp (500 gp for the most prized variety). Lustrous white, yellowish, pinkish, etc. to pure black (the most prized).</p><p>Opaque.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Peridot",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 500,
+   "value": 500,
+   "quantity": 1,
+   "weight": 1,
+   "color": "rich olive green (Chrysolite)",
+   "opaque": false,
+   "property": "Wards off enchantments",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 500 gp. Rich olive green (Chrysolite).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Wards off enchantments. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Spinel",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "red, red-brown, deep green, or very deep blue (the most prized)",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp (500 gp for the most prized variety). Red, red-brown, deep green, or very deep blue (the most prized).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Topaz",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 500,
+   "value": 500,
+   "quantity": 1,
+   "weight": 1,
+   "color": "golden yellow",
+   "opaque": false,
+   "property": "Wards off evil spells",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 500 gp. Golden yellow.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Wards off evil spells. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Tourmaline",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "fancy",
+   "baseValue": 100,
+   "value": 100,
+   "quantity": 1,
+   "weight": 1,
+   "color": "green pale, blue pale, brown pale, or reddish pale",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Fancy stone, base value 100 gp. Green pale, blue pale, brown pale, or reddish pale.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Black Opal",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "dark green with black mottling and golden flecks",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Dark green with black mottling and golden flecks.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Black Sapphire",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 5000,
+   "value": 5000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "lustrous black with glowing highlights",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 5,000 gp. Lustrous black with glowing highlights.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Diamond",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 5000,
+   "value": 5000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "clear blue-white with lesser stones clear white or pale tints",
+   "opaque": false,
+   "property": "Invulnerability vs. undead",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 5,000 gp. Clear blue-white with lesser stones clear white or pale tints.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Invulnerability vs. undead. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Emerald",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "deep bright green",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Deep bright green.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Fire Opal",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "fiery red",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Fiery red.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Jacinth",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 5000,
+   "value": 5000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "fiery orange (Corundum)",
+   "opaque": false,
+   "property": "Luck travelling, wards off plague, protection from fire",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 5,000 gp. Fiery orange (Corundum).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Luck travelling, wards off plague, protection from fire. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Opal",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "pale blue with green and golden mottling",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Pale blue with green and golden mottling.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Oriental Amethyst",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "rich purple (Corundum)",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Rich purple (Corundum).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Oriental Emerald",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 5000,
+   "value": 5000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "clear bright green (Corundum)",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 5,000 gp. Clear bright green (Corundum).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Oriental Topaz",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "fiery yellow (Corundum)",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Fiery yellow (Corundum).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Ruby",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 5000,
+   "value": 5000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "clear red to deep crimson (Corundum)",
+   "opaque": false,
+   "property": "Gives good luck",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 5,000 gp. Clear red to deep crimson (Corundum).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Gives good luck. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Sapphire",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "clear to medium blue (Corundum)",
+   "opaque": false,
+   "property": "Aids understanding of problems, kills spiders, boosts magical abilities",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Clear to medium blue (Corundum).</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Aids understanding of problems, kills spiders, boosts magical abilities. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Star Ruby",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "translucent ruby with white “star” center",
+   "opaque": false,
+   "property": "",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Translucent ruby with white “star” center.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ },
+ {
+  "name": "Star Sapphire",
+  "type": "treasure",
+  "img": "icons/svg/jewel.svg",
+  "system": {
+   "kind": "gem",
+   "class": "gem",
+   "baseValue": 1000,
+   "value": 1000,
+   "quantity": 1,
+   "weight": 1,
+   "color": "translucent sapphire with white “star” center",
+   "opaque": false,
+   "property": "Protection from magic",
+   "source": "DMG",
+   "description": "<p>Gem stone, base value 1,000 gp. Translucent sapphire with white “star” center.</p><p>Transparent or translucent (the DMG marks translucent stones in italics, which the source text does not preserve).</p><p>Reputed property: Protection from magic. The DMG notes these properties give no magical benefit by themselves.</p><p class=\"item-ref\">DMG p.25-26</p>"
+  }
+ }
+]

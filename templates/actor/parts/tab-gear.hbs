@@ -1,0 +1,78 @@
+    <div class="box wealth">
+      <h3 class="box-title">Wealth</h3>
+      <div class="coin-row">
+        <label class="coin"><span>Platinum</span><input type="number" name="system.money.pp" value="{{coins.pp}}" data-dtype="Number"></label>
+        <label class="coin"><span>Gold</span><input type="number" name="system.money.gp" value="{{coins.gp}}" data-dtype="Number"></label>
+        <label class="coin"><span>Electrum</span><input type="number" name="system.money.ep" value="{{coins.ep}}" data-dtype="Number"></label>
+        <label class="coin"><span>Silver</span><input type="number" name="system.money.sp" value="{{coins.sp}}" data-dtype="Number"></label>
+        <label class="coin"><span>Copper</span><input type="number" name="system.money.cp" value="{{coins.cp}}" data-dtype="Number"></label>
+      </div>
+      <label class="fld wide"><span>Other treasure notes</span><input type="text" name="system.treasure" value="{{system.treasure}}"></label>
+    </div>
+    <div class="box magic-list">
+      <h3 class="box-title">Magic Items
+        <button type="button" class="mini" data-action="itemCreate" data-type="magic" title="Add magic item"><i class="fa-solid fa-plus"></i></button>
+      </h3>
+      <table class="ledger">
+        <thead><tr><th title="Worn or in hand">Worn</th><th class="left">Item</th><th class="left">Kind</th><th>Qty / Charges</th><th></th><th></th></tr></thead>
+        <tbody>
+        {{#each magicItems}}
+        <tr data-item-id="{{id}}" class="{{#if s.equipped}}worn{{/if}}">
+          <td>{{#if wearable}}<input type="checkbox" data-item-field="system.equipped" {{adnd-checked s.equipped}}>{{/if}}</td>
+          <td class="left"><a data-action="itemEdit">{{name}}</a>{{#if s.usable}} <span class="hint">({{s.usable}})</span>{{/if}}</td>
+          <td class="left hint">{{cat}}{{#if s.protection.kind}} · {{#if (adnd-eq s.protection.kind "bracers")}}AC {{s.protection.ac}}{{else}}+{{s.protection.ac}} AC / +{{s.protection.save}} saves{{/if}}{{/if}}{{#if s.ammo}} · {{adnd-signed s.bonus.hit}}{{/if}}</td>
+          <td class="num">
+            {{#if charged}}<button type="button" class="tiny" data-action="chargeAdjust" data-delta="-1">−</button> <input type="number" class="w3" data-item-field="system.charges.value" data-dtype="Number" value="{{s.charges.value}}">{{#if s.charges.max}}/{{s.charges.max}}{{/if}} <button type="button" class="tiny" data-action="chargeAdjust" data-delta="1">+</button>
+            {{else}}{{#if stack}}<input type="number" class="w3" data-item-field="system.quantity" data-dtype="Number" value="{{s.quantity}}">{{/if}}{{/if}}
+          </td>
+          <td>{{#unless (adnd-eq s.category "ammunition")}}<button type="button" class="cast-btn" data-action="magicUse">{{useLabel}}</button>{{/unless}}</td>
+          <td><button type="button" class="icon-btn" data-action="itemDelete"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        {{else}}<tr><td colspan="6" class="hint">Drag magic items here from the 1e FRPG Magic Items compendium.</td></tr>{{/each}}
+        </tbody>
+      </table>
+      {{#if protection.notes.length}}<p class="hint">{{#each protection.notes}}{{this}}. {{/each}}</p>{{/if}}
+    </div>
+
+    <div class="box treasure-list">
+      <h3 class="box-title">Gems, Jewelry &amp; Valuables <span class="hint">total {{treasureTotal}} gp</span>
+        <button type="button" class="mini" data-action="itemCreate" data-type="treasure" title="Add treasure"><i class="fa-solid fa-plus"></i></button>
+      </h3>
+      <table class="ledger">
+        <thead><tr><th class="left">Item</th><th class="left">Kind</th><th>Qty</th><th>Value each (gp)</th><th>Total</th><th></th></tr></thead>
+        <tbody>
+        {{#each treasureItems}}
+        <tr data-item-id="{{id}}">
+          <td class="left"><a data-action="itemEdit">{{name}}</a></td>
+          <td class="left hint">{{kind}}</td>
+          <td><input type="number" class="w3" data-item-field="system.quantity" data-dtype="Number" value="{{s.quantity}}"></td>
+          <td><input type="number" class="w5" data-item-field="system.value" data-dtype="Number" value="{{s.value}}"></td>
+          <td class="num">{{totalText}}</td>
+          <td><button type="button" class="icon-btn" data-action="itemDelete"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        {{else}}<tr><td colspan="6" class="hint">No gems or jewelry.</td></tr>{{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box gear-list">
+      <h3 class="box-title">Possessions
+        <button type="button" class="mini" data-action="itemCreate" data-type="gear" title="Add item"><i class="fa-solid fa-plus"></i></button>
+      </h3>
+      <table class="ledger">
+        <thead><tr><th class="left">Item</th><th>Qty</th><th>Weight (gp)</th><th>Notes</th><th></th></tr></thead>
+        <tbody>
+        {{#each gear}}
+        <tr data-item-id="{{id}}">
+          <td class="left"><a data-action="itemEdit">{{name}}</a></td>
+          <td><input type="number" class="w4" data-item-field="system.quantity" data-dtype="Number" value="{{system.quantity}}"></td>
+          <td><input type="number" class="w4" data-item-field="system.weight" data-dtype="Number" value="{{system.weight}}"></td>
+          <td class="left hint">{{system.cost}}</td>
+          <td><button type="button" class="icon-btn" data-action="itemDelete"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        {{else}}<tr><td colspan="5" class="hint">Nothing carried.</td></tr>{{/each}}
+        </tbody>
+      </table>
+      <p class="enc">Items carried weigh <strong>{{system.encumbrance}}</strong> gp (about {{encLbs}} lb). Strength weight allowance {{adnd-signed system.mods.str.wt}} gp. Coins are not included.</p>
+    </div>
+  

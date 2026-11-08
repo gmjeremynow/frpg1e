@@ -1,0 +1,22 @@
+<div class="box armor-list">
+      <h3 class="box-title">Armor &amp; Shields
+        <button type="button" class="mini" data-action="itemCreate" data-type="armor" title="Add armor"><i class="fa-solid fa-plus"></i></button>
+      </h3>
+      <table class="ledger">
+        <thead><tr><th>Worn</th><th class="left">Armor</th><th>Base AC</th><th>Magic</th><th>Bulk</th><th>Move</th><th>Wt.</th><th></th></tr></thead>
+        <tbody>
+        {{#each armor}}
+        <tr data-item-id="{{id}}">
+          <td><input type="checkbox" data-item-field="system.equipped" {{adnd-checked system.equipped}}></td>
+          <td class="left"><a data-action="itemEdit">{{name}}</a></td>
+          <td class="num">{{#if (adnd-eq system.kind "shield")}}−{{system.shieldBonus}}{{else}}{{system.baseAC}}{{/if}}</td>
+          <td><input type="number" class="w3" data-item-field="system.magic" data-dtype="Number" value="{{system.magic}}"></td>
+          <td>{{system.bulk}}</td>
+          <td class="num">{{#if system.baseMove}}{{system.baseMove}}&Prime;{{/if}}</td>
+          <td class="num">{{system.weight}}</td>
+          <td><button type="button" class="icon-btn" data-action="itemDelete"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        {{else}}<tr><td colspan="8" class="hint">No armor.</td></tr>{{/each}}
+        </tbody>
+      </table>
+    </div>

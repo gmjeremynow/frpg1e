@@ -1,0 +1,6575 @@
+{
+ "DMG": {
+  "A": [
+   {
+    "range": [
+     1,
+     3
+    ],
+    "name": "Potion of Animal Control"
+   },
+   {
+    "range": [
+     4,
+     6
+    ],
+    "name": "Potion of Clairaudience"
+   },
+   {
+    "range": [
+     7,
+     9
+    ],
+    "name": "Potion of Clairvoyance"
+   },
+   {
+    "range": [
+     10,
+     12
+    ],
+    "name": "Potion of Climbing"
+   },
+   {
+    "range": [
+     13,
+     15
+    ],
+    "name": "Potion of Delusion"
+   },
+   {
+    "range": [
+     16,
+     18
+    ],
+    "name": "Potion of Diminution"
+   },
+   {
+    "range": [
+     19,
+     20
+    ],
+    "name": "Potion of Dragon Control"
+   },
+   {
+    "range": [
+     21,
+     23
+    ],
+    "name": "Potion of ESP"
+   },
+   {
+    "range": [
+     24,
+     26
+    ],
+    "name": "Potion of Extra-Healing"
+   },
+   {
+    "range": [
+     27,
+     29
+    ],
+    "name": "Potion of Fire Resistance"
+   },
+   {
+    "range": [
+     30,
+     32
+    ],
+    "name": "Potion of Flying"
+   },
+   {
+    "range": [
+     33,
+     34
+    ],
+    "name": "Potion of Gaseous Form"
+   },
+   {
+    "range": [
+     35,
+     36
+    ],
+    "name": "Potion of Giant Control"
+   },
+   {
+    "range": [
+     37,
+     39
+    ],
+    "name": "Potion of Giant Strength"
+   },
+   {
+    "range": [
+     40,
+     41
+    ],
+    "name": "Potion of Growth"
+   },
+   {
+    "range": [
+     42,
+     47
+    ],
+    "name": "Potion of Healing"
+   },
+   {
+    "range": [
+     48,
+     49
+    ],
+    "name": "Potion of Heroism"
+   },
+   {
+    "range": [
+     50,
+     51
+    ],
+    "name": "Potion of Human Control"
+   },
+   {
+    "range": [
+     52,
+     54
+    ],
+    "name": "Potion of Invisibility"
+   },
+   {
+    "range": [
+     55,
+     57
+    ],
+    "name": "Potion of Invulnerability"
+   },
+   {
+    "range": [
+     58,
+     60
+    ],
+    "name": "Potion of Levitation"
+   },
+   {
+    "range": [
+     61,
+     63
+    ],
+    "name": "Potion of Longevity"
+   },
+   {
+    "range": [
+     64,
+     66
+    ],
+    "name": "Oil of Etherealness"
+   },
+   {
+    "range": [
+     67,
+     69
+    ],
+    "name": "Oil of Slipperiness"
+   },
+   {
+    "range": [
+     70,
+     72
+    ],
+    "name": "Philter of Love"
+   },
+   {
+    "range": [
+     73,
+     75
+    ],
+    "name": "Philter of Persuasiveness"
+   },
+   {
+    "range": [
+     76,
+     78
+    ],
+    "name": "Potion of Plant Control"
+   },
+   {
+    "range": [
+     79,
+     81
+    ],
+    "name": "Potion of Polymorph (self)"
+   },
+   {
+    "range": [
+     82,
+     84
+    ],
+    "name": "Potion of Poison"
+   },
+   {
+    "range": [
+     85,
+     87
+    ],
+    "name": "Potion of Speed"
+   },
+   {
+    "range": [
+     88,
+     90
+    ],
+    "name": "Potion of Super-Heroism"
+   },
+   {
+    "range": [
+     91,
+     93
+    ],
+    "name": "Potion of Sweet Water"
+   },
+   {
+    "range": [
+     94,
+     96
+    ],
+    "name": "Potion of Treasure Finding"
+   },
+   {
+    "range": [
+     97,
+     97
+    ],
+    "name": "Potion of Undead Control"
+   },
+   {
+    "range": [
+     98,
+     100
+    ],
+    "name": "Potion of Water Breathing"
+   }
+  ],
+  "C": [
+   {
+    "range": [
+     1,
+     6
+    ],
+    "name": "Ring of Contrariness"
+   },
+   {
+    "range": [
+     7,
+     12
+    ],
+    "name": "Ring of Delusion"
+   },
+   {
+    "range": [
+     13,
+     14
+    ],
+    "name": "Ring of Djinni Summoning"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "name": "Ring of Elemental Command"
+   },
+   {
+    "range": [
+     16,
+     21
+    ],
+    "name": "Ring of Feather Falling"
+   },
+   {
+    "range": [
+     22,
+     27
+    ],
+    "name": "Ring of Fire Resistance"
+   },
+   {
+    "range": [
+     28,
+     30
+    ],
+    "name": "Ring of Free Action"
+   },
+   {
+    "range": [
+     31,
+     33
+    ],
+    "name": "Ring of Human Influence"
+   },
+   {
+    "range": [
+     34,
+     40
+    ],
+    "name": "Ring of Invisibility"
+   },
+   {
+    "range": [
+     41,
+     43
+    ],
+    "name": "Ring of Mammal Control"
+   },
+   {
+    "range": [
+     44,
+     44
+    ],
+    "name": "Ring of Multiple Wishes"
+   },
+   {
+    "range": [
+     45,
+     60
+    ],
+    "name": "Ring of Protection"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "name": "Ring of Regeneration"
+   },
+   {
+    "range": [
+     62,
+     63
+    ],
+    "name": "Ring of Shooting Stars"
+   },
+   {
+    "range": [
+     64,
+     65
+    ],
+    "name": "Ring of Spell Storing"
+   },
+   {
+    "range": [
+     66,
+     69
+    ],
+    "name": "Ring of Spell Turning"
+   },
+   {
+    "range": [
+     70,
+     75
+    ],
+    "name": "Ring of Swimming"
+   },
+   {
+    "range": [
+     76,
+     77
+    ],
+    "name": "Ring of Telekinesis"
+   },
+   {
+    "range": [
+     78,
+     79
+    ],
+    "name": "Ring of Three Wishes"
+   },
+   {
+    "range": [
+     80,
+     85
+    ],
+    "name": "Ring of Warmth"
+   },
+   {
+    "range": [
+     86,
+     90
+    ],
+    "name": "Ring of Water Walking"
+   },
+   {
+    "range": [
+     91,
+     98
+    ],
+    "name": "Ring of Weakness"
+   },
+   {
+    "range": [
+     99,
+     99
+    ],
+    "name": "Ring of Wizardry"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Ring of X-Ray Vision"
+   }
+  ],
+  "D": [
+   {
+    "range": [
+     1,
+     3
+    ],
+    "name": "Rod of Absorption"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "name": "Rod of Beguiling"
+   },
+   {
+    "range": [
+     5,
+     14
+    ],
+    "name": "Rod of Cancellation"
+   },
+   {
+    "range": [
+     15,
+     16
+    ],
+    "name": "Rod of Lordly Might"
+   },
+   {
+    "range": [
+     17,
+     17
+    ],
+    "name": "Rod of Resurrection"
+   },
+   {
+    "range": [
+     18,
+     18
+    ],
+    "name": "Rod of Rulership"
+   },
+   {
+    "range": [
+     19,
+     19
+    ],
+    "name": "Rod of Smiting"
+   },
+   {
+    "range": [
+     20,
+     20
+    ],
+    "name": "Staff of Command"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Staff of Curing"
+   },
+   {
+    "range": [
+     23,
+     23
+    ],
+    "name": "Staff of the Magi"
+   },
+   {
+    "range": [
+     24,
+     24
+    ],
+    "name": "Staff of Power"
+   },
+   {
+    "range": [
+     25,
+     27
+    ],
+    "name": "Staff of the Serpent"
+   },
+   {
+    "range": [
+     28,
+     31
+    ],
+    "name": "Staff of Striking"
+   },
+   {
+    "range": [
+     32,
+     33
+    ],
+    "name": "Staff of Withering"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "name": "Wand of Conjuration"
+   },
+   {
+    "range": [
+     35,
+     38
+    ],
+    "name": "Wand of Enemy Detection"
+   },
+   {
+    "range": [
+     39,
+     41
+    ],
+    "name": "Wand of Fear"
+   },
+   {
+    "range": [
+     42,
+     44
+    ],
+    "name": "Wand of Fire"
+   },
+   {
+    "range": [
+     45,
+     47
+    ],
+    "name": "Wand of Frost"
+   },
+   {
+    "range": [
+     48,
+     52
+    ],
+    "name": "Wand of Illumination"
+   },
+   {
+    "range": [
+     53,
+     56
+    ],
+    "name": "Wand of Illusion"
+   },
+   {
+    "range": [
+     57,
+     59
+    ],
+    "name": "Wand of Lightning"
+   },
+   {
+    "range": [
+     60,
+     68
+    ],
+    "name": "Wand of Magic Detection"
+   },
+   {
+    "range": [
+     69,
+     73
+    ],
+    "name": "Wand of Metal & Mineral Detection"
+   },
+   {
+    "range": [
+     74,
+     78
+    ],
+    "name": "Wand of Magic Missiles"
+   },
+   {
+    "range": [
+     79,
+     86
+    ],
+    "name": "Wand of Negation"
+   },
+   {
+    "range": [
+     87,
+     89
+    ],
+    "name": "Wand of Paralyzation"
+   },
+   {
+    "range": [
+     90,
+     92
+    ],
+    "name": "Wand of Polymorphing"
+   },
+   {
+    "range": [
+     93,
+     94
+    ],
+    "name": "Wand of Secret Door & Trap Location"
+   },
+   {
+    "range": [
+     95,
+     100
+    ],
+    "name": "Wand of Wonder"
+   }
+  ],
+  "E1": [
+   {
+    "range": [
+     1,
+     2
+    ],
+    "name": "Alchemy Jug"
+   },
+   {
+    "range": [
+     3,
+     4
+    ],
+    "name": "Amulet of Inescapable Location"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "name": "Amulet of Life Protection"
+   },
+   {
+    "range": [
+     6,
+     7
+    ],
+    "name": "Amulet of the Planes"
+   },
+   {
+    "range": [
+     8,
+     11
+    ],
+    "name": "Amulet of Proof Against Detection and Location"
+   },
+   {
+    "range": [
+     12,
+     13
+    ],
+    "name": "Underwater Apparatus"
+   },
+   {
+    "range": [
+     14,
+     16
+    ],
+    "name": "Arrow of Direction"
+   },
+   {
+    "range": [
+     17,
+     17
+    ],
+    "name": "ARTIFACT"
+   },
+   {
+    "range": [
+     18,
+     20
+    ],
+    "name": "Bag of Beans"
+   },
+   {
+    "range": [
+     21,
+     21
+    ],
+    "name": "Bag of Devouring"
+   },
+   {
+    "range": [
+     22,
+     26
+    ],
+    "name": "Bag of Holding"
+   },
+   {
+    "range": [
+     27,
+     27
+    ],
+    "name": "Bag of Transmuting"
+   },
+   {
+    "range": [
+     28,
+     29
+    ],
+    "name": "Bag of Tricks"
+   },
+   {
+    "range": [
+     30,
+     31
+    ],
+    "name": "Beaker of Plentiful Potions"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Boat, Folding"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "name": "Book of Exalted Deeds"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "name": "Book of Infinite Spells"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "name": "Book of Vile Darkness"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "name": "Boots of Dancing"
+   },
+   {
+    "range": [
+     37,
+     42
+    ],
+    "name": "Boots of Elvenkind"
+   },
+   {
+    "range": [
+     43,
+     47
+    ],
+    "name": "Boots of Levitation"
+   },
+   {
+    "range": [
+     48,
+     51
+    ],
+    "name": "Boots of Speed"
+   },
+   {
+    "range": [
+     52,
+     55
+    ],
+    "name": "Boots of Striding and Springing"
+   },
+   {
+    "range": [
+     56,
+     58
+    ],
+    "name": "Bowl Commanding Water Elementals"
+   },
+   {
+    "range": [
+     59,
+     59
+    ],
+    "name": "Bowl of Watery Death"
+   },
+   {
+    "range": [
+     60,
+     79
+    ],
+    "name": "Bracers of Defense"
+   },
+   {
+    "range": [
+     80,
+     81
+    ],
+    "name": "Bracers of Defenselessness"
+   },
+   {
+    "range": [
+     82,
+     84
+    ],
+    "name": "Brazier Commanding Fire Elementals"
+   },
+   {
+    "range": [
+     85,
+     85
+    ],
+    "name": "Brazier of Sleep Smoke"
+   },
+   {
+    "range": [
+     86,
+     92
+    ],
+    "name": "Brooch of Shielding"
+   },
+   {
+    "range": [
+     93,
+     93
+    ],
+    "name": "Broom of Animated Attack"
+   },
+   {
+    "range": [
+     94,
+     98
+    ],
+    "name": "Broom of Flying"
+   },
+   {
+    "range": [
+     99,
+     100
+    ],
+    "name": "Everfull Purse"
+   }
+  ],
+  "E2": [
+   {
+    "range": [
+     1,
+     6
+    ],
+    "name": "Candle of Invocation"
+   },
+   {
+    "range": [
+     7,
+     8
+    ],
+    "name": "Carpet of Flying"
+   },
+   {
+    "range": [
+     9,
+     10
+    ],
+    "name": "Censer Controlling Air Elementals"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Censer of Summoning Hostile Air Elementals"
+   },
+   {
+    "range": [
+     12,
+     13
+    ],
+    "name": "Chime of Opening"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "name": "Chime of Hunger"
+   },
+   {
+    "range": [
+     15,
+     18
+    ],
+    "name": "Cloak of Displacement"
+   },
+   {
+    "range": [
+     19,
+     27
+    ],
+    "name": "Cloak of Elvenkind"
+   },
+   {
+    "range": [
+     28,
+     30
+    ],
+    "name": "Cloak of Manta Ray"
+   },
+   {
+    "range": [
+     31,
+     32
+    ],
+    "name": "Cloak of Poisonousness"
+   },
+   {
+    "range": [
+     33,
+     55
+    ],
+    "name": "Cloak of Protection"
+   },
+   {
+    "range": [
+     56,
+     60
+    ],
+    "name": "Crystal Ball"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "name": "Crystal Hypnosis Ball"
+   },
+   {
+    "range": [
+     62,
+     63
+    ],
+    "name": "Cube of Force"
+   },
+   {
+    "range": [
+     64,
+     65
+    ],
+    "name": "Cube of Frost Resistance"
+   },
+   {
+    "range": [
+     66,
+     67
+    ],
+    "name": "Cubic Gate"
+   },
+   {
+    "range": [
+     68,
+     69
+    ],
+    "name": "Instant Fortress"
+   },
+   {
+    "range": [
+     70,
+     72
+    ],
+    "name": "Decanter of Endless Water"
+   },
+   {
+    "range": [
+     73,
+     76
+    ],
+    "name": "Deck of Many Things"
+   },
+   {
+    "range": [
+     77,
+     77
+    ],
+    "name": "Drums of Deafening"
+   },
+   {
+    "range": [
+     78,
+     79
+    ],
+    "name": "Drums of Panic"
+   },
+   {
+    "range": [
+     80,
+     85
+    ],
+    "name": "Dust of Appearance"
+   },
+   {
+    "range": [
+     86,
+     91
+    ],
+    "name": "Dust of Disappearance"
+   },
+   {
+    "range": [
+     92,
+     92
+    ],
+    "name": "Dust of Sneezing and Choking"
+   },
+   {
+    "range": [
+     93,
+     93
+    ],
+    "name": "Efreeti Bottle"
+   },
+   {
+    "range": [
+     94,
+     94
+    ],
+    "name": "Eversmoking Bottle"
+   },
+   {
+    "range": [
+     95,
+     95
+    ],
+    "name": "Eyes of Charming"
+   },
+   {
+    "range": [
+     96,
+     97
+    ],
+    "name": "Eyes of the Eagle"
+   },
+   {
+    "range": [
+     98,
+     99
+    ],
+    "name": "Eyes of Minute Seeing"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Eyes of Petrification"
+   }
+  ],
+  "E3": [
+   {
+    "range": [
+     1,
+     15
+    ],
+    "name": "Figurine of Wondrous Power"
+   },
+   {
+    "range": [
+     16,
+     16
+    ],
+    "name": "Flask of Curses"
+   },
+   {
+    "range": [
+     17,
+     18
+    ],
+    "name": "Gauntlets of Dexterity"
+   },
+   {
+    "range": [
+     19,
+     20
+    ],
+    "name": "Gauntlets of Fumbling"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Gauntlets of Ogre Power"
+   },
+   {
+    "range": [
+     23,
+     25
+    ],
+    "name": "Gauntlets of Swimming and Climbing"
+   },
+   {
+    "range": [
+     26,
+     26
+    ],
+    "name": "Gem of Brightness"
+   },
+   {
+    "range": [
+     27,
+     27
+    ],
+    "name": "Gem of Seeing"
+   },
+   {
+    "range": [
+     28,
+     28
+    ],
+    "name": "Girdle of Femininity/Masculinity"
+   },
+   {
+    "range": [
+     29,
+     29
+    ],
+    "name": "Girdle of Giant Strength"
+   },
+   {
+    "range": [
+     30,
+     30
+    ],
+    "name": "Helm of Brilliance"
+   },
+   {
+    "range": [
+     31,
+     35
+    ],
+    "name": "Helm of Comprehending Languages & Reading Magic"
+   },
+   {
+    "range": [
+     36,
+     37
+    ],
+    "name": "Helm of Opposite Alignment"
+   },
+   {
+    "range": [
+     38,
+     39
+    ],
+    "name": "Helm of Telepathy"
+   },
+   {
+    "range": [
+     40,
+     40
+    ],
+    "name": "Helm of Teleportation"
+   },
+   {
+    "range": [
+     41,
+     45
+    ],
+    "name": "Helm of Underwater Action"
+   },
+   {
+    "range": [
+     46,
+     46
+    ],
+    "name": "Horn of Blasting"
+   },
+   {
+    "range": [
+     47,
+     48
+    ],
+    "name": "Horn of Bubbles"
+   },
+   {
+    "range": [
+     49,
+     49
+    ],
+    "name": "Horn of Collapsing"
+   },
+   {
+    "range": [
+     50,
+     53
+    ],
+    "name": "Horn of the Tritons"
+   },
+   {
+    "range": [
+     54,
+     60
+    ],
+    "name": "Horn of Valhalla"
+   },
+   {
+    "range": [
+     61,
+     63
+    ],
+    "name": "Horseshoes of Speed"
+   },
+   {
+    "range": [
+     64,
+     65
+    ],
+    "name": "Horseshoes of a Zephyr"
+   },
+   {
+    "range": [
+     66,
+     70
+    ],
+    "name": "Incense of Meditation"
+   },
+   {
+    "range": [
+     71,
+     71
+    ],
+    "name": "Incense of Obsession"
+   },
+   {
+    "range": [
+     72,
+     72
+    ],
+    "name": "Orbiting Stones"
+   },
+   {
+    "range": [
+     73,
+     78
+    ],
+    "name": "Instrument of the Bards"
+   },
+   {
+    "range": [
+     79,
+     80
+    ],
+    "name": "Iron Flask"
+   },
+   {
+    "range": [
+     81,
+     85
+    ],
+    "name": "Javelin of Lightning"
+   },
+   {
+    "range": [
+     86,
+     90
+    ],
+    "name": "Javelin of Piercing"
+   },
+   {
+    "range": [
+     91,
+     91
+    ],
+    "name": "Jewel of Attacks"
+   },
+   {
+    "range": [
+     92,
+     92
+    ],
+    "name": "Jewel of Flawlessness"
+   },
+   {
+    "range": [
+     93,
+     100
+    ],
+    "name": "Restorative Ointment"
+   }
+  ],
+  "E4": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Libram of Gainful Conjuration"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "name": "Libram of Ineffable Damnation"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "name": "Libram of Silver Magic"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "name": "Lyre of Building"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "name": "Manual of Bodily Health"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "name": "Manual of Gainful Exercise"
+   },
+   {
+    "range": [
+     7,
+     7
+    ],
+    "name": "Manual of Golems"
+   },
+   {
+    "range": [
+     8,
+     8
+    ],
+    "name": "Manual of Puissant Skill at Arms"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "name": "Manual of Quickness of Action"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "name": "Manual of Stealthy Pilfering"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Mattock of the Titans"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "name": "Maul of the Titans"
+   },
+   {
+    "range": [
+     13,
+     15
+    ],
+    "name": "Medallion of ESP"
+   },
+   {
+    "range": [
+     16,
+     17
+    ],
+    "name": "Medallion of Thought Projection"
+   },
+   {
+    "range": [
+     18,
+     18
+    ],
+    "name": "Mirror of Life Trapping"
+   },
+   {
+    "range": [
+     19,
+     19
+    ],
+    "name": "Mirror of Mental Prowess"
+   },
+   {
+    "range": [
+     20,
+     20
+    ],
+    "name": "Mirror of Opposition"
+   },
+   {
+    "range": [
+     21,
+     23
+    ],
+    "name": "Necklace of Adaptation"
+   },
+   {
+    "range": [
+     24,
+     27
+    ],
+    "name": "Necklace of Missiles"
+   },
+   {
+    "range": [
+     28,
+     33
+    ],
+    "name": "Necklace of Prayer Beads"
+   },
+   {
+    "range": [
+     34,
+     35
+    ],
+    "name": "Necklace of Strangulation"
+   },
+   {
+    "range": [
+     36,
+     38
+    ],
+    "name": "Net of Entrapment"
+   },
+   {
+    "range": [
+     39,
+     42
+    ],
+    "name": "Net of Snaring"
+   },
+   {
+    "range": [
+     43,
+     44
+    ],
+    "name": "Nolzurs’ Marvelous Pigments"
+   },
+   {
+    "range": [
+     45,
+     46
+    ],
+    "name": "Pearl of Power"
+   },
+   {
+    "range": [
+     47,
+     48
+    ],
+    "name": "Pearl of Wisdom"
+   },
+   {
+    "range": [
+     49,
+     50
+    ],
+    "name": "Periapt of Foul Rotting"
+   },
+   {
+    "range": [
+     51,
+     53
+    ],
+    "name": "Periapt of Health"
+   },
+   {
+    "range": [
+     54,
+     60
+    ],
+    "name": "Periapt of Proof Against Poison"
+   },
+   {
+    "range": [
+     61,
+     64
+    ],
+    "name": "Periapt of Wound Closure"
+   },
+   {
+    "range": [
+     65,
+     70
+    ],
+    "name": "Phylactery of Faithfulness"
+   },
+   {
+    "range": [
+     71,
+     74
+    ],
+    "name": "Phylactery of Long Years"
+   },
+   {
+    "range": [
+     75,
+     76
+    ],
+    "name": "Phylactery of Monstrous Attention"
+   },
+   {
+    "range": [
+     77,
+     84
+    ],
+    "name": "Pipes of the Sewers"
+   },
+   {
+    "range": [
+     85,
+     85
+    ],
+    "name": "Portable Hole"
+   },
+   {
+    "range": [
+     86,
+     100
+    ],
+    "name": "Feather Token"
+   }
+  ],
+  "E5": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Robe of the Archmagi"
+   },
+   {
+    "range": [
+     2,
+     8
+    ],
+    "name": "Robe of Blending"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "name": "Robe of Eyes"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "name": "Robe of Powerlessness"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Robe of Scintillating Colors"
+   },
+   {
+    "range": [
+     12,
+     19
+    ],
+    "name": "Robe of Useful Items"
+   },
+   {
+    "range": [
+     20,
+     25
+    ],
+    "name": "Rope of Climbing"
+   },
+   {
+    "range": [
+     26,
+     27
+    ],
+    "name": "Rope of Constriction"
+   },
+   {
+    "range": [
+     28,
+     31
+    ],
+    "name": "Rope of Entanglement"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Rug of Smothering"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "name": "Rug of Welcome"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "name": "Saw of Mighty Cutting"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "name": "Scarab of Death"
+   },
+   {
+    "range": [
+     36,
+     38
+    ],
+    "name": "Scarab of Enraging Enemies"
+   },
+   {
+    "range": [
+     39,
+     40
+    ],
+    "name": "Scarab of Insanity"
+   },
+   {
+    "range": [
+     41,
+     46
+    ],
+    "name": "Scarab of Protection"
+   },
+   {
+    "range": [
+     47,
+     47
+    ],
+    "name": "Spade of Colossal Excavation"
+   },
+   {
+    "range": [
+     48,
+     48
+    ],
+    "name": "Sphere of Annihilation"
+   },
+   {
+    "range": [
+     49,
+     50
+    ],
+    "name": "Stone of Controlling Earth Elementals"
+   },
+   {
+    "range": [
+     51,
+     52
+    ],
+    "name": "Stone of Good Luck (Luckstone)"
+   },
+   {
+    "range": [
+     53,
+     54
+    ],
+    "name": "Stone of Weight (Loadstone)"
+   },
+   {
+    "range": [
+     55,
+     57
+    ],
+    "name": "Talisman of Pure Good"
+   },
+   {
+    "range": [
+     58,
+     58
+    ],
+    "name": "Talisman of the Sphere"
+   },
+   {
+    "range": [
+     59,
+     60
+    ],
+    "name": "Talisman of Ultimate Evil"
+   },
+   {
+    "range": [
+     61,
+     66
+    ],
+    "name": "Talisman of Zagy"
+   },
+   {
+    "range": [
+     67,
+     67
+    ],
+    "name": "Tome of Clear Thought"
+   },
+   {
+    "range": [
+     68,
+     68
+    ],
+    "name": "Tome of Leadership and Influence"
+   },
+   {
+    "range": [
+     69,
+     69
+    ],
+    "name": "Tome of Understanding"
+   },
+   {
+    "range": [
+     70,
+     76
+    ],
+    "name": "Trident of Fish Command"
+   },
+   {
+    "range": [
+     77,
+     78
+    ],
+    "name": "Trident of Submission"
+   },
+   {
+    "range": [
+     79,
+     83
+    ],
+    "name": "Trident of Warning"
+   },
+   {
+    "range": [
+     84,
+     85
+    ],
+    "name": "Trident of Yearning"
+   },
+   {
+    "range": [
+     86,
+     87
+    ],
+    "name": "Vacuous Grimoire"
+   },
+   {
+    "range": [
+     88,
+     90
+    ],
+    "name": "Well of Many Worlds"
+   },
+   {
+    "range": [
+     91,
+     100
+    ],
+    "name": "Wings of Flying"
+   }
+  ],
+  "ES": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Axe of the Dwarvish Lords"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "name": "Walking Hut"
+   },
+   {
+    "range": [
+     3,
+     4
+    ],
+    "name": "Codex of the Infinite Planes"
+   },
+   {
+    "range": [
+     5,
+     20
+    ],
+    "name": "Crown of Might"
+   },
+   {
+    "range": [
+     21,
+     21
+    ],
+    "name": "Crystal of the Ebon Flame"
+   },
+   {
+    "range": [
+     22,
+     22
+    ],
+    "name": "Cup and Talisman of Al’Akbar"
+   },
+   {
+    "range": [
+     23,
+     24
+    ],
+    "name": "Eye of the Lich"
+   },
+   {
+    "range": [
+     25,
+     25
+    ],
+    "name": "Hand of the Lich"
+   },
+   {
+    "range": [
+     26,
+     26
+    ],
+    "name": "Mystical Organ"
+   },
+   {
+    "range": [
+     27,
+     27
+    ],
+    "name": "Horn of Change"
+   },
+   {
+    "range": [
+     28,
+     29
+    ],
+    "name": "Invulnerable Coat of Arnd"
+   },
+   {
+    "range": [
+     30,
+     31
+    ],
+    "name": "Iron Flask of Tuerny the Merciless"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Jacinth of Inestimable Beauty"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "name": "Mask of Concealment"
+   },
+   {
+    "range": [
+     34,
+     35
+    ],
+    "name": "Quill of Forgery"
+   },
+   {
+    "range": [
+     36,
+     37
+    ],
+    "name": "Mace of Cuthbert"
+   },
+   {
+    "range": [
+     38,
+     38
+    ],
+    "name": "Machine of Lum the Mad"
+   },
+   {
+    "range": [
+     39,
+     40
+    ],
+    "name": "Mighty Servant of Leuk-O"
+   },
+   {
+    "range": [
+     41,
+     47
+    ],
+    "name": "Orb of the Dragonkind"
+   },
+   {
+    "range": [
+     48,
+     63
+    ],
+    "name": "Orb of Might"
+   },
+   {
+    "range": [
+     64,
+     64
+    ],
+    "name": "Marvelous Nightingale"
+   },
+   {
+    "range": [
+     65,
+     66
+    ],
+    "name": "Recorder of Ye’Cind"
+   },
+   {
+    "range": [
+     67,
+     68
+    ],
+    "name": "Ring of Gaxx"
+   },
+   {
+    "range": [
+     69,
+     74
+    ],
+    "name": "Rod of Seven Parts"
+   },
+   {
+    "range": [
+     75,
+     91
+    ],
+    "name": "Sceptre of Might"
+   },
+   {
+    "range": [
+     92,
+     92
+    ],
+    "name": "Sword of Betrayal"
+   },
+   {
+    "range": [
+     93,
+     98
+    ],
+    "name": "Teeth of Dahlver-Nar"
+   },
+   {
+    "range": [
+     99,
+     99
+    ],
+    "name": "Throne of the Gods"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Wand of Orcus"
+   }
+  ],
+  "F": [
+   {
+    "range": [
+     1,
+     5
+    ],
+    "name": "Chain Mail +1"
+   },
+   {
+    "range": [
+     6,
+     9
+    ],
+    "name": "Chain Mail +2"
+   },
+   {
+    "range": [
+     10,
+     11
+    ],
+    "name": "Chain Mail +3"
+   },
+   {
+    "range": [
+     12,
+     19
+    ],
+    "name": "Leather Armor +1"
+   },
+   {
+    "range": [
+     20,
+     26
+    ],
+    "name": "Plate Mail +1"
+   },
+   {
+    "range": [
+     27,
+     32
+    ],
+    "name": "Plate Mail +2"
+   },
+   {
+    "range": [
+     33,
+     35
+    ],
+    "name": "Plate Mail +3"
+   },
+   {
+    "range": [
+     36,
+     37
+    ],
+    "name": "Plate Mail +4"
+   },
+   {
+    "range": [
+     38,
+     38
+    ],
+    "name": "Plate Mail +5"
+   },
+   {
+    "range": [
+     39,
+     39
+    ],
+    "name": "Plate Mail of Etherealness"
+   },
+   {
+    "range": [
+     40,
+     44
+    ],
+    "name": "Plate Mail of Vulnerability"
+   },
+   {
+    "range": [
+     45,
+     50
+    ],
+    "name": "Ring Mail +1"
+   },
+   {
+    "range": [
+     51,
+     55
+    ],
+    "name": "Scale Mail +1"
+   },
+   {
+    "range": [
+     56,
+     59
+    ],
+    "name": "Scale Mail +2"
+   },
+   {
+    "range": [
+     60,
+     63
+    ],
+    "name": "Splint Mail +1"
+   },
+   {
+    "range": [
+     64,
+     66
+    ],
+    "name": "Splint Mail +2"
+   },
+   {
+    "range": [
+     67,
+     68
+    ],
+    "name": "Splint Mail +3"
+   },
+   {
+    "range": [
+     69,
+     69
+    ],
+    "name": "Splint Mail +4"
+   },
+   {
+    "range": [
+     70,
+     75
+    ],
+    "name": "Studded Leather +1"
+   },
+   {
+    "range": [
+     76,
+     84
+    ],
+    "name": "Shield +1"
+   },
+   {
+    "range": [
+     85,
+     89
+    ],
+    "name": "Shield +2"
+   },
+   {
+    "range": [
+     90,
+     93
+    ],
+    "name": "Shield +3"
+   },
+   {
+    "range": [
+     94,
+     95
+    ],
+    "name": "Shield +4"
+   },
+   {
+    "range": [
+     96,
+     96
+    ],
+    "name": "Shield +5"
+   },
+   {
+    "range": [
+     97,
+     97
+    ],
+    "name": "Shield, large, +1, +4 vs. missiles"
+   },
+   {
+    "range": [
+     98,
+     100
+    ],
+    "name": "Shield −1, missile attractor"
+   }
+  ],
+  "G": [
+   {
+    "range": [
+     1,
+     25
+    ],
+    "name": "Sword +1"
+   },
+   {
+    "range": [
+     26,
+     30
+    ],
+    "name": "Sword +1, +2 vs. magic-using & enchanted creatures"
+   },
+   {
+    "range": [
+     31,
+     35
+    ],
+    "name": "Sword +1, +3 vs. lycanthropes & shape changers"
+   },
+   {
+    "range": [
+     36,
+     40
+    ],
+    "name": "Sword +1, +3 vs. regenerating creatures"
+   },
+   {
+    "range": [
+     41,
+     45
+    ],
+    "name": "Sword +1, +4 vs. reptiles"
+   },
+   {
+    "range": [
+     46,
+     49
+    ],
+    "name": "Sword +1, Flame Tongue"
+   },
+   {
+    "range": [
+     50,
+     50
+    ],
+    "name": "Sword +1, Luck Blade"
+   },
+   {
+    "range": [
+     51,
+     58
+    ],
+    "name": "Sword +2"
+   },
+   {
+    "range": [
+     59,
+     62
+    ],
+    "name": "Sword +2, Giant Slayer"
+   },
+   {
+    "range": [
+     63,
+     66
+    ],
+    "name": "Sword +2, Dragon Slayer"
+   },
+   {
+    "range": [
+     67,
+     67
+    ],
+    "name": "Sword +2, Nine Lives Stealer"
+   },
+   {
+    "range": [
+     68,
+     71
+    ],
+    "name": "Sword +3"
+   },
+   {
+    "range": [
+     72,
+     74
+    ],
+    "name": "Sword +3, Frost Brand"
+   },
+   {
+    "range": [
+     75,
+     76
+    ],
+    "name": "Sword +4"
+   },
+   {
+    "range": [
+     77,
+     77
+    ],
+    "name": "Sword +4, Defender"
+   },
+   {
+    "range": [
+     78,
+     78
+    ],
+    "name": "Sword +5"
+   },
+   {
+    "range": [
+     79,
+     79
+    ],
+    "name": "Sword +5, Defender"
+   },
+   {
+    "range": [
+     80,
+     80
+    ],
+    "name": "Sword +5, Holy Avenger"
+   },
+   {
+    "range": [
+     81,
+     81
+    ],
+    "name": "Sword of Dancing"
+   },
+   {
+    "range": [
+     82,
+     82
+    ],
+    "name": "Sword of Wounding"
+   },
+   {
+    "range": [
+     83,
+     83
+    ],
+    "name": "Sword of Life Stealing"
+   },
+   {
+    "range": [
+     84,
+     84
+    ],
+    "name": "Sword of Sharpness"
+   },
+   {
+    "range": [
+     85,
+     85
+    ],
+    "name": "Sword, Vorpal Weapon"
+   },
+   {
+    "range": [
+     86,
+     90
+    ],
+    "name": "Sword +1, Cursed"
+   },
+   {
+    "range": [
+     91,
+     95
+    ],
+    "name": "Sword −2, Cursed"
+   },
+   {
+    "range": [
+     96,
+     100
+    ],
+    "name": "Sword, Cursed Berserking"
+   }
+  ],
+  "H": [
+   {
+    "range": [
+     1,
+     8
+    ],
+    "name": "Arrow +1"
+   },
+   {
+    "range": [
+     9,
+     12
+    ],
+    "name": "Arrow +2"
+   },
+   {
+    "range": [
+     13,
+     14
+    ],
+    "name": "Arrow +3"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "name": "Arrow of Slaying"
+   },
+   {
+    "range": [
+     16,
+     20
+    ],
+    "name": "Axe +1"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Axe +2"
+   },
+   {
+    "range": [
+     23,
+     23
+    ],
+    "name": "Axe +2, Throwing"
+   },
+   {
+    "range": [
+     24,
+     24
+    ],
+    "name": "Axe +3"
+   },
+   {
+    "range": [
+     25,
+     27
+    ],
+    "name": "Battle Axe +1"
+   },
+   {
+    "range": [
+     28,
+     32
+    ],
+    "name": "Bolt +2"
+   },
+   {
+    "range": [
+     33,
+     35
+    ],
+    "name": "Bow +1"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "name": "Crossbow of Accuracy, +3"
+   },
+   {
+    "range": [
+     37,
+     37
+    ],
+    "name": "Crossbow of Distance"
+   },
+   {
+    "range": [
+     38,
+     38
+    ],
+    "name": "Crossbow of Speed"
+   },
+   {
+    "range": [
+     39,
+     46
+    ],
+    "name": "Dagger +1, +2 vs. creatures smaller than man-sized"
+   },
+   {
+    "range": [
+     47,
+     50
+    ],
+    "name": "Dagger +2, +3 vs. creatures larger than man-sized"
+   },
+   {
+    "range": [
+     51,
+     51
+    ],
+    "name": "Dagger of Venom"
+   },
+   {
+    "range": [
+     52,
+     56
+    ],
+    "name": "Flail +1"
+   },
+   {
+    "range": [
+     57,
+     60
+    ],
+    "name": "Hammer +1"
+   },
+   {
+    "range": [
+     61,
+     62
+    ],
+    "name": "Hammer +2"
+   },
+   {
+    "range": [
+     63,
+     63
+    ],
+    "name": "Hammer +3, Dwarven Thrower"
+   },
+   {
+    "range": [
+     64,
+     64
+    ],
+    "name": "Hammer of Thunderbolts"
+   },
+   {
+    "range": [
+     65,
+     67
+    ],
+    "name": "Javelin +2"
+   },
+   {
+    "range": [
+     68,
+     72
+    ],
+    "name": "Mace +1"
+   },
+   {
+    "range": [
+     73,
+     75
+    ],
+    "name": "Mace +2"
+   },
+   {
+    "range": [
+     76,
+     76
+    ],
+    "name": "Mace of Disruption"
+   },
+   {
+    "range": [
+     77,
+     77
+    ],
+    "name": "Mace +4"
+   },
+   {
+    "range": [
+     78,
+     80
+    ],
+    "name": "Military Pick +1"
+   },
+   {
+    "range": [
+     81,
+     83
+    ],
+    "name": "Morning Star +1"
+   },
+   {
+    "range": [
+     84,
+     88
+    ],
+    "name": "Scimitar +2"
+   },
+   {
+    "range": [
+     89,
+     89
+    ],
+    "name": "Sling of Seeking +2"
+   },
+   {
+    "range": [
+     90,
+     94
+    ],
+    "name": "Spear +1"
+   },
+   {
+    "range": [
+     95,
+     96
+    ],
+    "name": "Spear +2"
+   },
+   {
+    "range": [
+     97,
+     97
+    ],
+    "name": "Spear +3"
+   },
+   {
+    "range": [
+     98,
+     99
+    ],
+    "name": "Spear, Cursed Backbiter"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Trident (Military Fork) +3"
+   }
+  ],
+  "B": [
+   {
+    "range": [
+     61,
+     62
+    ],
+    "name": "Scroll of Protection from Demons"
+   },
+   {
+    "range": [
+     63,
+     64
+    ],
+    "name": "Scroll of Protection from Devils"
+   },
+   {
+    "range": [
+     65,
+     70
+    ],
+    "name": "Scroll of Protection from Elementals"
+   },
+   {
+    "range": [
+     71,
+     76
+    ],
+    "name": "Scroll of Protection from Lycanthropes"
+   },
+   {
+    "range": [
+     77,
+     82
+    ],
+    "name": "Scroll of Protection from Magic"
+   },
+   {
+    "range": [
+     83,
+     87
+    ],
+    "name": "Scroll of Protection from Petrification"
+   },
+   {
+    "range": [
+     88,
+     92
+    ],
+    "name": "Scroll of Protection from Possession"
+   },
+   {
+    "range": [
+     93,
+     97
+    ],
+    "name": "Scroll of Protection from Undead"
+   }
+  ]
+ },
+ "UA": {
+  "III.A": [
+   {
+    "range": [
+     1,
+     3
+    ],
+    "name": "Potion of Animal Control"
+   },
+   {
+    "range": [
+     4,
+     6
+    ],
+    "name": "Potion of Clairaudience"
+   },
+   {
+    "range": [
+     7,
+     9
+    ],
+    "name": "Potion of Clairvoyance"
+   },
+   {
+    "range": [
+     10,
+     12
+    ],
+    "name": "Potion of Climbing"
+   },
+   {
+    "range": [
+     13,
+     15
+    ],
+    "name": "Potion of Delusion"
+   },
+   {
+    "range": [
+     16,
+     18
+    ],
+    "name": "Potion of Diminution"
+   },
+   {
+    "range": [
+     19,
+     20
+    ],
+    "name": "Potion of Dragon Control"
+   },
+   {
+    "range": [
+     21,
+     23
+    ],
+    "name": "Potion of ESP"
+   },
+   {
+    "range": [
+     24,
+     26
+    ],
+    "name": "Potion of Extra-Healing"
+   },
+   {
+    "range": [
+     27,
+     29
+    ],
+    "name": "Potion of Fire Resistance"
+   },
+   {
+    "range": [
+     30,
+     32
+    ],
+    "name": "Potion of Flying"
+   },
+   {
+    "range": [
+     33,
+     34
+    ],
+    "name": "Potion of Gaseous Form"
+   },
+   {
+    "range": [
+     35,
+     36
+    ],
+    "name": "Potion of Giant Control"
+   },
+   {
+    "range": [
+     37,
+     39
+    ],
+    "name": "Potion of Giant Strength"
+   },
+   {
+    "range": [
+     40,
+     41
+    ],
+    "name": "Potion of Growth"
+   },
+   {
+    "range": [
+     42,
+     47
+    ],
+    "name": "Potion of Healing"
+   },
+   {
+    "range": [
+     48,
+     49
+    ],
+    "name": "Potion of Heroism"
+   },
+   {
+    "range": [
+     50,
+     51
+    ],
+    "name": "Potion of Human Control"
+   },
+   {
+    "range": [
+     52,
+     54
+    ],
+    "name": "Potion of Invisibility"
+   },
+   {
+    "range": [
+     55,
+     57
+    ],
+    "name": "Potion of Invulnerability"
+   },
+   {
+    "range": [
+     58,
+     60
+    ],
+    "name": "Potion of Levitation"
+   },
+   {
+    "range": [
+     61,
+     63
+    ],
+    "name": "Potion of Longevity"
+   },
+   {
+    "range": [
+     64,
+     66
+    ],
+    "name": "Oil of Etherealness"
+   },
+   {
+    "range": [
+     67,
+     69
+    ],
+    "name": "Oil of Slipperiness"
+   },
+   {
+    "range": [
+     70,
+     72
+    ],
+    "name": "Philter of Love"
+   },
+   {
+    "range": [
+     73,
+     75
+    ],
+    "name": "Philter of Persuasiveness"
+   },
+   {
+    "range": [
+     76,
+     78
+    ],
+    "name": "Potion of Plant Control"
+   },
+   {
+    "range": [
+     79,
+     81
+    ],
+    "name": "Potion of Polymorph (self)"
+   },
+   {
+    "range": [
+     82,
+     84
+    ],
+    "name": "Potion of Poison"
+   },
+   {
+    "range": [
+     85,
+     87
+    ],
+    "name": "Potion of Speed"
+   },
+   {
+    "range": [
+     88,
+     90
+    ],
+    "name": "Potion of Super-Heroism"
+   },
+   {
+    "range": [
+     91,
+     93
+    ],
+    "name": "Potion of Sweet Water"
+   },
+   {
+    "range": [
+     94,
+     96
+    ],
+    "name": "Potion of Treasure Finding"
+   },
+   {
+    "range": [
+     97,
+     97
+    ],
+    "name": "Potion of Undead Control"
+   },
+   {
+    "range": [
+     98,
+     100
+    ],
+    "name": "Potion of Water Breathing"
+   }
+  ],
+  "III.A.2": [
+   {
+    "range": [
+     1,
+     5
+    ],
+    "name": "Elixir of Health"
+   },
+   {
+    "range": [
+     6,
+     15
+    ],
+    "name": "Elixir of Life"
+   },
+   {
+    "range": [
+     16,
+     20
+    ],
+    "name": "Elixir of Madness"
+   },
+   {
+    "range": [
+     21,
+     25
+    ],
+    "name": "Elixir of Youth"
+   },
+   {
+    "range": [
+     26,
+     30
+    ],
+    "name": "Potion of Fire Breath"
+   },
+   {
+    "range": [
+     31,
+     35
+    ],
+    "name": "Oil of Acid Resistance"
+   },
+   {
+    "range": [
+     36,
+     40
+    ],
+    "name": "Oil of Disenchantment"
+   },
+   {
+    "range": [
+     41,
+     45
+    ],
+    "name": "Oil of Elemental Invulnerability"
+   },
+   {
+    "range": [
+     46,
+     49
+    ],
+    "name": "Oil of Fiery Burning"
+   },
+   {
+    "range": [
+     50,
+     55
+    ],
+    "name": "Oil of Fumbling"
+   },
+   {
+    "range": [
+     56,
+     60
+    ],
+    "name": "Oil of Impact"
+   },
+   {
+    "range": [
+     61,
+     65
+    ],
+    "name": "Oil of Sharpness"
+   },
+   {
+    "range": [
+     66,
+     70
+    ],
+    "name": "Oil of Timelessness"
+   },
+   {
+    "range": [
+     71,
+     75
+    ],
+    "name": "Philter of Beauty"
+   },
+   {
+    "range": [
+     76,
+     80
+    ],
+    "name": "Philter of Glibness"
+   },
+   {
+    "range": [
+     81,
+     85
+    ],
+    "name": "Philter of Stammering & Stuttering"
+   },
+   {
+    "range": [
+     86,
+     90
+    ],
+    "name": "Potion of Rainbow Hues"
+   },
+   {
+    "range": [
+     91,
+     95
+    ],
+    "name": "Potion of Ventriloquism"
+   },
+   {
+    "range": [
+     96,
+     100
+    ],
+    "name": "Potion of Vitality"
+   }
+  ],
+  "III.B.2": [
+   {
+    "range": [
+     1,
+     2
+    ],
+    "name": "Scroll of Protection from Acid"
+   },
+   {
+    "range": [
+     3,
+     7
+    ],
+    "name": "Scroll of Protection from Breath Weapons, Dragon"
+   },
+   {
+    "range": [
+     8,
+     12
+    ],
+    "name": "Scroll of Protection from Breath Weapons, Non-dragon"
+   },
+   {
+    "range": [
+     13,
+     17
+    ],
+    "name": "Scroll of Protection from Cold"
+   },
+   {
+    "range": [
+     18,
+     22
+    ],
+    "name": "Scroll of Protection from Electricity"
+   },
+   {
+    "range": [
+     23,
+     27
+    ],
+    "name": "Scroll of Protection from Fire"
+   },
+   {
+    "range": [
+     28,
+     32
+    ],
+    "name": "Scroll of Protection from Gas"
+   },
+   {
+    "range": [
+     33,
+     37
+    ],
+    "name": "Scroll of Protection from Illusions"
+   },
+   {
+    "range": [
+     38,
+     42
+    ],
+    "name": "Scroll of Protection from Paralyzation"
+   },
+   {
+    "range": [
+     43,
+     48
+    ],
+    "name": "Scroll of Protection from Plants"
+   },
+   {
+    "range": [
+     49,
+     54
+    ],
+    "name": "Scroll of Protection from Poison"
+   },
+   {
+    "range": [
+     55,
+     59
+    ],
+    "name": "Scroll of Protection from Traps"
+   },
+   {
+    "range": [
+     60,
+     64
+    ],
+    "name": "Scroll of Protection from Water"
+   },
+   {
+    "range": [
+     65,
+     70
+    ],
+    "name": "Scroll of Protection from Weapons, Magical blunt"
+   },
+   {
+    "range": [
+     71,
+     76
+    ],
+    "name": "Scroll of Protection from Weapons, Magical edged"
+   },
+   {
+    "range": [
+     77,
+     82
+    ],
+    "name": "Scroll of Protection from Weapons, Magical missile"
+   },
+   {
+    "range": [
+     83,
+     88
+    ],
+    "name": "Scroll of Protection from Weapons, Non-magic blunt"
+   },
+   {
+    "range": [
+     89,
+     94
+    ],
+    "name": "Scroll of Protection from Weapons, Non-magic edged"
+   },
+   {
+    "range": [
+     95,
+     100
+    ],
+    "name": "Scroll of Protection from Weapons, Non-magic missile"
+   }
+  ],
+  "III.C": [
+   {
+    "range": [
+     1,
+     6
+    ],
+    "name": "Ring of Contrariness"
+   },
+   {
+    "range": [
+     7,
+     12
+    ],
+    "name": "Ring of Delusion"
+   },
+   {
+    "range": [
+     13,
+     14
+    ],
+    "name": "Ring of Djinni Summoning"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "name": "Ring of Elemental Command"
+   },
+   {
+    "range": [
+     16,
+     21
+    ],
+    "name": "Ring of Feather Falling"
+   },
+   {
+    "range": [
+     22,
+     27
+    ],
+    "name": "Ring of Fire Resistance"
+   },
+   {
+    "range": [
+     28,
+     30
+    ],
+    "name": "Ring of Free Action"
+   },
+   {
+    "range": [
+     31,
+     33
+    ],
+    "name": "Ring of Human Influence"
+   },
+   {
+    "range": [
+     34,
+     40
+    ],
+    "name": "Ring of Invisibility"
+   },
+   {
+    "range": [
+     41,
+     43
+    ],
+    "name": "Ring of Mammal Control"
+   },
+   {
+    "range": [
+     44,
+     44
+    ],
+    "name": "Ring of Multiple Wishes"
+   },
+   {
+    "range": [
+     45,
+     60
+    ],
+    "name": "Ring of Protection"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "name": "Ring of Regeneration"
+   },
+   {
+    "range": [
+     62,
+     63
+    ],
+    "name": "Ring of Shooting Stars"
+   },
+   {
+    "range": [
+     64,
+     65
+    ],
+    "name": "Ring of Spell Storing"
+   },
+   {
+    "range": [
+     66,
+     69
+    ],
+    "name": "Ring of Spell Turning"
+   },
+   {
+    "range": [
+     70,
+     75
+    ],
+    "name": "Ring of Swimming"
+   },
+   {
+    "range": [
+     76,
+     77
+    ],
+    "name": "Ring of Telekinesis"
+   },
+   {
+    "range": [
+     78,
+     79
+    ],
+    "name": "Ring of Three Wishes"
+   },
+   {
+    "range": [
+     80,
+     85
+    ],
+    "name": "Ring of Warmth"
+   },
+   {
+    "range": [
+     86,
+     90
+    ],
+    "name": "Ring of Water Walking"
+   },
+   {
+    "range": [
+     91,
+     98
+    ],
+    "name": "Ring of Weakness"
+   },
+   {
+    "range": [
+     99,
+     99
+    ],
+    "name": "Ring of Wizardry"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Ring of X-Ray Vision"
+   }
+  ],
+  "III.C.2": [
+   {
+    "range": [
+     1,
+     8
+    ],
+    "name": "Ring of Animal Friendship"
+   },
+   {
+    "range": [
+     9,
+     10
+    ],
+    "name": "Ring of Anything"
+   },
+   {
+    "range": [
+     11,
+     20
+    ],
+    "name": "Ring of Blinking"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Ring of Arcane Knowledge"
+   },
+   {
+    "range": [
+     23,
+     31
+    ],
+    "name": "Ring of Chameleon Power"
+   },
+   {
+    "range": [
+     32,
+     40
+    ],
+    "name": "Ring of Clumsiness"
+   },
+   {
+    "range": [
+     41,
+     49
+    ],
+    "name": "Ring of Faerie"
+   },
+   {
+    "range": [
+     50,
+     58
+    ],
+    "name": "Ring of Jumping"
+   },
+   {
+    "range": [
+     59,
+     67
+    ],
+    "name": "Ring of Mind Shielding"
+   },
+   {
+    "range": [
+     68,
+     70
+    ],
+    "name": "Ring of the Ram"
+   },
+   {
+    "range": [
+     71,
+     79
+    ],
+    "name": "Ring of Shocking Grasp"
+   },
+   {
+    "range": [
+     80,
+     92
+    ],
+    "name": "Ring of Sustenance"
+   },
+   {
+    "range": [
+     93,
+     100
+    ],
+    "name": "Ring of Truth"
+   }
+  ],
+  "III.D": [
+   {
+    "range": [
+     1,
+     6
+    ],
+    "name": "Rod of Absorption"
+   },
+   {
+    "range": [
+     7,
+     10
+    ],
+    "name": "Rod of Alertness"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Rod of Beguiling"
+   },
+   {
+    "range": [
+     12,
+     21
+    ],
+    "name": "Rod of Cancellation"
+   },
+   {
+    "range": [
+     22,
+     26
+    ],
+    "name": "Rod of Flailing"
+   },
+   {
+    "range": [
+     27,
+     27
+    ],
+    "name": "Rod of Lordly Might"
+   },
+   {
+    "range": [
+     28,
+     30
+    ],
+    "name": "Rod of Passage"
+   },
+   {
+    "range": [
+     31,
+     31
+    ],
+    "name": "Rod of Resurrection"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Rod of Rulership"
+   },
+   {
+    "range": [
+     33,
+     36
+    ],
+    "name": "Rod of Security"
+   },
+   {
+    "range": [
+     37,
+     37
+    ],
+    "name": "Rod of Smiting"
+   },
+   {
+    "range": [
+     38,
+     40
+    ],
+    "name": "Rod of Splendor"
+   },
+   {
+    "range": [
+     41,
+     41
+    ],
+    "name": "Staff of Command"
+   },
+   {
+    "range": [
+     42,
+     48
+    ],
+    "name": "Staff of Curing"
+   },
+   {
+    "range": [
+     49,
+     55
+    ],
+    "name": "Staff-Mace"
+   },
+   {
+    "range": [
+     56,
+     56
+    ],
+    "name": "Staff of the Magi"
+   },
+   {
+    "range": [
+     57,
+     57
+    ],
+    "name": "Staff of Power"
+   },
+   {
+    "range": [
+     58,
+     63
+    ],
+    "name": "Staff of the Serpent"
+   },
+   {
+    "range": [
+     64,
+     70
+    ],
+    "name": "Staff of Slinging"
+   },
+   {
+    "range": [
+     71,
+     76
+    ],
+    "name": "Staff-Spear"
+   },
+   {
+    "range": [
+     77,
+     82
+    ],
+    "name": "Staff of Striking"
+   },
+   {
+    "range": [
+     83,
+     85
+    ],
+    "name": "Staff of Swarming Insects"
+   },
+   {
+    "range": [
+     86,
+     86
+    ],
+    "name": "Staff of Thunder & Lightning"
+   },
+   {
+    "range": [
+     87,
+     90
+    ],
+    "name": "Staff of Withering"
+   },
+   {
+    "range": [
+     91,
+     100
+    ],
+    "name": "Staff of the Woodlands"
+   }
+  ],
+  "III.D.2": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Anything Wand"
+   },
+   {
+    "range": [
+     2,
+     5
+    ],
+    "name": "Buckler Wand"
+   },
+   {
+    "range": [
+     6,
+     7
+    ],
+    "name": "Wand of Conjuration"
+   },
+   {
+    "range": [
+     8,
+     10
+    ],
+    "name": "Wand of Defoliation"
+   },
+   {
+    "range": [
+     11,
+     12
+    ],
+    "name": "Wand of Earth & Stone"
+   },
+   {
+    "range": [
+     13,
+     16
+    ],
+    "name": "Wand of Enemy Detection"
+   },
+   {
+    "range": [
+     17,
+     20
+    ],
+    "name": "Wand of Fear"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Wand of Fire"
+   },
+   {
+    "range": [
+     23,
+     26
+    ],
+    "name": "Wand of Fireballs"
+   },
+   {
+    "range": [
+     27,
+     30
+    ],
+    "name": "Wand of Flame Extinguishing"
+   },
+   {
+    "range": [
+     31,
+     31
+    ],
+    "name": "Wand of Force"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Wand of Frost"
+   },
+   {
+    "range": [
+     33,
+     35
+    ],
+    "name": "Wand of Ice Storms"
+   },
+   {
+    "range": [
+     36,
+     39
+    ],
+    "name": "Wand of Illumination"
+   },
+   {
+    "range": [
+     40,
+     43
+    ],
+    "name": "Wand of Illusion"
+   },
+   {
+    "range": [
+     44,
+     45
+    ],
+    "name": "Wand of Lightning"
+   },
+   {
+    "range": [
+     46,
+     49
+    ],
+    "name": "Wand of Lightning Bolts"
+   },
+   {
+    "range": [
+     50,
+     53
+    ],
+    "name": "Wand of Magic Detection"
+   },
+   {
+    "range": [
+     54,
+     61
+    ],
+    "name": "Wand of Magic Missiles"
+   },
+   {
+    "range": [
+     62,
+     66
+    ],
+    "name": "Wand of Metal & Mineral Detection"
+   },
+   {
+    "range": [
+     67,
+     68
+    ],
+    "name": "Wand of Metal Command"
+   },
+   {
+    "range": [
+     69,
+     74
+    ],
+    "name": "Wand of Negation"
+   },
+   {
+    "range": [
+     75,
+     78
+    ],
+    "name": "Wand of Paralyzation"
+   },
+   {
+    "range": [
+     79,
+     82
+    ],
+    "name": "Wand of Polymorphing"
+   },
+   {
+    "range": [
+     83,
+     86
+    ],
+    "name": "Wand of Secret Door & Trap Location"
+   },
+   {
+    "range": [
+     87,
+     90
+    ],
+    "name": "Wand of Size Alteration"
+   },
+   {
+    "range": [
+     91,
+     92
+    ],
+    "name": "Wand of Steam & Vapor"
+   },
+   {
+    "range": [
+     93,
+     100
+    ],
+    "name": "Wand of Wonder"
+   }
+  ],
+  "III.E.1": [
+   {
+    "range": [
+     1,
+     2
+    ],
+    "name": "Alchemy Jug"
+   },
+   {
+    "range": [
+     3,
+     4
+    ],
+    "name": "Amulet of Inescapable Location"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "name": "Amulet of Life Protection"
+   },
+   {
+    "range": [
+     6,
+     7
+    ],
+    "name": "Amulet of the Planes"
+   },
+   {
+    "range": [
+     8,
+     11
+    ],
+    "name": "Amulet of Proof Against Detection and Location"
+   },
+   {
+    "range": [
+     12,
+     13
+    ],
+    "name": "Underwater Apparatus"
+   },
+   {
+    "range": [
+     14,
+     16
+    ],
+    "name": "Arrow of Direction"
+   },
+   {
+    "range": [
+     17,
+     17
+    ],
+    "name": "ARTIFACT"
+   },
+   {
+    "range": [
+     18,
+     20
+    ],
+    "name": "Bag of Beans"
+   },
+   {
+    "range": [
+     21,
+     21
+    ],
+    "name": "Bag of Devouring"
+   },
+   {
+    "range": [
+     22,
+     26
+    ],
+    "name": "Bag of Holding"
+   },
+   {
+    "range": [
+     27,
+     27
+    ],
+    "name": "Bag of Transmuting"
+   },
+   {
+    "range": [
+     28,
+     29
+    ],
+    "name": "Bag of Tricks"
+   },
+   {
+    "range": [
+     30,
+     31
+    ],
+    "name": "Beaker of Plentiful Potions"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Boat, Folding"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "name": "Book of Exalted Deeds"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "name": "Book of Infinite Spells"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "name": "Book of Vile Darkness"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "name": "Boots of Dancing"
+   },
+   {
+    "range": [
+     37,
+     42
+    ],
+    "name": "Boots of Elvenkind"
+   },
+   {
+    "range": [
+     43,
+     47
+    ],
+    "name": "Boots of Levitation"
+   },
+   {
+    "range": [
+     48,
+     51
+    ],
+    "name": "Boots of Speed"
+   },
+   {
+    "range": [
+     52,
+     55
+    ],
+    "name": "Boots of Striding and Springing"
+   },
+   {
+    "range": [
+     56,
+     58
+    ],
+    "name": "Bowl Commanding Water Elementals"
+   },
+   {
+    "range": [
+     59,
+     59
+    ],
+    "name": "Bowl of Watery Death"
+   },
+   {
+    "range": [
+     60,
+     79
+    ],
+    "name": "Bracers of Defense"
+   },
+   {
+    "range": [
+     80,
+     81
+    ],
+    "name": "Bracers of Defenselessness"
+   },
+   {
+    "range": [
+     82,
+     84
+    ],
+    "name": "Brazier Commanding Fire Elementals"
+   },
+   {
+    "range": [
+     85,
+     85
+    ],
+    "name": "Brazier of Sleep Smoke"
+   },
+   {
+    "range": [
+     86,
+     92
+    ],
+    "name": "Brooch of Shielding"
+   },
+   {
+    "range": [
+     93,
+     93
+    ],
+    "name": "Broom of Animated Attack"
+   },
+   {
+    "range": [
+     94,
+     98
+    ],
+    "name": "Broom of Flying"
+   },
+   {
+    "range": [
+     99,
+     100
+    ],
+    "name": "Everfull Purse"
+   }
+  ],
+  "III.E.2": [
+   {
+    "range": [
+     1,
+     6
+    ],
+    "name": "Candle of Invocation"
+   },
+   {
+    "range": [
+     7,
+     8
+    ],
+    "name": "Carpet of Flying"
+   },
+   {
+    "range": [
+     9,
+     10
+    ],
+    "name": "Censer Controlling Air Elementals"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Censer of Summoning Hostile Air Elementals"
+   },
+   {
+    "range": [
+     12,
+     13
+    ],
+    "name": "Chime of Opening"
+   },
+   {
+    "range": [
+     14,
+     14
+    ],
+    "name": "Chime of Hunger"
+   },
+   {
+    "range": [
+     15,
+     18
+    ],
+    "name": "Cloak of Displacement"
+   },
+   {
+    "range": [
+     19,
+     27
+    ],
+    "name": "Cloak of Elvenkind"
+   },
+   {
+    "range": [
+     28,
+     30
+    ],
+    "name": "Cloak of Manta Ray"
+   },
+   {
+    "range": [
+     31,
+     32
+    ],
+    "name": "Cloak of Poisonousness"
+   },
+   {
+    "range": [
+     33,
+     55
+    ],
+    "name": "Cloak of Protection"
+   },
+   {
+    "range": [
+     56,
+     60
+    ],
+    "name": "Crystal Ball"
+   },
+   {
+    "range": [
+     61,
+     61
+    ],
+    "name": "Crystal Hypnosis Ball"
+   },
+   {
+    "range": [
+     62,
+     63
+    ],
+    "name": "Cube of Force"
+   },
+   {
+    "range": [
+     64,
+     65
+    ],
+    "name": "Cube of Frost Resistance"
+   },
+   {
+    "range": [
+     66,
+     67
+    ],
+    "name": "Cubic Gate"
+   },
+   {
+    "range": [
+     68,
+     69
+    ],
+    "name": "Instant Fortress"
+   },
+   {
+    "range": [
+     70,
+     72
+    ],
+    "name": "Decanter of Endless Water"
+   },
+   {
+    "range": [
+     73,
+     76
+    ],
+    "name": "Deck of Many Things"
+   },
+   {
+    "range": [
+     77,
+     77
+    ],
+    "name": "Drums of Deafening"
+   },
+   {
+    "range": [
+     78,
+     79
+    ],
+    "name": "Drums of Panic"
+   },
+   {
+    "range": [
+     80,
+     85
+    ],
+    "name": "Dust of Appearance"
+   },
+   {
+    "range": [
+     86,
+     91
+    ],
+    "name": "Dust of Disappearance"
+   },
+   {
+    "range": [
+     92,
+     92
+    ],
+    "name": "Dust of Sneezing and Choking"
+   },
+   {
+    "range": [
+     93,
+     93
+    ],
+    "name": "Efreeti Bottle"
+   },
+   {
+    "range": [
+     94,
+     94
+    ],
+    "name": "Eversmoking Bottle"
+   },
+   {
+    "range": [
+     95,
+     95
+    ],
+    "name": "Eyes of Charming"
+   },
+   {
+    "range": [
+     96,
+     97
+    ],
+    "name": "Eyes of the Eagle"
+   },
+   {
+    "range": [
+     98,
+     99
+    ],
+    "name": "Eyes of Minute Seeing"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Eyes of Petrification"
+   }
+  ],
+  "III.E.3": [
+   {
+    "range": [
+     1,
+     15
+    ],
+    "name": "Figurine of Wondrous Power"
+   },
+   {
+    "range": [
+     16,
+     16
+    ],
+    "name": "Flask of Curses"
+   },
+   {
+    "range": [
+     17,
+     18
+    ],
+    "name": "Gauntlets of Dexterity"
+   },
+   {
+    "range": [
+     19,
+     20
+    ],
+    "name": "Gauntlets of Fumbling"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Gauntlets of Ogre Power"
+   },
+   {
+    "range": [
+     23,
+     25
+    ],
+    "name": "Gauntlets of Swimming and Climbing"
+   },
+   {
+    "range": [
+     26,
+     26
+    ],
+    "name": "Gem of Brightness"
+   },
+   {
+    "range": [
+     27,
+     27
+    ],
+    "name": "Gem of Seeing"
+   },
+   {
+    "range": [
+     28,
+     28
+    ],
+    "name": "Girdle of Femininity/Masculinity"
+   },
+   {
+    "range": [
+     29,
+     29
+    ],
+    "name": "Girdle of Giant Strength"
+   },
+   {
+    "range": [
+     30,
+     30
+    ],
+    "name": "Helm of Brilliance"
+   },
+   {
+    "range": [
+     31,
+     35
+    ],
+    "name": "Helm of Comprehending Languages & Reading Magic"
+   },
+   {
+    "range": [
+     36,
+     37
+    ],
+    "name": "Helm of Opposite Alignment"
+   },
+   {
+    "range": [
+     38,
+     39
+    ],
+    "name": "Helm of Telepathy"
+   },
+   {
+    "range": [
+     40,
+     40
+    ],
+    "name": "Helm of Teleportation"
+   },
+   {
+    "range": [
+     41,
+     45
+    ],
+    "name": "Helm of Underwater Action"
+   },
+   {
+    "range": [
+     46,
+     46
+    ],
+    "name": "Horn of Blasting"
+   },
+   {
+    "range": [
+     47,
+     48
+    ],
+    "name": "Horn of Bubbles"
+   },
+   {
+    "range": [
+     49,
+     49
+    ],
+    "name": "Horn of Collapsing"
+   },
+   {
+    "range": [
+     50,
+     53
+    ],
+    "name": "Horn of the Tritons"
+   },
+   {
+    "range": [
+     54,
+     60
+    ],
+    "name": "Horn of Valhalla"
+   },
+   {
+    "range": [
+     61,
+     63
+    ],
+    "name": "Horseshoes of Speed"
+   },
+   {
+    "range": [
+     64,
+     65
+    ],
+    "name": "Horseshoes of a Zephyr"
+   },
+   {
+    "range": [
+     66,
+     70
+    ],
+    "name": "Incense of Meditation"
+   },
+   {
+    "range": [
+     71,
+     71
+    ],
+    "name": "Incense of Obsession"
+   },
+   {
+    "range": [
+     72,
+     72
+    ],
+    "name": "Orbiting Stones"
+   },
+   {
+    "range": [
+     73,
+     78
+    ],
+    "name": "Instrument of the Bards"
+   },
+   {
+    "range": [
+     79,
+     80
+    ],
+    "name": "Iron Flask"
+   },
+   {
+    "range": [
+     81,
+     85
+    ],
+    "name": "Javelin of Lightning"
+   },
+   {
+    "range": [
+     86,
+     90
+    ],
+    "name": "Javelin of Piercing"
+   },
+   {
+    "range": [
+     91,
+     91
+    ],
+    "name": "Jewel of Attacks"
+   },
+   {
+    "range": [
+     92,
+     92
+    ],
+    "name": "Jewel of Flawlessness"
+   },
+   {
+    "range": [
+     93,
+     100
+    ],
+    "name": "Restorative Ointment"
+   }
+  ],
+  "III.E.4": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Libram of Gainful Conjuration"
+   },
+   {
+    "range": [
+     2,
+     2
+    ],
+    "name": "Libram of Ineffable Damnation"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "name": "Libram of Silver Magic"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "name": "Lyre of Building"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "name": "Manual of Bodily Health"
+   },
+   {
+    "range": [
+     6,
+     6
+    ],
+    "name": "Manual of Gainful Exercise"
+   },
+   {
+    "range": [
+     7,
+     7
+    ],
+    "name": "Manual of Golems"
+   },
+   {
+    "range": [
+     8,
+     8
+    ],
+    "name": "Manual of Puissant Skill at Arms"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "name": "Manual of Quickness of Action"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "name": "Manual of Stealthy Pilfering"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Mattock of the Titans"
+   },
+   {
+    "range": [
+     12,
+     12
+    ],
+    "name": "Maul of the Titans"
+   },
+   {
+    "range": [
+     13,
+     15
+    ],
+    "name": "Medallion of ESP"
+   },
+   {
+    "range": [
+     16,
+     17
+    ],
+    "name": "Medallion of Thought Projection"
+   },
+   {
+    "range": [
+     18,
+     18
+    ],
+    "name": "Mirror of Life Trapping"
+   },
+   {
+    "range": [
+     19,
+     19
+    ],
+    "name": "Mirror of Mental Prowess"
+   },
+   {
+    "range": [
+     20,
+     20
+    ],
+    "name": "Mirror of Opposition"
+   },
+   {
+    "range": [
+     21,
+     23
+    ],
+    "name": "Necklace of Adaptation"
+   },
+   {
+    "range": [
+     24,
+     27
+    ],
+    "name": "Necklace of Missiles"
+   },
+   {
+    "range": [
+     28,
+     33
+    ],
+    "name": "Necklace of Prayer Beads"
+   },
+   {
+    "range": [
+     34,
+     35
+    ],
+    "name": "Necklace of Strangulation"
+   },
+   {
+    "range": [
+     36,
+     38
+    ],
+    "name": "Net of Entrapment"
+   },
+   {
+    "range": [
+     39,
+     42
+    ],
+    "name": "Net of Snaring"
+   },
+   {
+    "range": [
+     43,
+     44
+    ],
+    "name": "Nolzurs’ Marvelous Pigments"
+   },
+   {
+    "range": [
+     45,
+     46
+    ],
+    "name": "Pearl of Power"
+   },
+   {
+    "range": [
+     47,
+     48
+    ],
+    "name": "Pearl of Wisdom"
+   },
+   {
+    "range": [
+     49,
+     50
+    ],
+    "name": "Periapt of Foul Rotting"
+   },
+   {
+    "range": [
+     51,
+     53
+    ],
+    "name": "Periapt of Health"
+   },
+   {
+    "range": [
+     54,
+     60
+    ],
+    "name": "Periapt of Proof Against Poison"
+   },
+   {
+    "range": [
+     61,
+     64
+    ],
+    "name": "Periapt of Wound Closure"
+   },
+   {
+    "range": [
+     65,
+     70
+    ],
+    "name": "Phylactery of Faithfulness"
+   },
+   {
+    "range": [
+     71,
+     74
+    ],
+    "name": "Phylactery of Long Years"
+   },
+   {
+    "range": [
+     75,
+     76
+    ],
+    "name": "Phylactery of Monstrous Attention"
+   },
+   {
+    "range": [
+     77,
+     84
+    ],
+    "name": "Pipes of the Sewers"
+   },
+   {
+    "range": [
+     85,
+     85
+    ],
+    "name": "Portable Hole"
+   },
+   {
+    "range": [
+     86,
+     100
+    ],
+    "name": "Feather Token"
+   }
+  ],
+  "III.E.5": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Robe of the Archmagi"
+   },
+   {
+    "range": [
+     2,
+     8
+    ],
+    "name": "Robe of Blending"
+   },
+   {
+    "range": [
+     9,
+     9
+    ],
+    "name": "Robe of Eyes"
+   },
+   {
+    "range": [
+     10,
+     10
+    ],
+    "name": "Robe of Powerlessness"
+   },
+   {
+    "range": [
+     11,
+     11
+    ],
+    "name": "Robe of Scintillating Colors"
+   },
+   {
+    "range": [
+     12,
+     19
+    ],
+    "name": "Robe of Useful Items"
+   },
+   {
+    "range": [
+     20,
+     25
+    ],
+    "name": "Rope of Climbing"
+   },
+   {
+    "range": [
+     26,
+     27
+    ],
+    "name": "Rope of Constriction"
+   },
+   {
+    "range": [
+     28,
+     31
+    ],
+    "name": "Rope of Entanglement"
+   },
+   {
+    "range": [
+     32,
+     32
+    ],
+    "name": "Rug of Smothering"
+   },
+   {
+    "range": [
+     33,
+     33
+    ],
+    "name": "Rug of Welcome"
+   },
+   {
+    "range": [
+     34,
+     34
+    ],
+    "name": "Saw of Mighty Cutting"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "name": "Scarab of Death"
+   },
+   {
+    "range": [
+     36,
+     38
+    ],
+    "name": "Scarab of Enraging Enemies"
+   },
+   {
+    "range": [
+     39,
+     40
+    ],
+    "name": "Scarab of Insanity"
+   },
+   {
+    "range": [
+     41,
+     46
+    ],
+    "name": "Scarab of Protection"
+   },
+   {
+    "range": [
+     47,
+     47
+    ],
+    "name": "Spade of Colossal Excavation"
+   },
+   {
+    "range": [
+     48,
+     48
+    ],
+    "name": "Sphere of Annihilation"
+   },
+   {
+    "range": [
+     49,
+     50
+    ],
+    "name": "Stone of Controlling Earth Elementals"
+   },
+   {
+    "range": [
+     51,
+     52
+    ],
+    "name": "Stone of Good Luck (Luckstone)"
+   },
+   {
+    "range": [
+     53,
+     54
+    ],
+    "name": "Stone of Weight (Loadstone)"
+   },
+   {
+    "range": [
+     55,
+     57
+    ],
+    "name": "Talisman of Pure Good"
+   },
+   {
+    "range": [
+     58,
+     58
+    ],
+    "name": "Talisman of the Sphere"
+   },
+   {
+    "range": [
+     59,
+     60
+    ],
+    "name": "Talisman of Ultimate Evil"
+   },
+   {
+    "range": [
+     61,
+     66
+    ],
+    "name": "Talisman of Zagy"
+   },
+   {
+    "range": [
+     67,
+     67
+    ],
+    "name": "Tome of Clear Thought"
+   },
+   {
+    "range": [
+     68,
+     68
+    ],
+    "name": "Tome of Leadership and Influence"
+   },
+   {
+    "range": [
+     69,
+     69
+    ],
+    "name": "Tome of Understanding"
+   },
+   {
+    "range": [
+     70,
+     76
+    ],
+    "name": "Trident of Fish Command"
+   },
+   {
+    "range": [
+     77,
+     78
+    ],
+    "name": "Trident of Submission"
+   },
+   {
+    "range": [
+     79,
+     83
+    ],
+    "name": "Trident of Warning"
+   },
+   {
+    "range": [
+     84,
+     85
+    ],
+    "name": "Trident of Yearning"
+   },
+   {
+    "range": [
+     86,
+     87
+    ],
+    "name": "Vacuous Grimoire"
+   },
+   {
+    "range": [
+     88,
+     90
+    ],
+    "name": "Well of Many Worlds"
+   },
+   {
+    "range": [
+     91,
+     100
+    ],
+    "name": "Wings of Flying"
+   }
+  ],
+  "III.E.6": [
+   {
+    "range": [
+     1,
+     4
+    ],
+    "name": "Amulet Versus Undead"
+   },
+   {
+    "range": [
+     5,
+     5
+    ],
+    "name": "Anything Item"
+   },
+   {
+    "range": [
+     6,
+     7
+    ],
+    "name": "Beads of Force"
+   },
+   {
+    "range": [
+     8,
+     14
+    ],
+    "name": "Blessed Spellbook"
+   },
+   {
+    "range": [
+     15,
+     16
+    ],
+    "name": "Boots of the North"
+   },
+   {
+    "range": [
+     17,
+     19
+    ],
+    "name": "Boots of Varied Tracks"
+   },
+   {
+    "range": [
+     20,
+     20
+    ],
+    "name": "Boots, Winged"
+   },
+   {
+    "range": [
+     21,
+     24
+    ],
+    "name": "Bracers of Archery"
+   },
+   {
+    "range": [
+     25,
+     26
+    ],
+    "name": "Bracers of Brachiation"
+   },
+   {
+    "range": [
+     27,
+     28
+    ],
+    "name": "Chime of Interruption"
+   },
+   {
+    "range": [
+     29,
+     30
+    ],
+    "name": "Cloak of Arachnidia"
+   },
+   {
+    "range": [
+     31,
+     34
+    ],
+    "name": "Cloak of the Bat"
+   },
+   {
+    "range": [
+     35,
+     36
+    ],
+    "name": "Cyclocone"
+   },
+   {
+    "range": [
+     37,
+     40
+    ],
+    "name": "Dart of the Hornets’ Nest"
+   },
+   {
+    "range": [
+     41,
+     42
+    ],
+    "name": "Deck of Illusions"
+   },
+   {
+    "range": [
+     43,
+     44
+    ],
+    "name": "Dicerion of Light & Darkness"
+   },
+   {
+    "range": [
+     45,
+     47
+    ],
+    "name": "Dust of Dryness"
+   },
+   {
+    "range": [
+     48,
+     50
+    ],
+    "name": "Dust of Illusion"
+   },
+   {
+    "range": [
+     51,
+     54
+    ],
+    "name": "Dust of Tracelessness"
+   },
+   {
+    "range": [
+     55,
+     56
+    ],
+    "name": "Egg of Desire"
+   },
+   {
+    "range": [
+     57,
+     60
+    ],
+    "name": "Egg of Reason"
+   },
+   {
+    "range": [
+     61,
+     62
+    ],
+    "name": "Egg of Shattering"
+   },
+   {
+    "range": [
+     63,
+     65
+    ],
+    "name": "Gem of Insight"
+   },
+   {
+    "range": [
+     66,
+     68
+    ],
+    "name": "Girdle of Dwarvenkind"
+   },
+   {
+    "range": [
+     69,
+     76
+    ],
+    "name": "Girdle of Many Pouches"
+   },
+   {
+    "range": [
+     77,
+     79
+    ],
+    "name": "Gloves of Missile Snaring"
+   },
+   {
+    "range": [
+     80,
+     83
+    ],
+    "name": "Gloves of Thievery"
+   },
+   {
+    "range": [
+     84,
+     88
+    ],
+    "name": "Hat of Difference"
+   },
+   {
+    "range": [
+     89,
+     95
+    ],
+    "name": "Hat of Disguise"
+   },
+   {
+    "range": [
+     96,
+     100
+    ],
+    "name": "Hat of Stupidity"
+   }
+  ],
+  "III.E.7": [
+   {
+    "range": [
+     1,
+     5
+    ],
+    "name": "Handy Haversack"
+   },
+   {
+    "range": [
+     6,
+     10
+    ],
+    "name": "Horn of Fog"
+   },
+   {
+    "range": [
+     11,
+     12
+    ],
+    "name": "Horn of Goodness (Evil)"
+   },
+   {
+    "range": [
+     13,
+     14
+    ],
+    "name": "Iron Bands of Bilarro"
+   },
+   {
+    "range": [
+     15,
+     18
+    ],
+    "name": "Lens of Detection"
+   },
+   {
+    "range": [
+     19,
+     21
+    ],
+    "name": "Lens of Ultravision"
+   },
+   {
+    "range": [
+     22,
+     23
+    ],
+    "name": "Mantle of Celestian"
+   },
+   {
+    "range": [
+     24,
+     27
+    ],
+    "name": "Sustaining Spoon"
+   },
+   {
+    "range": [
+     28,
+     29
+    ],
+    "name": "Pearl of the Sirines"
+   },
+   {
+    "range": [
+     30,
+     31
+    ],
+    "name": "Philosopher’s Stone"
+   },
+   {
+    "range": [
+     32,
+     37
+    ],
+    "name": "Pouch of Accessibility"
+   },
+   {
+    "range": [
+     38,
+     38
+    ],
+    "name": "Prison of Binding"
+   },
+   {
+    "range": [
+     39,
+     40
+    ],
+    "name": "Quiver of Ehlonna"
+   },
+   {
+    "range": [
+     41,
+     42
+    ],
+    "name": "Robe of Stars"
+   },
+   {
+    "range": [
+     43,
+     48
+    ],
+    "name": "Robe of Vermin"
+   },
+   {
+    "range": [
+     49,
+     50
+    ],
+    "name": "Scarab Versus Golems"
+   },
+   {
+    "range": [
+     51,
+     54
+    ],
+    "name": "Shadow Lanthorn"
+   },
+   {
+    "range": [
+     55,
+     57
+    ],
+    "name": "Sheet of Smallness"
+   },
+   {
+    "range": [
+     58,
+     59
+    ],
+    "name": "Shoes of Fharlanghn"
+   },
+   {
+    "range": [
+     60,
+     64
+    ],
+    "name": "Slippers of Kicking"
+   },
+   {
+    "range": [
+     65,
+     70
+    ],
+    "name": "Slippers of Spider Climbing"
+   },
+   {
+    "range": [
+     71,
+     72
+    ],
+    "name": "Sovereign Glue"
+   },
+   {
+    "range": [
+     73,
+     77
+    ],
+    "name": "Spoon of Stirring"
+   },
+   {
+    "range": [
+     78,
+     81
+    ],
+    "name": "Stone Horse"
+   },
+   {
+    "range": [
+     82,
+     84
+    ],
+    "name": "Ultimate Solution"
+   },
+   {
+    "range": [
+     85,
+     88
+    ],
+    "name": "Wind Fan"
+   },
+   {
+    "range": [
+     89,
+     92
+    ],
+    "name": "Mystical Flowing Flagon"
+   },
+   {
+    "range": [
+     93,
+     100
+    ],
+    "name": "Mystical Spell Component Case"
+   }
+  ],
+  "III.F": [
+   {
+    "range": [
+     1,
+     5
+    ],
+    "name": "Chain Mail +1"
+   },
+   {
+    "range": [
+     6,
+     9
+    ],
+    "name": "Chain Mail +2"
+   },
+   {
+    "range": [
+     10,
+     11
+    ],
+    "name": "Chain Mail +3"
+   },
+   {
+    "range": [
+     12,
+     19
+    ],
+    "name": "Leather Armor +1"
+   },
+   {
+    "range": [
+     20,
+     26
+    ],
+    "name": "Plate Mail +1"
+   },
+   {
+    "range": [
+     27,
+     32
+    ],
+    "name": "Plate Mail +2"
+   },
+   {
+    "range": [
+     33,
+     35
+    ],
+    "name": "Plate Mail +3"
+   },
+   {
+    "range": [
+     36,
+     37
+    ],
+    "name": "Plate Mail +4"
+   },
+   {
+    "range": [
+     38,
+     38
+    ],
+    "name": "Plate Mail +5"
+   },
+   {
+    "range": [
+     39,
+     39
+    ],
+    "name": "Plate Mail of Etherealness"
+   },
+   {
+    "range": [
+     40,
+     44
+    ],
+    "name": "Plate Mail of Vulnerability"
+   },
+   {
+    "range": [
+     45,
+     50
+    ],
+    "name": "Ring Mail +1"
+   },
+   {
+    "range": [
+     51,
+     55
+    ],
+    "name": "Scale Mail +1"
+   },
+   {
+    "range": [
+     56,
+     59
+    ],
+    "name": "Scale Mail +2"
+   },
+   {
+    "range": [
+     60,
+     63
+    ],
+    "name": "Splint Mail +1"
+   },
+   {
+    "range": [
+     64,
+     66
+    ],
+    "name": "Splint Mail +2"
+   },
+   {
+    "range": [
+     67,
+     68
+    ],
+    "name": "Splint Mail +3"
+   },
+   {
+    "range": [
+     69,
+     69
+    ],
+    "name": "Splint Mail +4"
+   },
+   {
+    "range": [
+     70,
+     75
+    ],
+    "name": "Studded Leather +1"
+   },
+   {
+    "range": [
+     76,
+     84
+    ],
+    "name": "Shield +1"
+   },
+   {
+    "range": [
+     85,
+     89
+    ],
+    "name": "Shield +2"
+   },
+   {
+    "range": [
+     90,
+     93
+    ],
+    "name": "Shield +3"
+   },
+   {
+    "range": [
+     94,
+     95
+    ],
+    "name": "Shield +4"
+   },
+   {
+    "range": [
+     96,
+     96
+    ],
+    "name": "Shield +5"
+   },
+   {
+    "range": [
+     97,
+     97
+    ],
+    "name": "Shield, large, +1, +4 vs. missiles"
+   },
+   {
+    "range": [
+     98,
+     100
+    ],
+    "name": "Shield −1, missile attractor"
+   }
+  ],
+  "III.F.2": [
+   {
+    "range": [
+     1,
+     1
+    ],
+    "name": "Anything Armor"
+   },
+   {
+    "range": [
+     2,
+     7
+    ],
+    "name": "Bronze Plate Mail +1"
+   },
+   {
+    "range": [
+     8,
+     11
+    ],
+    "name": "Bronze Plate Mail +2"
+   },
+   {
+    "range": [
+     12,
+     17
+    ],
+    "name": "Buckler +1"
+   },
+   {
+    "range": [
+     18,
+     21
+    ],
+    "name": "Buckler +2"
+   },
+   {
+    "range": [
+     22,
+     23
+    ],
+    "name": "Buckler +3"
+   },
+   {
+    "range": [
+     24,
+     25
+    ],
+    "name": "Chain Mail +4"
+   },
+   {
+    "range": [
+     26,
+     31
+    ],
+    "name": "Elfin Chain Mail +1"
+   },
+   {
+    "range": [
+     32,
+     35
+    ],
+    "name": "Elfin Chain Mail +2"
+   },
+   {
+    "range": [
+     36,
+     38
+    ],
+    "name": "Elfin Chain Mail +3"
+   },
+   {
+    "range": [
+     39,
+     40
+    ],
+    "name": "Elfin Chain Mail +4"
+   },
+   {
+    "range": [
+     41,
+     41
+    ],
+    "name": "Elfin Chain Mail +5"
+   },
+   {
+    "range": [
+     42,
+     50
+    ],
+    "name": "Leather Armor +2"
+   },
+   {
+    "range": [
+     51,
+     55
+    ],
+    "name": "Leather Armor +3"
+   },
+   {
+    "range": [
+     56,
+     62
+    ],
+    "name": "Plate Armor, Field, +1"
+   },
+   {
+    "range": [
+     63,
+     68
+    ],
+    "name": "Plate Armor, Field, +2"
+   },
+   {
+    "range": [
+     69,
+     71
+    ],
+    "name": "Plate Armor, Field, +3"
+   },
+   {
+    "range": [
+     72,
+     73
+    ],
+    "name": "Plate Armor, Field, +4"
+   },
+   {
+    "range": [
+     74,
+     74
+    ],
+    "name": "Plate Armor, Field, +5"
+   },
+   {
+    "range": [
+     75,
+     80
+    ],
+    "name": "Plate Armor, Full, +1"
+   },
+   {
+    "range": [
+     81,
+     84
+    ],
+    "name": "Plate Armor, Full, +2"
+   },
+   {
+    "range": [
+     85,
+     87
+    ],
+    "name": "Plate Armor, Full, +3"
+   },
+   {
+    "range": [
+     88,
+     89
+    ],
+    "name": "Plate Armor, Full, +4"
+   },
+   {
+    "range": [
+     90,
+     93
+    ],
+    "name": "Ring Mail +2"
+   },
+   {
+    "range": [
+     94,
+     95
+    ],
+    "name": "Scale Mail +3"
+   },
+   {
+    "range": [
+     96,
+     100
+    ],
+    "name": "Studded Leather +2"
+   }
+  ],
+  "III.G": [
+   {
+    "range": [
+     1,
+     25
+    ],
+    "name": "Sword +1"
+   },
+   {
+    "range": [
+     26,
+     30
+    ],
+    "name": "Sword +1, +2 vs. magic-using & enchanted creatures"
+   },
+   {
+    "range": [
+     31,
+     35
+    ],
+    "name": "Sword +1, +3 vs. lycanthropes & shape changers"
+   },
+   {
+    "range": [
+     36,
+     40
+    ],
+    "name": "Sword +1, +3 vs. regenerating creatures"
+   },
+   {
+    "range": [
+     41,
+     45
+    ],
+    "name": "Sword +1, +4 vs. reptiles"
+   },
+   {
+    "range": [
+     46,
+     49
+    ],
+    "name": "Sword +1, Flame Tongue"
+   },
+   {
+    "range": [
+     50,
+     50
+    ],
+    "name": "Sword +1, Luck Blade"
+   },
+   {
+    "range": [
+     51,
+     58
+    ],
+    "name": "Sword +2"
+   },
+   {
+    "range": [
+     59,
+     62
+    ],
+    "name": "Sword +2, Giant Slayer"
+   },
+   {
+    "range": [
+     63,
+     66
+    ],
+    "name": "Sword +2, Dragon Slayer"
+   },
+   {
+    "range": [
+     67,
+     70
+    ],
+    "name": "Sword, Short, Quickness (+2)"
+   },
+   {
+    "range": [
+     71,
+     76
+    ],
+    "name": "Sword +3"
+   },
+   {
+    "range": [
+     77,
+     79
+    ],
+    "name": "Sword +3, Frost Brand"
+   },
+   {
+    "range": [
+     80,
+     81
+    ],
+    "name": "Sword of the Planes"
+   },
+   {
+    "range": [
+     82,
+     84
+    ],
+    "name": "Sword +4"
+   },
+   {
+    "range": [
+     85,
+     86
+    ],
+    "name": "Sword +4, Defender"
+   },
+   {
+    "range": [
+     87,
+     88
+    ],
+    "name": "Sword +5"
+   },
+   {
+    "range": [
+     89,
+     94
+    ],
+    "name": "Sword +1, Cursed"
+   },
+   {
+    "range": [
+     95,
+     98
+    ],
+    "name": "Sword −2, Cursed"
+   },
+   {
+    "range": [
+     99,
+     100
+    ],
+    "name": "Sword, Cursed Berserking"
+   }
+  ],
+  "III.G.2": [
+   {
+    "range": [
+     1,
+     15
+    ],
+    "name": "Sun Blade"
+   },
+   {
+    "range": [
+     16,
+     16
+    ],
+    "name": "Sword, Anything"
+   },
+   {
+    "range": [
+     17,
+     32
+    ],
+    "name": "Sword, Broad, “Final Word” Type"
+   },
+   {
+    "range": [
+     33,
+     45
+    ],
+    "name": "Sword of Dancing"
+   },
+   {
+    "range": [
+     46,
+     61
+    ],
+    "name": "Sword +5, Defender"
+   },
+   {
+    "range": [
+     62,
+     69
+    ],
+    "name": "Sword +6, Defender"
+   },
+   {
+    "range": [
+     70,
+     84
+    ],
+    "name": "Sword +5, Holy Avenger"
+   },
+   {
+    "range": [
+     85,
+     91
+    ],
+    "name": "Sword +6, Holy Avenger"
+   },
+   {
+    "range": [
+     92,
+     93
+    ],
+    "name": "Sword of Life Stealing"
+   },
+   {
+    "range": [
+     94,
+     95
+    ],
+    "name": "Sword +2, Nine Lives Stealer"
+   },
+   {
+    "range": [
+     96,
+     97
+    ],
+    "name": "Sword of Sharpness"
+   },
+   {
+    "range": [
+     98,
+     98
+    ],
+    "name": "Sword, Vorpal Weapon"
+   },
+   {
+    "range": [
+     99,
+     100
+    ],
+    "name": "Sword of Wounding"
+   }
+  ],
+  "III.H": [
+   {
+    "range": [
+     1,
+     8
+    ],
+    "name": "Arrow +1"
+   },
+   {
+    "range": [
+     9,
+     12
+    ],
+    "name": "Arrow +2"
+   },
+   {
+    "range": [
+     13,
+     14
+    ],
+    "name": "Arrow +3"
+   },
+   {
+    "range": [
+     15,
+     15
+    ],
+    "name": "Arrow of Slaying"
+   },
+   {
+    "range": [
+     16,
+     20
+    ],
+    "name": "Axe +1"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Axe +2"
+   },
+   {
+    "range": [
+     23,
+     23
+    ],
+    "name": "Axe +2, Throwing"
+   },
+   {
+    "range": [
+     24,
+     24
+    ],
+    "name": "Axe +3"
+   },
+   {
+    "range": [
+     25,
+     27
+    ],
+    "name": "Battle Axe +1"
+   },
+   {
+    "range": [
+     28,
+     32
+    ],
+    "name": "Bolt +2"
+   },
+   {
+    "range": [
+     33,
+     35
+    ],
+    "name": "Bow +1"
+   },
+   {
+    "range": [
+     36,
+     36
+    ],
+    "name": "Crossbow of Accuracy, +3"
+   },
+   {
+    "range": [
+     37,
+     37
+    ],
+    "name": "Crossbow of Distance"
+   },
+   {
+    "range": [
+     38,
+     38
+    ],
+    "name": "Crossbow of Speed"
+   },
+   {
+    "range": [
+     39,
+     46
+    ],
+    "name": "Dagger +1, +2 vs. creatures smaller than man-sized"
+   },
+   {
+    "range": [
+     47,
+     50
+    ],
+    "name": "Dagger +2, +3 vs. creatures larger than man-sized"
+   },
+   {
+    "range": [
+     51,
+     51
+    ],
+    "name": "Dagger of Venom"
+   },
+   {
+    "range": [
+     52,
+     56
+    ],
+    "name": "Flail +1"
+   },
+   {
+    "range": [
+     57,
+     60
+    ],
+    "name": "Hammer +1"
+   },
+   {
+    "range": [
+     61,
+     62
+    ],
+    "name": "Hammer +2"
+   },
+   {
+    "range": [
+     63,
+     63
+    ],
+    "name": "Hammer +3, Dwarven Thrower"
+   },
+   {
+    "range": [
+     64,
+     64
+    ],
+    "name": "Hammer of Thunderbolts"
+   },
+   {
+    "range": [
+     65,
+     67
+    ],
+    "name": "Javelin +2"
+   },
+   {
+    "range": [
+     68,
+     72
+    ],
+    "name": "Mace +1"
+   },
+   {
+    "range": [
+     73,
+     75
+    ],
+    "name": "Mace +2"
+   },
+   {
+    "range": [
+     76,
+     76
+    ],
+    "name": "Mace of Disruption"
+   },
+   {
+    "range": [
+     77,
+     77
+    ],
+    "name": "Mace +4"
+   },
+   {
+    "range": [
+     78,
+     80
+    ],
+    "name": "Military Pick +1"
+   },
+   {
+    "range": [
+     81,
+     83
+    ],
+    "name": "Morning Star +1"
+   },
+   {
+    "range": [
+     84,
+     88
+    ],
+    "name": "Scimitar +2"
+   },
+   {
+    "range": [
+     89,
+     89
+    ],
+    "name": "Sling of Seeking +2"
+   },
+   {
+    "range": [
+     90,
+     94
+    ],
+    "name": "Spear +1"
+   },
+   {
+    "range": [
+     95,
+     96
+    ],
+    "name": "Spear +2"
+   },
+   {
+    "range": [
+     97,
+     97
+    ],
+    "name": "Spear +3"
+   },
+   {
+    "range": [
+     98,
+     99
+    ],
+    "name": "Spear, Cursed Backbiter"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Trident (Military Fork) +3"
+   }
+  ],
+  "III.H.2": [
+   {
+    "range": [
+     1,
+     2
+    ],
+    "name": "Arrow +4"
+   },
+   {
+    "range": [
+     3,
+     3
+    ],
+    "name": "Axe +4"
+   },
+   {
+    "range": [
+     4,
+     4
+    ],
+    "name": "Axe of Hurling"
+   },
+   {
+    "range": [
+     5,
+     10
+    ],
+    "name": "Battle Axe +2"
+   },
+   {
+    "range": [
+     11,
+     13
+    ],
+    "name": "Battle Axe +3"
+   },
+   {
+    "range": [
+     14,
+     20
+    ],
+    "name": "Bolt +1"
+   },
+   {
+    "range": [
+     21,
+     22
+    ],
+    "name": "Bolt +3"
+   },
+   {
+    "range": [
+     23,
+     27
+    ],
+    "name": "Bullet, Sling, +1"
+   },
+   {
+    "range": [
+     28,
+     31
+    ],
+    "name": "Bullet, Sling, +2"
+   },
+   {
+    "range": [
+     32,
+     34
+    ],
+    "name": "Bullet, Sling, +3"
+   },
+   {
+    "range": [
+     35,
+     35
+    ],
+    "name": "Bullet, Sling, of Impact"
+   },
+   {
+    "range": [
+     36,
+     40
+    ],
+    "name": "Dagger +1"
+   },
+   {
+    "range": [
+     41,
+     43
+    ],
+    "name": "Dagger +2"
+   },
+   {
+    "range": [
+     44,
+     44
+    ],
+    "name": "Dagger +2, Longtooth"
+   },
+   {
+    "range": [
+     45,
+     46
+    ],
+    "name": "Dagger +3"
+   },
+   {
+    "range": [
+     47,
+     47
+    ],
+    "name": "Dagger of Throwing"
+   },
+   {
+    "range": [
+     48,
+     51
+    ],
+    "name": "Dart +1"
+   },
+   {
+    "range": [
+     52,
+     54
+    ],
+    "name": "Dart +2"
+   },
+   {
+    "range": [
+     55,
+     56
+    ],
+    "name": "Dart +3"
+   },
+   {
+    "range": [
+     57,
+     57
+    ],
+    "name": "Dart of Homing"
+   },
+   {
+    "range": [
+     58,
+     61
+    ],
+    "name": "Flail +2"
+   },
+   {
+    "range": [
+     62,
+     62
+    ],
+    "name": "Hammer +4"
+   },
+   {
+    "range": [
+     63,
+     63
+    ],
+    "name": "Hornblade"
+   },
+   {
+    "range": [
+     64,
+     68
+    ],
+    "name": "Javelin +1"
+   },
+   {
+    "range": [
+     69,
+     70
+    ],
+    "name": "Javelin +3"
+   },
+   {
+    "range": [
+     71,
+     75
+    ],
+    "name": "Knife +1"
+   },
+   {
+    "range": [
+     76,
+     78
+    ],
+    "name": "Knife +2"
+   },
+   {
+    "range": [
+     79,
+     79
+    ],
+    "name": "Knife, Buckle"
+   },
+   {
+    "range": [
+     80,
+     81
+    ],
+    "name": "Lance +1"
+   },
+   {
+    "range": [
+     82,
+     83
+    ],
+    "name": "Mace +3"
+   },
+   {
+    "range": [
+     84,
+     86
+    ],
+    "name": "Morning Star +2"
+   },
+   {
+    "range": [
+     87,
+     87
+    ],
+    "name": "Pole Arm +1"
+   },
+   {
+    "range": [
+     88,
+     89
+    ],
+    "name": "Quarterstaff, Magic"
+   },
+   {
+    "range": [
+     90,
+     92
+    ],
+    "name": "Scimitar +1"
+   },
+   {
+    "range": [
+     93,
+     94
+    ],
+    "name": "Scimitar +3"
+   },
+   {
+    "range": [
+     95,
+     95
+    ],
+    "name": "Scimitar of Speed"
+   },
+   {
+    "range": [
+     96,
+     96
+    ],
+    "name": "Scimitar +4"
+   },
+   {
+    "range": [
+     97,
+     99
+    ],
+    "name": "Spear +4"
+   },
+   {
+    "range": [
+     100,
+     100
+    ],
+    "name": "Spear +5"
+   }
+  ]
+ }
+}

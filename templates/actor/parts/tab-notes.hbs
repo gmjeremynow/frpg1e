@@ -1,0 +1,13 @@
+    <div class="box">
+      <h3 class="box-title">Background &amp; Appearance</h3>
+      {{#if editable}}
+      <div class="pm-slot" data-pm-name="system.details.biography" data-pm-enriched="biography"><prose-mirror name="system.details.biography" value="{{system.details.biography}}" document-uuid="{{actor.uuid}}" toggled>{{{biography}}}</prose-mirror></div>
+      {{else}}<div class="rich">{{{biography}}}</div>{{/if}}
+    </div>
+    <div class="box">
+      <h3 class="box-title">Notes</h3>
+      {{#if editable}}
+      <div class="pm-slot" data-pm-name="system.details.notes" data-pm-enriched="notes"><prose-mirror name="system.details.notes" value="{{system.details.notes}}" document-uuid="{{actor.uuid}}" toggled>{{{notes}}}</prose-mirror></div>
+      {{else}}<div class="rich">{{{notes}}}</div>{{/if}}
+    </div>
+  

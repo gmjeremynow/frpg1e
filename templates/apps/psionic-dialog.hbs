@@ -1,0 +1,25 @@
+<div class="frpg1e-form">
+  <div class="row"><span class="lbl">Range</span>
+    <select name="range">
+      <option value="short">Short (to {{ranges.[0]}}")</option>
+      {{#if ranges.[1]}}<option value="medium">Medium (to {{ranges.[1]}}")</option>{{/if}}
+      {{#if ranges.[2]}}<option value="long">Long (to {{ranges.[2]}}")</option>{{/if}}
+    </select>
+  </div>
+  {{#if psionicTarget}}
+    {{#if defenseless}}
+      <p class="hint">{{targetName}} has no defense mode it can afford, so it is defenseless (DMG IV.B).</p>
+    {{else}}
+      <div class="row"><span class="lbl">{{targetName}} defends with</span>
+        <select name="def">{{#each defOptions}}<option value="{{key}}">{{label}}</option>{{/each}}
+          <option value="">No defense (defenseless)</option></select>
+      </div>
+    {{/if}}
+  {{else}}
+    <p class="hint">{{targetName}} is not psionic: saving throw by intelligence + wisdom (DMG IV.C).</p>
+    <div class="row"><span class="lbl">Int + Wis</span><input type="number" name="intWis" value="{{intWis}}" class="w4"></div>
+    <div class="row col">
+      {{#each adjustments}}<label><input type="checkbox" name="adj{{i}}" {{#if checked}}checked{{/if}}> {{label}} ({{v}})</label>{{/each}}
+    </div>
+  {{/if}}
+</div>

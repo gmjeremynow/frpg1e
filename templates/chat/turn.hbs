@@ -1,0 +1,6 @@
+<div class="frpg1e-card turn-card">
+  <div class="card-title">{{title}}</div>
+  {{#if natural}}<div class="roll-line"><span class="adnd-big">{{natural}}</span><span class="vs">needs {{needed}}</span></div>{{else}}<div class="roll-line"><span class="vs">Automatic: {{needed}}</span></div>{{/if}}
+  <div class="result {{#if success}}hit{{else}}miss{{/if}}">{{outcome}}</div>
+  {{#if number}}<div class="hint">Number affected ({{numberFormula}}): <strong>{{number}}</strong>. {{duration}}</div>{{/if}}
+</div>

@@ -1,0 +1,16 @@
+<tr class="weapon-row" data-item-id="{{id}}">
+  <td><img class="row-img" src="{{img}}" alt=""></td>
+  <td class="left">
+    <a class="attack-link" data-action="attack" title="Roll to hit">{{name}}{{#if s.magic.hit}} {{adnd-signed s.magic.hit}}{{/if}}</a>
+    {{#if missile}}<span class="sub-note">range {{missile}}&Prime; · rate {{s.missile.rate}}</span>{{/if}}
+    {{#if tags}}<span class="sub-note tag">{{tags}}</span>{{/if}}
+  </td>
+  <td><input type="checkbox" data-item-field="system.proficient" {{adnd-checked s.proficient}}></td>
+  <td class="num">{{s.speed}}</td>
+  <td class="num dmg" title="{{rangeText}}">{{dmgText}}</td>
+  {{#each row}}<td class="acn need">{{need}}</td>{{/each}}
+  <td class="row-tools">
+    <button type="button" class="icon-btn" data-action="itemEdit" title="Edit"><i class="fa-solid fa-pen"></i></button>
+    <button type="button" class="icon-btn" data-action="itemDelete" title="Delete"><i class="fa-solid fa-trash"></i></button>
+  </td>
+</tr>

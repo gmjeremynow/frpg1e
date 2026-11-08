@@ -1,0 +1,22 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC",
+      "monster": "Monster"
+    },
+    "Item": {
+      "weapon": "Weapon",
+      "armor": "Armor",
+      "spell": "Spell",
+      "gear": "Equipment",
+      "psionic": "Psionic Discipline",
+      "magic": "Magic Item",
+      "treasure": "Treasure",
+      "proficiency": "Nonweapon Proficiency"
+    }
+  },
+  "ADND1E": {
+    "Title": "1e FRPG"
+  }
+}

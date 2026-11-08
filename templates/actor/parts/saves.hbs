@@ -1,0 +1,16 @@
+<div class="box saves">
+        <h3 class="box-title">Saving Throws</h3>
+        {{#each saves}}
+        <div class="save-line">
+          <button type="button" class="save-row" data-action="save" data-save="{{key}}" title="Save vs. {{label}} (shift-click to skip options)">
+            <span class="save-label">{{short}}</span>
+            <span class="save-circle">{{value}}</span>
+          </button>
+          <label class="save-adj" title="Permanent adjustment to this save (e.g. +1 from a ring of protection); already included in the number">
+            <span>adj.</span><input type="number" name="system.saves.{{key}}.misc" value="{{lookup (lookup ../system.saves key) 'misc'}}" data-dtype="Number">
+          </label>
+        </div>
+        {{/each}}
+        {{#if racial}}<p class="hint racial">Racial: {{racial}}</p>{{/if}}
+        <p class="hint">A natural 1 always fails.</p>
+      </div>

@@ -1,0 +1,55 @@
+    <div class="box prof-slots">
+      <h3 class="box-title">Proficiency Slots <span class="hint">DSG Table 10 · WSG Table 1</span></h3>
+      <div class="slot-row">
+        <div class="slot-stat"><span class="slot-big">{{profs.slots.weapon}}</span><span>weapon</span><span class="hint">{{profs.weaponUsed}} used{{#if profs.overflow}}, {{profs.overflow}} to nonweapon{{/if}} · {{profs.weaponFree}} free</span></div>
+        <div class="slot-stat"><span class="slot-big">{{profs.slots.nonweapon}}</span><span>nonweapon</span><span class="hint">{{profs.nwUsed}} used · {{profs.nwFree}} free</span></div>
+        <label class="fld"><span>DM grants: weapon</span><input type="number" name="system.profs.extraWeapon" value="{{system.profs.extraWeapon}}" data-dtype="Number" class="w3"></label>
+        <label class="fld"><span>nonweapon</span><input type="number" name="system.profs.extraNonweapon" value="{{system.profs.extraNonweapon}}" data-dtype="Number" class="w3" title="For example the WSG optional extra 1st-level slot"></label>
+      </div>
+      {{#if profs.perClass}}<p class="hint">{{profs.perClass}}. New slots come at levels N+1, 2N+1… (first level counts). Multi-class characters use the best class for each kind.</p>{{/if}}
+      {{#each profs.notes}}<p class="warn">{{this}}.</p>{{/each}}
+    </div>
+
+    <div class="box">
+      <h3 class="box-title">Weapon Proficiencies
+        <button type="button" class="mini" data-action="profWeaponAdd" title="Add a weapon proficiency"><i class="fa-solid fa-plus"></i></button>
+      </h3>
+      <table class="ledger prof-weapons">
+        <thead><tr><th class="left">Weapon</th><th title="UA weapon specialization (fighters and rangers)">Specialization</th><th title="A bow other than a crossbow: specialization costs one more slot">Bow</th><th>Slots</th><th></th></tr></thead>
+        <tbody>
+        {{#each profs.weapons}}
+          <tr>
+            <td class="left"><input type="text" value="{{name}}" data-prof-index="{{index}}" data-prof-field="name" placeholder="weapon"></td>
+            <td><select data-prof-index="{{index}}" data-prof-field="spec"><option value="" {{adnd-selected "" spec}}>—</option><option value="single" {{adnd-selected "single" spec}}>Specialized</option><option value="double" {{adnd-selected "double" spec}}>Double</option></select></td>
+            <td><input type="checkbox" data-prof-index="{{index}}" data-prof-field="bow" {{adnd-checked bow}}></td>
+            <td class="num">{{cost}}</td>
+            <td><button type="button" class="icon-btn" data-action="profWeaponRemove" data-index="{{index}}"><i class="fa-solid fa-trash"></i></button></td>
+          </tr>
+        {{else}}<tr><td colspan="5" class="hint">List the weapons this character is proficient with.</td></tr>{{/each}}
+        </tbody>
+      </table>
+      <p class="hint">UA p.18: specialization costs 2 slots (3 for a bow other than a crossbow); double specialization 1 more. The non-proficiency penalty{{#if (adnd-eq profs.nonProf null)}}{{else}} ({{profs.nonProf}}){{/if}} applies to weapons whose <em>Prof</em> box is clear on the Combat tab.</p>
+    </div>
+
+    <div class="box">
+      <h3 class="box-title">Nonweapon Proficiencies</h3>
+      <table class="ledger nwp-list">
+        <thead><tr><th class="left">Proficiency</th><th class="left">Ability</th><th title="Die roll modifier, including improvements (negative is easier)">Mod</th><th title="Highest d20 roll that succeeds">Roll ≤</th><th title="Slots used, including improvements">Slots</th><th title="Slots spent improving it (−2 each)">Impr.</th><th></th><th></th></tr></thead>
+        <tbody>
+        {{#each profs.nwp}}
+          <tr data-item-id="{{id}}">
+            <td class="left"><a data-action="itemEdit">{{name}}</a>{{#if p.specialty}} <span class="hint">({{p.specialty}})</span>{{/if}}{{#if p.everyUse}} <span class="hint" title="DSG: a check every time it is used">*</span>{{/if}}</td>
+            <td class="left">{{abilityShort}}</td>
+            <td class="num">{{modText}}</td>
+            <td class="num">{{#if (adnd-eq target null)}}—{{else}}{{target}}{{/if}}</td>
+            <td class="num">{{slotsUsed}}</td>
+            <td><input type="number" class="w3" data-item-field="system.improvements" data-dtype="Number" value="{{p.improvements}}" min="0"></td>
+            <td>{{#if p.check}}<button type="button" class="cast-btn" data-action="profRoll">Check</button>{{else}}{{#if tracking}}<button type="button" class="cast-btn" data-action="profRoll">Track</button>{{else}}<button type="button" class="cast-btn" data-action="profRoll">Show</button>{{/if}}{{/if}}</td>
+            <td><button type="button" class="icon-btn" data-action="itemDelete"><i class="fa-solid fa-trash"></i></button></td>
+          </tr>
+        {{else}}<tr><td colspan="8" class="hint">Drag proficiencies here from the 1e FRPG Nonweapon Proficiencies compendium.</td></tr>{{/each}}
+        </tbody>
+      </table>
+      <p class="hint">Proficiency Check (WSG p.11): d20 plus the modifier, at or under the ability score (scores above 18 count as 18). An unmodified 20 always fails, and 19 fails unless the proficiency is improved. Shift-click Check to skip the modifier dialog.</p>
+    </div>
+  

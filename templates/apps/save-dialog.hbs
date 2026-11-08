@@ -1,0 +1,14 @@
+<div class="frpg1e-form">
+  {{#if isChar}}
+  <div class="row col">
+    <label><input type="checkbox" name="wis"> Mental attack: charm, fear, illusion, suggestion... (Wisdom {{wisAdj}})</label>
+    <label><input type="checkbox" name="dex"> Attack that can be dodged: fire ball, lightning bolt... (Dexterity {{dexAdj}})</label>
+    {{#if barbarianPoison}}<label><input type="checkbox" name="poison"> Versus poison (barbarian +4 instead of +3)</label>{{/if}}
+    {{#if druid}}<label><input type="checkbox" name="fire"> Versus fire or lightning (electrical) (druid +2)</label>{{/if}}
+    {{#if cavalier}}<label><input type="checkbox" name="illusion"> Versus an illusion spell (cavalier +2)</label>{{/if}}
+    {{#if racial}}<label><input type="checkbox" name="racial" checked> Racial constitution bonus {{racialText}}{{#if poisonOnly}} (poison only){{/if}}</label>{{/if}}
+  </div>
+  {{/if}}
+  {{#if classBonus}}<p class="hint">Class bonus {{classBonus}} is already in the number shown on the sheet.</p>{{/if}}
+  <div class="row"><span class="lbl">Other modifier</span><input type="number" name="misc" value="0" class="w4"></div>
+</div>

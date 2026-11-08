@@ -1,0 +1,17 @@
+<div class="frpg1e-card item-card">
+  <header class="card-head"><img src="{{item.img}}" alt=""><div><div class="card-title">{{item.name}}</div>{{#if s.level}}<div class="card-sub">level {{s.level}} · {{s.school}}</div>{{/if}}{{#if s.kind}}{{#if s.cost}}<div class="card-sub">{{s.kind}} discipline · cost {{s.cost}}</div>{{/if}}{{/if}}</div></header>
+  {{#if s.cost}}<div class="stat-grid">
+    <span>Range</span><span>{{s.range}}</span><span>Duration</span><span>{{s.duration}}</span>
+    <span>Area</span><span>{{s.aoe}}</span><span>Save</span><span>{{s.save}}</span>
+  </div>{{else}}{{#if s.range}}<div class="stat-grid">
+    <span>Range</span><span>{{s.range}}</span><span>Casting</span><span>{{s.castingTime}}</span>
+    <span>Duration</span><span>{{s.duration}}</span><span>Save</span><span>{{s.save}}</span>
+    <span>Area</span><span>{{s.aoe}}</span><span>Comp.</span><span>{{s.components}}</span>
+  </div>{{/if}}{{/if}}
+  {{#if heal}}<div class="roll-line heal-line"><span class="adnd-big">{{heal}}</span><span class="hint">hit points ({{formula}})</span></div>{{/if}}
+  {{#if fnLabel}}<div class="card-sub fn-label">{{fnLabel}}</div>{{/if}}
+  {{#if usage}}<div class="usage">{{usage}}</div>{{/if}}
+  {{#if resultsHTML}}{{{resultsHTML}}}{{/if}}
+  {{#if applyButton}}<div class="card-buttons"><button type="button" data-card-action="heal" class="primary">Apply healing</button></div>{{/if}}
+  <details class="desc"><summary>Description</summary>{{{description}}}</details>
+</div>

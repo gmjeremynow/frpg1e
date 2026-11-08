@@ -1,0 +1,33 @@
+<div class="box classes">
+      <h3 class="box-title">Class &amp; Level
+        <button type="button" class="mini" data-action="classAdd" title="Add a class (multi-classed characters)"><i class="fa-solid fa-plus"></i></button>
+      </h3>
+      <table class="ledger">
+        <thead><tr><th>Class</th><th>Level</th><th>Experience</th><th>Next Level</th><th>Atk/Rd</th><th>Hit Dice</th><th></th></tr></thead>
+        <tbody>
+        {{#each classes}}
+        <tr data-class-index="{{index}}">
+          <td><select data-class-field="key">{{#each ../classOptions}}<option value="{{value}}" {{adnd-selected value ../key}}>{{label}}</option>{{/each}}</select></td>
+          <td><input type="number" data-class-field="level" data-dtype="Number" value="{{level}}" min="0"></td>
+          <td><input type="number" data-class-field="xp" data-dtype="Number" value="{{xp}}" min="0"></td>
+          <td class="num">{{next}}</td>
+          <td class="num">{{#if attacksPerRound}}{{attacksPerRound}}{{else}}1/1{{/if}}</td>
+          <td><button type="button" class="roll-btn" data-action="levelHP" title="Roll hit points for reaching this level">d{{hitDie}}</button></td>
+          <td><button type="button" class="icon-btn" data-action="classRemove" title="Remove class"><i class="fa-solid fa-xmark"></i></button></td>
+        </tr>
+        <tr class="sub" data-class-index="{{index}}">
+          <td colspan="7">
+            <span class="hint">Combat table</span>
+            <select data-class-field="matrix">{{#each ../matrixOptions}}<option value="{{value}}" {{adnd-selected value ../matrix}}>{{label}}</option>{{/each}}</select>
+            <span class="hint">Saves as</span>
+            <select data-class-field="save">{{#each ../saveOptions}}<option value="{{value}}" {{adnd-selected value ../save}}>{{label}}</option>{{/each}}</select>
+            {{#if isCustom}}<span class="hint">Hit die d</span><input class="w3" type="number" data-class-field="hitDie" data-dtype="Number" value="{{hitDie}}">{{/if}}
+          </td>
+        </tr>
+        {{else}}
+        <tr><td colspan="7" class="hint">No class: 0-level (fighter table).</td></tr>
+        {{/each}}
+        </tbody>
+      </table>
+      <label class="dual hint" title="Human dual-classed character (PHB p.33). Hit points are not divided between classes."><input type="checkbox" name="system.details.dualClass" {{adnd-checked system.details.dualClass}}> Dual-classed (human): hit points are not divided</label>
+    </div>

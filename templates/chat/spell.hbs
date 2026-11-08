@@ -1,0 +1,15 @@
+<div class="frpg1e-card spell-card">
+  <header class="card-head"><img src="{{img}}" alt=""><div><div class="card-title">{{title}}</div><div class="card-sub">{{listLabel}} {{s.level}} · {{s.school}}</div></div></header>
+  <div class="stat-grid">
+    <span>Range</span><span>{{s.range}}</span><span>Casting</span><span>{{s.castingTime}}</span>
+    <span>Duration</span><span>{{s.duration}}</span><span>Save</span><span>{{s.save}}</span>
+    <span>Area</span><span>{{s.aoe}}</span><span>Comp.</span><span>{{s.components}}</span>
+  </div>
+  {{#if failure}}<div class="result {{#if failure.failed}}miss{{else}}hit{{/if}}">Spell failure check: {{failure.roll}} vs {{failure.chance}}%. {{#if failure.failed}}The spell is lost with no effect.{{else}}The spell works.{{/if}}</div>{{/if}}
+  {{#if heal}}<div class="roll-line heal-line"><span class="adnd-big">{{heal}}</span><span class="hint">{{healText}} ({{#if (adnd-eq healMode "allBut")}}d4{{else}}{{s.heal}}{{/if}})</span></div>
+  <div class="card-buttons"><button type="button" data-card-action="heal" class="primary">Apply healing</button>{{#if reversedDamage}}<button type="button" data-card-action="apply" title="The reversed spell (cause wounds) does this much damage">Reversed: damage</button>{{/if}}</div>
+  <p class="hint">Applies to selected tokens, or to the tokens targeted when the spell was cast.</p>{{/if}}
+  {{#if damage}}<div class="roll-line"><span class="adnd-big">{{damage}}</span><span class="hint">{{s.damage}}</span></div>
+  <div class="card-buttons"><button type="button" data-card-action="apply">Apply</button><button type="button" data-card-action="apply-half">½</button></div>{{/if}}
+  {{#if resultsHTML}}{{#if levelNote}}<div class="hint">{{levelNote}}</div>{{/if}}{{{resultsHTML}}}<p class="hint">Apply buttons act on selected tokens, or on the tokens targeted when the spell was cast.</p>{{/if}}
+</div>

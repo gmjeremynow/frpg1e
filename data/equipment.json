@@ -1,0 +1,1508 @@
+[
+ {
+  "name": "Belt",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p>",
+   "weight": 3,
+   "quantity": 1,
+   "cost": "3 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Cloak",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p><p>Encumbrance 25 gp worn, 50 gp folded (DMG Appendix O).</p>",
+   "weight": 25,
+   "quantity": 1,
+   "cost": "5 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Boots, high, hard",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p>",
+   "weight": 60,
+   "quantity": 1,
+   "cost": "2 gp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Girdle, broad",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "2 gp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Boots, high, soft",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p>",
+   "weight": 30,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Girdle, normal",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "10 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Boots, low, hard",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p>",
+   "weight": 60,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Hat",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "7 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Boots, low, soft",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p>",
+   "weight": 30,
+   "quantity": 1,
+   "cost": "8 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Robe",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p><p>Encumbrance 25 gp worn, 50 gp folded (DMG Appendix O).</p>",
+   "weight": 25,
+   "quantity": 1,
+   "cost": "6 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Cap",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Clothing (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 sp",
+   "source": "PHB",
+   "category": "Clothing",
+   "carried": true
+  }
+ },
+ {
+  "name": "Belladona, sprig",
+  "type": "gear",
+  "img": "icons/svg/oak.svg",
+  "system": {
+   "description": "<p>Herbs (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "4 sp",
+   "source": "PHB",
+   "category": "Herbs",
+   "carried": true
+  }
+ },
+ {
+  "name": "Wolvesbane, sprig",
+  "type": "gear",
+  "img": "icons/svg/oak.svg",
+  "system": {
+   "description": "<p>Herbs (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "10 sp",
+   "source": "PHB",
+   "category": "Herbs",
+   "carried": true
+  }
+ },
+ {
+  "name": "Garlic, bud",
+  "type": "gear",
+  "img": "icons/svg/oak.svg",
+  "system": {
+   "description": "<p>Herbs (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "5 cp",
+   "source": "PHB",
+   "category": "Herbs",
+   "carried": true
+  }
+ },
+ {
+  "name": "Chicken",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "3 cp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Horse, medium war",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "225 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Cow",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "10 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Horse, riding (light)",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "25 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Dog, guard",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "25 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Mule",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "20 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Dog, hunting",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "17 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Ox",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "15 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Donkey",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "8 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Pigeon",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "2 cp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Goat",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Piglet",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Hawk, large",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "40 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Pig",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "3 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Hawk, small",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "18 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Pony",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "15 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Horse, draft",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "30 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Sheep",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "2 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Horse, heavy war",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "300 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Songbird",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "4 cp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Horse, light war",
+  "type": "gear",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "description": "<p>Livestock (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "150 gp",
+   "source": "PHB",
+   "category": "Livestock",
+   "carried": true
+  }
+ },
+ {
+  "name": "Backpack, leather",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 20,
+   "quantity": 1,
+   "cost": "2 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Pouch, belt, large",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 10,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Box, iron, large",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "28 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Pouch, belt, small",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "15 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Box, iron, small",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "9 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Quiver, 1 doz. arrows cap.",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 30,
+   "quantity": 1,
+   "cost": "8 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Candle, tallow",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "1 cp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Quiver, 1 score arrows cap.",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 30,
+   "quantity": 1,
+   "cost": "12 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Candle, wax",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "1 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Quiver, 1 score bolts cap.",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 30,
+   "quantity": 1,
+   "cost": "15 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Case, bone, map or scroll",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 50,
+   "quantity": 1,
+   "cost": "5 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Quiver, 2 score bolts cap.",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 30,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Case, leather, map or scroll",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 25,
+   "quantity": 1,
+   "cost": "15 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Rope, 50’",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 75,
+   "quantity": 1,
+   "cost": "4 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Chest, wooden, large",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>Encumbrance 500-1,500 gp (DMG Appendix O).</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "17 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Sack, large",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 20,
+   "quantity": 1,
+   "cost": "16 cp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Chest, wooden, small",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>Encumbrance 100-250 gp (DMG Appendix O).</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "8 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Sack, small",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "10 cp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Lantern, bullseye",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 60,
+   "quantity": 1,
+   "cost": "12 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Skin for water or wine",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>Encumbrance 5 gp empty, 50 gp full (DMG Appendix O).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "15 sp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Lantern, hooded",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 60,
+   "quantity": 1,
+   "cost": "7 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Spike, iron, large",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 10,
+   "quantity": 1,
+   "cost": "1 cp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Mirror, large metal",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "10 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Thieves’ picks & tools",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>Not counted for encumbrance (DMG Appendix O).</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "30 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Mirror, small, silver",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 5,
+   "quantity": 1,
+   "cost": "20 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Tinder Box, with flint & steel",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 2,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Oil, flask of",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p><p>Empty flask 7 gp (DMG Appendix O).</p>",
+   "weight": 20,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Torch",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 25,
+   "quantity": 1,
+   "cost": "1 cp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Pole, 10’",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Miscellaneous Equipment & Items (PHB p.35-36).</p>",
+   "weight": 100,
+   "quantity": 1,
+   "cost": "3 cp",
+   "source": "PHB",
+   "category": "Miscellaneous Equipment & Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Ale, pint",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 sp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Mead, pint",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "5 sp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Beer, small, pint",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "5 cp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Rations, iron, 1 week",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p>",
+   "weight": 75,
+   "quantity": 1,
+   "cost": "5 gp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Food, merchant’s meal",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 sp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Rations, standard, 1 week",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p>",
+   "weight": 200,
+   "quantity": 1,
+   "cost": "3 gp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Food, rich meal",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Wine, pint, good",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "10 sp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Grain, horse meal, 1 day",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 sp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Wine, pint, watered",
+  "type": "gear",
+  "img": "icons/svg/tankard.svg",
+  "system": {
+   "description": "<p>Provisions (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "5 sp",
+   "source": "PHB",
+   "category": "Provisions",
+   "carried": true
+  }
+ },
+ {
+  "name": "Beads, Prayer",
+  "type": "gear",
+  "img": "icons/svg/sun.svg",
+  "system": {
+   "description": "<p>Religious Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Religious Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Symbol, Holy (or Unholy), wooden",
+  "type": "gear",
+  "img": "icons/svg/sun.svg",
+  "system": {
+   "description": "<p>Religious Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "7 sp",
+   "source": "PHB",
+   "category": "Religious Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Incense, stick",
+  "type": "gear",
+  "img": "icons/svg/sun.svg",
+  "system": {
+   "description": "<p>Religious Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "1 gp",
+   "source": "PHB",
+   "category": "Religious Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Water, Holy (or Unholy), vial",
+  "type": "gear",
+  "img": "icons/svg/sun.svg",
+  "system": {
+   "description": "<p>Religious Items (PHB p.35-36).</p>",
+   "weight": 25,
+   "quantity": 1,
+   "cost": "25 gp",
+   "source": "PHB",
+   "category": "Religious Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Symbol, Holy (or Unholy), iron",
+  "type": "gear",
+  "img": "icons/svg/sun.svg",
+  "system": {
+   "description": "<p>Religious Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "2 gp",
+   "source": "PHB",
+   "category": "Religious Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Symbol, Holy (or Unholy), silver",
+  "type": "gear",
+  "img": "icons/svg/sun.svg",
+  "system": {
+   "description": "<p>Religious Items (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "50 gp",
+   "source": "PHB",
+   "category": "Religious Items",
+   "carried": true
+  }
+ },
+ {
+  "name": "Barding, chain",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p><p>Cost: not legible in the source text; see PHB p.36.</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Saddle",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p><p>Encumbrance 250 gp (light horse) or 500 gp (heavy horse) (DMG Appendix O).</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "10 gp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Barding, leather",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "100 gp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Saddle Bags, large",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p>",
+   "weight": 150,
+   "quantity": 1,
+   "cost": "4 gp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Barding, plate",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p><p>Cost: not legible in the source text; see PHB p.36.</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Saddle Bags, small",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p>",
+   "weight": 150,
+   "quantity": 1,
+   "cost": "3 gp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Bit and Bridle",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "15 sp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Saddle Blanket",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p>",
+   "weight": 20,
+   "quantity": 1,
+   "cost": "3 sp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Harness",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Tack and Harness (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "12 sp",
+   "source": "PHB",
+   "category": "Tack and Harness",
+   "carried": true
+  }
+ },
+ {
+  "name": "Barge (or Raft), small",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "50 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Galley, small",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "10,000 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Boat, small",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "75 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Ship, merchant, large",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "15,000 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Boat, long",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "150 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Ship, merchant, small",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "5,000 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Cart",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "50 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Ship, war",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "20,000 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Galley, large",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "25,000 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Wagon",
+  "type": "gear",
+  "img": "icons/svg/wing.svg",
+  "system": {
+   "description": "<p>Transport (PHB p.35-36).</p><p>No encumbrance listed in DMG Appendix O for this item.</p>",
+   "weight": 0,
+   "quantity": 1,
+   "cost": "150 gp",
+   "source": "PHB",
+   "category": "Transport",
+   "carried": true
+  }
+ },
+ {
+  "name": "Arrows (dozen)",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (PHB p.35). Fired from: arrow. Each shot from a matching weapon uses one.</p>",
+   "weight": 2,
+   "quantity": 12,
+   "cost": "1 gp per dozen (2 sp each)",
+   "source": "PHB",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "arrow"
+  }
+ },
+ {
+  "name": "Arrow, silver",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (PHB p.35). Fired from: arrow. Each shot from a matching weapon uses one.</p>",
+   "weight": 2,
+   "quantity": 1,
+   "cost": "1 gp each",
+   "source": "PHB",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "arrow"
+  }
+ },
+ {
+  "name": "Quarrels, light",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (PHB p.35). Fired from: light crossbow. Each shot from a matching weapon uses one.</p><p>The PHB prices light quarrels singly; this stack is 20.</p>",
+   "weight": 1,
+   "quantity": 20,
+   "cost": "1 sp each",
+   "source": "PHB",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "bolt-light"
+  }
+ },
+ {
+  "name": "Quarrels, heavy (score)",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (PHB p.35). Fired from: heavy crossbow. Each shot from a matching weapon uses one.</p>",
+   "weight": 2,
+   "quantity": 20,
+   "cost": "2 gp per score",
+   "source": "PHB",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "bolt-heavy"
+  }
+ },
+ {
+  "name": "Quarrels, hand crossbow",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (UA p.26). Fired from: hand crossbow. Each shot from a matching weapon uses one.</p><p>UA does not say how many quarrels the 100 gp buys: set the quantity you allow.</p>",
+   "weight": 1,
+   "quantity": 1,
+   "cost": "100 gp (UA p.26: \"Quarrels for same\"; the number sold is not stated)",
+   "source": "UA",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "bolt-hand"
+  }
+ },
+ {
+  "name": "Sling bullets (score)",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (PHB p.35). Fired from: bullet. Each shot from a matching weapon uses one.</p><p>The PHB also sells a sling with a dozen bullets for 15 sp.</p>",
+   "weight": 2,
+   "quantity": 20,
+   "cost": "10 sp per score",
+   "source": "PHB",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "bullet"
+  }
+ },
+ {
+  "name": "Sling stones",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (PHB p.37). Fired from: stone. Each shot from a matching weapon uses one.</p><p>No price is listed; stones are found.</p>",
+   "weight": 1,
+   "quantity": 20,
+   "cost": "none listed (gathered)",
+   "source": "PHB",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "stone"
+  }
+ },
+ {
+  "name": "Blowgun needles",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "description": "<p>Ammunition (UA p.26). Fired from: needle. Each shot from a matching weapon uses one.</p><p>UA lists the blowgun and needle together at 15 gp weight; no separate weight for a needle.</p>",
+   "weight": 0,
+   "quantity": 10,
+   "cost": "1 sp each",
+   "source": "UA",
+   "category": "Ammunition",
+   "carried": true,
+   "ammo": "needle"
+  }
+ }
+]
