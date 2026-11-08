@@ -12,6 +12,9 @@
       "name": "Jeremy Clifford"
     }
   ],
+  "url": "https://github.com/gmjeremynow/frpg1e",
+  "manifest": "https://github.com/gmjeremynow/frpg1e/releases/latest/download/system.json",
+  "download": "https://github.com/gmjeremynow/frpg1e/releases/download/v0.31.0/frpg1e.zip",
   "esmodules": [
     "frpg1e.mjs"
   ],
