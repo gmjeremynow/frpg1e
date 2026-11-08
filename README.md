@@ -160,7 +160,7 @@ The weapon table on the Combat tab prints the score needed against AC 10 down to
 
 ## Naming
 
-From 0.16.3 the system, its sheets, compendia and the non-monster descriptions call the game "1e Fantasy RPG" (short form "1e FRPG") and the books "PHB", "DMG", "UA", "DSG" and "WSG". Monster descriptions keep the book wording. From 0.17.0 the system id is `frpg1e` (it was `adnd1e`) and the compendium ids start with `frpg1e-`. A world made with the old `adnd1e` system will not open with this one: create a new world and pick 1e FRPG (Table Edition), and remove the old `Data/systems/adnd1e` folder.
+From 0.16.3 the system, its sheets, compendia and the non-monster descriptions call the game "1e Fantasy RPG" (short form "1e FRPG") and the books "PHB", "DMG", "UA", "DSG" and "WSG". Monster descriptions keep the book wording. From 0.17.0 the system id is `frpg1e` (it was `adnd1e`) and the compendium ids start with `frpg1e-`. A world made with the old system will not open with this one: create a new world and pick 1e FRPG (Table Edition), and remove the old `Data/systems/adnd1e` folder.
 
 ## Development
 
