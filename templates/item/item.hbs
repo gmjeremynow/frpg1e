@@ -22,7 +22,8 @@
         <label class="fld"><span>Magic damage</span><input type="number" name="system.magic.dmg" value="{{system.magic.dmg}}" data-dtype="Number"></label>
         <label class="fld"><span>Other to hit</span><input type="number" name="system.bonus.hit" value="{{system.bonus.hit}}" data-dtype="Number"></label>
         <label class="fld"><span>Other damage</span><input type="number" name="system.bonus.dmg" value="{{system.bonus.dmg}}" data-dtype="Number"></label>
-        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" step="any" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        {{> "systems/frpg1e/templates/item/weight-src.hbs"}}
         <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
       </div>
       <div class="checks">
@@ -80,7 +81,8 @@
         <label class="fld"><span>Magic bonus</span><input type="number" name="system.magic" value="{{system.magic}}" data-dtype="Number"></label>
         <label class="fld"><span>Bulk</span><input type="text" name="system.bulk" value="{{system.bulk}}"></label>
         {{#unless (adnd-eq system.kind "shield")}}<label class="fld"><span>Thieving category</span><select name="system.thiefArmor">{{#each thiefArmorOptions}}<option value="{{value}}" {{adnd-selected value ../system.thiefArmor}}>{{label}}</option>{{/each}}</select></label>{{/unless}}
-        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" step="any" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        {{> "systems/frpg1e/templates/item/weight-src.hbs"}}
         <label class="check"><input type="checkbox" name="system.equipped" {{adnd-checked system.equipped}}> Worn</label>
       </div>
     </div>
@@ -115,7 +117,8 @@
         <label class="fld"><span>Kind</span><select name="system.category">{{#each magicCategories}}<option value="{{value}}" {{adnd-selected value ../system.category}}>{{label}}</option>{{/each}}</select></label>
         <label class="fld"><span>Usable by</span><input type="text" name="system.usable" value="{{system.usable}}" placeholder="all classes"></label>
         <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
-        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" step="any" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        {{> "systems/frpg1e/templates/item/weight-src.hbs"}}
         {{#if (adnd-eq system.category "ammunition")}}
         <label class="fld"><span>Fired from</span><select name="system.ammo">{{#each ammoKinds}}<option value="{{value}}" {{adnd-selected value ../system.ammo}}>{{label}}</option>{{/each}}</select></label>
         <label class="fld"><span>To hit bonus</span><input type="number" name="system.bonus.hit" value="{{system.bonus.hit}}" data-dtype="Number"></label>
@@ -136,11 +139,64 @@
       {{#if system.protection.kind}}<p class="hint">Applied while worn. The description's table gives this item's actual bonus; set it above. Ring: no armor class bonus with magic armor, and only the strongest ring counts. Cloak: not with magic armor, armor other than leather, or a shield. Bracers: not with body armor.</p>{{/if}}
       {{#if system.quantityRoll}}<p class="hint">Found in groups of {{system.quantityRoll}} (rolled by the treasure roller).</p>{{/if}}
     </div>
+    {{> "systems/frpg1e/templates/item/container.hbs"}}
+    {{#if artifact}}
+    <div class="box artifact-box">
+      <h3 class="box-title">Artifact Powers &amp; Effects <span class="hint">(GM only; DMG p.162-164)</span></h3>
+      {{#if artifact.unmatched}}
+      <p class="hint">This item's name does not match a DMG artifact. Choose which artifact's powers it has:</p>
+      <label class="fld"><span>Artifact</span><select data-art-key><option value="">— choose —</option>{{#each artifact.choices}}<option value="{{value}}">{{label}}</option>{{/each}}</select></label>
+      {{else}}
+        {{#if artifact.ethosOn}}
+        <div class="art-row">
+          <span class="art-label">Ethos</span>
+          {{#if artifact.ethosLocked}}<strong class="art-value">{{artifact.ethos}}</strong>
+          {{else}}<button type="button" class="mini mini-text" data-art-roll-ethos><i class="fa-solid fa-dice-d20"></i> Roll ethos (d20)</button>{{/if}}
+        </div>
+        {{/if}}
+        {{#if artifact.touch}}<p class="hint">{{artifact.touch}}</p>{{/if}}
+        {{#if artifact.horn}}
+        <p class="hint">Each blowing gives a power or an effect; the DM sets the chance of a power (75% suggested), then rolls on the table. Results are whispered to you.</p>
+        <label class="fld"><span>Chance of a power (%)</span><input type="number" data-art-chance value="{{artifact.hornChance}}" min="0" max="100"></label>
+        <div class="art-buttons">{{#each artifact.blasts}}<button type="button" class="mini mini-text" data-art-blow="{{n}}"><i class="fa-solid fa-bullhorn"></i> {{label}}</button>{{/each}}</div>
+        {{else}}
+        {{#if artifact.variants}}
+        {{#if artifact.locked}}{{#each artifact.variants}}{{#if selected}}<p class="art-row"><span class="art-label">Which one</span> <strong class="art-value">{{label}}</strong></p>{{/if}}{{/each}}
+        {{else}}<label class="fld"><span>Which one</span><select data-art-variant>{{#each artifact.variants}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>{{/if}}
+        {{/if}}
+        <div class="art-buttons">
+          {{#if artifact.locked}}
+          <button type="button" class="mini mini-text" data-art-post><i class="fa-solid fa-comment"></i> Whisper to GM</button>
+          <span class="hint">Rolled; {{artifact.total}} powers and effects.</span>
+          {{else}}
+          <button type="button" class="mini mini-text" data-art-roll-empty><i class="fa-solid fa-dice"></i> Roll powers</button>
+          <span class="hint">{{artifact.total}} powers and effects, rolled once for all of them.</span>
+          {{/if}}
+        </div>
+        {{#each artifact.groups as |g|}}
+        <h4 class="art-group">{{g.label}}</h4>
+        <table class="art-table"><tbody>
+          {{#each g.rows as |r|}}
+          <tr>
+            <td class="art-tab" title="{{r.tableTitle}}">{{r.table}}</td>
+            <td>{{#if r.letter}}<span class="art-letter">{{r.letter}}.</span> {{r.text}}{{else}}<span class="hint">{{r.tableTitle}}</span>{{/if}}</td>
+          </tr>
+          {{/each}}
+        </tbody></table>
+        {{#if g.note}}<p class="hint">{{g.note}}</p>{{/if}}
+        {{/each}}
+        {{/if}}
+        {{#if artifact.note}}<p class="hint">{{artifact.note}}</p>{{/if}}
+        <p class="hint">Table I minor benign, II major benign, III minor malevolent, IV major malevolent, V prime powers, VI side effects. Players learn these only through experimentation, legends, legend lore and the like (DMG p.155). Each roll is made once and then fixed; the same entry is not rolled twice for one item. Recorded on this copy of the item only.</p>
+      {{/if}}
+    </div>
+    {{/if}}
   {{/if}}
 
   {{#if hasDice}}
     <div class="box dice-box">
       <h3 class="box-title">Dice from the description</h3>
+      {{#if foundSummary}}<p class="cont-now"><strong>When found (rolled once, kept):</strong> {{foundSummary}}</p>{{/if}}
       {{#if system.rolls.length}}
       <table class="dice-table">
         <thead><tr>{{#if isMagic}}<th>Function</th>{{/if}}<th>Roll</th><th>Formula</th><th></th></tr></thead>
@@ -174,6 +230,7 @@
         <label class="fld"><span>Die roll modifier</span><input type="number" name="system.modifier" value="{{system.modifier}}" data-dtype="Number" title="Added to the d20 (WSG convention): negative is easier"></label>
         <label class="fld"><span>Improvements (−2 each)</span><input type="number" name="system.improvements" value="{{system.improvements}}" data-dtype="Number" min="0"></label>
         <label class="fld"><span>Specialty</span><input type="text" name="system.specialty" value="{{system.specialty}}" placeholder="animal, mount…"></label>
+        <label class="fld"><span>Base number</span><input type="number" name="system.target" value="{{system.target}}" min="0" title="Setting rules (e.g. OA): roll this number or higher on 1d20. 0 = use the ability check."></label>
         <label class="check"><input type="checkbox" name="system.check" {{adnd-checked system.check}}> Uses Proficiency Checks</label>
         <label class="check"><input type="checkbox" name="system.everyUse" {{adnd-checked system.everyUse}}> Check every use (DSG *)</label>
       </div>
@@ -189,7 +246,8 @@
         <label class="fld"><span>Value each (gp)</span><input type="number" name="system.value" value="{{system.value}}" data-dtype="Number"></label>
         <label class="fld"><span>Base value (gp)</span><input type="number" name="system.baseValue" value="{{system.baseValue}}" data-dtype="Number"></label>
         <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
-        <label class="fld"><span>Weight (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        <label class="fld"><span>Weight (gp)</span><input type="number" step="any" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        {{> "systems/frpg1e/templates/item/weight-src.hbs"}}
       </div>
       {{#if system.property}}<p class="hint">Reputed property: {{system.property}}</p>{{/if}}
     </div>
@@ -219,12 +277,15 @@
       <h3 class="box-title">Item</h3>
       <div class="form-grid">
         <label class="fld"><span>Quantity</span><input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"></label>
-        <label class="fld"><span>Weight each (gp)</span><input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
-        <label class="fld"><span>Cost / notes</span><input type="text" name="system.cost" value="{{system.cost}}"></label>
+        <label class="fld"><span>Weight each (gp)</span><input type="number" step="any" name="system.weight" value="{{system.weight}}" data-dtype="Number"></label>
+        {{> "systems/frpg1e/templates/item/weight-src.hbs"}}
+        <label class="fld"><span>Cost</span><input type="text" name="system.cost" value="{{system.cost}}"></label>
+        <label class="fld"><span>Notes</span><input type="text" name="system.notes" value="{{system.notes}}"></label>
         <label class="fld"><span>Ammunition for</span><select name="system.ammo">{{#each gearAmmoKinds}}<option value="{{value}}" {{adnd-selected value ../system.ammo}}>{{label}}</option>{{/each}}</select></label>
       </div>
       {{#if system.ammo}}<p class="hint">Counted down by one each time a matching launcher fires it.</p>{{/if}}
     </div>
+    {{> "systems/frpg1e/templates/item/container.hbs"}}
   {{/if}}
 
     <div class="box">

@@ -5,6 +5,7 @@
     {{#each mods}}<span class="mod" title="{{label}}">{{text}}</span>{{/each}}
     <span class="eq">=</span><span class="adnd-big">{{total}}</span>
   </div>
+  {{#if crit}}<div class="cf-banner crit">CRITICAL HIT</div>{{/if}}{{#if fumble}}<div class="cf-banner fumble">FUMBLE</div>{{/if}}
   {{#if mods.length}}<div class="mod-list">{{#each mods}}{{label}} {{text}}{{#unless @last}}, {{/unless}}{{/each}}</div>{{/if}}
   {{#each results}}
   <div class="target-line {{#if hit}}hit{{else}}miss{{/if}}">
@@ -13,7 +14,7 @@
     <span class="verdict">{{#if hit}}HIT{{else}}MISS{{/if}}</span>
   </div>
   {{/each}}
-  {{#if untargeted}}<div class="target-line"><span class="t-name">No target</span><span class="verdict small">{{#if (adnd-eq bestAC null)}}hits no armor class{{else}}hits AC {{bestAC}} or worse{{/if}}</span></div>
+  {{#if untargeted}}<div class="target-line"><span class="t-name">No target</span><span class="verdict small">{{#if crit}}critical hit: hits any armor class{{else}}{{#if (adnd-eq bestAC null)}}you miss{{else}}hits AC {{bestAC}} or worse{{/if}}{{/if}}</span></div>
   {{#if armorAdjNote}}<div class="hint">{{armorAdjNote}}</div>{{/if}}{{/if}}
   {{#if specNote}}<div class="hint">{{specNote}}</div>{{/if}}
   {{#if ammoNote}}<div class="hint">{{ammoNote}}</div>{{/if}}

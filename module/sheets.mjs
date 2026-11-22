@@ -1,6 +1,9 @@
-import { CLASSES, ATTACK_MATRICES, SAVING_THROWS, THIEF_TABLE, THIEF_ARMOR, fighterAttacksPerRound, cavalierChoiceBonus,
+import * as Artifacts from "./artifacts.mjs";
+import { HIDDEN_CLASSES } from "./extend.mjs";
+import { CLASSES, ATTACK_MATRICES, SAVING_THROWS, THIEF_TABLE, THIEF_ARMOR, fighterAttacksPerRound, cavalierChoiceBonus, cavalierRules,
   PSI_ATTACK_MODES, PSI_DEFENSE_MODES, BODY_WEAPONRY, weaponProfCost } from "./tables.mjs";
 import * as Psi from "./psionics.mjs";
+import * as MagicWeapons from "./magic-weapons.mjs";
 import * as Rolls from "./rolls.mjs";
 import { SYSTEM_ID, SAVE_LABELS, SAVE_SHORT, THIEF_LABELS } from "./rolls.mjs";
 import * as RACE from "./races.mjs";
@@ -8,13 +11,24 @@ import * as CF from "./classfeatures.mjs";
 import * as Treasure from "./treasure.mjs";
 import { RACES, MAGIC_CATEGORIES, TREASURE_KINDS, ABILITY_LABELS, PROF_GROUPS, NPC_ROLES, NPC_SERVING } from "./data/models.mjs";
 import { LOYALTY_GROUPS } from "./tables.mjs";
+
+/** Weapon names for the weapon proficiency list (the system's weapon data, PHB/UA), loaded once. */
+let WEAPON_NAMES = null;
+async function weaponNames() {
+  if (WEAPON_NAMES) return WEAPON_NAMES;
+  try {
+    const data = await (await fetch(`systems/${SYSTEM_ID}/data/weapons.json`)).json();
+    WEAPON_NAMES = data.map(w => w.name);
+  } catch (err) { console.warn(`${SYSTEM_ID} | weapon list not loaded`, err); WEAPON_NAMES = []; }
+  return WEAPON_NAMES;
+}
 import * as R from "./rules.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2, ItemSheetV2 } = foundry.applications.sheets;
 const TextEditor = foundry.applications.ux.TextEditor.implementation;
 
-const LISTS = { cleric: "Cleric", druid: "Druid", magicuser: "Magic-User", illusionist: "Illusionist" };
+import { SPELL_LISTS as LISTS } from "./tables.mjs";
 const ORD = ["", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"];
 /**
  * Text editors: built with Foundry's own HTMLProseMirrorElement.create() (raw value and enriched display passed
@@ -90,6 +104,30 @@ async function onPopIn() {
 /* ================================================================== */
 /*  Shared actor sheet behaviour                                        */
 /* ================================================================== */
+/** PHB p.33: the nine alignments. An entry that matches none (an old free-text note) is kept as an extra choice. */
+const ALIGNMENTS = ["Lawful Good", "Lawful Neutral", "Lawful Evil", "Neutral Good", "True Neutral", "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"];
+const ALIGN_ABBR = { lg: "Lawful Good", ln: "Lawful Neutral", le: "Lawful Evil", ng: "Neutral Good", n: "True Neutral", tn: "True Neutral", neutral: "True Neutral", "neutral neutral": "True Neutral", ne: "Neutral Evil", cg: "Chaotic Good", cn: "Chaotic Neutral", ce: "Chaotic Evil" };
+function alignmentOptions(current) {
+  const cur = String(current ?? "").trim();
+  const match = ALIGNMENTS.find(a => a.toLowerCase() === cur.toLowerCase()) ?? ALIGN_ABBR[cur.toLowerCase()] ?? null;
+  const opts = [{ value: "", label: "—", selected: !cur }, ...ALIGNMENTS.map(a => ({ value: a, label: a, selected: a === match }))];
+  if (cur && !match) opts.push({ value: cur, label: cur, selected: true });
+  return opts;
+}
+
+/** Location choices for an item: worn, carried, stored, and every container the actor has (not the item itself or anything inside it). */
+function locationOptions(actor, item) {
+  const cur = String(item.system.location ?? "carried");
+  const conts = actor.system.containers ?? [];
+  const parentOf = id => conts.find(c => c.id === id)?.parent ?? null;
+  const inside = (cid, itemId) => { let p = cid, n = 0; while (p && n++ < 10) { if (p === itemId) return true; p = parentOf(p); } return false; };
+  const opts = [["worn", "Worn"], ["carried", "Carried"], ["stored", "Stored"]]
+    .concat(conts.filter(c => c.id !== item.id && !inside(c.id, item.id)).map(c => [`in:${c.id}`, `${c.kind === "animal" ? "On" : "In"} ${c.name}`]));
+  if (cur === "mount") opts.push(["mount", "On mount (choose which)"]);
+  if (!opts.some(o => o[0] === cur)) opts.push([cur, cur.startsWith("in:") ? "(container gone)" : cur]);
+  return opts.map(([value, label]) => ({ value, label, selected: value === cur }));
+}
+
 class ADnDActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
     classes: ["frpg1e", "sheet", "actor"],
@@ -120,6 +158,7 @@ class ADnDActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       profWeaponAdd: ADnDActorSheet.#onProfWeaponAdd,
       profWeaponRemove: ADnDActorSheet.#onProfWeaponRemove,
       chargeAdjust: ADnDActorSheet.#onChargeAdjust,
+      magicWeapon: ADnDActorSheet.#onMagicWeapon,
       psiReset: ADnDActorSheet.#onPsiReset
     }
   };
@@ -132,6 +171,7 @@ class ADnDActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   async _prepareContext(options) {
     const ctx = await super._prepareContext(options);
+    ctx.alignOptions = alignmentOptions(this.actor.system.details?.alignment ?? "");
     const actor = this.actor;
     ctx.actor = actor;
     ctx.system = actor.system;
@@ -216,6 +256,10 @@ class ADnDActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const list = foundry.utils.deepClone(this.actor._source.system.profs?.weapons ?? []);
     list.splice(Number(target.dataset.index), 1);
     return this.actor.update({ "system.profs.weapons": list });
+  }
+  static async #onMagicWeapon(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    if (item) await MagicWeapons.addWeapons(item);
   }
   static #onChargeAdjust(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
@@ -311,7 +355,8 @@ export class CharacterSheet extends ADnDActorSheet {
     const a = this.actor, s = a.system, m = s.mods;
     ctx.races = opt(RACES);
     ctx.race = raceContext(s);
-    ctx.classOptions = Object.entries(CLASSES).map(([value, c]) => ({ value, label: c.label }));
+    const used = new Set(s.classInfo.map(c => c.key));
+    ctx.classOptions = Object.entries(CLASSES).filter(([k]) => !HIDDEN_CLASSES.has(k) || used.has(k)).map(([value, c]) => ({ value, label: c.label }));
     ctx.matrixOptions = [{ value: "", label: "(class default)" }, ...Object.entries(ATTACK_MATRICES).map(([value, c]) => ({ value, label: c.label }))];
     ctx.saveOptions = [{ value: "", label: "(class default)" }, ...Object.keys(SAVING_THROWS).map(value => ({ value, label: { cleric: "Cleric", fighter: "Fighter", magicuser: "Magic-User", thief: "Thief" }[value] }))];
     ctx.classes = s.classInfo.map(c => ({
@@ -347,28 +392,55 @@ export class CharacterSheet extends ADnDActorSheet {
       rangeText: i.system.damage.smRange ? `${i.system.damage.smRange} / ${i.system.damage.lRange}` : "",
       missile: i.system.attackType !== "melee" && i.system.missile.short ? `${i.system.missile.short}/${i.system.missile.medium}/${i.system.missile.long}` : "",
       row: Rolls.weaponToHitRow(a, i),
+      linked: !!i.getFlag(SYSTEM_ID, "linkedMagic"),
+      locOpts: locationOptions(a, i),
       tags: weaponTags(a, i)
     }));
     ctx.acHeader = Array.from({ length: 11 }, (_, i) => 10 - i);
-    ctx.armor = items.filter(i => i.type === "armor");
-    ctx.gear = items.filter(i => i.type === "gear");
+    ctx.armor = items.filter(i => i.type === "armor").map(i => ({ id: i.id, name: i.name, img: i.img, system: i.system, locOpts: locationOptions(a, i),
+      halfWorn: i.system.kind === "armor" && Number(i.system.magic) > 0 && (i.system.equipped || i.system.location === "worn") ? (Number(i.system.weight) || 0) / 2 : 0 }));
+    const ANIMAL_CATS = ["Livestock", "Transport"];
+    const contById = new Map((s.containers ?? []).map(c => [c.id, c]));
+    const contInfo = i => { const c = contById.get(i.id); if (!c) return null;
+      const inside = items.filter(x => x.system.location === `in:${i.id}`).map(x => (x.system.quantity ?? 1) > 1 ? `${x.name} ×${x.system.quantity}` : x.name);
+      return { ...c, loadText: `${c.load.toLocaleString()}${c.capacity ? ` / ${c.capacity.toLocaleString()}` : ""}${c.max ? ` (max ${c.max.toLocaleString()})` : ""} gp`,
+        contents: inside.length ? `Inside: ${inside.join(", ")}` : "Empty" }; };
+    const isAnimal = i => i.type === "gear" && (ANIMAL_CATS.includes(i.system.category) || i.system.container?.kind === "animal");
+    ctx.gear = items.filter(i => i.type === "gear" && !isAnimal(i)).map(i => ({ id: i.id, name: i.name, img: i.img, system: i.system, locOpts: locationOptions(a, i), cont: contInfo(i) }));
+    ctx.animals = items.filter(isAnimal).map(i => ({ id: i.id, name: i.name, img: i.img, system: i.system, cont: contInfo(i) }));
+    ctx.packList = (s.containers ?? []).filter(c => c.kind !== "animal").map(c => ({ ...c, loadText: `${c.load.toLocaleString()}${c.capacity ? ` / ${c.capacity.toLocaleString()}` : ""} gp` }));
+    const magicWeaponMap = await fetch(`systems/${SYSTEM_ID}/data/magic-weapons.json`).then(r => r.json()).catch(() => ({}));
     const USE = { potion: "Drink", scroll: "Read", wand: "Use", staff: "Use", rod: "Use" };
     ctx.magicItems = items.filter(i => i.type === "magic" && i.system.category !== "reference").map(i => ({
       id: i.id, name: i.name, img: i.img, s: i.system, cat: MAGIC_CATEGORIES[i.system.category] ?? "",
-      useLabel: USE[i.system.category] ?? "Show", charged: ["wand", "staff", "rod"].includes(i.system.category),
+      useLabel: USE[i.system.category] ?? ((i.system.charges?.max ?? 0) > 0 ? "Use" : "Show"), charged: ["wand", "staff", "rod"].includes(i.system.category) || (i.system.charges?.max ?? 0) > 0,
       stack: ["potion", "scroll", "ammunition"].includes(i.system.category),
-      wearable: !!i.system.protection?.kind || ["ring", "misc"].includes(i.system.category)
+      wearable: !!i.system.protection?.kind || ["ring", "misc"].includes(i.system.category),
+      weaponMissing: !!magicWeaponMap[i.name] && !MagicWeapons.linkedWeapons(a, i.id).length,
+      locOpts: locationOptions(a, i), cont: contInfo(i),
+      found: i.getFlag(SYSTEM_ID, "found")?.summary ?? ""
     }));
+    for (const m of ctx.magicItems) {   // a "when found" roll not yet made (items owned before 0.48.0): the button says Roll
+      const r = m.s.rolls ?? [];
+      if (!m.found && r.length && r.every(x => x.fn === "Determine type (when found)")) m.useLabel = "Roll";
+    }
     ctx.treasureItems = items.filter(i => i.type === "treasure").map(i => ({
       id: i.id, name: i.name, img: i.img, s: i.system, kind: TREASURE_KINDS[i.system.kind] ?? "",
       total: Math.round(i.system.value * i.system.quantity * 100) / 100,
-      totalText: (Math.round(i.system.value * i.system.quantity * 100) / 100).toLocaleString()
+      totalText: (Math.round(i.system.value * i.system.quantity * 100) / 100).toLocaleString(),
+      locOpts: locationOptions(a, i)
     }));
     ctx.treasureTotal = ctx.treasureItems.reduce((t, i) => t + i.total, 0).toLocaleString();
     // Proficiencies (DSG Table 10 / WSG Table 1)
     {
       const slots = s.profSlots;
-      const weapons = (s.profs.weapons ?? []).map((w, index) => ({ ...w, index, cost: weaponProfCost(w) }));
+      // choices: the weapon list, plus any weapon the character carries and any name already entered
+      const base = await weaponNames();
+      const carried = items.filter(i => i.type === "weapon").map(i => i.name);
+      const known = new Set(base);
+      const extra = [...new Set([...carried, ...(s.profs.weapons ?? []).map(w => w.name)])].filter(n => n && !known.has(n)).sort();
+      const weapons = (s.profs.weapons ?? []).map((w, index) => ({ ...w, index, cost: weaponProfCost(w),
+        options: [...base.map(n => ({ n, sel: n === w.name })), ...extra.map(n => ({ n, sel: n === w.name, other: true }))] }));
       const weaponUsed = weapons.reduce((t, w) => t + w.cost, 0);
       const nwp = items.filter(i => i.type === "proficiency").map(i => {
         const p = i.system, score = s.abilities[p.ability]?.value ?? null;
@@ -432,7 +504,12 @@ export class CharacterSheet extends ADnDActorSheet {
     ctx.psi = psionicContext(a, items);
     ctx.multiClass = s.classInfo.length > 1;
     ctx.coins = s.money;
+    ctx.storedTotal = (s.encByLoc?.stored ?? 0) + (s.encCoinsStored ?? 0);
     ctx.encLbs = Math.round(s.encumbrance / 10);
+    ctx.encLoadLbs = Math.round((s.encLoad ?? s.encumbrance) / 10);
+    ctx.encOn = !!s.enc && s.enc.rule !== "off";
+    ctx.encSlowed = ctx.encOn && s.enc.move !== null && s.enc.move < (s.move.armor ?? s.move.value);
+    ctx.encRuleLabel = s.enc?.rule === "WSG" ? "WSG Table 11" : "PHB p.101";
 
     // Rich text
     ctx.biography = await TextEditor.enrichHTML(s.details.biography, { relativeTo: a });
@@ -527,10 +604,7 @@ function weaponTags(actor, item) {
   const cls = actor.system.classInfo;
   if (w.specialized) tags.push(w.specialized === "double" ? "Double specialist" : "Specialist");
   const cav = cls.find(c => c.def.cavalier);
-  if (w.choice && cav) {
-    const b = cavalierChoiceBonus(w.choice, cav.level);
-    tags.push(b ? `Weapon of choice +${b}${w.choice === "lance" ? " mounted" : ""}` : "Weapon of choice (not yet)");
-  }
+  if (w.choice && cav) tags.push(cavalierRules(cav.def).choiceLabel(w.choice, cav.level));
   const atk = Rolls.weaponAttacks(actor, item);
   if (atk) tags.push(`${atk} attacks/round`);
   return tags.join(" · ");
@@ -560,20 +634,22 @@ function classFeatures(actor) {
     ] });
   }
   if (s.cavalier) {
-    const c = s.cavalier;
+    const c = s.cavalier, cr = c.rules ?? cavalierRules(null);
     const L = c.level;
-    const horse = [[3, "Vaults into the saddle in bulky armor and is underway in 1 segment"], [5, "Can urge a mount to +2\" movement for up to 6 turns"],
+    const horse = !cr.ridingSkills ? [] : [[3, "Vaults into the saddle in bulky armor and is underway in 1 segment"], [5, "Can urge a mount to +2\" movement for up to 6 turns"],
       [7, "Can ride a pegasus"], [9, "Can ride a hippogriff"], [11, "Can ride a griffon or similar (DM)"]]
       .filter(([lv]) => L >= lv).map(([, t]) => t);
     boxes.push({ title: "Cavalier Abilities", rows: [
       pctRow("Not thrown from saddle", c.horsemanship, "Also the chance not to be injured if the mount falls."),
-      pctRow("Mind-affecting magic has no effect", 90, "Beguiling, charm, domination, hold, hypnosis, magic jar, possession, sleep, suggestion, psionic mind blast. In addition to any saving throw."),
+      ...(cr.mindResist ? [pctRow("Mind-affecting magic has no effect", 90, "Beguiling, charm, domination, hold, hypnosis, magic jar, possession, sleep, suggestion, psionic mind blast. In addition to any saving throw.")] : []),
       { label: "Fear", value: "Immune" },
-      { label: "Save vs. illusion spells", value: "+2" }
+      ...(cr.illusionSave ? [{ label: "Save vs. illusion spells", value: `+${cr.illusionSave}` }] : []),
+      ...(cr.extraRows ? cr.extraRows(L) : [])
     ], notes: [
-      ...(actor.system.details.race === "human" ? ["Human: attacks from horseback as if 1 level higher (applied when you tick Mounted)."] : []),
+      ...(actor.system.details.race === "human" && cr.mountedLevel ? ["Human: attacks from horseback as if 1 level higher (applied when you tick Mounted)."] : []),
       ...horse,
-      "Good alignment: radiates protection from fear (1\" radius) and can function at negative hit points down to the hit points rolled at 1st level.",
+      ...(cr.goodAura ? ["Good alignment: radiates protection from fear (1\" radius) and can function at negative hit points down to the hit points rolled at 1st level."] : []),
+      ...(cr.notes ? cr.notes(L) : []),
       "Weapons of choice are set on each weapon's sheet; the bonus is added to the numbers on the Combat tab."
     ] });
   }
@@ -913,6 +989,12 @@ export class ADnDItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     ctx.abilityOptions = [{ value: "", label: "None (NA)" }, ...opt(ABILITY_LABELS)];
     ctx.magicCategories = opt(MAGIC_CATEGORIES);
     ctx.treasureKinds = opt(TREASURE_KINDS);
+    ctx.weightSources = [{ value: "", label: "(not classified)" }, { value: "published", label: "Published (printed in a 1e book)" }, { value: "derived", label: "Derived (comparison or printed rule of thumb)" },
+      { value: "dm", label: "Set by the DM" }, { value: "unspecified", label: "Unspecified (no published weight)" }, { value: "exempt", label: "Not counted (rules)" }];
+    ctx.foundSummary = this.document.getFlag?.(SYSTEM_ID, "found")?.summary ?? "";
+    { const c = this.document.actor?.system?.containers?.find(x => x.id === this.document.id);
+      ctx.contLoad = c ? `${c.load.toLocaleString()}${c.capacity ? ` of ${c.capacity.toLocaleString()}` : ""} gp${c.over ? " (over capacity)" : ""}` : ""; }
+    ctx.containerKinds = [{ value: "", label: "No" }, { value: "pack", label: "Ordinary container" }, { value: "magic", label: "Magic container (contents weightless)" }, { value: "animal", label: "Animal or transport" }];
     ctx.protectionKinds = [{ value: "", label: "None" }, { value: "ring", label: "Ring of protection" }, { value: "cloak", label: "Cloak of protection" }, { value: "bracers", label: "Bracers of defense" }];
     ctx.gearAmmoKinds = [{ value: "", label: "Not ammunition" }, ...Object.entries(Rolls.AMMO_KINDS).map(([value, label]) => ({ value, label: `${label} (${value.startsWith("bolt") ? "crossbow" : value === "needle" ? "blowgun" : value === "arrow" ? "bows" : "sling"})` })),
       { value: "bolt", label: "Quarrels (any crossbow)" }];
@@ -928,11 +1010,13 @@ export class ADnDItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     ctx.ordLevel = ORD[item.system.level] ?? "";
     ctx.kinds = [{ value: "armor", label: "Body armor" }, { value: "shield", label: "Shield" }];
     ctx.descriptionHTML = await TextEditor.enrichHTML(item.system.description ?? "", { relativeTo: item });
+    ctx.artifact = game.user.isGM && item.type === "magic" ? await Artifacts.artifactContext(item) : null;
     return ctx;
   }
 
   _onRender(context, options) {
     super._onRender(context, options);
+    try { Artifacts.bindArtifactControls(this, this.element); } catch (err) { console.error("frpg1e | artifact controls", err); }
     mountEditors(this.element, this.item, context);
     // Special magic bonuses vs. creature types
     this.element.querySelectorAll("[data-vs-index]").forEach(el => {

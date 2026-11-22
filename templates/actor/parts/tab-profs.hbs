@@ -19,7 +19,7 @@
         <tbody>
         {{#each profs.weapons}}
           <tr>
-            <td class="left"><input type="text" value="{{name}}" data-prof-index="{{index}}" data-prof-field="name" placeholder="weapon"></td>
+            <td class="left"><select data-prof-index="{{index}}" data-prof-field="name"><option value="" {{#unless name}}selected{{/unless}}>— choose a weapon —</option>{{#each options}}<option value="{{n}}" {{#if sel}}selected{{/if}}>{{n}}{{#if other}} (not in the weapon list){{/if}}</option>{{/each}}</select></td>
             <td><select data-prof-index="{{index}}" data-prof-field="spec"><option value="" {{adnd-selected "" spec}}>—</option><option value="single" {{adnd-selected "single" spec}}>Specialized</option><option value="double" {{adnd-selected "double" spec}}>Double</option></select></td>
             <td><input type="checkbox" data-prof-index="{{index}}" data-prof-field="bow" {{adnd-checked bow}}></td>
             <td class="num">{{cost}}</td>
@@ -47,7 +47,7 @@
             <td>{{#if p.check}}<button type="button" class="cast-btn" data-action="profRoll">Check</button>{{else}}{{#if tracking}}<button type="button" class="cast-btn" data-action="profRoll">Track</button>{{else}}<button type="button" class="cast-btn" data-action="profRoll">Show</button>{{/if}}{{/if}}</td>
             <td><button type="button" class="icon-btn" data-action="itemDelete"><i class="fa-solid fa-trash"></i></button></td>
           </tr>
-        {{else}}<tr><td colspan="8" class="hint">Drag proficiencies here from the 1e FRPG Nonweapon Proficiencies compendium.</td></tr>{{/each}}
+        {{else}}<tr><td colspan="8" class="hint">Drag proficiencies here from the Nonweapon Proficiencies (DSG/WSG) compendium.</td></tr>{{/each}}
         </tbody>
       </table>
       <p class="hint">Proficiency Check (WSG p.11): d20 plus the modifier, at or under the ability score (scores above 18 count as 18). An unmodified 20 always fails, and 19 fails unless the proficiency is improved. Shift-click Check to skip the modifier dialog.</p>

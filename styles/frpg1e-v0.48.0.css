@@ -504,3 +504,232 @@ p.item-ref { font-style: italic; color: #5a4e40; font-size: 12px; }
 .frpg1e-card .ability-roll-table .num { text-align: right; }
 .frpg1e-card .ability-roll-table s.dropped { opacity: .5; }
 .frpg1e .abilities .box-title .mini-text { width: auto; margin-left: auto; }
+
+/* Foundry's theme paints table heads and rows with a dark band and light text, which is hard to read on the parchment.
+   Every table on the sheets (including tabs added by add-on modules) gets a clear background and dark headings. */
+.frpg1e table, .frpg1e table :is(thead, tbody, tfoot, tr, th, td), .frpg1e-dialog table :is(thead, tbody, tr, th, td) { background: transparent !important; }
+.frpg1e table th, .frpg1e-dialog table th { color: var(--ink-2) !important; text-shadow: none !important; }
+.frpg1e table td { text-shadow: none !important; }
+.frpg1e .ledger tbody tr:nth-child(even) td { background: rgba(255,255,255,.18) !important; }
+.frpg1e .weapon-table th.acn, .frpg1e .acadj th { color: var(--blood) !important; }
+.frpg1e .weapon-table .ac-head-label th { color: var(--ink-3) !important; }
+.frpg1e tr[class*="-later"] th, .frpg1e tr[class*="-later"] td { color: #8a7f6a !important; }
+
+/* =====================================================================
+   Goldenrod sheet style (world setting "Sheet style"): goldenrod stock, black rules and lettering,
+   in the manner of the classic printed record sheets. Fonts: Fraunces (labels and headings), Sancreek
+   (title lettering; its "1" reads as an I, so the digit is set in Rye), all SIL Open Font License.
+   ===================================================================== */
+@font-face { font-family: "Fraunces"; src: url("../fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Fraunces"; font-style: italic; src: url("../fonts/Fraunces-Italic.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Sancreek"; src: url("../fonts/Sancreek-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Rye"; src: url("../fonts/Rye-Regular.ttf") format("truetype"); font-display: swap; }
+.frpg1e .gold-only { display: none; }
+
+body.frpg1e-gold :is(.frpg1e, .frpg1e-card, .frpg1e-dialog, .frpg1e-encounter) {
+  --paper: #c9971e;
+  --paper-2: #c2921d;
+  --wash: #b98b1c;
+  --ink: #1a1815;
+  --ink-2: #1a1815;
+  --ink-3: #3d3220;
+  --rule: #1a1815;
+  --rule-strong: #1a1815;
+  --blood: #1a1815;
+  --blood-2: #3d3220;
+  --hit: #1f4a24;
+  --adnd-font-head: "Fraunces", Georgia, serif;
+  --adnd-font-serif: "Fraunces", Georgia, serif;
+}
+body.frpg1e-gold .application.frpg1e .window-content { background: var(--paper); background-image: none; }
+body.frpg1e-gold .application.frpg1e .window-header { background: #1a1815; color: #c9971e; border-bottom: 2px solid #1a1815; }
+body.frpg1e-gold .frpg1e .sheet-head { background: var(--paper); border-bottom: 3px solid var(--rule-strong); }
+
+/* headings (box titles, tabs): thin light capitals, like ABILITIES: and POSSESSIONS: */
+body.frpg1e-gold .frpg1e :is(.box-title, .sheet-tabs button) {
+  font-family: "Fraunces", serif; font-weight: 350; text-transform: uppercase; letter-spacing: .02em; font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+body.frpg1e-gold .frpg1e .box-title { background: none; border-bottom: 2px solid var(--rule-strong); font-size: 18px; }
+body.frpg1e-gold .frpg1e .sheet-tabs { background: var(--paper); border-bottom: 2px solid var(--rule-strong); }
+body.frpg1e-gold .frpg1e .sheet-tabs button.active { font-weight: 600; border-bottom-color: var(--ink); }
+
+/* labels: heavy capitals, like STRENGTH, ARMOR WORN, WEAPON */
+body.frpg1e-gold .frpg1e :is(.fld > span, .vital-label, th, .slot-stat > span:not(.slot-big):not(.hint), label > span:first-child) {
+  font-family: "Fraunces", serif !important; font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; font-size: 10.5px; color: var(--ink) !important;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+body.frpg1e-gold .frpg1e .hint, body.frpg1e-gold .frpg1e .box-title .hint { color: var(--ink-3); font-family: "Fraunces", serif; font-style: italic; }
+
+/* boxes: black ruled frames on the stock */
+body.frpg1e-gold .frpg1e .box { background: transparent; border: 2px solid var(--rule-strong); }
+body.frpg1e-gold .frpg1e :is(input[type="text"], input[type="number"], select, .fld output) { border-bottom: 1.5px solid var(--rule-strong); color: var(--ink); }
+body.frpg1e-gold .frpg1e input:focus, body.frpg1e-gold .frpg1e select:focus { background: rgba(255,255,255,.35); }
+body.frpg1e-gold .frpg1e input[type="checkbox"] { accent-color: #1a1815; }
+body.frpg1e-gold .frpg1e .vital { background: var(--paper); border-width: 2px; }
+body.frpg1e-gold .frpg1e .vital.ac { background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M1 1 H99 V72 L50 99 L1 72 Z' fill='%23c9971e' stroke='%231a1815' stroke-width='2' vector-effect='non-scaling-stroke'/></svg>") center / 100% 100% no-repeat; }
+body.frpg1e-gold .frpg1e .portrait { outline-color: var(--paper); border-width: 2px; }
+body.frpg1e-gold .frpg1e .ledger tbody tr:nth-child(even) td { background: rgba(0,0,0,.05) !important; }
+body.frpg1e-gold .frpg1e tr[class*="-later"] th, body.frpg1e-gold .frpg1e tr[class*="-later"] td, body.frpg1e-gold .frpg1e li[class*="-later"] { color: #5a4a2a !important; }
+body.frpg1e-gold .frpg1e :is(button, .mini):not(.sheet-tabs button) { border-color: var(--rule-strong); color: var(--ink); background: rgba(255,255,255,.18); }
+
+/* the title: wood-type capitals with a dropped shadow, as on the printed sheet */
+body.frpg1e-gold .frpg1e .gold-only { display: inline; }
+body.frpg1e-gold .frpg1e .record-mark { display: flex; flex-direction: column; align-items: flex-end; font-family: "Fraunces", serif; font-style: italic; font-weight: 700; color: var(--ink); font-size: 14px; line-height: 1.1; }
+body.frpg1e-gold .frpg1e .gold-title { font-family: "Sancreek", serif; font-style: normal; font-weight: normal; font-size: 22px; letter-spacing: .03em; text-shadow: 2px 2px 0 rgba(26,24,21,.45); }
+body.frpg1e-gold .frpg1e .gold-one { font-family: "Rye", serif; }
+
+/* chat cards and dialogs in the same style */
+body.frpg1e-gold .frpg1e-card { background: #c9971e; color: #1a1815; border-color: #1a1815; }
+body.frpg1e-gold .application.frpg1e-dialog .window-content { background: #c9971e; color: #1a1815; }
+
+/* the boot from the printed sheet's move box, in the empty cell between Weight and Base Move (goldenrod only) */
+.frpg1e .detail-grid .boot-art { grid-column: 4; grid-row: 2; }
+body.frpg1e-gold .frpg1e .detail-grid .boot-art { display: block; min-height: 60px; background: url("../assets/boot.png") center / contain no-repeat; }
+/* the sword from the printed sheet's COMBAT heading, beside the Weapons title (goldenrod only) */
+body.frpg1e-gold .frpg1e .box-title .sword-art { display: inline-block; width: 230px; height: 26px; flex: 0 1 230px; background: url("../assets/sword.png") left center / contain no-repeat; }
+
+/* the Will, at the foot of the Possessions tab (as on the printed record sheet) */
+@font-face { font-family: "Italianno"; src: url("../fonts/Italianno-Regular.ttf") format("truetype"); font-display: swap; }
+.frpg1e .will-line { display: grid; grid-template-columns: auto minmax(120px, 220px) auto 1fr; gap: 8px; align-items: end; }
+.frpg1e .will-script { font-family: "Italianno", cursive; font-size: 28px; line-height: 1; color: var(--ink); white-space: nowrap; }
+.frpg1e .will-text { width: 100%; min-height: 26px; field-sizing: content; resize: vertical; background: transparent; color: var(--ink); border: none; border-bottom: 1px solid var(--rule);
+  border-radius: 0; font-family: var(--adnd-font-body); font-size: 13px; padding: 2px; box-shadow: none; }
+.frpg1e .will-text:focus { outline: none; background: rgba(255,255,255,.35); }
+body.frpg1e-gold .frpg1e .will-text { border-bottom: 1.5px solid var(--rule-strong); }
+/* the necklace from the printed sheet's MAGIC ITEMS heading, beside the Magic Items title (goldenrod only) */
+body.frpg1e-gold .frpg1e .box-title .necklace-art { display: inline-block; width: 104px; height: 36px; margin: -6px 0 -6px 4px; flex: 0 0 104px; background: url("../assets/necklace.png") left center / contain no-repeat; }
+
+/* Checkboxes. Foundry's theme draws its own checkboxes in its orange accent and ignores accent-color, so its
+   checkbox colour variables are set here (and the pseudo-elements it draws with, as a fallback):
+   dark brown on parchment, black on goldenrod. */
+.frpg1e, .frpg1e-dialog {
+  --frpg-check: #3a2f24; --frpg-check-mark: #fbf4e0;
+  --checkbox-checked-color: var(--frpg-check); --checkbox-checkmark-color: var(--frpg-check-mark);
+  --checkbox-border-color: var(--frpg-check); --checkbox-background-color: transparent;
+  --color-checkbox-checked: var(--frpg-check); --color-checkbox-checkmark: var(--frpg-check-mark);
+}
+body.frpg1e-gold :is(.frpg1e, .frpg1e-dialog) { --frpg-check: #1a1815; --frpg-check-mark: #fbf4e0; }
+/* Draw the checkbox ourselves: Foundry's own glyph leaves the tick as a cut-out, so its colour cannot be set reliably. */
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"] {
+  appearance: none !important; -webkit-appearance: none !important; position: relative; display: inline-block; vertical-align: middle;
+  width: 15px !important; height: 15px !important; min-width: 15px; margin: 0; padding: 0; cursor: pointer;
+  border: 1.5px solid var(--frpg-check) !important; border-radius: 2px; background: transparent !important; box-shadow: none !important;
+}
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"]::before { content: none !important; display: none !important; }
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"]::after { content: none !important; }
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"]:checked { background: var(--frpg-check) !important; }
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"]:checked::after {
+  content: "" !important; display: block !important; position: absolute; left: 3.5px; top: 0.5px; width: 4px; height: 8px;
+  border: solid var(--frpg-check-mark); border-width: 0 2px 2px 0; transform: rotate(45deg); background: none !important;
+}
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"]:disabled { opacity: .45; cursor: default; }
+:is(.frpg1e, .frpg1e-dialog) input[type="checkbox"]:focus-visible { outline: 2px solid var(--frpg-check); outline-offset: 1px; }
+
+/* dialogs: Foundry's dark interface theme was colouring labels, hints and inputs for a dark window; force ink on paper (both sheet styles) */
+.application.frpg1e-dialog .window-content :is(label, p, span, div, .hint, legend, small, li, td, th, h1, h2, h3, h4) { color: var(--ink); text-shadow: none; }
+.application.frpg1e-dialog .window-content .hint { color: var(--ink-2); opacity: 1; }
+.application.frpg1e-dialog .window-content .form-group > label { font-family: var(--adnd-font-head); font-weight: 600; }
+.application.frpg1e-dialog .window-content :is(input[type="text"], input[type="number"], input:not([type]), select, textarea) {
+  background: rgba(255,255,255,.45); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 3px; box-shadow: none; }
+.application.frpg1e-dialog .window-content :is(input, select, textarea):focus { outline: 2px solid var(--blood); outline-offset: 0; background: rgba(255,255,255,.7); }
+.application.frpg1e-dialog .window-content select option { background: #fbf4e0; color: #1a1815; }
+.application.frpg1e-dialog .window-content input::placeholder { color: var(--ink-3); opacity: .8; }
+.application.frpg1e-dialog .form-footer button, .application.frpg1e-dialog footer button {
+  background: rgba(255,255,255,.3); color: var(--ink); border: 1.5px solid var(--rule-strong); font-family: var(--adnd-font-head); font-weight: 600; text-shadow: none; }
+.application.frpg1e-dialog .form-footer button:is(.default, [autofocus]), .application.frpg1e-dialog footer button:is(.default, [autofocus]) {
+  background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.application.frpg1e-dialog .form-footer button:hover, .application.frpg1e-dialog footer button:hover { box-shadow: 0 0 0 1px var(--blood); }
+body.frpg1e-gold .application.frpg1e-dialog .window-content :is(input[type="text"], input[type="number"], input:not([type]), select, textarea) { background: rgba(255,255,255,.3); border-color: #1a1815; }
+
+/* goldenrod: the optional class modules colour their notes for parchment (#6b5f4a, later rows #9a917e), too faint on goldenrod.
+   Covers every module tab (injected as .tab-body inside the sheet) and module chat cards. */
+body.frpg1e-gold .frpg1e .tab-body :is(.hint, [class$="-src"], [class*="-src "], em, i:not([class*="fa-"])),
+body.frpg1e-gold .frpg1e-card :is(.hint, [class$="-src"]) { color: #2e2618 !important; opacity: 1 !important; font-weight: 450; }
+body.frpg1e-gold .frpg1e .tab-body :is([class$="-later"], [class*="-later "]),
+body.frpg1e-gold .frpg1e .tab-body :is([class$="-later"], [class*="-later "]) :is(td, th, .hint, span) { color: #3a2e17 !important; }
+body.frpg1e-gold .frpg1e .tab-body table :is(td, th) { border-bottom-color: rgba(26,24,21,.35) !important; }
+body.frpg1e-gold .frpg1e .tab-body table th { color: #1a1815 !important; font-weight: 700; }
+
+/* Initiative / Surprise / Morale sit in the tab bar but are buttons: give them the same look as the other sheet buttons (e.g. Roll 4d6) */
+.frpg1e .sheet-tabs .quick-rolls .mini-text { border-radius: 2px; margin-bottom: 0; }
+body.frpg1e-gold .frpg1e .sheet-tabs .quick-rolls .mini-text { background: rgba(255,255,255,.18); border: 1px solid var(--rule-strong); color: var(--ink); font-weight: normal; text-transform: none; }
+body.frpg1e-gold .frpg1e .sheet-tabs .quick-rolls .mini-text:hover { border-color: var(--blood); color: var(--blood); }
+/* a little space between the tab row and the Initiative / Surprise / Morale buttons when they wrap below it */
+.frpg1e .sheet-tabs .quick-rolls { margin-top: 6px; margin-bottom: 4px; }
+
+/* natural 20 / natural 1 on attack cards (setting: critFumble) */
+.frpg1e-card .cf-banner { margin: 4px 0; padding: 2px 6px; text-align: center; font-family: var(--adnd-font-head); font-size: 16px; letter-spacing: .12em; border: 2px solid currentColor; border-radius: 2px; }
+.frpg1e-card .cf-banner.crit { color: var(--hit); }
+.frpg1e-card .cf-banner.fumble { color: var(--blood); }
+body.frpg1e-gold .frpg1e-card .cf-banner { font-family: "Fraunces", serif; font-weight: 800; color: #1a1815; }
+body.frpg1e-gold .frpg1e-card .cf-banner.crit { background: rgba(255,255,255,.3); }
+body.frpg1e-gold .frpg1e-card .cf-banner.fumble { background: #1a1815; color: #c9971e; border-color: #1a1815; }
+
+/* exceptional strength percentile: number centred in its box (Foundry's input padding and line height pushed it to the bottom) */
+.frpg1e .ab-score .pct input[type="number"] {
+  box-sizing: border-box; width: 36px; height: 26px; min-height: 0; padding: 0; margin: 0 0 0 2px;
+  line-height: 24px; font-size: 14px; font-weight: 700; text-align: center; vertical-align: middle; color: var(--ink);
+}
+
+/* artifact powers and effects (item sheet, GM only) */
+.frpg1e .artifact-box .art-row, .frpg1e .artifact-box .art-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 6px; }
+.frpg1e .artifact-box .art-group { margin: 8px 0 2px; font-family: var(--adnd-font-head); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink); border-bottom: 1px solid var(--rule); }
+.frpg1e .artifact-box .art-table { width: 100%; border-collapse: collapse; }
+.frpg1e .artifact-box .art-table td { padding: 2px 4px; vertical-align: top; border-bottom: 1px dotted var(--rule); }
+.frpg1e .artifact-box .art-table td.art-tab { width: 2.6em; font-weight: 700; text-align: center; color: var(--ink); }
+.frpg1e .artifact-box .art-table select { width: 100%; }
+.frpg1e .artifact-box .art-text { font-size: 12px; color: var(--ink); margin-top: 2px; line-height: 1.3; }
+.frpg1e .artifact-box .art-table td:last-child { width: 28px; }
+.frpg1e-card.artifact-card ul { margin: 2px 0 6px; padding-left: 16px; }
+.frpg1e-card.artifact-card h4 { margin: 6px 0 2px; }
+/* artifact box buttons: size to their label (the .mini class fixes buttons at 22px wide) */
+.frpg1e .artifact-box .mini.mini-text { width: auto; flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; height: 24px; padding: 0 9px; font-size: 12px; }
+.frpg1e .artifact-box .art-buttons .hint { margin-left: 4px; }
+.frpg1e .artifact-box .art-label { font-family: var(--adnd-font-head); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; color: var(--ink); margin-right: 6px; }
+.frpg1e .artifact-box .art-value { font-size: 14px; color: var(--ink); }
+.frpg1e .artifact-box .art-letter { font-weight: 700; color: var(--ink); }
+.frpg1e .artifact-box .art-table td { color: var(--ink); line-height: 1.35; padding: 4px; }
+/* dialog buttons: the label sits in a <span> inside the button; let it take the button's own colour (the dark-ink text rule above was
+   turning the default button's label black on black) */
+.application.frpg1e-dialog .window-content button :is(span, i, label, div) { color: inherit !important; }
+.application.frpg1e-dialog .form-footer button:is(.default, [autofocus]), .application.frpg1e-dialog footer button:is(.default, [autofocus]) { color: var(--paper) !important; }
+
+/* brawl dialog: compact, left-aligned rows */
+.frpg1e-brawl .brawl-form .row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; padding: 4px 0; border-bottom: 1px dotted var(--rule); }
+.frpg1e-brawl .brawl-form .row .lbl { flex: 0 0 118px; white-space: nowrap; font-family: var(--adnd-font-head); font-weight: 600; }
+.frpg1e-brawl .brawl-form .row select { flex: 1 1 200px; min-width: 0; }
+.frpg1e-brawl .brawl-form .row label { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.frpg1e-brawl .brawl-form .row.col { flex-direction: column; align-items: flex-start; gap: 3px; }
+.frpg1e-brawl .brawl-form .row.col label { white-space: normal; }
+.frpg1e-brawl .brawl-form .brawl-sub { margin: 0 0 2px 128px; }
+.frpg1e-brawl .brawl-form > p.hint { font-size: 11px; line-height: 1.3; }
+.frpg1e-card .brawl-dmg { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 4px 0 2px; }
+.frpg1e-card .target-line + .hint .mini.mini-text, .frpg1e-card .brawl-dmg .mini.mini-text { width: auto; padding: 1px 8px; height: auto; margin-left: 4px; }
+/* Items sidebar: "Spells by class and level" (GM) */
+.frpg1e-spell-folders { flex: 1 1 100%; margin-top: 4px; }
+
+/* Armor Class / Combat Adjustments: editable rows look like the others, numbers in one right-hand column */
+.frpg1e label.ac-line { font: inherit !important; color: inherit; }
+.frpg1e .ac-line > span:not(#frpg1e-x) { font-family: inherit !important; font-weight: normal !important; text-transform: none !important; letter-spacing: normal !important; font-size: inherit !important; color: var(--ink) !important; }
+.frpg1e .ac-line strong, .frpg1e .ac-line input { min-width: 3.2em; text-align: right; }
+.frpg1e .ac-line input[type="number"] { width: 3.2em; padding: 0; margin: 0; height: auto; font-size: 15px; font-weight: 700; text-align: right; background: transparent; border: none; border-bottom: 1px solid var(--rule-strong); border-radius: 0; box-shadow: none; }
+.frpg1e .ac-line input[type="number"]::placeholder { text-align: right; }
+
+/* item Location dropdown and stored coins */
+.frpg1e select.loc-select { width: auto; min-width: 6.5em; max-width: 8em; height: 22px; padding: 0 2px; font-size: 11px; }
+.frpg1e .weapon-row .sub-note.loc { display: block; margin-top: 2px; }
+.frpg1e .wealth .coin-caption { margin: 0 0 4px; font-size: 11px; font-style: italic; color: var(--ink-2); text-align: right; }
+.frpg1e .wealth .coin-stored { margin-top: 2px; opacity: .9; }
+.frpg1e input.notes-in { width: 100%; min-width: 8em; text-align: left; }
+.frpg1e .cont-load { font-size: 11px; color: var(--ink-2); }
+.frpg1e .sub-note.cont-load { display: block; }
+.frpg1e .cont-load.over { color: #8b1a1a; font-weight: 700; }
+.frpg1e .cont-load.overmax { color: #8b1a1a; font-weight: 800; text-decoration: underline; }
+body.frpg1e-gold .frpg1e .cont-load.over, body.frpg1e-gold .frpg1e .cont-load.overmax { color: #6b0f0f; }
+
+.frpg1e input.wt-unknown::placeholder { color: #8b1a1a; font-weight: 700; opacity: 1; }
+.frpg1e .wt-unknown-note { color: #8b1a1a; }
+body.frpg1e-gold .frpg1e input.wt-unknown::placeholder, body.frpg1e-gold .frpg1e .wt-unknown-note { color: #6b0f0f; }
+
+.frpg1e .sub-note.found-note { display: block; font-size: 11px; font-style: italic; color: var(--ink-2); }
+.frpg1e .cont-now { margin: 4px 0; }

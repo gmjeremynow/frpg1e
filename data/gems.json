@@ -2,7 +2,7 @@
  {
   "name": "Azurite",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/azurite.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -20,7 +20,7 @@
  {
   "name": "Banded Agate",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/banded-agate.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -38,7 +38,7 @@
  {
   "name": "Blue Quartz",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/blue-quartz.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -56,7 +56,7 @@
  {
   "name": "Eye Agate",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/eye-agate.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -74,7 +74,7 @@
  {
   "name": "Hematite",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/hematite.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -92,7 +92,7 @@
  {
   "name": "Lapis Lazuli",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/lapis-lazuli.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -110,7 +110,7 @@
  {
   "name": "Malachite",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/malachite.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -128,7 +128,7 @@
  {
   "name": "Moss Agate",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/moss-agate.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -146,7 +146,7 @@
  {
   "name": "Obsidian",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/obsidian.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -164,7 +164,7 @@
  {
   "name": "Rhodochrosite",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/rhodochrosite.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -182,7 +182,7 @@
  {
   "name": "Tiger Eye",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/tiger-eye.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -200,7 +200,7 @@
  {
   "name": "Turquoise",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/turquoise.svg",
   "system": {
    "kind": "gem",
    "class": "ornamental",
@@ -218,7 +218,7 @@
  {
   "name": "Bloodstone",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/bloodstone.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -236,7 +236,7 @@
  {
   "name": "Carnelian",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/carnelian.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -254,7 +254,7 @@
  {
   "name": "Chalcedony",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/chalcedony.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -272,7 +272,7 @@
  {
   "name": "Chrysoprase",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/chrysoprase.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -290,7 +290,7 @@
  {
   "name": "Citrine",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/citrine.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -308,7 +308,7 @@
  {
   "name": "Jasper",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/jasper.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -326,7 +326,7 @@
  {
   "name": "Moonstone",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/moonstone.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -344,7 +344,7 @@
  {
   "name": "Onyx",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/onyx.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -362,7 +362,7 @@
  {
   "name": "Rock Crystal",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/rock-crystal.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -380,7 +380,7 @@
  {
   "name": "Sardonyx",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/sardonyx.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -398,7 +398,7 @@
  {
   "name": "Smoky Quartz",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/smoky-quartz.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -416,7 +416,7 @@
  {
   "name": "Star Rose Quartz",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/star-rose-quartz.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -434,7 +434,7 @@
  {
   "name": "Zircon",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/zircon.svg",
   "system": {
    "kind": "gem",
    "class": "semi-precious",
@@ -452,7 +452,7 @@
  {
   "name": "Amber",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/amber.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -470,7 +470,7 @@
  {
   "name": "Alexandrite",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/alexandrite.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -488,7 +488,7 @@
  {
   "name": "Amethyst",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/amethyst.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -506,7 +506,7 @@
  {
   "name": "Aquamarine",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/aquamarine.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -524,7 +524,7 @@
  {
   "name": "Chrysoberyl",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/chrysoberyl.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -542,7 +542,7 @@
  {
   "name": "Coral",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/coral.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -560,7 +560,7 @@
  {
   "name": "Garnet",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/garnet.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -578,7 +578,7 @@
  {
   "name": "Jade",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/jade.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -596,7 +596,7 @@
  {
   "name": "Jet",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/jet.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -614,7 +614,7 @@
  {
   "name": "Pearl",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/pearl.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -632,7 +632,7 @@
  {
   "name": "Peridot",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/peridot.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -650,7 +650,7 @@
  {
   "name": "Spinel",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/spinel.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -668,7 +668,7 @@
  {
   "name": "Topaz",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/topaz.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -686,7 +686,7 @@
  {
   "name": "Tourmaline",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/tourmaline.svg",
   "system": {
    "kind": "gem",
    "class": "fancy",
@@ -704,7 +704,7 @@
  {
   "name": "Black Opal",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/black-opal.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -722,7 +722,7 @@
  {
   "name": "Black Sapphire",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/black-sapphire.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -740,7 +740,7 @@
  {
   "name": "Diamond",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/diamond.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -758,7 +758,7 @@
  {
   "name": "Emerald",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/emerald.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -776,7 +776,7 @@
  {
   "name": "Fire Opal",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/fire-opal.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -794,7 +794,7 @@
  {
   "name": "Jacinth",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/jacinth.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -812,7 +812,7 @@
  {
   "name": "Opal",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/opal.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -830,7 +830,7 @@
  {
   "name": "Oriental Amethyst",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/oriental-amethyst.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -848,7 +848,7 @@
  {
   "name": "Oriental Emerald",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/oriental-emerald.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -866,7 +866,7 @@
  {
   "name": "Oriental Topaz",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/oriental-topaz.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -884,7 +884,7 @@
  {
   "name": "Ruby",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/ruby.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -902,7 +902,7 @@
  {
   "name": "Sapphire",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/sapphire.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -920,7 +920,7 @@
  {
   "name": "Star Ruby",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/star-ruby.svg",
   "system": {
    "kind": "gem",
    "class": "gem",
@@ -938,7 +938,7 @@
  {
   "name": "Star Sapphire",
   "type": "treasure",
-  "img": "icons/svg/jewel.svg",
+  "img": "systems/frpg1e/assets/gems/star-sapphire.svg",
   "system": {
    "kind": "gem",
    "class": "gem",

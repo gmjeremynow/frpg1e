@@ -5,13 +5,13 @@
     <div class="head-main">
       <div class="title-line">
         <input class="char-name" type="text" name="name" value="{{actor.name}}" placeholder="Character name">
-        <span class="record-mark">Player Character Record</span>
+        <span class="record-mark"><span class="gold-only gold-title"><span class="gold-one">1</span>E FANTASY RPG</span> Player Character Record</span>
       </div>
       <div class="head-fields">
         <label class="fld"><span>Race</span>
           <select name="system.details.race">{{#each races}}<option value="{{value}}" {{adnd-selected value ../system.details.race}}>{{label}}</option>{{/each}}</select>
         </label>
-        <label class="fld"><span>Alignment</span><input type="text" name="system.details.alignment" value="{{system.details.alignment}}"></label>
+        <label class="fld"><span>Alignment</span><select name="system.details.alignment">{{#each alignOptions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
         <label class="fld"><span>Class</span><output title="Change classes in the Class &amp; Level box">{{#each classes}}{{label}} {{level}}{{#unless @last}} / {{/unless}}{{else}}0-level{{/each}}</output></label>
         <label class="fld narrow"><span>Move</span><output>{{system.move.value}}&Prime;</output></label>
       </div>
@@ -75,6 +75,7 @@
         <label class="fld"><span>Deity</span><input type="text" name="system.details.deity" value="{{system.details.deity}}"></label>
         <label class="fld"><span>Player</span><input type="text" name="system.details.player" value="{{system.details.player}}"></label>
         <label class="fld wide"><span>Languages</span><input type="text" name="system.details.languages" value="{{system.details.languages}}"></label>
+        <div class="boot-art gold-only" aria-hidden="true"></div>
         <label class="fld"><span>Base Move</span><input type="number" name="system.move.base" value="{{system.move.base}}" data-dtype="Number"></label>
       </div>
     </div>

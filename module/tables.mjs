@@ -118,6 +118,13 @@ export function scoreFromBase(base, ac) {
 /* ------------------------------------------------------------------ */
 /* Columns: [Paralyzation/Poison/Death, Petrification/Polymorph,
  *           Rod/Staff/Wand, Breath Weapon, Spell]                      */
+/** Spell lists. Setting modules add their own with api.registerSpellList(key, label). */
+export const SPELL_LISTS = { cleric: "Cleric", druid: "Druid", magicuser: "Magic-User", illusionist: "Illusionist" };
+export const SPELL_LIST_KEYS = Object.keys(SPELL_LISTS);
+/** Nonweapon proficiency groups. Mutable key list: setting modules add groups with api.registerProficiencyGroup. */
+export const PROF_GROUPS = { craftsman: "Craftsman (DSG)", adventuring: "Adventuring (DSG)", wilderness: "Wilderness (WSG)", other: "Other" };
+export const PROF_GROUP_KEYS = Object.keys(PROF_GROUPS);
+
 export const SAVE_KEYS = ["ppd", "pp", "rsw", "bw", "sp"];
 
 export const SAVING_THROWS = {
@@ -524,6 +531,8 @@ export function classIs(key, base) {
 
 /** Fighters', paladins', rangers' attacks per melee round (PHB p.25). */
 export function fighterAttacksPerRound(classKey, level) {
+  const own = CLASSES[classKey]?.attacksPerRound;           // setting classes: [[maxLevel, "3/2"], ...]
+  if (Array.isArray(own)) return (own.find(([max]) => level <= (max ?? Infinity)) ?? own[own.length - 1])[1];
   // PHB p.25; UA p.23 adds barbarians, cavaliers and the UA paladin
   const t = {
     fighter: [[6, "1/1"], [12, "3/2"], [Infinity, "2/1"]],
@@ -721,6 +730,25 @@ export function cavalierChoiceBonus(choice, level) {
   return Math.floor((level - start) / 6) + 1;
 }
 
+/**
+ * Cavalier abilities for a class with cavalier: true. A setting class can change them with def.cavalierRules:
+ *   mindResist (90% vs. mind-affecting magic), illusionSave (bonus vs. illusion spells), mountedLevel (humans attack
+ *   from horseback as 1 level higher), goodAura (fear aura and negative hit points when good), ridingSkills (UA riding
+ *   progression), choiceHit(choice, level, mounted) -> to-hit bonus, choiceAttacks(level) -> attacks per round or null.
+ * The defaults are the UA cavalier's (UA p.15-17).
+ */
+export function cavalierRules(def) {
+  const UA = {
+    mindResist: true, illusionSave: 2, mountedLevel: true, goodAura: true, ridingSkills: true,
+    // the lance bonus only while mounted
+    choiceHit: (choice, level, mounted) => (choice === "lance" && !mounted ? 0 : cavalierChoiceBonus(choice, level)),
+    // weapons of choice attack as if 5 levels higher; 3/1 at 16th level and above
+    choiceAttacks: level => (level >= 16 ? "3/1" : fighterAttacksPerRound("cavalier", level + 5)),
+    choiceLabel: (choice, level) => { const b = cavalierChoiceBonus(choice, level); return b ? `Weapon of choice +${b}${choice === "lance" ? " mounted" : ""}` : "Weapon of choice (not yet)"; }
+  };
+  return { ...UA, ...(def?.cavalierRules ?? {}) };
+}
+
 /* ------------------------------------------------------------------ */
 /*  WEAPON SPECIALIZATION (UA p.18-19)                                 */
 /* ------------------------------------------------------------------ */
@@ -863,7 +891,9 @@ export function proficiencySlots(classes) {
     const t = PROFICIENCY_SLOTS[c.key];
     if (!t) { unknown.push(c.key); continue; }
     const steps = Math.floor(Math.max(0, c.level - 1) / t[4]);
-    per.push({ key: c.key, level: c.level, weapon: (t[0] ?? 0) + steps * t[2], nonweapon: (t[1] ?? 0) + steps * t[3], bard: t[0] === null });
+    // an optional sixth entry gives nonweapon slots their own rate (every N levels)
+    const nwSteps = t[5] ? Math.floor(Math.max(0, c.level - 1) / t[5]) : steps;
+    per.push({ key: c.key, level: c.level, weapon: (t[0] ?? 0) + steps * t[2], nonweapon: (t[1] ?? 0) + nwSteps * t[3], bard: t[0] === null });
   }
   const others = per.filter(p => !p.bard);
   let weapon = others.length ? Math.max(...others.map(p => p.weapon)) : 0;
@@ -928,3 +958,73 @@ export const LOYALTY_SITUATIONS = [["offered bribe", "co-operates"], ["ordered t
   ["ordered to perform heroic and dangerous act", "refuses"], ["ordered to rescue party member(s)", "refuses"], ["ordered to rescue liege", "refuses"],
   ["in combat with possibly dangerous foe", "runs away"], ["liege incapacitated or slain", "runs away"], ["offered surrender terms", "surrenders"],
   ["surrounded by superior foe", "surrenders"], ["ordered to use up or diminish own magic item", "refuses"]];
+
+/* ------------------------------------------------------------------ */
+/*  ENCUMBRANCE AND MOVEMENT                                            */
+/* ------------------------------------------------------------------ */
+// PHB p.101: normal gear about 35# (12"), heavy gear about 70# (9"), very heavy about 105# (6"), encumbered over 105# (3" to 4").
+// PHB p.9: the strength weight allowance is carried over and above these limits (added to each limit here).
+// DMG p.225: 1,500 gp (150#) is the most a normal-strength person can carry and still move (the allowance is added to it here).
+// Movement is the base rate scaled 1, 3/4, 1/2, 1/4, which gives the PHB's 12" / 9" / 6" / 3" for a 12" base.
+export const ENC_PHB = [
+  { key: "normal", label: "Normal gear", limit: 350, f: 1, react: "reaction and initiative normal or better" },
+  { key: "heavy", label: "Heavy gear", limit: 700, f: 3 / 4, react: "reaction and initiative normal, no bonuses" },
+  { key: "veryHeavy", label: "Very heavy gear", limit: 1050, f: 1 / 2, react: "reaction and initiative slowed" },
+  { key: "encumbered", label: "Encumbered", limit: 1500, f: 1 / 4, react: "reaction and initiative slowed greatly; no trotting" }
+];
+// Wilderness Survival Guide p.30, Table 11: [light low, light high, moderate high, heavy high, severe high] in gp, by strength.
+const ENC_WSG = [
+  { s: 3, r: [40, 100, 350, 700, 1150] }, { s: 5, r: [50, 150, 450, 800, 1250] }, { s: 7, r: [60, 200, 550, 900, 1350] },
+  { s: 11, r: [90, 350, 700, 1050, 1500] }, { s: 13, r: [120, 450, 800, 1150, 1600] }, { s: 15, r: [140, 550, 900, 1250, 1700] },
+  { s: 16, r: [160, 700, 1050, 1400, 1850] }, { s: 17, r: [170, 850, 1200, 1550, 2000] }, { s: 18, r: [180, 1000, 1400, 1700, 2250] }
+];
+const ENC_WSG_EXC = [
+  { max: 50, r: [190, 1100, 1450, 1750, 2500] }, { max: 75, r: [200, 1200, 1500, 1800, 2750] }, { max: 90, r: [210, 1300, 1600, 2000, 3000] },
+  { max: 99, r: [220, 1400, 1700, 2200, 3500] }, { max: 100, r: [250, 1500, 1900, 2400, 4500] }
+];
+// WSG p.31, Table 12 (miles per half-day for a 12" base: normal/accelerated, by terrain). The tactical rate is scaled from the
+// normal-terrain column against Light (12): moderate 10/12, heavy 7/12, severe 5/12. "None" (15) is not made faster than the base rate.
+export const ENC_WSG_CATS = [
+  { key: "none", label: "Not encumbered", f: 1, miles: "15/18, rugged 12/16, very rugged 8/10" },
+  { key: "light", label: "Light", f: 1, miles: "12/16, rugged 12/15, very rugged 6/9" },
+  { key: "moderate", label: "Moderate", f: 10 / 12, miles: "10/12, rugged 9/11, very rugged 4/6" },
+  { key: "heavy", label: "Heavy", f: 7 / 12, miles: "7/10, rugged 6/8, very rugged 3/5" },
+  { key: "severe", label: "Severe", f: 5 / 12, miles: "5/7, rugged 3/5, very rugged 2/3" }
+];
+function wsgRow(str, pct) {
+  if (str >= 18 && pct > 0) return ENC_WSG_EXC.find(r => pct <= r.max).r;
+  if (str > 18) return ENC_WSG_EXC[ENC_WSG_EXC.length - 1].r;
+  return (ENC_WSG.find(r => str <= r.s) ?? ENC_WSG[ENC_WSG.length - 1]).r;
+}
+/**
+ * Encumbrance level and the movement it allows.
+ * @returns {{ rule, key, label, move, limits, note, max }}  move: null when the rule is off; 0 when the load is too great to move
+ */
+export function encumbrance({ rule = "PHB", load = 0, str = 10, pct = 0, allowance = 0, baseMove = 12 }) {
+  const scale = f => Math.max(1, Math.floor(baseMove * f));
+  if (rule === "WSG") {
+    const r = wsgRow(str, pct);
+    const idx = load < r[0] ? 0 : r.slice(1).findIndex(hi => load <= hi) + 1;   // 0 none, 1 light ... 4 severe, 0 from findIndex -1 → handled below
+    const over = load > r[4];
+    const cat = over ? null : ENC_WSG_CATS[load < r[0] ? 0 : idx];
+    return {
+      rule, key: over ? "impossible" : cat.key, label: over ? "Over the Severe limit" : cat.label,
+      move: over ? 0 : scale(cat.f), max: r[4],
+      limits: `light ${r[0]}-${r[1]}, moderate ${r[1] + 1}-${r[2]}, heavy ${r[2] + 1}-${r[3]}, severe ${r[3] + 1}-${r[4]} gp`,
+      note: over ? "cannot move, fight or perform any other physical activity (WSG p.30)" : `overland, miles per half-day for a 12" base: normal ${cat.miles} (WSG p.31)`
+    };
+  }
+  if (rule === "PHB") {
+    const lim = ENC_PHB.map(e => Math.max(0, e.limit + allowance));
+    const i = lim.findIndex(l => load <= l);
+    const over = i < 0;
+    const e = over ? null : ENC_PHB[i];
+    return {
+      rule, key: over ? "impossible" : e.key, label: over ? "Too heavy to move" : e.label,
+      move: over ? 0 : scale(e.f), max: lim[3],
+      limits: `normal to ${lim[0]}, heavy to ${lim[1]}, very heavy to ${lim[2]}, most ${lim[3]} gp`,
+      note: over ? "more than the most that can be carried while moving (DMG p.225)" : e.react + " (PHB p.101)"
+    };
+  }
+  return { rule: "off", key: "", label: "", move: null, max: null, limits: "", note: "" };
+}

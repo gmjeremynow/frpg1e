@@ -4,7 +4,7 @@
     <span class="mem-count" title="Times memorized">{{system.memorized}}</span>
     <button type="button" class="tiny" data-action="memorize" data-delta="1" title="Memorize one more">+</button>
   </div>
-  <a class="spell-name" data-action="itemChat" title="Show in chat">{{name}}{{#if system.reversible}} <span class="rev" title="Reversible">ʀ</span>{{/if}}</a>
+  <a class="spell-name" data-action="itemChat" title="Show in chat">{{name}}{{#if system.reversible}} <span class="rev" title="Reversible">(r)</span>{{/if}}</a>
   <span class="spell-stats">{{system.range}} · {{system.castingTime}} · {{system.duration}}{{#if system.save}} · save {{system.save}}{{/if}}</span>
   <button type="button" class="cast-btn" data-action="cast" {{#unless system.memorized}}disabled{{/unless}}>Cast</button>
   <button type="button" class="icon-btn" data-action="itemEdit" title="Edit"><i class="fa-solid fa-pen"></i></button>

@@ -4789,43 +4789,16 @@
        "label": "3+1 to 4 hit dice (½d4, round off)",
        "formula": "round(1d4/2)",
        "rows": []
+      },
+      {
+       "label": "4+1 to 4+4 hit dice (0-1: d4, 3 or 4 = 1)",
+       "formula": "floor(1d4/3)",
+       "rows": []
       }
      ],
      "table": {
       "formula": "",
       "rows": []
-     }
-    },
-    {
-     "label": "4+1 to 4+4 hit dice",
-     "kind": "table",
-     "formula": "",
-     "save": "",
-     "each": "",
-     "fn": "",
-     "charges": 0,
-     "note": "",
-     "mode": "",
-     "x": "",
-     "choices": [],
-     "table": {
-      "formula": "1d4",
-      "rows": [
-       {
-        "lo": 1,
-        "hi": 2,
-        "text": "no creature affected",
-        "formula": "",
-        "kind": ""
-       },
-       {
-        "lo": 3,
-        "hi": 4,
-        "text": "1 creature affected",
-        "formula": "",
-        "kind": ""
-       }
-      ]
      }
     }
    ]

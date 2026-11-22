@@ -1,9 +1,10 @@
 <tr class="weapon-row" data-item-id="{{id}}">
   <td><img class="row-img" src="{{img}}" alt=""></td>
   <td class="left">
-    <a class="attack-link" data-action="attack" title="Roll to hit">{{name}}{{#if s.magic.hit}} {{adnd-signed s.magic.hit}}{{/if}}</a>
+    <a class="attack-link" data-action="attack" title="Roll to hit">{{name}}{{#unless linked}}{{#if s.magic.hit}} {{adnd-signed s.magic.hit}}{{/if}}{{/unless}}</a>{{#if linked}} <span class="hint" title="Weapon form of a magic item; removed with it">(magic item)</span>{{/if}}
     {{#if missile}}<span class="sub-note">range {{missile}}&Prime; · rate {{s.missile.rate}}</span>{{/if}}
     {{#if tags}}<span class="sub-note tag">{{tags}}</span>{{/if}}
+    {{#unless linked}}<span class="sub-note loc">{{> "systems/frpg1e/templates/actor/parts/loc-select.hbs" opts=locOpts}}</span>{{/unless}}
   </td>
   <td><input type="checkbox" data-item-field="system.proficient" {{adnd-checked s.proficient}}></td>
   <td class="num">{{s.speed}}</td>

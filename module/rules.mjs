@@ -184,7 +184,8 @@ export function thiefSkills(classes, race, dexScore, armorCat = null) {
   for (const c of classes) {
     const d = CLASSES[c.key];
     if (!d || d.thiefSkills === undefined) continue;
-    const eff = c.level + d.thiefSkills;
+    // setting classes: thiefSkills may be a function of the class level (e.g. half level)
+    const eff = typeof d.thiefSkills === "function" ? d.thiefSkills(c.level) : c.level + d.thiefSkills;
     if (eff > level) { level = eff; def = d; }
   }
   if (level < 1) return null;
@@ -193,7 +194,7 @@ export function thiefSkills(classes, race, dexScore, armorCat = null) {
   const frozen = def.acrobat ? Math.min(level, 5) : level;
   const row = THIEF_TABLE[Math.min(17, frozen)];
   const cwRow = THIEF_TABLE[Math.min(17, level)];
-  const raceAdj = THIEF_RACE_ADJ[race] ?? THIEF_RACE_ADJ.human;
+  const raceAdj = def.noThiefRace ? THIEF_RACE_ADJ.human : (THIEF_RACE_ADJ[race] ?? THIEF_RACE_ADJ.human);
   const dexAll = dexterityThiefAdj(dexScore) ?? { pp: 0, ol: 0, ft: 0, ms: 0, hs: 0 };
   const armor = armorCat ? THIEF_ARMOR[armorCat] : null;
   // UA: no dexterity bonuses apply (penalties do) in armor other than simple leather
@@ -202,7 +203,7 @@ export function thiefSkills(classes, race, dexScore, armorCat = null) {
   const out = {};
   THIEF_SKILL_KEYS.forEach((k, i) => {
     const base = k === "cw" ? cwRow[i] : row[i];
-    if (base === null || (monkOnly && (k === "pp" || k === "rl"))) { out[k] = null; return; }
+    if (base === null || (monkOnly && (k === "pp" || k === "rl")) || (def.thiefSkillKeys && !def.thiefSkillKeys.includes(k))) { out[k] = null; return; }
     let dex = dexAll[k] ?? 0;
     if (!dexOK && dex > 0) dex = 0;
     const arm = armor && armorIdx[k] !== undefined ? armor.v[armorIdx[k]] : 0;
@@ -228,7 +229,8 @@ export function spellSlots(classes, wisScore, extras = {}) {
     if (!def?.spells) continue;
     for (const sp of def.spells) {
       const slots = spellSlotsFor(sp.progression, c.level);
-      if (def.wisBonusSpells ?? (classIs(c.key, "cleric") || classIs(c.key, "druid"))) {
+      // a spell entry may set wisdom: true/false (bonus spells and failure by wisdom for that list only)
+      if (sp.wisdom ?? def.wisBonusSpells ?? (classIs(c.key, "cleric") || classIs(c.key, "druid"))) {
         const bonus = wisdomTable(wisScore).bonusSpells;
         for (let i = 0; i < slots.length; i++) if (slots[i] > 0) slots[i] += bonus[i + 1] ?? 0;
       }
@@ -252,6 +254,8 @@ export function spellSlots(classes, wisScore, extras = {}) {
 /** Formula and constant for the hit points gained on reaching a level in a class. */
 export function levelHitDice(classKey, level) {
   const def = CLASSES[classKey] ?? CLASSES.custom;
+  // setting classes with an irregular table: levelHD(level) -> { dice, die, fixed } gained at that level
+  if (typeof def.levelHD === "function") return { die: def.hitDie, dice: 0, fixed: 0, ...def.levelHD(level) };
   if (level <= 1 && def.firstFormula) return { dice: 1, die: def.hitDie, fixed: 0, formula: def.firstFormula };
   if (level <= 1) return { dice: def.firstDice, die: def.hitDie, fixed: 0 };
   if (level <= levelOfMaxHD(def)) return { dice: 1, die: def.hitDie, fixed: 0 };

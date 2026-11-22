@@ -108,7 +108,7 @@ export async function rollJewelry() {
   }
   const piece = PIECES[Math.floor(Math.random() * PIECES.length)];
   const name = `${piece[0].toUpperCase()}${piece.slice(1)}, ${JEWELRY[cls].desc.toLowerCase()}`;
-  const data = { name, type: "treasure", img: "icons/svg/jewel.svg", system: {
+  const data = { name, type: "treasure", img: "systems/frpg1e/assets/gems/jewelry.svg", system: {
     kind: "jewelry", value, baseValue: value, quantity: 1, weight: 1, source: "DMG",
     description: `<p>${JEWELRY[cls].desc}, ${JEWELRY[cls].range} gp class (DMG p.26).${notes.length ? ` ${notes.join("; ")}.` : ""}</p><p class="hint">The type of piece is chosen at random from the DMG's examples; rename it as you like. Encumbrance 1-5 gp (small) or 50 gp (large), DMG Appendix O.</p>` } };
   return { kind: "jewelry", label: name, detail: `d% ${n}${notes.length ? `; ${notes.join("; ")}` : ""}`, value, data };
@@ -210,6 +210,11 @@ export async function rollMagicItem(source = "UA", { only = null, exclude = [] }
       const a = await d100(); path.push(`Special d% ${a}`);
       entry = pick(tables.DMG.ES, a);
     }
+  }
+  if (entry.oneOf?.length) {   // e.g. Bow +1: the DMG leaves the type to the DM, so one of the listed items is picked at random
+    const k = Math.floor(Math.random() * entry.oneOf.length);
+    entry = { ...entry, name: entry.oneOf[k] };
+    path.push(`type picked at random from ${entry.oneOf.length}; change it to suit the campaign`);
   }
   const data = await findItem(entry.name);
   let qty = 1;

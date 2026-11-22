@@ -11,7 +11,7 @@
         <label class="fld"><span>Race</span>
           <select name="system.details.race">{{#each races}}<option value="{{value}}" {{adnd-selected value ../system.details.race}}>{{label}}</option>{{/each}}</select>
         </label>
-        <label class="fld"><span>Alignment</span><input type="text" name="system.details.alignment" value="{{system.details.alignment}}"></label>
+        <label class="fld"><span>Alignment</span><select name="system.details.alignment">{{#each alignOptions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
         <label class="fld"><span>Class</span><output title="Change classes in the Class &amp; Level box">{{#each classes}}{{label}} {{level}}{{#unless @last}} / {{/unless}}{{else}}0-level{{/each}}</output></label>
         <label class="fld narrow"><span>Move</span><output>{{system.move.value}}&Prime;</output></label>
       </div>

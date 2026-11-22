@@ -3,7 +3,7 @@ import { isPC } from "./actor-types.mjs";
  * Every roll the system makes, and the chat cards that report them.
  */
 import { CLASSES, classIs, SAVE_KEYS, RANGE_PENALTY, TURN_UNDEAD, turnUndeadColumn, backstabMultiplier, scoreFromBase,
-  cavalierChoiceBonus, specialistAttacks, fighterAttacksPerRound } from "./tables.mjs";
+  cavalierChoiceBonus, cavalierRules, specialistAttacks, fighterAttacksPerRound } from "./tables.mjs";
 import * as R from "./rules.mjs";
 import * as Dice from "./dice.mjs";
 import * as CF from "./classfeatures.mjs";
@@ -28,6 +28,13 @@ export const THIEF_LABELS = {
 };
 
 const setting = key => game.settings.get(SYSTEM_ID, key);
+/** House rule (setting critFumble): natural 20 on an attack always hits (critical hit), natural 1 always misses (fumble). */
+function critFumble(natural) {
+  let on = true;
+  try { on = setting("critFumble"); } catch (e) { /* setting not registered yet */ }
+  return { crit: !!on && natural === 20, fumble: !!on && natural === 1 };
+}
+const CF_BANNER = cf => cf.crit ? `<div class="cf-banner crit">CRITICAL HIT</div>` : cf.fumble ? `<div class="cf-banner fumble">FUMBLE</div>` : "";
 const signed = n => (n >= 0 ? `+${n}` : `${n}`);
 
 async function postCard(actor, template, data, { rolls = [], flags = {}, flavor } = {}) {
@@ -63,8 +70,9 @@ function attackerProfile(actor) {
   return {
     monster: false,
     entries,
-    humanCavalier: s.details.race === "human" && classes.some(c => c.def.cavalier),
+    humanCavalier: s.details.race === "human" && classes.some(c => c.def.cavalier && cavalierRules(c.def).mountedLevel),
     cavalierLevel: Math.max(0, ...classes.filter(c => c.def.cavalier).map(c => c.level)),
+    cavalierRules: cavalierRules(classes.filter(c => c.def.cavalier).sort((a, b) => b.level - a.level)[0]?.def),
     // UA p.18: weapon specialization is for single-classed fighters and rangers
     canSpecialize: classes.length === 1 && ["fighter", "ranger"].includes(classes[0].key),
     specLevel: classes.length === 1 ? classes[0].level : 0,
@@ -80,7 +88,7 @@ function neededToHit(profile, ac, { mounted = false } = {}) {
   for (const e of profile.entries) {
     if (!e.matrix) continue;   // e.g. the bard row: bards fight at their fighter level
     // UA p.16: a human cavalier attacks from horseback as if 1 level higher
-    const lvl = e.level + (mounted && profile.humanCavalier && CLASSES[e.key]?.cavalier ? 1 : 0);
+    const lvl = e.level + (mounted && profile.humanCavalier && CLASSES[e.key]?.cavalier && cavalierRules(CLASSES[e.key]).mountedLevel ? 1 : 0);
     const score = R.characterToHit(e.matrix, lvl, ac);
     if (!best || score < best.score) best = { score, via: `${CLASSES[e.key]?.label ?? "0-level"} ${e.level}`, entry: e };
   }
@@ -173,6 +181,42 @@ function specialization(profile, item, missile, range) {
   return { hit: 1, dmg: 2, label: "Specialization" };
 }
 
+/**
+ * Missile rules from setting classes (def.missileRules, see extend.mjs): the classes that have them, with their levels.
+ * Each gives { pointBlank(actor, item, level) -> label | null, dialog(actor, item, level) -> HTML | "",
+ *   bonus({ actor, item, level, range, ammoItem, extra }) -> { mods: [{ label, hit, dmg }], notes: [] }, rate(item, level) -> string | null }.
+ */
+function missileClasses(actor) {
+  if (!isPC(actor)) return [];
+  return (actor.system.classInfo ?? []).filter(c => c.def?.missileRules && c.level > 0);
+}
+function classMissileBonus(actor, ctx) {
+  const mods = [], notes = [];
+  for (const c of missileClasses(actor)) {
+    const out = c.def.missileRules.bonus?.({ actor, level: c.level, ...ctx }) ?? null;
+    if (out?.mods) mods.push(...out.mods.filter(m => m.hit || m.dmg));
+    if (out?.notes) notes.push(...out.notes);
+  }
+  return { mods, notes };
+}
+/**
+ * Attack rules from setting classes for every attack, melee or missile (def.attackRules):
+ * { dialog(actor, item, level) -> HTML (inputs named "x-<name>"), bonus({ actor, item, level, missile, range, extra }) -> { mods, notes } }.
+ */
+function attackClasses(actor) {
+  if (!isPC(actor)) return [];
+  return (actor.system.classInfo ?? []).filter(c => c.def?.attackRules && c.level > 0);
+}
+function classAttackBonus(actor, ctx) {
+  const mods = [], notes = [];
+  for (const c of attackClasses(actor)) {
+    const out = c.def.attackRules.bonus?.({ actor, level: c.level, ...ctx }) ?? null;
+    if (out?.mods) mods.push(...out.mods.filter(m => m.hit || m.dmg));
+    if (out?.notes) notes.push(...out.notes);
+  }
+  return { mods, notes };
+}
+
 /** Attacks per round shown for a weapon on the sheet. */
 export function weaponAttacks(actor, item) {
   const profile = attackerProfile(actor);
@@ -182,10 +226,12 @@ export function weaponAttacks(actor, item) {
     const kind = w.attackType === "missile" ? missileKind(item) : "melee";
     return specialistAttacks(kind, profile.specLevel) ?? "";
   }
-  // UA p.15: weapons of choice attack as if 5 levels higher; 3/1 at 16th level and above
-  if (w.choice && profile.cavalierLevel && cavalierChoiceBonus(w.choice, profile.cavalierLevel) > 0) {
-    const L = profile.cavalierLevel;
-    return L >= 16 ? "3/1" : fighterAttacksPerRound("cavalier", L + 5);
+  // UA p.15: weapons of choice attack as if 5 levels higher; 3/1 at 16th level and above (setting classes may differ)
+  if (w.choice && profile.cavalierLevel && profile.cavalierRules.choiceHit(w.choice, profile.cavalierLevel, true) > 0)
+    return profile.cavalierRules.choiceAttacks(profile.cavalierLevel) ?? "";
+  if (w.attackType === "missile") for (const c of missileClasses(actor)) {
+    const r = c.def.missileRules.rate?.(item, c.level);
+    if (r) return r;
   }
   return "";
 }
@@ -207,8 +253,16 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
   const canMissile = w ? ["missile", "both"].includes(w.attackType) : false;
   const canMelee = w ? ["melee", "both"].includes(w.attackType) : true;
   const thiefLevel = isChar ? Math.max(0, ...actor.system.classInfo.filter(c => c.def.backstab).map(c => c.level)) : 0;
+  const backstabMult = isChar ? Math.max(1, ...actor.system.classInfo.filter(c => c.def.backstab && c.level > 0)
+    .map(c => (typeof c.def.backstab === "function" ? c.def.backstab(c.level) : backstabMultiplier(c.level)))) : 1;
 
-  const pointBlank = canMissile && w?.specialized && profile.canSpecialize && ["bow", "lightXbow", "heavyXbow"].includes(missileKind(item));
+  const specPointBlank = canMissile && w?.specialized && profile.canSpecialize && ["bow", "lightXbow", "heavyXbow"].includes(missileKind(item));
+  const mClasses = canMissile ? missileClasses(actor) : [];
+  const pointBlankLabel = mClasses.map(c => c.def.missileRules.pointBlank?.(actor, item, c.level)).find(Boolean)
+    ?? (specPointBlank ? "Point blank (specialist: 6' to 30' for bows, 6' to 60' for crossbows)" : "");
+  const pointBlank = !!pointBlankLabel;
+  const classDialog = mClasses.map(c => c.def.missileRules.dialog?.(actor, item, c.level) ?? "").join("")
+    + attackClasses(actor).map(c => c.def.attackRules.dialog?.(actor, item, c.level) ?? "").join("");
   // Special magic bonuses against creature types, and magic ammunition for bows, crossbows and slings
   const vsOptions = (w?.magic?.vs ?? []).map((v, i) => ({ i, label: `+${v.bonus} vs. ${v.text}` }));
   const ammoKind = canMissile ? ammoFor(item) : null;
@@ -225,7 +279,7 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
   if (!fast) {
     const content = await renderTemplate(`systems/${SYSTEM_ID}/templates/apps/attack-dialog.hbs`, {
       canMelee, canMissile, both: canMelee && canMissile, thief: thiefLevel > 0, ranges: w?.missile,
-      cavalier: profile.cavalierLevel > 0, pointBlank, vsOptions, magicHit: w?.magic?.hit ?? 0, ammoItems, ammoMissing, thrownStack,
+      cavalier: profile.cavalierLevel > 0, humanCavalier: !!profile.humanCavalier, pointBlank, pointBlankLabel, classDialog, vsOptions, magicHit: w?.magic?.hit ?? 0, ammoItems, ammoMissing, thrownStack,
       quantity: item?.system.quantity ?? 0
     });
     const res = await DialogV2.wait({
@@ -248,7 +302,9 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
             misc: Number(el.misc?.value) || 0,
             vs: el.vs ? Number(el.vs.value) : -1,
             ammo: el.ammo?.value ?? "",
-            countThrown: el.countThrown?.checked ?? false
+            countThrown: el.countThrown?.checked ?? false,
+            // fields a setting class adds to the dialog are named "x-<name>"
+            extra: Object.fromEntries([...button.form.querySelectorAll("[name^='x-']")].map(e => [e.name.slice(2), e.type === "checkbox" ? e.checked : e.value]))
           };
         }
       }]
@@ -278,12 +334,16 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
   if (plb) mods.push({ label: "Per-level progression", value: plb });
   if (missile && RANGE_PENALTY[opts.range]) mods.push({ label: `${opts.range} range`, value: RANGE_PENALTY[opts.range] });
   // UA p.15: cavalier weapons of choice (the lance only while mounted)
-  if (w?.choice && profile.cavalierLevel && (w.choice !== "lance" || opts.mounted)) {
-    const cb = cavalierChoiceBonus(w.choice, profile.cavalierLevel);
+  if (w?.choice && profile.cavalierLevel) {
+    const cb = profile.cavalierRules.choiceHit(w.choice, profile.cavalierLevel, !!opts.mounted);
     if (cb) mods.push({ label: "Weapon of choice", value: cb });
   }
   const spec = specialization(profile, item, missile, opts.range);
   if (spec?.hit) mods.push({ label: spec.label, value: spec.hit });
+  const cls = missile ? classMissileBonus(actor, { item, range: opts.range, ammoItem, extra: opts.extra ?? {} }) : { mods: [], notes: [] };
+  const acl = classAttackBonus(actor, { item, missile, range: opts.range, extra: opts.extra ?? {} });
+  cls.mods.push(...acl.mods); cls.notes.push(...acl.notes);
+  for (const m of cls.mods) if (m.hit) mods.push({ label: m.label, value: m.hit });
   if (opts.backstab) mods.push({ label: "Back stab", value: 4 });
   else if (opts.rear) mods.push({ label: "Rear / unseen", value: 2 });
   if (opts.helpless) mods.push({ label: "Stunned / prone / motionless", value: 4 });
@@ -302,15 +362,16 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
   const behind = opts.rear || opts.backstab;
 
   const targets = Array.from(game.user.targets).map(t => targetDefense(t, { rear: behind })).filter(Boolean);
+  const cf = critFumble(natural);
   const results = targets.map(t => {
     const need = neededToHit(profile, t.ac, { mounted: opts.mounted });
     const adj = useArmorAdj ? R.weaponArmorAdj(adjTable, t.type) : 0;
     const total = roll.total + adj;
-    return { ...t, need: need.score, via: need.via, adj, adjText: adj ? signed(adj) : "", total, hit: total >= need.score };
+    return { ...t, need: need.score, via: need.via, adj, adjText: adj ? signed(adj) : "", total, hit: cf.crit || (!cf.fumble && total >= need.score) };
   });
 
   // Damage formulas
-  const dmg = damageParts(actor, { item, routine, missile, backstab: opts.backstab, thiefLevel, spec, mounted: opts.mounted, profile, vsSel, ammoItem });
+  const dmg = damageParts(actor, { item, routine, missile, backstab: opts.backstab, thiefLevel, backstabMult, spec, mounted: opts.mounted, profile, vsSel, ammoItem, extraDmg: cls.mods.filter(m => m.dmg) });
   if (ammoItem) await ammoItem.update({ "system.quantity": Math.max(0, ammoItem.system.quantity - 1) });
   // a thrown weapon from a stack is used up (pick it up again by raising the quantity)
   const thrownUsed = missile && !key && opts.countThrown && item && item.system.quantity > 0;
@@ -324,13 +385,14 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
     natural, total: roll.total, mods: mods.map(m => ({ ...m, text: signed(m.value) })),
     results,
     untargeted: !results.length,
-    bestAC: results.length ? null : bestACHit(profile, roll.total, opts.mounted),
+    bestAC: results.length || cf.fumble ? null : bestACHit(profile, roll.total, opts.mounted),
+    crit: cf.crit, fumble: cf.fumble,
     ammoNote: ammoItem ? `${ammoItem.name}: ${ammoItem.system.quantity} left.${ammoItem.system.quantity ? "" : " That was the last one."}`
       : thrownUsed ? `${item.name}: ${item.system.quantity} left.` : (missile && key ? `No ${AMMO_KINDS[key]?.toLowerCase() ?? "ammunition"} counted.` : ""),
-    specNote: w?.specialized && !profile.canSpecialize ? "Specialization ignored: only single-classed fighters and rangers can specialize (UA p.18)." : "",
+    specNote: [w?.specialized && !profile.canSpecialize ? "Specialization ignored: only single-classed fighters and rangers can specialize (UA p.18)." : "", ...cls.notes].filter(Boolean).join(" "),
     armorAdjNote: useArmorAdj && !results.length && adjTable ? "Weapon vs. armor type adjustments are applied per target." : "",
     dmg, largeTarget,
-    backstab: opts.backstab ? backstabMultiplier(thiefLevel) : null
+    backstab: opts.backstab ? backstabMult : null
   }, {
     rolls: [roll],
     flags: {
@@ -342,7 +404,7 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
 }
 
 /** Damage formulas for size S/M and L, with every flat bonus folded in. */
-function damageParts(actor, { item, routine, missile, backstab, thiefLevel, spec = null, mounted = false, profile = null, vsSel = null, ammoItem = null }) {
+function damageParts(actor, { item, routine, missile, backstab, thiefLevel, backstabMult = null, spec = null, mounted = false, profile = null, vsSel = null, ammoItem = null, extraDmg = [] }) {
   let sm, l, smRange = "", lRange = "";
   const bonus = [];
   if (item) {
@@ -366,10 +428,11 @@ function damageParts(actor, { item, routine, missile, backstab, thiefLevel, spec
     if (actor.system.combat.dmgMisc) bonus.push({ label: "Misc.", value: actor.system.combat.dmgMisc });
   }
   if (spec?.dmg) bonus.push({ label: spec.label, value: spec.dmg });
+  for (const m of extraDmg) bonus.push({ label: m.label, value: m.dmg });
   // UA p.16: a cavalier's lance does +1 damage per level mounted, +1 dismounted
   if (item?.system.choice === "lance" && profile?.cavalierLevel) bonus.push({ label: mounted ? "Mounted lance" : "Lance on foot", value: mounted ? profile.cavalierLevel : 1 });
   // Back stab multiplies the weapon's damage (PHB p.27); specialist point-blank shots do double damage (UA p.18)
-  const mult = (backstab ? backstabMultiplier(thiefLevel) : 1) * (spec?.doubleDice ? 2 : 1);
+  const mult = (backstab ? (backstabMult ?? backstabMultiplier(thiefLevel)) : 1) * (spec?.doubleDice ? 2 : 1);
   const b = bonus.reduce((a, x) => a + x.value, 0);
   // PHB p.27: back stab damage is a multiple of the normal damage for the weapon used.
   const build = f => {
@@ -463,7 +526,7 @@ export async function rollSave(actor, key, { fast = false } = {}) {
       racial: racial && ((["rsw", "sp"].includes(key) && racial.magic) || (key === "ppd" && racial.poison)) ? racial : null,
       racialText: racial ? signed(racial.value) : "",
       poisonOnly: key === "ppd",
-      barbarianPoison: !!barb, cavalier: !!cav, druid: isChar && s.classInfo.some(c => c.key === "druid"), classBonus: isChar && s.saves[key].class ? signed(s.saves[key].class) : ""
+      barbarianPoison: !!barb, cavalier: !!(cav && cav.rules?.illusionSave), cavalierIllusion: cav?.rules?.illusionSave ?? 0, druid: isChar && s.classInfo.some(c => c.key === "druid"), classBonus: isChar && s.saves[key].class ? signed(s.saves[key].class) : ""
     });
     const res = await DialogV2.wait({
       window: { title: `Save vs. ${SAVE_LABELS[key]}` },
@@ -490,7 +553,7 @@ export async function rollSave(actor, key, { fast = false } = {}) {
   // UA p.20: barbarians save +4 vs. poison (the sheet already counts +3 for this column)
   if (opts.poison && s.barbarian && key === "ppd") mods.push({ label: "Barbarian vs. poison", value: 1 });
   // UA p.17: cavaliers save at +2 versus all forms of illusion spells
-  if (opts.illusion && s.cavalier) mods.push({ label: "Cavalier vs. illusion", value: 2 });
+  if (opts.illusion && s.cavalier?.rules?.illusionSave) mods.push({ label: "Cavalier vs. illusion", value: s.cavalier.rules.illusionSave });
   // PHB p.21: druids save +2 against fire and lightning (electrical) attacks
   if (opts.fire && s.classInfo?.some(c => c.key === "druid")) mods.push({ label: "Druid vs. fire/lightning", value: 2 });
   if (opts.misc) mods.push({ label: "Situational", value: opts.misc });
@@ -541,7 +604,9 @@ export function turningLevel(actor) {
   if (!isPC(actor)) return 0;
   let lvl = 0;
   for (const c of actor.system.classInfo) {
-    if (classIs(c.key, "cleric") && !CLASSES[c.key]?.noTurning) lvl = Math.max(lvl, c.level + (CLASSES[c.key]?.turnUndeadOffset ?? 0));
+    // setting classes may give noTurning / turnUndeadOffset as functions of the actor (e.g. turning only while a spell lasts)
+    const d = CLASSES[c.key], val = x => (typeof x === "function" ? x(actor) : x);
+    if (classIs(c.key, "cleric") && !val(d?.noTurning)) lvl = Math.max(lvl, c.level + (val(d?.turnUndeadOffset) ?? 0));
     // DMG p.75: paladins turn undead as a cleric two levels below their level
     if (c.key === "paladin" || c.key === "paladinUA") lvl = Math.max(lvl, c.level - 2);
   }
@@ -591,7 +656,8 @@ export async function rollLevelHP(actor, classIndex) {
   const con = actor.system.mods.con.hpAdj;
   // PHB p.19: multi-classed characters divide by the number of classes. Bards and dual-classed humans add to existing dice.
   const dual = actor.system.details.dualClass || actor.system.classInfo.some(x => x.def.dualClass);
-  const nClasses = dual ? 1 : (actor.system.classInfo.length || 1);
+  const split = actor.system.classInfo.some(x => x.def.splitClass);
+  const nClasses = (dual || split) ? 1 : (actor.system.classInfo.length || 1);
   let raw, perDie = [], rolls = [], formula = null, note = "";
   if (hd.formula) {
     // UA p.15: cavaliers (and UA paladins) start with 1d10+3; constitution applies to that die
@@ -603,8 +669,19 @@ export async function rollLevelHP(actor, classIndex) {
     const r = await evalRoll(`${hd.dice}d${die}`);
     rolls.push(r);
     perDie = r.dice[0].results.map(x => x.result);
-    // PHB p.12: constitution adjusts each hit die, but never reduces a die below 1
-    raw = perDie.reduce((t, x) => t + Math.max(1, x + con), 0);
+    const bonus = Number(c.def.dieBonus) || 0;      // setting classes: a fixed bonus per hit die (e.g. +1)
+    if (split && c.def.splitClass) {
+      // split class (e.g. a ninja): its own die never gets the constitution bonus
+      raw = perDie.reduce((t, x) => t + x + bonus, 0);
+      note = `${c.label}: no constitution bonus on this die.`;
+    } else if (split) {
+      // the other class of a split-class character rolls its normal die, halves it (round up), then adds constitution
+      raw = perDie.reduce((t, x) => t + Math.max(1, Math.ceil((x + bonus) / 2) + con), 0);
+      note = "Split class: the die is halved (rounded up) before the constitution bonus.";
+    } else {
+      // PHB p.12: constitution adjusts each hit die, but never reduces a die below 1
+      raw = perDie.reduce((t, x) => t + Math.max(1, x + bonus + con), 0);
+    }
   } else if (hd.fixed === null) {
     return ui.notifications.warn(`${c.label}: the book gives no hit point rule beyond level ${c.def.maxHD}. Add hit points by hand.`);
   } else {
@@ -798,8 +875,9 @@ export async function castSpell(actor, item) {
   let failure = null;
   // PHB Wisdom Table II: chance of spell failure for clerics and druids with low wisdom
   // (the table covers druids too per the errata in The Dragon #35)
-  if (isPC(actor) && ((s.list === "cleric" && actor.system.classInfo.some(c => classIs(c.key, "cleric")))
-      || (s.list === "druid" && actor.system.classInfo.some(c => classIs(c.key, "druid"))))) {
+  const usesList = base => actor.system.classInfo.some(c => classIs(c.key, base) && (c.def?.spells ?? [{ list: base }]).some(sp => sp.list === s.list));
+  const wisList = actor.system.classInfo?.some(c => (c.def?.spells ?? []).some(sp => sp.list === s.list && sp.wisdom));
+  if (isPC(actor) && (usesList("cleric") || usesList("druid") || wisList)) {
     const chance = actor.system.mods.wis.spellFailure;
     if (chance) {
       const r = await evalRoll("1d100");
@@ -882,9 +960,10 @@ export function weaponToHitRow(actor, item, { missile = null } = {}) {
   }
   if (w) mod += w.magic.hit + w.bonus.hit;
   mod += perLevelBonus(profile);
-  if (w?.choice && w.choice !== "lance" && profile.cavalierLevel) mod += cavalierChoiceBonus(w.choice, profile.cavalierLevel);
+  if (w?.choice && profile.cavalierLevel) mod += profile.cavalierRules.choiceHit(w.choice, profile.cavalierLevel, false);
   const spec = specialization(profile, item, useMissile, "short");
   if (spec) mod += spec.hit;
+  if (useMissile && item) for (const m of classMissileBonus(actor, { item, range: "short", ammoItem: null, extra: {} }).mods) mod += m.hit ?? 0;
   const useAdj = setting("weaponVsArmor") && w && !w.natural;
   const table = w ? (useMissile ? w.missile.acAdj : w.acAdj) : null;
   const row = [];
@@ -905,7 +984,7 @@ const TextEditorImpl = () => foundry.applications.ux.TextEditor.implementation;
 export async function useMagicItem(actor, item) {
   const s = item.system;
   if (s.heal) return useHealingItem(actor, item);
-  if (s.rolls?.length) return useRolledItem(actor, item);
+  if (s.rolls?.length && hasRollsLeft(item)) return useRolledItem(actor, item);
   let usage = "", update = null;
   if (["potion", "scroll"].includes(s.category)) {
     if (s.quantity < 1) return ui.notifications.warn(`${actor.name} has no ${item.name} left.`);
@@ -917,10 +996,66 @@ export async function useMagicItem(actor, item) {
     usage = `Uses a charge: ${s.charges.value - 1} of ${s.charges.max} left.`;
   } else if (["wand", "staff", "rod"].includes(s.category)) {
     usage = "Charges are not set on this item; set them on its sheet to track them (DMG: typically found with fewer than full charges).";
+  } else if (s.charges?.max > 0) {
+    // rings and other charged items: not every power costs a charge, so ask
+    const spend = await DialogV2.wait({
+      window: { title: item.name }, classes: ["frpg1e-dialog"], rejectClose: false,
+      content: `<p>Spend a charge? ${s.charges.value} of ${s.charges.max} left.</p><p class="hint">Some of this item's powers may work without spending one; see its description.</p>`,
+      buttons: [
+        { action: "spend", label: "Use 1 charge", default: true, callback: () => true },
+        { action: "free", label: "No charge", callback: () => false }
+      ]
+    });
+    if (spend === null || spend === undefined) return;
+    if (spend) {
+      if (s.charges.value < 1) return ui.notifications.warn(`${item.name} has no charges left.`);
+      update = { "system.charges.value": s.charges.value - 1 };
+      usage = `Uses a charge: ${s.charges.value - 1} of ${s.charges.max} left.`;
+    }
   }
   if (update) await item.update(update);
   const description = await TextEditorImpl().enrichHTML(s.description ?? "", { relativeTo: item });
   return postCard(actor, "item", { item, s, description, usage }, { flags: { type: "item" } });
+}
+
+/** True while the item still has something to roll: a use other than "when found", or a "when found" roll not yet made. */
+function hasRollsLeft(item) {
+  const rolls = item.system.rolls ?? [];
+  if (rolls.some(r => r.fn !== Dice.FIND_FN)) return true;
+  return rolls.some(r => r.fn === Dice.FIND_FN) && !item.getFlag("frpg1e", "found");
+}
+
+/**
+ * Roll an item's "Determine type (when found)" dice once, when it is added to a character, and keep the result:
+ * it is saved on the item (flag frpg1e.found) and never rolled again. Charges and Bag of Holding capacity are set from it.
+ */
+export async function rollWhenFound(actor, item) {
+  if (item.getFlag("frpg1e", "found")) return null;
+  const s = item.system;
+  const entries = Dice.rollsForFunction(s.rolls ?? [], Dice.FIND_FN);
+  if (!entries.length) return null;
+  const out = await Dice.runRolls(entries, {});
+  const update = {};
+  let usage = "Rolled once, when it was added; this result is kept and will not be rolled again.";
+  const ch = out.results.find(r => /^charges/i.test(r.label));
+  if (ch) { update["system.charges.value"] = ch.total; update["system.charges.max"] = ch.total; usage += ` Charges set to ${ch.total}.`; }
+  // Bag of holding: "weighs 15 lb, holds 250 lb, ..." sets its weight and capacity (10 gp to the pound)
+  const cap = out.results.find(r => /^capacity/i.test(r.label) && r.row);
+  const lbs = cap ? [...String(cap.row).matchAll(/([\d,]+)\s*lb/gi)].map(m => Number(m[1].replace(/,/g, ""))) : [];
+  if (lbs.length >= 2) {
+    update["system.weight"] = lbs[0] * 10;
+    update["system.weightSource"] = "published";
+    update["system.weightRef"] = "DMG p.138 (Capacity roll)";
+    update["system.container.kind"] = s.container?.kind || "magic";
+    update["system.container.capacity"] = lbs[1] * 10;
+    usage += ` Weight set to ${(lbs[0] * 10).toLocaleString()} gp; holds up to ${(lbs[1] * 10).toLocaleString()} gp.`;
+  }
+  const summary = out.results.map(r => `${r.label}: ${r.row ?? r.total}${r.sub ? ` (${r.sub.total})` : ""}`).join("; ");
+  update["flags.frpg1e.found"] = { summary, at: Date.now() };
+  await item.update(update);
+  const resultsHTML = await Dice.renderResults(out.results);
+  const description = await TextEditorImpl().enrichHTML(s.description ?? "", { relativeTo: item });
+  return postCard(actor, "item", { item, s, description, usage, resultsHTML, fnLabel: "When found" }, { rolls: out.rolls, flags: { type: "rolls" } });
 }
 
 /**
@@ -931,7 +1066,8 @@ export async function useMagicItem(actor, item) {
 async function useRolledItem(actor, item) {
   const s = item.system;
   const rolls = s.rolls;
-  let functions = Dice.itemFunctions(rolls);
+  const found = !!item.getFlag("frpg1e", "found");
+  let functions = Dice.itemFunctions(rolls).filter(o => !(found && o.fn === Dice.FIND_FN));
   const hasFns = functions.length > 0;
   if (rolls.some(r => !r.fn) && !functions.some(o => o.fn !== Dice.FIND_FN)) functions = [{ fn: "", charges: 0 }, ...functions];
   if (!functions.length) functions = [{ fn: "", charges: 0 }];
@@ -943,10 +1079,9 @@ async function useRolledItem(actor, item) {
   if (!opts) return;
   const pick = functions[Math.max(0, labelled.findIndex(o => o.fn === opts.fn))];
   const fn = pick.fn;
-  const finding = fn === Dice.FIND_FN;
+  if (fn === Dice.FIND_FN) return rollWhenFound(actor, item);
   let usage = "", update = {};
-  if (finding) usage = "Rolled for the item as found; nothing is used up.";
-  else if (["potion", "scroll"].includes(s.category)) {
+  if (["potion", "scroll"].includes(s.category)) {
     if (s.quantity < 1) return ui.notifications.warn(`${actor.name} has no ${item.name} left.`);
     update["system.quantity"] = s.quantity - 1;
     usage = `${s.category === "potion" ? "Drinks" : "Reads"} it${s.quantity - 1 ? ` (${s.quantity - 1} left)` : " (none left)"}.`;
@@ -960,15 +1095,11 @@ async function useRolledItem(actor, item) {
   }
   const entries = Dice.rollsForFunction(rolls, fn);
   const out = await Dice.runRolls(entries, opts);
-  if (finding) {
-    const ch = out.results.find(r => /^charges/i.test(r.label));
-    if (ch) { update["system.charges.value"] = ch.total; update["system.charges.max"] = ch.total; usage += ` Charges set to ${ch.total}.`; }
-  }
   if (Object.keys(update).length) await item.update(update);
   const resultsHTML = await Dice.renderResults(out.results);
   const description = await TextEditorImpl().enrichHTML(s.description ?? "", { relativeTo: item });
   const targets = Array.from(game.user.targets).map(t => t.document.uuid);
-  return postCard(actor, "item", { item, s, description, usage, resultsHTML, fnLabel: fn ? (finding ? "When found" : fn) : "" },
+  return postCard(actor, "item", { item, s, description, usage, resultsHTML, fnLabel: fn || "" },
     { rolls: out.rolls, flags: { type: "rolls", targets } });
 }
 
@@ -1040,9 +1171,10 @@ export async function rollProficiency(actor, item, { fast = false } = {}) {
   const p = item.system;
   const description = await TextEditorImpl().enrichHTML(p.description ?? "", { relativeTo: item });
   if (item.name === "Tracking" && !p.check) return rollTracking(actor, item, description);
-  if (!p.check || !p.ability) {
+  if (!p.check || (!p.ability && !(p.target > 0))) {
     return postCard(actor, "proficiency", { item, p, description, noCheck: true }, { flags: { type: "proficiency" } });
   }
+  if (p.target > 0) return rollTargetProficiency(actor, item, description, { fast });
   const score = actor.system.abilities?.[p.ability]?.value ?? 10;
   let situational = 0;
   if (!fast) {
@@ -1074,6 +1206,39 @@ export async function rollProficiency(actor, item, { fast = false } = {}) {
     msg.blind = true;
     if (!game.user.isGM) ui.notifications.info(`${item.name}: the DM rolls this check in secret.`);
   } else ChatMessage.applyMode(msg);
+  return ChatMessage.create(msg);
+}
+
+/** Base-number proficiencies (setting rules such as OA): 1d20 at or above the number, less 1 per improvement, never below 3. */
+export function targetProficiencyNeed(target, improvements = 0, situational = 0) {
+  return Math.max(3, target - improvements + situational);
+}
+async function rollTargetProficiency(actor, item, description, { fast = false } = {}) {
+  const p = item.system;
+  let situational = 0;
+  if (!fast) {
+    const res = await DialogV2.wait({
+      window: { title: `${item.name}: Proficiency` }, classes: ["frpg1e-dialog"], rejectClose: false,
+      content: `<div class="frpg1e-roll-options"><p>Base number ${p.target}${p.improvements ? `, improved ${p.improvements}× (−${p.improvements})` : ""}.</p>
+        <div class="form-group"><label>Situational change to the number needed</label><input type="number" name="sit" value="0"></div>
+        <p class="hint">Positive is harder. The number needed never drops below 3.</p></div>`,
+      buttons: [{ action: "roll", label: "Roll", default: true, callback: (e, b) => Number(b.form.elements.sit?.value) || 0 }]
+    });
+    if (res === null || res === undefined) return;
+    situational = res;
+  }
+  const need = targetProficiencyNeed(p.target, p.improvements, situational);
+  const roll = await evalRoll("1d20");
+  const success = roll.total >= need;
+  return rollCardSimple(actor, roll, `${item.name}${p.specialty ? ` (${p.specialty})` : ""}`, need, success, description);
+}
+async function rollCardSimple(actor, roll, title, need, success, description) {
+  const content = `<div class="frpg1e-card prof-card"><header class="card-head"><img src="icons/svg/book.svg" alt=""><div><div class="card-title">${title}</div><div class="card-sub">Proficiency (base number)</div></div></header>
+    <div class="roll-line"><span class="adnd-big">${roll.total}</span><span class="vs">needs ${need}+</span></div>
+    <div class="result ${success ? "hit" : "miss"}">${success ? "Success (superior work)" : "Failure (average work or worse)"}</div>
+    <details class="desc"><summary>Description</summary>${description}</details></div>`;
+  const msg = { speaker: ChatMessage.getSpeaker({ actor }), content, rolls: [roll], flags: { [SYSTEM_ID]: { type: "proficiency" } } };
+  ChatMessage.applyMode(msg);
   return ChatMessage.create(msg);
 }
 
@@ -1313,7 +1478,7 @@ export async function rollBrawl(actor) {
   const str = isChar ? actor.system.abilities.str.value : null;
   const strPct = isChar ? actor.system.abilities.str.pct : 0;
   const mySize = actorSize(actor);
-  const objOpts = Object.entries(PUMMEL_OBJECTS).map(([k, o]) => `<option value="${k}">${o.label} — ${o.dmg.replace("1d", "1-")}</option>`).join("");
+  const objOpts = Object.entries(PUMMEL_OBJECTS).map(([k, o]) => `<option value="${k}">${o.label}</option>`).join("");
   const content = `<div class="frpg1e-form brawl-form">
     <div class="row"><span class="lbl">Attack</span>
       <label><input type="radio" name="action" value="pummel" checked> Pummel</label>
@@ -1322,8 +1487,8 @@ export async function rollBrawl(actor) {
     <div class="row"><span class="lbl">Striking with</span><select name="object">${objOpts}</select></div>
     <div class="row"><span class="lbl">Strength</span><input type="number" name="str" class="w4" value="${str ?? ""}" ${isChar ? "" : 'placeholder="?"'}>
       ${isChar ? `<label><input type="checkbox" name="exc" ${str === 18 && strPct > 0 ? "checked" : ""}> 18/01 or more</label>` : '<span class="hint">for the chance to stun</span>'}</div>
-    <div class="row"><span class="lbl">Target's legs</span><select name="legs"><option value="2">2 or fewer (upright)</option><option value="4">4 (−6)</option><option value="6">6 (−8)</option><option value="more">more than 6 (−10)</option><option value="none">none (cannot be overborne)</option></select>
-      <span class="hint">overbear only</span></div>
+    <div class="row"><span class="lbl">Target's legs</span><select name="legs"><option value="2">2 or fewer (upright)</option><option value="4">4 (−6)</option><option value="6">6 (−8)</option><option value="more">more than 6 (−10)</option><option value="none">none (cannot be overborne)</option></select></div>
+    <p class="hint brawl-sub">Target's legs count for overbearing only.</p>
     <div class="row col">
       <label><input type="checkbox" name="rear"> Surprise or from behind (pummel +2${thiefish ? "; thieves +4" : ""}, no initiative penalty)</label>
       <label><input type="checkbox" name="helpless"> Target stunned or prone (+4)</label>
@@ -1334,7 +1499,7 @@ export async function rollBrawl(actor) {
     <p class="hint">UA Appendix Q (System II). Target tokens first: their armor class is adjusted for the attack form (pummel ignores a shield other than a buckler; grapple ignores shield and magic armor bonus except magic plate; overbear adds size and legs).</p>
   </div>`;
   const res = await DialogV2.wait({
-    window: { title: `Brawl: ${actor.name}` }, classes: ["frpg1e-dialog"], content, rejectClose: false,
+    window: { title: `Brawl: ${actor.name}` }, position: { width: 440 }, classes: ["frpg1e-dialog", "frpg1e-brawl"], content, rejectClose: false,
     buttons: [{ action: "roll", label: "Roll to Hit", icon: "fa-solid fa-hand-fist", default: true, callback: (ev, button) => {
       const el = button.form.elements;
       return { action: el.action.value, object: el.object.value, str: el.str.value === "" ? null : Number(el.str.value), exc: el.exc?.checked ?? false,
@@ -1357,16 +1522,18 @@ export async function rollBrawl(actor) {
   const rolls = [roll];
   const useAdj = action === "pummel" && setting("weaponVsArmor");
   const targets = Array.from(game.user.targets).map(t => brawlDefense(t, { action, attackerSize: mySize, legs: res.legs })).filter(Boolean);
+  const cf = critFumble(natural);
+  const hitList = [];
   let rows = "";
   for (const t of targets) {
     if (!t.possible) { rows += `<div class="target-line miss"><span class="t-name">${t.name}</span><span class="verdict small">cannot be overborne</span></div>`; continue; }
     const need = neededToHit(profile, t.ac).score;
     const adj = useAdj ? R.weaponArmorAdj(FIST_AC_ADJ, t.type) : 0;
     const total = roll.total + adj;
-    const hit = total >= need;
+    const hit = cf.crit || (!cf.fumble && total >= need);
     let result = "";
+    if (hit) hitList.push(t.uuid);
     if (hit && action === "pummel") {
-      const dmg = await evalRoll(PUMMEL_OBJECTS[res.object].dmg); rolls.push(dmg);
       const chance = stunChance(res.object, t.vuln, res.str, res.exc);
       let stun = "";
       if (res.str === null) stun = "set the attacker's strength to check for a stun";
@@ -1376,25 +1543,31 @@ export async function rollBrawl(actor) {
         if (d.total <= chance) { const seg = await evalRoll("1d10"); rolls.push(seg); stun = `<strong>STUNNED</strong> for ${seg.total} segments (rolled ${d.total} vs ${chance}%)`; }
         else stun = `not stunned (rolled ${d.total} vs ${chance}%)`;
       }
-      result = `${dmg.total} damage · ${stun}`;
+      result = stun;
     } else if (hit && action === "grapple") result = "<strong>HELD</strong>: no further action this round; −2 to hit, +2 to be hit, no dexterity bonus while held";
     else if (hit && action === "overbear") result = "<strong>KNOCKED PRONE</strong>: +4 to be hit, −2 to hit until back on its feet";
     rows += `<div class="target-line ${hit ? "hit" : "miss"}"><span class="t-name">${t.name}</span>
       <span class="gm-only t-need">AC ${t.ac}${t.notes.length ? ` (${t.notes.join(", ")})` : ""} needs ${need}${adj ? ` · fist vs. armor ${signed(adj)} → ${total}` : ""}${action === "pummel" ? ` · ${VULN[t.vuln].toLowerCase()}` : ""}</span>
       <span class="verdict">${hit ? "HIT" : "MISS"}</span></div>${result ? `<div class="hint">${result}</div>` : ""}`;
   }
-  if (!targets.length) rows = `<div class="target-line"><span class="t-name">No target</span><span class="verdict small">${(() => { const b = bestACHit(profile, roll.total); return b === null ? "hits no armor class" : `hits AC ${b} or worse`; })()}</span></div>
-    <div class="hint">Target a token to apply the attack form's armor class adjustments${action === "pummel" ? ", the stun chance and damage" : ""}.</div>`;
+  if (!targets.length) rows = `<div class="target-line"><span class="t-name">No target</span><span class="verdict small">${(() => { if (cf.crit) return "critical hit: hits any armor class"; const b = cf.fumble ? null : bestACHit(profile, roll.total); return b === null ? "you miss" : `hits AC ${b} or worse`; })()}</span></div>
+    <div class="hint">Target a token to apply the attack form's armor class adjustments${action === "pummel" ? " and the stun chance" : ""}.</div>`;
   const init = action === "pummel" ? (monk || res.rear ? "no initiative penalty" : "initiative −4") : action === "grapple" ? "initiative −1" : "no initiative penalty";
   const label = { pummel: `Pummel (${PUMMEL_OBJECTS[res.object].label.split(" (")[0].toLowerCase()})`, grapple: "Grapple", overbear: "Overbear" }[action];
   const modsHtml = mods.map(m => `<span class="mod" title="${m.label}">${signed(m.value)}</span>`).join("");
   const content2 = `<div class="frpg1e-card attack-card">
     <header class="card-head"><img src="${actor.img}" alt=""><div><div class="card-title">Brawl: ${label}</div><div class="card-sub">UA Appendix Q · ${init}</div></div></header>
     <div class="roll-line"><span class="die" title="Natural d20">${natural}</span>${modsHtml}<span class="eq">=</span><span class="adnd-big">${roll.total}</span></div>
+    ${CF_BANNER(cf)}
     ${mods.length ? `<div class="mod-list">${mods.map(m => `${m.label} ${signed(m.value)}`).join(", ")}</div>` : ""}
     ${rows}
+    ${action === "pummel" && !cf.fumble && (hitList.length || !targets.length) ? `<div class="card-buttons"><button type="button" data-card-action="damage-sm" class="primary">Damage <small>${PUMMEL_OBJECTS[res.object].dmg}</small></button></div>
+    <div class="hint">Damage on any hit, stunned or not; no strength bonus (UA p.107).</div>` : ""}
     <div class="hint">The attack is spoiled if the attacker takes damage this round before it is made.</div></div>`;
-  const msg = { speaker: ChatMessage.getSpeaker({ actor }), content: content2, rolls, flags: { [SYSTEM_ID]: { type: "brawl" } } };
+  const pdmg = PUMMEL_OBJECTS[res.object].dmg;
+  const msg = { speaker: ChatMessage.getSpeaker({ actor }), content: content2, rolls,
+    flags: { [SYSTEM_ID]: { type: "brawl", actorUuid: actor.uuid, dmg: action === "pummel" ? { sm: pdmg, l: pdmg } : null,
+      targets: targets.map(t => ({ uuid: t.uuid, hit: hitList.includes(t.uuid) })) } } };
   ChatMessage.applyMode(msg);
   return ChatMessage.create(msg);
 }

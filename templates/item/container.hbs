@@ -1,0 +1,13 @@
+<div class="box">
+  <h3 class="box-title">Container</h3>
+  <div class="form-grid">
+    <label class="fld"><span>Holds things</span><select name="system.container.kind">{{#each containerKinds}}<option value="{{value}}" {{adnd-selected value ../system.container.kind}}>{{label}}</option>{{/each}}</select></label>
+    {{#if system.container.kind}}
+    <label class="fld"><span>{{#if (adnd-eq system.container.kind "animal")}}Normal load (gp){{else}}Capacity (gp){{/if}}</span><input type="number" name="system.container.capacity" value="{{system.container.capacity}}" data-dtype="Number" placeholder="0 = no limit"></label>
+    {{#if (adnd-eq system.container.kind "animal")}}<label class="fld"><span>Maximum load (gp)</span><input type="number" name="system.container.max" value="{{system.container.max}}" data-dtype="Number"></label>{{/if}}
+    {{#if (adnd-eq system.container.kind "magic")}}<label class="fld"><span>Weight when full (gp)</span><input type="number" name="system.container.fullWeight" value="{{system.container.fullWeight}}" data-dtype="Number" placeholder="0 = always its own weight"></label>{{/if}}
+    {{/if}}
+  </div>
+  {{#if contLoad}}<p class="cont-now"><strong>Now holding:</strong> {{contLoad}}</p>{{/if}}
+  {{#if system.container.kind}}<p class="hint">{{#if (adnd-eq system.container.kind "pack")}}Items set to this location add their weight to it, and it counts wherever it is.{{/if}}{{#if (adnd-eq system.container.kind "magic")}}Contents add no weight; the container weighs its own weight{{#if system.container.fullWeight}}, rising toward its full weight as it fills{{/if}}.{{/if}}{{#if (adnd-eq system.container.kind "animal")}}Not carried by you. Above its normal load, up to its maximum, it moves at its encumbered rate (the figure right of the slash, WSG Table 13). For a vehicle, enter the maximum load for its team (WSG Table 14).{{/if}} A capacity of 0 means no limit is checked.</p>{{/if}}
+</div>

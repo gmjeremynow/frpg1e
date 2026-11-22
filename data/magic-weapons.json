@@ -1,0 +1,595 @@
+{
+ "Staff of Power": {
+  "forms": [
+   {
+    "label": "quarterstaff +2",
+    "base": "Staff, Quarter",
+    "hit": 2,
+    "dmg": 2,
+    "note": "Strikes as a +2 weapon for 3-8; spending 1 charge doubles the damage (use the staff's Use button for that)."
+   }
+  ]
+ },
+ "Staff of the Magi": {
+  "forms": [
+   {
+    "label": "quarterstaff +2",
+    "base": "Staff, Quarter",
+    "hit": 2,
+    "dmg": 2
+   }
+  ]
+ },
+ "Staff of Striking": {
+  "forms": [
+   {
+    "label": "quarterstaff +3",
+    "base": "Staff, Quarter",
+    "hit": 3,
+    "dmg": 3,
+    "note": "A hit does d6+3 and uses 1 charge; 2 or 3 charges double or triple the bonus (staff's Use button)."
+   }
+  ]
+ },
+ "Staff of Withering": {
+  "forms": [
+   {
+    "label": "staff +1",
+    "base": "Staff, Quarter",
+    "hit": 1,
+    "dmg": 1,
+    "sm": "1d4",
+    "l": "1d4",
+    "note": "2-5 damage; withering effects by charges on the staff's Use button."
+   }
+  ]
+ },
+ "Staff of the Serpent": {
+  "choose": {
+   "die": "1d100",
+   "note": "DMG: 60% are pythons.",
+   "options": [
+    {
+     "lo": 1,
+     "hi": 60,
+     "label": "Python",
+     "forms": [
+      {
+       "label": "python, +2",
+       "base": "Staff, Quarter",
+       "hit": 2,
+       "dmg": 2,
+       "note": "3-8 damage; constrictor form on the staff's description."
+      }
+     ]
+    },
+    {
+     "lo": 61,
+     "hi": 100,
+     "label": "Adder",
+     "forms": [
+      {
+       "label": "adder, +1",
+       "base": "Staff, Quarter",
+       "hit": 1,
+       "dmg": 1,
+       "sm": "1d3",
+       "l": "1d3",
+       "note": "2-4 damage; poison bite on the staff's Use button."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Staff of Slinging": {
+  "forms": [
+   {
+    "label": "quarterstaff +1",
+    "base": "Staff, Quarter",
+    "hit": 1,
+    "dmg": 1
+   }
+  ]
+ },
+ "Staff of Thunder & Lightning": {
+  "forms": [
+   {
+    "label": "quarterstaff +2",
+    "base": "Staff, Quarter",
+    "hit": 2,
+    "dmg": 2,
+    "note": "Thunder (+3) and lightning cost charges: the staff's Use button."
+   }
+  ]
+ },
+ "Staff of the Woodlands": {
+  "choose": {
+   "die": "1d4",
+   "note": "UA: each of the four types is equally likely.",
+   "options": [
+    {
+     "lo": 1,
+     "hi": 1,
+     "label": "+4 staff",
+     "forms": [
+      {
+       "label": "quarterstaff +4",
+       "base": "Staff, Quarter",
+       "hit": 4,
+       "dmg": 4
+      }
+     ]
+    },
+    {
+     "lo": 2,
+     "hi": 2,
+     "label": "+3 staff",
+     "forms": [
+      {
+       "label": "quarterstaff +3",
+       "base": "Staff, Quarter",
+       "hit": 3,
+       "dmg": 3
+      }
+     ]
+    },
+    {
+     "lo": 3,
+     "hi": 3,
+     "label": "+2 staff",
+     "forms": [
+      {
+       "label": "quarterstaff +2",
+       "base": "Staff, Quarter",
+       "hit": 2,
+       "dmg": 2
+      }
+     ]
+    },
+    {
+     "lo": 4,
+     "hi": 4,
+     "label": "+1 staff",
+     "forms": [
+      {
+       "label": "quarterstaff +1",
+       "base": "Staff, Quarter",
+       "hit": 1,
+       "dmg": 1
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Staff-Mace": {
+  "forms": [
+   {
+    "label": "quarterstaff +3",
+    "base": "Staff, Quarter",
+    "hit": 3,
+    "dmg": 3
+   },
+   {
+    "label": "footman’s mace +1",
+    "base": "Mace, Footman’s",
+    "hit": 1,
+    "dmg": 1
+   },
+   {
+    "label": "horseman’s mace +2",
+    "base": "Mace, Horseman’s",
+    "hit": 2,
+    "dmg": 2
+   }
+  ]
+ },
+ "Staff-Spear": {
+  "choose": {
+   "die": "1d20",
+   "note": "UA: rolled the first time it is used.",
+   "options": [
+    {
+     "lo": 1,
+     "hi": 6,
+     "label": "+1",
+     "forms": [
+      {
+       "label": "spear +1",
+       "base": "Spear",
+       "hit": 1,
+       "dmg": 1
+      }
+     ]
+    },
+    {
+     "lo": 7,
+     "hi": 10,
+     "label": "+2",
+     "forms": [
+      {
+       "label": "spear +2",
+       "base": "Spear",
+       "hit": 2,
+       "dmg": 2
+      }
+     ]
+    },
+    {
+     "lo": 11,
+     "hi": 13,
+     "label": "+3",
+     "forms": [
+      {
+       "label": "spear +3",
+       "base": "Spear",
+       "hit": 3,
+       "dmg": 3
+      }
+     ]
+    },
+    {
+     "lo": 14,
+     "hi": 16,
+     "label": "+4",
+     "forms": [
+      {
+       "label": "spear +4",
+       "base": "Spear",
+       "hit": 4,
+       "dmg": 4
+      }
+     ]
+    },
+    {
+     "lo": 17,
+     "hi": 19,
+     "label": "+5",
+     "forms": [
+      {
+       "label": "spear +5",
+       "base": "Spear",
+       "hit": 5,
+       "dmg": 5
+      }
+     ]
+    },
+    {
+     "lo": 20,
+     "hi": 20,
+     "label": "+3, ranseur damage",
+     "forms": [
+      {
+       "label": "spear +3 (ranseur damage)",
+       "base": "Spear",
+       "hit": 3,
+       "dmg": 3,
+       "sm": "2d4",
+       "l": "2d4",
+       "note": "Damage as a ranseur (2-8), but acts as a spear to thrust or set against a charge."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Rod of Smiting": {
+  "forms": [
+   {
+    "label": "+3",
+    "base": "Mace, Footman’s",
+    "hit": 3,
+    "dmg": 3,
+    "sm": "1d8",
+    "l": "1d8",
+    "note": "4-11 damage; golem and outer-plane effects on the rod's Use button."
+   }
+  ]
+ },
+ "Rod of Lordly Might": {
+  "forms": [
+   {
+    "label": "mace +2",
+    "base": "Mace, Footman’s",
+    "hit": 2,
+    "dmg": 2
+   },
+   {
+    "label": "flaming sword +1",
+    "base": "Sword, Long",
+    "hit": 1,
+    "dmg": 1,
+    "note": "Sword of flame (button #1)."
+   },
+   {
+    "label": "battle axe +4",
+    "base": "Axe, Battle",
+    "hit": 4,
+    "dmg": 4,
+    "note": "Button #2."
+   },
+   {
+    "label": "spear +3",
+    "base": "Spear",
+    "hit": 3,
+    "dmg": 3,
+    "note": "Button #3; can lengthen to lance length."
+   }
+  ]
+ },
+ "Rod of Flailing": {
+  "forms": [
+   {
+    "label": "footman’s flail +3",
+    "base": "Flail, Footman’s",
+    "hit": 3,
+    "dmg": 3,
+    "sm": "1d6+1",
+    "l": "2d4",
+    "note": "Two heads: roll each separately (double hits possible)."
+   },
+   {
+    "label": "horseman’s flail +3",
+    "base": "Flail, Horseman’s",
+    "hit": 3,
+    "dmg": 3,
+    "note": "Mounted or in close quarters. Two heads: roll each separately."
+   }
+  ]
+ },
+ "Mattock of the Titans": {
+  "forms": [
+   {
+    "label": "+3 to hit",
+    "base": "Pick, Military, Footman’s",
+    "hit": 3,
+    "dmg": 0,
+    "sm": "5d6",
+    "l": "5d6",
+    "note": "5-30 damage (DMG gives the range only; 5d6 used), not counting strength. Giant-sized users with strength 20+."
+   }
+  ]
+ },
+ "Maul of the Titans": {
+  "forms": [
+   {
+    "label": "+2 to hit",
+    "base": "Hammer",
+    "hit": 2,
+    "dmg": 0,
+    "sm": "10d4",
+    "l": "10d4",
+    "attackType": "melee",
+    "note": "10-40 damage (DMG gives the range only; 10d4 used), not counting strength. Giant-sized users with strength 21+."
+   }
+  ]
+ },
+ "Trident of Fish Command": {
+  "forms": [
+   {
+    "label": "trident +1",
+    "base": "Trident",
+    "hit": 1,
+    "dmg": 1
+   }
+  ]
+ },
+ "Trident of Submission": {
+  "forms": [
+   {
+    "label": "trident +1",
+    "base": "Trident",
+    "hit": 1,
+    "dmg": 1,
+    "note": "Charges: submission on a hit (trident's Use button)."
+   }
+  ]
+ },
+ "Trident of Warning": {
+  "forms": [
+   {
+    "label": "trident +2",
+    "base": "Trident",
+    "hit": 2,
+    "dmg": 2
+   }
+  ]
+ },
+ "Javelin of Lightning": {
+  "forms": [
+   {
+    "label": "javelin (counts as +2)",
+    "base": "Javelin",
+    "hit": 0,
+    "dmg": 0,
+    "missile": {
+     "short": 9,
+     "medium": 9,
+     "long": 9
+    },
+    "note": "No bonus to hit or damage. Plus 20 electrical damage and the back stroke: the javelin's Use button. Used up when it strikes."
+   }
+  ]
+ },
+ "Javelin of Piercing": {
+  "forms": [
+   {
+    "label": "javelin +6",
+    "base": "Javelin",
+    "hit": 6,
+    "dmg": 6,
+    "missile": {
+     "short": 6,
+     "medium": 6,
+     "long": 6
+    },
+    "note": "Launches itself; range 6\", all short. One use."
+   }
+  ]
+ },
+ "Mace of Cuthbert": {
+  "forms": [
+   {
+    "label": "mace +5",
+    "base": "Mace, Footman’s",
+    "hit": 5,
+    "dmg": 5,
+    "note": "Also has disruption effects. Only lawful good clerics with 18 strength gain its powers."
+   }
+  ]
+ },
+ "Axe of the Dwarvish Lords": {
+  "forms": [
+   {
+    "label": "battle axe (sword of sharpness edge)",
+    "base": "Axe, Battle",
+    "hit": 1,
+    "dmg": 1,
+    "note": "Edge equals a sword of sharpness."
+   },
+   {
+    "label": "hand axe, thrown (sword of sharpness edge)",
+    "base": "Axe, Hand",
+    "hit": 1,
+    "dmg": 1,
+    "note": "Returns 30' to its thrower."
+   },
+   {
+    "label": "hammer head +3",
+    "base": "Hammer",
+    "hit": 3,
+    "dmg": 3,
+    "attackType": "melee"
+   }
+  ]
+ },
+ "Buckler Wand": {
+  "forms": [
+   {
+    "label": "dagger +1",
+    "base": "Dagger",
+    "hit": 1,
+    "dmg": 1,
+    "attackType": "melee",
+    "note": "Used with the +1 buckler it forms."
+   }
+  ]
+ },
+ "Wand of Force": {
+  "forms": [
+   {
+    "label": "energy blade (bastard sword +5)",
+    "base": "Sword, Bastard",
+    "hit": 5,
+    "dmg": 5,
+    "note": "1 charge per turn."
+   }
+  ]
+ },
+ "Robe of Stars": {
+  "forms": [
+   {
+    "label": "stars, +5 thrown",
+    "base": "Dart",
+    "hit": 5,
+    "dmg": 5,
+    "sm": "2d4",
+    "l": "2d4",
+    "missile": {
+     "short": 2,
+     "medium": 4,
+     "long": 6
+    },
+    "quantity": 6,
+    "note": "Up to six stars; maximum range 6\". Needs dart proficiency."
+   }
+  ]
+ },
+ "Hornblade": {
+  "choose": {
+   "die": "1d100",
+   "note": "UA: size and bonus.",
+   "options": [
+    {
+     "lo": 1,
+     "hi": 20,
+     "label": "Knife-sized, +1",
+     "forms": [
+      {
+       "label": "knife +1",
+       "base": "Knife",
+       "hit": 1,
+       "dmg": 1
+      }
+     ]
+    },
+    {
+     "lo": 21,
+     "hi": 35,
+     "label": "Knife-sized, +2",
+     "forms": [
+      {
+       "label": "knife +2",
+       "base": "Knife",
+       "hit": 2,
+       "dmg": 2
+      }
+     ]
+    },
+    {
+     "lo": 36,
+     "hi": 50,
+     "label": "Dagger-sized, +1",
+     "forms": [
+      {
+       "label": "dagger +1",
+       "base": "Dagger",
+       "hit": 1,
+       "dmg": 1
+      }
+     ]
+    },
+    {
+     "lo": 51,
+     "hi": 70,
+     "label": "Dagger-sized, +2",
+     "forms": [
+      {
+       "label": "dagger +2",
+       "base": "Dagger",
+       "hit": 2,
+       "dmg": 2
+      }
+     ]
+    },
+    {
+     "lo": 71,
+     "hi": 90,
+     "label": "Scimitar-sized, +2",
+     "forms": [
+      {
+       "label": "scimitar +2",
+       "base": "Scimitar",
+       "hit": 2,
+       "dmg": 2
+      }
+     ]
+    },
+    {
+     "lo": 91,
+     "hi": 100,
+     "label": "Scimitar-sized, +3",
+     "forms": [
+      {
+       "label": "scimitar +3",
+       "base": "Scimitar",
+       "hit": 3,
+       "dmg": 3
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

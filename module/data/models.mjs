@@ -2,9 +2,10 @@
  * TypeDataModels for every Actor and Item type (Foundry V14 requires
  * TypeDataModels; the legacy template.json is deprecated).
  */
+import { SPELL_LIST_KEYS, encumbrance as encumbranceStatus } from "../tables.mjs";
 import { CLASSES, BARD_TABLE, ACROBAT_TABLE, ACROBAT_RACE, ACROBAT_STR, ACROBAT_DEX, THIEF_ARMOR,
   barbarianSaveBonus, barbarianDexAC, barbarianConHP, PSI_ATTACK_MODES, PSI_DEFENSE_MODES, proficiencySlots,
-  LOYALTY_BASE, LOYALTY_GROUPS, LOYALTY_LIEGE_ALIGNMENT, loyaltyBand, charismaTable } from "../tables.mjs";
+  LOYALTY_BASE, LOYALTY_GROUPS, LOYALTY_LIEGE_ALIGNMENT, loyaltyBand, charismaTable, cavalierRules } from "../tables.mjs";
 import * as R from "../rules.mjs";
 import { RACE_OPTIONS, baseRace } from "../races.mjs";
 
@@ -74,20 +75,21 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       details: new f.SchemaField({
         race: str("human"), alignment: str(""), sex: str(""), age: str(""), height: str(""), weight: str(""),
         deity: str(""), languages: str(""), player: str(""), biography: html(), notes: html(),
-        dualClass: bool(false)
+        dualClass: bool(false), willName: str(""), willText: str("")
       }),
       psionics: psionicsField(),
       classes: new f.ArrayField(new f.SchemaField({
         key: str("fighter"), level: int(1, { min: 0 }), xp: int(0, { min: 0 }),
         matrix: str(""), save: str(""), hitDie: int(0, { min: 0 })
       }), { initial: [] }),
-      hp: new f.SchemaField({ value: int(1), max: int(1, { min: 0 }) }),
+      hp: new f.SchemaField({ value: int(0), max: int(0, { min: 0 }) }),
       ac: new f.SchemaField({ misc: int(0), override: new f.NumberField({ required: false, nullable: true, integer: true, initial: null }) }),
       move: new f.SchemaField({ base: int(12, { min: 0 }) }),
       combat: new f.SchemaField({ hitMisc: int(0), dmgMisc: int(0), missileMisc: int(0) }),
       saves: new f.SchemaField(Object.fromEntries(R.SAVE_KEYS.map(k => [k, new f.SchemaField({ misc: int(0) })]))),
       thief: new f.SchemaField(Object.fromEntries(R.THIEF_SKILL_KEYS.map(k => [k, new f.SchemaField({ misc: int(0) })]))),
       money: new f.SchemaField({ pp: int(0), gp: int(0), ep: int(0), sp: int(0), cp: int(0) }),
+      moneyStored: new f.SchemaField({ pp: int(0), gp: int(0), ep: int(0), sp: int(0), cp: int(0) }),
       treasure: str(""),
       // Proficiencies (DSG/WSG): weapons the character is proficient with, and slots the DM grants beyond the table
       profs: new f.SchemaField({
@@ -126,6 +128,9 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
     const barb = classes.find(c => c.def.barbarian);
     // UA p.19: barbarians get +2 hp per point of constitution over 14 instead of the normal adjustment
     if (barb) ab.con.hpAdj = barbarianConHP(this.abilities.con.value);
+    // Setting classes may replace the constitution hit point adjustment: def.conHP(con)
+    const conCls = classes.find(c => typeof c.def.conHP === "function");
+    if (conCls) ab.con.hpAdj = conCls.def.conHP(this.abilities.con.value);
     this.mods = ab;
     this.barbarian = barb ? { level: barb.level, saves: barbarianSaveBonus(barb.level) } : null;
 
@@ -136,7 +141,9 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
     for (const k of R.SAVE_KEYS) {
       this.saves[k].base = best[k].value;
       // PHB p.22: paladins make all saving throws at +2 (UA p.17: unchanged for the UA paladin)
-      this.saves[k].class = (this.barbarian ? (this.barbarian.saves[k] ?? 0) : 0) + (paladin ? 2 : 0);
+      // setting classes: def.saveBonus(level) -> { ppd, pp, rsw, bw, sp }; the best bonus of each class counts
+      const own = Math.max(0, ...classes.filter(c => typeof c.def.saveBonus === "function").map(c => c.def.saveBonus(c.level)?.[k] ?? 0));
+      this.saves[k].class = (this.barbarian ? (this.barbarian.saves[k] ?? 0) : 0) + (paladin ? 2 : 0) + own;
       this.saves[k].value = best[k].value - this.saves[k].misc - this.saves[k].class;
     }
     this.racialSave = R.racialSaveBonus(baseRace(this.details.race), this.abilities.con.value);
@@ -144,6 +151,13 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
     // Monks: AC and movement come from the monk table
     const monk = classes.find(c => c.key === "monk");
     this.monk = monk ? R.monkInfo(monk.level) : null;
+    // Setting classes: def.naturalAC(level, abilities) works like the monk's armor class (no armor, no dexterity
+    // adjustment); def.acBonus(level) improves armor class whatever is worn; def.move(level) sets base movement.
+    const nat = classes.filter(c => typeof c.def.naturalAC === "function" && c.level > 0).map(c => c.def.naturalAC(c.level, this.abilities));
+    this.naturalAC = nat.length ? Math.min(...nat, this.monk ? this.monk.ac : 99) : null;
+    this.classACBonus = classes.reduce((t, c) => t + (typeof c.def.acBonus === "function" ? (c.def.acBonus(c.level) || 0) : 0), 0);
+    const mv = classes.filter(c => typeof c.def.move === "function" && c.level > 0).map(c => c.def.move(c.level));
+    this.classMove = mv.length ? Math.max(...mv) : null;
 
     // Bard (PHB Bards Table II)
     const bard = classes.find(c => c.key === "bard");
@@ -153,7 +167,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
     } else this.bard = null;
     // Cavalier and UA paladin
     const cav = classes.find(c => c.def.cavalier);
-    this.cavalier = cav ? { level: cav.level, horsemanship: Math.min(100, 85 + Math.max(0, cav.level - 1)) } : null;
+    this.cavalier = cav ? { level: cav.level, horsemanship: Math.min(100, 85 + Math.max(0, cav.level - 1)), rules: cavalierRules(cav.def) } : null;
 
     // Spell slots
     this.spellSlots = R.spellSlots(classes.map(c => ({ key: c.key, level: c.level })), this.abilities.wis.value, this.extraSlots);
@@ -200,7 +214,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
     if (bestCloak) protAC += bestCloak.ac;
     else if (cloaks.length) notes.push(`${cloaks[0].name}: not with magic armor, armor other than leather, or a shield`);
     this.protection = { ac: protAC, save: protSave, notes, bracers: bracers.length ? Math.min(...bracers.map(b => b.ac)) : null };
-    const ac = R.armorClass(worn, dexDef, { misc: this.ac.misc - protAC, monkAC: this.monk ? this.monk.ac : null, bodyAC: this.bodyWeaponry?.ac ?? null, bracersAC: this.protection.bracers });
+    const ac = R.armorClass(worn, dexDef, { misc: this.ac.misc - protAC - this.classACBonus, monkAC: this.naturalAC ?? (this.monk ? this.monk.ac : null), bodyAC: this.bodyWeaponry?.ac ?? null, bracersAC: this.protection.bracers });
     if (this.ac.override !== null && this.ac.override !== undefined) ac.ac = this.ac.override;
     this.ac.value = ac.ac;
     this.ac.rear = ac.rear;
@@ -208,15 +222,86 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
     this.ac.shield = ac.shield;
     // Movement: slowest worn armor base movement (DMG p.27); magic armor moves at the next higher rate.
     const rates = [6, 9, 12];
-    let move = this.monk ? this.monk.move : this.move.base;
+    let move = this.monk ? this.monk.move : (this.classMove ?? this.move.base);
     for (const a of worn.filter(a => a.kind === "armor" && a.baseMove)) {
       let r = a.baseMove;
       if (a.magic > 0) r = rates[Math.min(rates.length - 1, rates.indexOf(r) + 1)] ?? r;
       move = Math.min(move, r);
     }
-    this.move.value = move;
     if (protSave) for (const k of R.SAVE_KEYS) this.saves[k].value -= protSave;
-    this.encumbrance = items.reduce((t, i) => t + (Number(i.system.weight) || 0) * (Number(i.system.quantity ?? 1) || 0), 0);
+    // Encumbrance (world setting encumbranceRule: PHB p.101 with the strength weight allowance, or WSG Table 11).
+    // Items marked as not carried are left out; each coin counts 1 gp of encumbrance (10 coins to the pound, PHB p.9).
+    // Location: worn and carried count; stored, and anything on an animal or vehicle, do not. Worn armor and worn magic count as worn.
+    // Items can sit inside containers (location "in:<id>"): an ordinary container weighs its own weight plus its contents; a magic
+    // container weighs a fixed amount (or more as it fills, if a full weight is set); an animal or vehicle carries its own load.
+    const wt = i => (Number(i.system.weight) || 0) * (Number(i.system.quantity ?? 1) || 0);
+    const ANIMAL_CATS = ["Livestock", "Transport"];
+    const all = items.filter(i => "weight" in i.system && !i.getFlag?.("frpg1e", "linkedMagic"));
+    const byId = new Map(all.map(i => [i.id, i]));
+    const kindOf = i => (i.system.container?.kind || (i.type === "gear" && ANIMAL_CATS.includes(i.system.category) ? "animal" : ""));
+    const parentOf = i => {
+      const l = String(i.system.location ?? "");
+      if (!l.startsWith("in:")) return null;
+      const p = byId.get(l.slice(3));
+      return p && p.id !== i.id && kindOf(p) ? p : null;
+    };
+    const contents = new Map();
+    for (const i of all) { const p = parentOf(i); if (p) { if (!contents.has(p.id)) contents.set(p.id, []); contents.get(p.id).push(i); } }
+    const memo = new Map();
+    const loadOf = (c, depth) => (contents.get(c.id) ?? []).reduce((t, i) => t + effWeight(i, depth + 1), 0);
+    const effWeight = (i, depth = 0) => {
+      if (depth > 8) return 0;                      // guards against a container placed inside itself
+      if (memo.has(i.id)) return memo.get(i.id);
+      const k = kindOf(i), own = wt(i), c = i.system.container ?? {};
+      let w = own;
+      // DMG p.28: worn magic armor counts half its weight (magic shields keep full weight)
+      if (i.type === "armor" && i.system.kind === "armor" && Number(i.system.magic) > 0 && (i.system.equipped || i.system.location === "worn")) w = own / 2;
+      if (k === "animal") w = 0;
+      else if (k === "pack") w = own + loadOf(i, depth);
+      else if (k === "magic" && c.fullWeight && c.capacity) w = own + (c.fullWeight - own) * Math.min(1, loadOf(i, depth) / c.capacity);
+      memo.set(i.id, w);
+      return w;
+    };
+    const byLoc = { worn: 0, carried: 0, mount: 0, stored: 0, animals: 0 };
+    for (const i of all) {
+      if (parentOf(i)) continue;                    // counted through its container
+      if (kindOf(i) === "animal") continue;
+      const l = i.system.carried === false ? "stored" : (i.system.equipped && ["armor", "magic"].includes(i.type) ? "worn" : (i.system.location ?? "carried"));
+      const key = ["worn", "carried", "stored", "mount"].includes(l) ? l : "carried";
+      byLoc[key] += effWeight(i);
+    }
+    for (const k in byLoc) byLoc[k] = Math.round(byLoc[k] * 10) / 10;
+    this.encByLoc = byLoc;
+    // counted items whose weight is unknown (no published weight, none entered)
+    const countedTop = i => {
+      let c = i, d = 0;
+      while (parentOf(c) && d++ < 8) { c = parentOf(c); if (["magic", "animal"].includes(kindOf(c))) return false; }
+      if (kindOf(c) === "animal" || c.system.carried === false) return false;
+      if (c.system.equipped && ["armor", "magic"].includes(c.type)) return true;
+      return !["stored", "mount"].includes(c.system.location ?? "carried");
+    };
+    const unknown = all.filter(i => i.system.weightSource === "unspecified" && !Number(i.system.weight) && kindOf(i) !== "animal" && countedTop(i));
+    this.encUnknown = unknown.length;
+    this.encUnknownNames = unknown.map(i => i.name).join(", ");
+    this.containers = all.filter(i => kindOf(i)).map(i => {
+      const k = kindOf(i), c = i.system.container ?? {}, load = Math.round(loadOf(i, 0) * 10) / 10;
+      const cap = Number(c.capacity) || 0, max = Number(c.max) || 0;
+      return { id: i.id, name: i.name, kind: k, load, capacity: cap, max, count: (contents.get(i.id) ?? []).length,
+        over: cap > 0 && load > cap, overMax: max > 0 && load > max, parent: parentOf(i)?.id ?? null };
+    });
+    this.encumbrance = byLoc.worn + byLoc.carried;
+    const coins = m => ["pp", "gp", "ep", "sp", "cp"].reduce((t, k) => t + (Number(m?.[k]) || 0), 0);
+    this.encCoins = coins(this.money);
+    this.encCoinsStored = coins(this.moneyStored);
+    this.encumbrance = Math.round(this.encumbrance * 10) / 10;
+    this.encLoad = Math.round((this.encumbrance + this.encCoins) * 10) / 10;
+    let rule = "PHB";
+    try { rule = game.settings.get("frpg1e", "encumbranceRule"); } catch (e) { /* not registered yet */ }
+    const baseMove = this.monk ? this.monk.move : (this.classMove ?? this.move.base);
+    this.enc = encumbranceStatus({ rule, load: this.encLoad, str: this.abilities.str.value, pct: this.abilities.str.pct,
+      allowance: this.mods?.str?.wt ?? 0, baseMove });
+    this.move.armor = move;                                   // after armor, before carried weight
+    this.move.value = this.enc.move === null ? move : Math.min(move, this.enc.move);
 
     // Thieving abilities, with UA Thieves Table II armor effects
     const suit = suits.sort((a, b) => a.baseAC - b.baseAC)[0];
@@ -384,12 +469,23 @@ export class MonsterData extends foundry.abstract.TypeDataModel {
 const common = () => ({
   description: html(),
   weight: num(0, { min: 0 }),
+  // where the weight comes from: "published" (printed in a 1e source), "derived" (by comparison or a printed rule of thumb),
+  // "unspecified" (no verified weight; 0 here does not mean weightless), "exempt" (rules say it is not counted); "" = not yet classified
+  weightSource: str(""),
+  weightRef: str(""),   // citation for the weight, e.g. "UA p.?"
   quantity: int(1, { min: 0 }),
   cost: str(""),
   source: str(""),
   xp: str(""),          // DMG/UA experience point value (as printed)
   gpValue: str(""),     // DMG/UA gold piece sale value (as printed)
-  quantityRoll: str("") // number found, e.g. 2d12 arrows (used by the treasure roller)
+  quantityRoll: str(""), // number found, e.g. 2d12 arrows (used by the treasure roller)
+  // where the item is: worn and carried count toward encumbrance; on a mount or stored elsewhere do not
+  // "worn" | "carried" | "stored" | "in:<item id>" (inside a container, or on an animal or vehicle); "mount" is the old on-mount choice
+  location: str("carried"),
+  // a container: "pack" (contents add to its weight), "magic" (contents add nothing; fixed weight, or fullWeight when full),
+  // "animal" (an animal or vehicle: carries its own load, never yours). capacity = weight limit in gp (0 = none set);
+  // max = maximum load for animals and vehicles (capacity is then the normal load)
+  container: new f.SchemaField({ kind: str(""), capacity: num(0, { min: 0 }), max: num(0, { min: 0 }), fullWeight: num(0, { min: 0 }) })
 });
 const acAdj = () => new f.ArrayField(int(0), { initial: () => Array(11).fill(0) });
 
@@ -446,7 +542,7 @@ export class SpellData extends foundry.abstract.TypeDataModel {
     return {
       description: html(),
       source: str(""),
-      list: str("magicuser", { choices: ["cleric", "druid", "magicuser", "illusionist"] }),
+      list: str("magicuser", { choices: SPELL_LIST_KEYS }),
       level: int(1, { min: 0, max: 9 }),
       school: str(""),
       reversible: bool(false),
@@ -483,7 +579,7 @@ export class PsionicData extends foundry.abstract.TypeDataModel {
 export class GearData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     // ammo: what this gear is ammunition for ("arrow", "bolt-light", "bolt-heavy", "bolt-hand", "bullet", "stone", "needle")
-    return { ...common(), carried: bool(true), category: str(""), ammo: str("") };
+    return { ...common(), carried: bool(true), category: str(""), ammo: str(""), notes: str("") };
   }
 }
 
@@ -514,7 +610,8 @@ export class MagicData extends foundry.abstract.TypeDataModel {
   }
 }
 
-export const PROF_GROUPS = { craftsman: "Craftsman (DSG)", adventuring: "Adventuring (DSG)", wilderness: "Wilderness (WSG)", other: "Other" };
+import { PROF_GROUPS, PROF_GROUP_KEYS } from "../tables.mjs";
+export { PROF_GROUPS, PROF_GROUP_KEYS };
 export const ABILITY_LABELS = { str: "Strength", int: "Intelligence", wis: "Wisdom", dex: "Dexterity", con: "Constitution", cha: "Charisma" };
 /** Nonweapon proficiencies (DSG pp.23-29, WSG pp.11-17). modifier: added to the d20 roll (WSG convention; negative is easier). */
 export class ProficiencyData extends foundry.abstract.TypeDataModel {
@@ -522,7 +619,7 @@ export class ProficiencyData extends foundry.abstract.TypeDataModel {
     return {
       description: html(),
       source: str(""),
-      group: str("other", { choices: Object.keys(PROF_GROUPS) }),
+      group: str("other", { choices: PROF_GROUP_KEYS }),
       slots: int(1, { min: 0 }),
       ability: str("", { choices: ["", ...Object.keys(ABILITY_LABELS)] }),
       check: bool(true),          // false: "NA", the proficiency never calls for a check
@@ -530,6 +627,7 @@ export class ProficiencyData extends foundry.abstract.TypeDataModel {
       everyUse: bool(false),      // DSG asterisk: a check every time it is used
       improvements: int(0, { min: 0 }),
       specialty: str(""),         // animal type, mount, and so on
+      target: int(0, { min: 0 }), // setting rules (e.g. OA): roll this number or higher on 1d20; each improvement lowers it by 1 (never below 3)
       notes: str("")
     };
   }

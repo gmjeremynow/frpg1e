@@ -67,6 +67,10 @@ export function defaultLevel(actor, list = null) {
     const classes = actor.system.classInfo ?? [];
     const full = classes.find(c => c.key === list);
     const user = classes.find(c => (c.def?.spells ?? []).some(sp => sp.list === list));
+    // a class may cast a list at a lower level than its own: spells: [{ list, progression, casterLevel: level -> n }]
+    const caster = full && (full.def?.spells ?? []).some(x => x.list === list) ? full : user;
+    const sp = caster ? (caster.def.spells ?? []).find(x => x.list === list) : null;
+    if (typeof sp?.casterLevel === "function") return Math.max(1, sp.casterLevel(caster.level) || 1);
     const best = full ?? user ?? [...classes].sort((a, b) => b.level - a.level)[0];
     return best?.level ?? 1;
   }

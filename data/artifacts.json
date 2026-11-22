@@ -1,0 +1,2533 @@
+{
+ "source": "DMG p.162-164 (tables); slots from each artifact's entry, DMG p.155-162",
+ "tables": {
+  "I": {
+   "title": "Table I: Minor Benign Powers",
+   "note": "",
+   "entries": [
+    {
+     "l": "A",
+     "t": "Adds 1 point to possessor’s major attribute"
+    },
+    {
+     "l": "B",
+     "t": "Animate dead (1 figure) (by touch) — 7 times/week"
+    },
+    {
+     "l": "C",
+     "t": "Audible glamer upon command — 3 times/day"
+    },
+    {
+     "l": "D",
+     "t": "Bless (by touch)"
+    },
+    {
+     "l": "E",
+     "t": "Clairaudience (when touched to the ear)"
+    },
+    {
+     "l": "F",
+     "t": "Clairvoyance (when touched to the eyes)"
+    },
+    {
+     "l": "G",
+     "t": "Color spray — 3 times/day"
+    },
+    {
+     "l": "H",
+     "t": "Comprehend languages when held"
+    },
+    {
+     "l": "I",
+     "t": "Create food and water — 1 time/day"
+    },
+    {
+     "l": "J",
+     "t": "Cure light wounds — 7 times/week"
+    },
+    {
+     "l": "K",
+     "t": "Darkness (5’, 10’, or 15’ radius) — 3 times/day"
+    },
+    {
+     "l": "L",
+     "t": "Detect charm — 3 times/day"
+    },
+    {
+     "l": "M",
+     "t": "Detect evil/good when held or ordered"
+    },
+    {
+     "l": "N",
+     "t": "Detect invisibility when held and ordered"
+    },
+    {
+     "l": "O",
+     "t": "Detect magic — 3 times/day"
+    },
+    {
+     "l": "P",
+     "t": "ESP (30’, 40’, 50’, or 60’ range) — 3 times/day"
+    },
+    {
+     "l": "Q",
+     "t": "Feather fall when grasped and ordered"
+    },
+    {
+     "l": "R",
+     "t": "Find traps — 3 times/day"
+    },
+    {
+     "l": "S",
+     "t": "Fly when held and ordered — 1 time/day"
+    },
+    {
+     "l": "T",
+     "t": "Hypnotic pattern (when moved) — 3 times/day"
+    },
+    {
+     "l": "U",
+     "t": "Infravision when held or worn"
+    },
+    {
+     "l": "V",
+     "t": "Invisibility (improved) — 3 times/day"
+    },
+    {
+     "l": "W",
+     "t": "Know alignment when held and ordered — 1 time/day"
+    },
+    {
+     "l": "X",
+     "t": "Levitate when held and ordered — 3 times/day"
+    },
+    {
+     "l": "Y",
+     "t": "Light — 7 times/week"
+    },
+    {
+     "l": "Z",
+     "t": "Mind blank — 3 times/day"
+    },
+    {
+     "l": "AA",
+     "t": "Obscurement — 1 time/day"
+    },
+    {
+     "l": "BB",
+     "t": "Pass without trace — 1 time/day"
+    },
+    {
+     "l": "CC",
+     "t": "Possessor immune to disease"
+    },
+    {
+     "l": "DD",
+     "t": "Possessor immune to fear"
+    },
+    {
+     "l": "EE",
+     "t": "Possessor immune to gas of any type"
+    },
+    {
+     "l": "FF",
+     "t": "Possessor need neither eat nor drink for up to 1 week"
+    },
+    {
+     "l": "GG",
+     "t": "Protection +2 when held or worn"
+    },
+    {
+     "l": "HH",
+     "t": "Remove fear by touch"
+    },
+    {
+     "l": "II",
+     "t": "Sanctuary when held or worn — 1 time/day"
+    },
+    {
+     "l": "JJ",
+     "t": "Shield, when held or worn, upon command — 3 times/day"
+    },
+    {
+     "l": "KK",
+     "t": "Speak with animals — 3 times/day"
+    },
+    {
+     "l": "LL",
+     "t": "Speak with dead — 1 time/day"
+    },
+    {
+     "l": "MM",
+     "t": "Speak with plants — 7 times/week"
+    },
+    {
+     "l": "NN",
+     "t": "Tongues when held or worn and commanded"
+    },
+    {
+     "l": "OO",
+     "t": "Ultravision when held or worn"
+    },
+    {
+     "l": "PP",
+     "t": "Ventriloquism upon command — 3 times/day"
+    },
+    {
+     "l": "QQ",
+     "t": "Water breathing upon command"
+    },
+    {
+     "l": "RR",
+     "t": "Water walking ability"
+    }
+   ]
+  },
+  "II": {
+   "title": "Table II: Major Benign Powers",
+   "note": "",
+   "entries": [
+    {
+     "l": "A",
+     "t": "Animal summoning (II or III) — 2 times/day"
+    },
+    {
+     "l": "B",
+     "t": "Animate object upon command — 1 time/day"
+    },
+    {
+     "l": "C",
+     "t": "+2 to armor class of possessor or AC 0, whichever is better"
+    },
+    {
+     "l": "D",
+     "t": "Cause serious wounds by touch"
+    },
+    {
+     "l": "E",
+     "t": "Charm monster — 2 times/day"
+    },
+    {
+     "l": "F",
+     "t": "Charm person — 7 times/week"
+    },
+    {
+     "l": "G",
+     "t": "Cone of cold (9-12 dice) — 2 times/day"
+    },
+    {
+     "l": "H",
+     "t": "Confusion — 1 time/day"
+    },
+    {
+     "l": "I",
+     "t": "Cure blindness by touch"
+    },
+    {
+     "l": "J",
+     "t": "Cure disease by touch"
+    },
+    {
+     "l": "K",
+     "t": "Dimension door — 2 times/day"
+    },
+    {
+     "l": "L",
+     "t": "Disintegrate — 1 time/day"
+    },
+    {
+     "l": "M",
+     "t": "Dispel illusion upon command — 2 times/day"
+    },
+    {
+     "l": "N",
+     "t": "Dispel magic upon command — 2 times/day"
+    },
+    {
+     "l": "O",
+     "t": "Double movement speed (on foot)"
+    },
+    {
+     "l": "P",
+     "t": "Emotion — 2 times/day"
+    },
+    {
+     "l": "Q",
+     "t": "Exorcise — 1 time/month"
+    },
+    {
+     "l": "R",
+     "t": "Fear by touch or gaze"
+    },
+    {
+     "l": "S",
+     "t": "Fireball (9-12 dice) — 2 times/day"
+    },
+    {
+     "l": "T",
+     "t": "Fire shield — 2 times/day"
+    },
+    {
+     "l": "U",
+     "t": "Giant strength (determine type) for 2 turns — 2 times/day"
+    },
+    {
+     "l": "V",
+     "t": "Haste — 1 time/day"
+    },
+    {
+     "l": "W",
+     "t": "Heal — 1 time/day"
+    },
+    {
+     "l": "X",
+     "t": "Hold animal — 1 time/day"
+    },
+    {
+     "l": "Y",
+     "t": "Hold monster — 1 time/day"
+    },
+    {
+     "l": "Z",
+     "t": "Hold person — 1 time/day"
+    },
+    {
+     "l": "AA",
+     "t": "Lightning bolt (9-12 dice) — 2 times/day"
+    },
+    {
+     "l": "BB",
+     "t": "Minor globe of invulnerability — 1 time/day"
+    },
+    {
+     "l": "CC",
+     "t": "Paralyzation by touch"
+    },
+    {
+     "l": "DD",
+     "t": "Passwall — 2 times/day"
+    },
+    {
+     "l": "EE",
+     "t": "Phantasmal killer — 1 time/day"
+    },
+    {
+     "l": "FF",
+     "t": "Polymorph self — 7 times/week"
+    },
+    {
+     "l": "GG",
+     "t": "Regenerate 2 h.p./turn (but not if killed)"
+    },
+    {
+     "l": "HH",
+     "t": "Remove curse by touch — 7 times/week"
+    },
+    {
+     "l": "II",
+     "t": "Slow — 1 time/day"
+    },
+    {
+     "l": "JJ",
+     "t": "Speak with monster — 2 times/day"
+    },
+    {
+     "l": "KK",
+     "t": "Stone to flesh — 1 time/day"
+    },
+    {
+     "l": "LL",
+     "t": "Suggestion — 2 times/day"
+    },
+    {
+     "l": "MM",
+     "t": "Telekinesis (1,000-6,000 g.p. weight) — 2 times/day"
+    },
+    {
+     "l": "NN",
+     "t": "Teleport (no error) — 2 times/day"
+    },
+    {
+     "l": "OO",
+     "t": "Transmute rock to mud — 2 times/day"
+    },
+    {
+     "l": "PP",
+     "t": "True seeing — 1 time/day"
+    },
+    {
+     "l": "QQ",
+     "t": "Turn wood — 1 time/day"
+    },
+    {
+     "l": "RR",
+     "t": "Wall of fire — 2 times/day"
+    },
+    {
+     "l": "SS",
+     "t": "Wall of ice — 2 times/day"
+    },
+    {
+     "l": "TT",
+     "t": "Wall of thorns — 2 times/day"
+    },
+    {
+     "l": "UU",
+     "t": "Weapon damage is +2 hit points"
+    },
+    {
+     "l": "VV",
+     "t": "Wind walk — 1 time/day"
+    },
+    {
+     "l": "WW",
+     "t": "Wizard eye — 2 times/day"
+    },
+    {
+     "l": "XX",
+     "t": "Word of recall — 1 time/day"
+    },
+    {
+     "l": "YY",
+     "t": "X-ray vision — 2 times/day"
+    }
+   ]
+  },
+  "III": {
+   "title": "Table III: Minor Malevolent Effects",
+   "note": "These powers should be inflicted upon the possessor of the item after he or she has had the artifact or relic for a period of time (1-4 weeks) or after using major powers of the item.",
+   "entries": [
+    {
+     "l": "A",
+     "t": "Acne on possessor’s face"
+    },
+    {
+     "l": "B",
+     "t": "Blindness for 1-4 rounds when first used against an enemy"
+    },
+    {
+     "l": "C",
+     "t": "Body odor noticeable at 10’ distance"
+    },
+    {
+     "l": "D",
+     "t": "Deafness for 1-4 turns when first used against an enemy"
+    },
+    {
+     "l": "E",
+     "t": "Gems or jewelry found never increase in value"
+    },
+    {
+     "l": "F",
+     "t": "Holy water within 10’ of item becomes polluted"
+    },
+    {
+     "l": "G",
+     "t": "Lose 1-4 points of charisma for 1-4 days when major power used"
+    },
+    {
+     "l": "H",
+     "t": "Possessor loses interest in sex"
+    },
+    {
+     "l": "I",
+     "t": "Possessor has satyriasis"
+    },
+    {
+     "l": "J",
+     "t": "Possessor’s hair turns white"
+    },
+    {
+     "l": "K",
+     "t": "Saving throws versus magic are at −1"
+    },
+    {
+     "l": "L",
+     "t": "Saving throws versus poison are at −2"
+    },
+    {
+     "l": "M",
+     "t": "Sense of smell lost for 2-8 hours when first used against an enemy"
+    },
+    {
+     "l": "N",
+     "t": "Small fires (torches, et al.) extinguished when major power used"
+    },
+    {
+     "l": "O",
+     "t": "Small items of wood rot from possessor’s touch (any item up to normal door size, 1-7 days time)"
+    },
+    {
+     "l": "P",
+     "t": "Touch of possessor kills green plants"
+    },
+    {
+     "l": "Q",
+     "t": "User causes hostility towards himself in all mammals within 6”"
+    },
+    {
+     "l": "R",
+     "t": "User must eat and drink 6 times the normal amount due to the item’s drain upon him or her"
+    },
+    {
+     "l": "S",
+     "t": "User’s sex changes"
+    },
+    {
+     "l": "T",
+     "t": "Wart appears on possessor’s nose"
+    },
+    {
+     "l": "U",
+     "t": "Weight gain of 10-40 pounds"
+    },
+    {
+     "l": "V",
+     "t": "Weight loss of 5-30 pounds"
+    },
+    {
+     "l": "W",
+     "t": "Yearning for item forces possessor to never be away from it for more than 1 day if at all possible"
+    },
+    {
+     "l": "X",
+     "t": "Yelling becomes necessary to invoke spells with verbal components"
+    }
+   ]
+  },
+  "IV": {
+   "title": "Table IV: Major Malevolent Effects",
+   "note": "Malevolent powers operate whenever a major or primary power of the artifact or relic is used, unless operation occurs after a pre-determined (but low) number of uneventful usages of a major or primary power, as stated above (item description or Table). Effects can be successive and cumulative. Body rot affects extremities — toes, fingers, ears, nose, lips, eyelids, hands, feet, arms, legs, head in that order — 1 member per operation. Nothing can prevent the loss or restore the member. Geas/quest fulfillment enables the possessor to act freely until primary power use once again operates this power. Life force freeing and associated entrapment of the possessor’s soul will likewise free the life force of a player character (and restore his or her body) if and when another character so uses the item. Where creature types are called for, select powerful types which would be logically connected to the item, usually foes of its creator or alignment or purpose. Aging 3-30 years is done by race life expectancy: 1) 3 years for half-orcs; 2) 4 years for humans; 3) 7 years for halflings; 4) 12 years for half-elves; 5) 20 years for gnomes; 6) 25 years for dwarves; 7) 30 years for elves. The aging cannot be reversed.",
+   "entries": [
+    {
+     "l": "A",
+     "t": "Body rot is 10% cumulative likely whenever a primary power is used, and part of the body is lost permanently"
+    },
+    {
+     "l": "B",
+     "t": "Capricious alignment change each time a primary power is used"
+    },
+    {
+     "l": "C",
+     "t": "Geas/quest placed upon possessor"
+    },
+    {
+     "l": "D",
+     "t": "Item contains the life force of another person, and after a set number of uses, the possessor’s life force is drawn into it and the former soul released"
+    },
+    {
+     "l": "E",
+     "t": "Item has power to affect its possessor when a primary power is used if the character has not followed the alignment or purposes of the artifact/relic"
+    },
+    {
+     "l": "F",
+     "t": "Item is a prison for a powerful being; and there is a 1%-4% cumulative chance per usage that it will break free, kill the possessor’s soul, and, using his or her body, proceed to slay all associates and henchmen of this character"
+    },
+    {
+     "l": "G",
+     "t": "Item is itself a living, sentient being forced to serve; but each usage of a primary power gives a 1%-3% cumulative possibility that the spell will be broken and the being will: 1) change the possessor into a like artifact/relic; 2) geas/quest the possessor to perform a mission of its choosing; 3) kill the possessor; 4) mentally enslave the possessor for a period of 2-8 weeks"
+    },
+    {
+     "l": "H",
+     "t": "Item is powerless against and hates 1-3 species of creatures, and when within 10” of any such creatures it forces its possessor to attack"
+    },
+    {
+     "l": "I",
+     "t": "Item releases a gas which renders all creatures, including wielder, within 20’ powerless to move for 5-20 rounds"
+    },
+    {
+     "l": "J",
+     "t": "Lose 1 point of charisma permanently"
+    },
+    {
+     "l": "K",
+     "t": "Lose 1 point of constitution permanently"
+    },
+    {
+     "l": "L",
+     "t": "Lose 1 point of dexterity permanently"
+    },
+    {
+     "l": "M",
+     "t": "Lose 1 point from hit points permanently"
+    },
+    {
+     "l": "N",
+     "t": "Lose 1 point of intelligence permanently"
+    },
+    {
+     "l": "O",
+     "t": "Lose 1 point of strength permanently"
+    },
+    {
+     "l": "P",
+     "t": "Lose 1 point of wisdom permanently"
+    },
+    {
+     "l": "Q",
+     "t": "Magic drained from the most powerful magic item (other than an artifact or relic) within 20’ of user"
+    },
+    {
+     "l": "R",
+     "t": "Reverse alignment permanently"
+    },
+    {
+     "l": "S",
+     "t": "Sacrifice a certain animal to activate item for 1 day"
+    },
+    {
+     "l": "T",
+     "t": "Sacrifice a human or player character to activate item for 1 day"
+    },
+    {
+     "l": "U",
+     "t": "Sacrifice 10,000-60,000 g.p. worth of gems and/or jewelry to activate item for 1 day"
+    },
+    {
+     "l": "V",
+     "t": "User becomes berserk and attacks creatures within 20’ randomly (check each round) for 5-20 rounds"
+    },
+    {
+     "l": "W",
+     "t": "User goes insane for 1-4 days"
+    },
+    {
+     "l": "X",
+     "t": "User grows ¼’ taller each time primary power is used"
+    },
+    {
+     "l": "Y",
+     "t": "User instantly killed (but may be raised or resurrected)"
+    },
+    {
+     "l": "Z",
+     "t": "User loses 1 level of experience"
+    },
+    {
+     "l": "AA",
+     "t": "User receives 2-20 hit points damage"
+    },
+    {
+     "l": "BB",
+     "t": "User receives 5-30 hit points damage"
+    },
+    {
+     "l": "CC",
+     "t": "User required to slay a certain type of creature to activate item, and slaying another set type will de-activate item"
+    },
+    {
+     "l": "DD",
+     "t": "User shrinks ¼’ each time primary power is used"
+    },
+    {
+     "l": "EE",
+     "t": "User transformed into a very powerful but minor being from another plane (demon, devil, godling) by creator of item and is carried off to serve this new master (start a new character)"
+    },
+    {
+     "l": "FF",
+     "t": "User withers and ages 3-30 years each time the primary power is used, eventually turning the possessor into a deathless withered zombie guardian of the item"
+    },
+    {
+     "l": "GG",
+     "t": "Utterance of a spell causes complete loss of voice for one day"
+    },
+    {
+     "l": "HH",
+     "t": "Yearning to be worshipped is uncontrollable; those failing to bow and scrape to the artifact’s possessor will be subject to instant attack."
+    }
+   ]
+  },
+  "V": {
+   "title": "Table V: Prime Powers",
+   "note": "",
+   "entries": [
+    {
+     "l": "A",
+     "t": "All of possessor’s ability totals permanently raised 2 points each upon pronouncement of a command word (18 maximum)"
+    },
+    {
+     "l": "B",
+     "t": "All of possessor’s ability totals raised to 18 each upon pronouncement of a command word"
+    },
+    {
+     "l": "C",
+     "t": "Bones/exoskeleton/cartilage of opponent turned to jelly — 1 time/day"
+    },
+    {
+     "l": "D",
+     "t": "Cacodemon-like power summons a demon lord, arch-devil, or nycadaemon — 1 time/month"
+    },
+    {
+     "l": "E",
+     "t": "Creeping doom callable — 1 time/day"
+    },
+    {
+     "l": "F",
+     "t": "Death ray equal to a finger of death with no saving throw — 1 time/day"
+    },
+    {
+     "l": "G",
+     "t": "Death spell power of 110%-200% effectiveness with respect to number of levels affected — 1 time/day"
+    },
+    {
+     "l": "H",
+     "t": "Gate spell power, 100% effective — 1 time/day"
+    },
+    {
+     "l": "I",
+     "t": "Imprisonment spell power — 1 time/week"
+    },
+    {
+     "l": "J",
+     "t": "Magical resistance of 50%-75% for possessor upon command word — 1 time/day"
+    },
+    {
+     "l": "K",
+     "t": "Major attribute permanently raised to 19 upon command word"
+    },
+    {
+     "l": "L",
+     "t": "Meteor swarm — 1 time/day"
+    },
+    {
+     "l": "M",
+     "t": "Monster summoning VIII — 2 times/day"
+    },
+    {
+     "l": "N",
+     "t": "Plane shift — 1 time/day"
+    },
+    {
+     "l": "O",
+     "t": "Polymorph any object — 1 time/day"
+    },
+    {
+     "l": "P",
+     "t": "Power word blind/kill/stun — 1 time/day"
+    },
+    {
+     "l": "Q",
+     "t": "Premonition of death or serious harm to possessor"
+    },
+    {
+     "l": "R",
+     "t": "Prismatic spray — 1 time/day"
+    },
+    {
+     "l": "S",
+     "t": "Restoration — 1 time/day"
+    },
+    {
+     "l": "T",
+     "t": "Resurrection — 7 times/week"
+    },
+    {
+     "l": "U",
+     "t": "Shades — 2 times/day"
+    },
+    {
+     "l": "V",
+     "t": "Shape change — 2 times/day"
+    },
+    {
+     "l": "W",
+     "t": "Spell absorption, 19-24 levels — 1 time/week"
+    },
+    {
+     "l": "X",
+     "t": "Summon 1 of each type of elemental, 16 hit dice each, no need for control — 1 time/week"
+    },
+    {
+     "l": "Y",
+     "t": "Summon djinn or efreet lord (8 h.p./die, +2 “to hit” and +4 damage) for 1 day of service — 1 time/week"
+    },
+    {
+     "l": "Z",
+     "t": "Super sleep spell affects double the number of creatures plus up to 2 5th or 6th and 1 7th or 8th level creature"
+    },
+    {
+     "l": "AA",
+     "t": "Temporal stasis, no saving throw, upon touch — 1 time/month"
+    },
+    {
+     "l": "BB",
+     "t": "The item enables the possessor to legend lore, commune, or contact higher plane (7th-10th) — 1 time/week"
+    },
+    {
+     "l": "CC",
+     "t": "Time stop of twice normal duration — 1 time/week"
+    },
+    {
+     "l": "DD",
+     "t": "Total fire/heat resistance for all creatures within 20’ of the item"
+    },
+    {
+     "l": "EE",
+     "t": "Total immunity from all forms of mental and psionic attacks"
+    },
+    {
+     "l": "FF",
+     "t": "Total immunity from all forms of cold"
+    },
+    {
+     "l": "GG",
+     "t": "Trap the soul with 90% effectiveness — 1 time/month"
+    },
+    {
+     "l": "HH",
+     "t": "User can cast combination spells (if a spell caster) as follows (d4): 1) 1st and 2nd level spells simultaneously; 2) 2nd and 3rd level spells simultaneously; 3) 3rd and 4th level spells simultaneously; 4) 1st, 2nd, and 3rd level spells simultaneously"
+    },
+    {
+     "l": "II",
+     "t": "Vanish — 2 times/day"
+    },
+    {
+     "l": "JJ",
+     "t": "Vision — 1 time/day"
+    },
+    {
+     "l": "KK",
+     "t": "Wish — 1 time/day"
+    },
+    {
+     "l": "LL",
+     "t": "Youth restored to creature touched — 1 time/month"
+    }
+   ]
+  },
+  "VI": {
+   "title": "Table VI: Side Effects",
+   "note": "",
+   "entries": [
+    {
+     "l": "A",
+     "t": "Alignment of possessor permanently changed to that of item"
+    },
+    {
+     "l": "B",
+     "t": "Charisma of possessor reduced to 3 as long as item is owned"
+    },
+    {
+     "l": "C",
+     "t": "Fear reaction possible in any creature within 20’ of the item whenever a major or primary power is used; all, including possessor, must save versus magic or flee in panic"
+    },
+    {
+     "l": "D",
+     "t": "Fumble reaction possible (as C. above)"
+    },
+    {
+     "l": "E",
+     "t": "Greed and covetousness reaction in all intelligent creatures viewing the item; save versus magic or attack possessor and steal the item — associates are only 25% likely to have to check; henchmen check loyalty first, failure then requires saving throw as above"
+    },
+    {
+     "l": "F",
+     "t": "Lycanthropy inflicted upon the possessor, type according to alignment of item, change to animal form involuntary and 50% likely (1 check only) whenever confronted and attacked by an enemy"
+    },
+    {
+     "l": "G",
+     "t": "Treasure within 5’ radius of mineral nature (metal or gems) of non-magical type is reduced by 20%-80% as the item consumes it to sustain its power"
+    },
+    {
+     "l": "H",
+     "t": "User becomes ethereal whenever any major or primary power of the item is activated, and there is a 5% cumulative chance that he or she will thereafter become ethereal whenever a stress (combat, life-or-death, difficult problem involving user’s decision) situation exists; the ethereal state lasts until stress is removed"
+    },
+    {
+     "l": "I",
+     "t": "User becomes fantastically strong (18/00 — 19 if 18/00 already) but very clumsy; so dexterity is reduced by as many points as strength was increased, and so no “to hit” bonuses are allowed for strength, and a −2 for clumsiness is given instead; furthermore, the individual must be checked as if he or she has a fumble spell cast upon him or her whenever any item is handled or spell is to be cast by the user"
+    },
+    {
+     "l": "J",
+     "t": "User cannot touch or be touched by any (even magical) metal; metal simply passes through his or her body as if it did not exist and has no effect"
+    },
+    {
+     "l": "K",
+     "t": "User has a poison touch which requires that humans and man-sized humanoids (but not undead) save versus poison whenever touched"
+    },
+    {
+     "l": "L",
+     "t": "User has limited omniscience and may request the DM to answer 1 question per game day (answer is given with limitations set by DM’s discretion, with overall campaign factors and knowledge of player vs. player character overriding considerations)"
+    },
+    {
+     "l": "M",
+     "t": "User has short-duration super charismatic effect upon creatures of the same basic alignment — evil, good, neutral (chaotic, lawful, true) — so that they will willingly join and serve the character for 1-4, 2-8, or 3-12 turns (depending upon how exact the alignment match is); thereafter the effect of the dweomer wears off and the creature(s) will no longer serve due to realization of the enchantment and fear of it (and hostility is possible)"
+    },
+    {
+     "l": "N",
+     "t": "Whenever any power of the item is used, temperature within a 6” radius is raised 20°-50° F. for 2-8 turns (moves with item)"
+    },
+    {
+     "l": "O",
+     "t": "Whenever the major or prime power of the item is used, temperature within a 6” radius is lowered 20°-80° F. for 2-8 turns (moves with item)"
+    },
+    {
+     "l": "P",
+     "t": "Whenever the prime power is used the possessor must save versus magic or lose 1 level of experience"
+    },
+    {
+     "l": "Q",
+     "t": "Whenever the prime power is used, those creatures friendly to the user within 20’, excluding the user, will sustain 5-20 hit points of damage"
+    },
+    {
+     "l": "R",
+     "t": "Whenever this item is used as a weapon to strike an enemy, it does double normal damage to the opponent but the wielder takes (normal) damage just as if he or she had been struck by the item"
+    }
+   ]
+  }
+ },
+ "items": {
+  "Axe of the Dwarvish Lords": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Walking Hut": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Codex of the Infinite Planes": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         4
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         2
+        ],
+        [
+         "V",
+         2
+        ],
+        [
+         "VI",
+         2
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Crown of Might": {
+   "ethos": {
+    "die": "1d20",
+    "rows": [
+     [
+      1,
+      6,
+      "Evil"
+     ],
+     [
+      7,
+      14,
+      "Good"
+     ],
+     [
+      15,
+      20,
+      "Neutrality"
+     ]
+    ]
+   },
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "While worn (also raises the wearer’s level by 1)",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "2nd item of set, same ethos",
+       "slots": [
+        [
+         "I",
+         1
+        ],
+        [
+         "II",
+         1
+        ]
+       ],
+       "note": "Gained when the wearer also has an Orb or Sceptre of the same ethos."
+      },
+      {
+       "label": "3rd item of set, same ethos",
+       "slots": [
+        [
+         "I",
+         1
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ],
+       "note": "Gained when the wearer has all three items of the same ethos."
+      }
+     ]
+    }
+   ],
+   "touch": "A character of another alignment who touches it takes 5-30 hit points of damage and must save versus magic or be instantly killed. A wearer who touches an Orb or Sceptre of a different ethos takes damage and saves as noted; if the save succeeds, 1 malevolent power from Table IV affects him or her."
+  },
+  "Crystal of the Ebon Flame": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Cup and Talisman of Al’Akbar": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "The Cup",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "III",
+         1
+        ]
+       ],
+       "note": "The Table III effect applies to neutral or evil characters only."
+      },
+      {
+       "label": "The Talisman",
+       "slots": [
+        [
+         "II",
+         2
+        ],
+        [
+         "IV",
+         1
+        ]
+       ],
+       "note": "The Table IV effect applies to evil characters only."
+      },
+      {
+       "label": "Possessor of both",
+       "slots": [
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Eye of the Lich": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Hand of the Lich": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         10
+        ],
+        [
+         "II",
+         5
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         2
+        ],
+        [
+         "V",
+         2
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Mystical Organ": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         7
+        ],
+        [
+         "II",
+         7
+        ],
+        [
+         "III",
+         3
+        ],
+        [
+         "IV",
+         7
+        ],
+        [
+         "V",
+         7
+        ],
+        [
+         "VI",
+         3
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Horn of Change": {
+   "horn": {
+    "chance": 75,
+    "blasts": [
+     [
+      "I",
+      "III"
+     ],
+     [
+      "II",
+      "VI"
+     ],
+     [
+      "V",
+      "IV"
+     ]
+    ]
+   },
+   "variants": []
+  },
+  "Invulnerable Coat of Arnd": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Iron Flask of Tuerny the Merciless": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Jacinth of Inestimable Beauty": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Mask of Concealment": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Quill of Forgery": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Mace of Cuthbert": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Machine of Lum the Mad": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         15
+        ],
+        [
+         "II",
+         15
+        ],
+        [
+         "III",
+         10
+        ],
+        [
+         "IV",
+         10
+        ],
+        [
+         "V",
+         15
+        ],
+        [
+         "VI",
+         5
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Mighty Servant of Leuk-O": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         6
+        ],
+        [
+         "II",
+         6
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         2
+        ],
+        [
+         "VI",
+         2
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Orb of the Dragonkind": {
+   "variants": [
+    {
+     "label": "1. Orb of the Hatchling",
+     "groups": [
+      {
+       "label": "Powers",
+       "slots": [
+        [
+         "I",
+         3
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "2. Orb of the Wyrmkin",
+     "groups": [
+      {
+       "label": "Powers",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "II",
+         1
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "3. Orb of the Dragonette",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         1
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "4. Orb of the Dragon",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         1
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "5. Orb of the Great Serpent",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "6. Orb of the Firedrake",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         3
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "7. Orb of the Elder Wyrm",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         3
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "label": "8. Orb of the Eternal Grand Dragon",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         3
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         2
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Orb of Might": {
+   "ethos": {
+    "die": "1d20",
+    "rows": [
+     [
+      1,
+      6,
+      "Evil"
+     ],
+     [
+      7,
+      14,
+      "Good"
+     ],
+     [
+      15,
+      20,
+      "Neutrality"
+     ]
+    ]
+   },
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         2
+        ],
+        [
+         "III",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "touch": "A character of another ethos who touches it must save versus magic or die, and takes 4-24 hit points of damage even if the save succeeds. If that character also has a Crown and/or Sceptre, surviving the save brings a malevolent effect from Table IV."
+  },
+  "Marvelous Nightingale": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Recorder of Ye’Cind": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         5
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Ring of Gaxx": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "V",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Rod of Seven Parts": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Parts 1-2",
+       "slots": [
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Parts 2-3",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Parts 3-4",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Parts 4-5",
+       "slots": [
+        [
+         "IV",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Parts 5-6",
+       "slots": [
+        [
+         "II",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Parts 6-7",
+       "slots": [
+        [
+         "VI",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Complete Rod",
+       "slots": [
+        [
+         "I",
+         1
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "V",
+         2
+        ],
+        [
+         "IV",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Sceptre of Might": {
+   "ethos": {
+    "die": "1d20",
+    "rows": [
+     [
+      1,
+      6,
+      "Evil"
+     ],
+     [
+      7,
+      14,
+      "Good"
+     ],
+     [
+      15,
+      20,
+      "Neutrality"
+     ]
+    ]
+   },
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         1
+        ],
+        [
+         "II",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "touch": "Handling a Sceptre of another ethos has the same effects as for a Crown."
+  },
+  "Sword of Betrayal": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         5
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         1
+        ],
+        [
+         "IV",
+         2
+        ],
+        [
+         "V",
+         2
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Teeth of Dahlver-Nar": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Tooth 1",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 2",
+       "slots": [
+        [
+         "II",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 3",
+       "slots": [
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 4",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 5",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 6",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 7",
+       "slots": [
+        [
+         "VI",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 8",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 9",
+       "slots": [
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 10",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 11",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 12",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 13",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 14",
+       "slots": [
+        [
+         "VI",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 15",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 16",
+       "slots": [
+        [
+         "II",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 17",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 18",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 19",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 20",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 21",
+       "slots": [
+        [
+         "IV",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 22",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 23",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 24",
+       "slots": [
+        [
+         "II",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 25",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 26",
+       "slots": [
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 27",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 28",
+       "slots": [
+        [
+         "II",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 29",
+       "slots": [
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 30",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 31",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Tooth 32",
+       "slots": [
+        [
+         "I",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Set of teeth 1-8",
+       "slots": [
+        [
+         "II",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Set of teeth 9-16",
+       "slots": [
+        [
+         "II",
+         1
+        ],
+        [
+         "IV",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Set of teeth 17-24",
+       "slots": [
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Set of teeth 25-32",
+       "slots": [
+        [
+         "II",
+         1
+        ],
+        [
+         "III",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Set of teeth 1-16",
+       "slots": [
+        [
+         "V",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "Set of teeth 17-32",
+       "slots": [
+        [
+         "V",
+         1
+        ]
+       ]
+      },
+      {
+       "label": "All 32 teeth",
+       "slots": [
+        [
+         "V",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Powers/effects are cumulative. This printing of the DMG lists the four 'Set of' rows for teeth 1-8, 9-16, 17-24 and 25-32 twice; they are used once here."
+  },
+  "Throne of the Gods": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         3
+        ],
+        [
+         "II",
+         3
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         2
+        ],
+        [
+         "V",
+         2
+        ],
+        [
+         "VI",
+         2
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "Wand of Orcus": {
+   "variants": [
+    {
+     "label": "",
+     "groups": [
+      {
+       "label": "Powers and effects",
+       "slots": [
+        [
+         "I",
+         4
+        ],
+        [
+         "II",
+         2
+        ],
+        [
+         "III",
+         2
+        ],
+        [
+         "IV",
+         1
+        ],
+        [
+         "VI",
+         1
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
