@@ -356,7 +356,8 @@ export class CharacterSheet extends ADnDActorSheet {
     ctx.races = opt(RACES);
     ctx.race = raceContext(s);
     const used = new Set(s.classInfo.map(c => c.key));
-    ctx.classOptions = Object.entries(CLASSES).filter(([k]) => !HIDDEN_CLASSES.has(k) || used.has(k)).map(([value, c]) => ({ value, label: c.label }));
+    // "custom" (Other) is only the fallback for unknown classes; it is offered only to a character that already has it
+    ctx.classOptions = Object.entries(CLASSES).filter(([k]) => k === "custom" ? used.has(k) : (!HIDDEN_CLASSES.has(k) || used.has(k))).map(([value, c]) => ({ value, label: c.label }));
     ctx.matrixOptions = [{ value: "", label: "(class default)" }, ...Object.entries(ATTACK_MATRICES).map(([value, c]) => ({ value, label: c.label }))];
     ctx.saveOptions = [{ value: "", label: "(class default)" }, ...Object.keys(SAVING_THROWS).map(value => ({ value, label: { cleric: "Cleric", fighter: "Fighter", magicuser: "Magic-User", thief: "Thief" }[value] }))];
     ctx.classes = s.classInfo.map(c => ({
