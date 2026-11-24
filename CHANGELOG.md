@@ -2,6 +2,7 @@
 
 What each version added or changed, newest first. Versions before 0.16.0 are not listed separately.
 
+- **Monster art keeps your own images (0.48.4).** Apply Monster Art replaces a portrait or token image only when it is the default skull (or mystery man, or blank) or an image from the monster art folder. Anything you set by hand stays, in the book compendia, on world monsters and on placed tokens; before, the book compendia were overwritten whenever a matching "Token ..." image existed. Rebuilding the book compendia now carries hand-set monster images over to the new copies. Nothing is ever deleted.
 - **Background art (0.48.3).** The system now has its own background picture (adventurers at a ruin entrance), shown on its card in Foundry's setup screen. A world can use it by setting its Background Image to `systems/frpg1e/assets/background.webp`.
 - **Weapon proficiency list takes module weapons (0.48.2).** Modules can add weapons to the weapon proficiency drop-down with `registerWeaponNames` (API version 3); the OA modules add the OA weapons. The list is now in alphabetical order, and a name already listed in another letter case is not repeated.
 - **"Other (set below)" removed from the class list (0.48.1).** The catch-all class is no longer offered when choosing a class. A character who already has it keeps it, with its combat table, saves and hit die settings. The system still uses its defaults behind the scenes when a character's class belongs to a module that is switched off.

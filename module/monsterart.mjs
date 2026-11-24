@@ -11,6 +11,19 @@ const ID = "frpg1e";
 const IMG_EXT = /\.(webp|png|jpe?g|gif|svg|avif)$/i;
 const DEFAULT_IMGS = new Set(["icons/svg/skull.svg", "icons/svg/mystery-man.svg", ""]);
 
+/**
+ * True when an image may be replaced by monster art: the default skull or mystery man, nothing at all, or an image
+ * from the monster art folder (so renamed or replaced art is picked up). Any other image was assigned by hand and is
+ * never touched.
+ */
+export function replaceableImg(src) {
+  const s = String(src ?? "");
+  if (DEFAULT_IMGS.has(s)) return true;
+  const folder = artFolder().replace(/^\/+|\/+$/g, "");
+  let path = s; try { path = decodeURIComponent(s); } catch (e) { /* keep as is */ }
+  return path.replace(/^\/+/, "").startsWith(folder + "/");
+}
+
 export const artKey = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 /** Keys to try for a monster name: the full name, then the name without its parenthetical parts. */
 export function nameKeys(name) {
@@ -112,7 +125,7 @@ export async function applyMonsterArt({ confirm = true } = {}) {
     const ok = await foundry.applications.api.DialogV2.confirm({
       window: { title: "Apply Monster Art" },
       content: `<p>${index.size} "Token ..." images found. Set them as portrait and token image on the matching monsters in the book compendia and in this world?</p>
-        <p class="hint">World monsters that already have their own picture are left alone.</p>`,
+        <p class="hint">A portrait or token image you set yourself (anything other than the default skull or an image from the monster art folder) is never replaced, in the compendia, on world monsters or on placed tokens. Nothing is deleted.</p>`,
       rejectClose: false
     });
     if (!ok) return;
@@ -126,7 +139,12 @@ export async function applyMonsterArt({ confirm = true } = {}) {
       const path = artFor(a.name, index);
       const up = { _id: a.id };
       if (tokenSize(a.system.size) === 2 && a.prototypeToken.width < 2) Object.assign(up, { "prototypeToken.width": 2, "prototypeToken.height": 2 });
-      if (path) { used.add(path); Object.assign(up, { img: path, "prototypeToken.texture.src": path }); }
+      if (path) {
+        used.add(path);
+        // a portrait or token image set by hand is kept; only defaults and earlier monster art are replaced
+        if (replaceableImg(a.img) && a.img !== path) up.img = path;
+        if (replaceableImg(a.prototypeToken?.texture?.src) && a.prototypeToken?.texture?.src !== path) up["prototypeToken.texture.src"] = path;
+      }
       if (Object.keys(up).length > 1) updates.push(up);
     }
     if (pack.locked) await pack.configure({ locked: false });
@@ -140,8 +158,8 @@ export async function applyMonsterArt({ confirm = true } = {}) {
     if (!a.prototypeToken?.displayBars) up["prototypeToken.displayBars"] = (CONST.TOKEN_DISPLAY_MODES?.HOVER ?? 30);
     if (!path) { if (Object.keys(up).length > 1) worldUpdates.push(up); continue; }
     used.add(path);
-    if (DEFAULT_IMGS.has(a.img ?? "")) up.img = path;
-    if (DEFAULT_IMGS.has(a.prototypeToken?.texture?.src ?? "")) up["prototypeToken.texture.src"] = path;
+    if (replaceableImg(a.img) && a.img !== path) up.img = path;
+    if (replaceableImg(a.prototypeToken?.texture?.src) && a.prototypeToken?.texture?.src !== path) up["prototypeToken.texture.src"] = path;
     if (Object.keys(up).length > 1) worldUpdates.push(up);
   }
   if (worldUpdates.length) await Actor.updateDocuments(worldUpdates);
@@ -154,8 +172,8 @@ export async function applyMonsterArt({ confirm = true } = {}) {
       if (t.actor?.type !== "monster") continue;
       const up = { _id: t.id };
       if (!t.displayBars) up.displayBars = (CONST.TOKEN_DISPLAY_MODES?.HOVER ?? 30);
-      const path = DEFAULT_IMGS.has(t.texture?.src ?? "") ? (artFor(t.actor.name, index) ?? artFor(t.name, index)) : null;
-      if (path) { used.add(path); up["texture.src"] = path; }
+      const path = replaceableImg(t.texture?.src) ? (artFor(t.actor.name, index) ?? artFor(t.name, index)) : null;
+      if (path) { used.add(path); if (t.texture?.src !== path) up["texture.src"] = path; }
       if (Object.keys(up).length > 1) ups.push(up);
     }
     if (ups.length) { await scene.updateEmbeddedDocuments("Token", ups); tokenCount += ups.length; }

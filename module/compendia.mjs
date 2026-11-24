@@ -3,7 +3,7 @@
  * (Foundry V11+ packs are LevelDB databases; building them in-world avoids
  * shipping a compiled database and keeps the data easy to inspect.)
  */
-import { getArtIndex, applyArtToData } from "./monsterart.mjs";
+import { getArtIndex, applyArtToData, replaceableImg } from "./monsterart.mjs";
 const ID = "frpg1e";
 const DATA_VERSION = "50";
 const LIST_LABEL = { cleric: "Cleric", druid: "Druid", magicuser: "Magic-User", illusionist: "Illusionist" };
@@ -82,7 +82,7 @@ export async function importCompendia({ confirm = false } = {}) {
   if (confirm) {
     const ok = await foundry.applications.api.DialogV2.confirm({
       window: { title: "Import Book Compendia" },
-      content: "<p>Rebuild the 1e FRPG book compendia? Existing copies in this world are replaced.</p>",
+      content: "<p>Rebuild the 1e FRPG book compendia? Existing copies in this world are replaced. Monster portraits and token images you set by hand are carried over.</p>",
       rejectClose: false
     });
     if (!ok) return;
@@ -94,8 +94,16 @@ export async function importCompendia({ confirm = false } = {}) {
     const data = await (await fetch(`systems/${ID}/data/${def.file}`)).json();
     const key = `world.${def.name}`;
     const existing = game.packs.get(key);
-    if (existing) await existing.deleteCompendium();
     const type = def.type ?? "Item";
+    // monsters in the old copy with a portrait or token image set by hand keep it in the rebuilt copy
+    const kept = new Map();
+    if (existing && type === "Actor") {
+      for (const a of await existing.getDocuments()) {
+        const k = { img: replaceableImg(a.img) ? null : a.img, tok: replaceableImg(a.prototypeToken?.texture?.src) ? null : a.prototypeToken?.texture?.src };
+        if (k.img || k.tok) kept.set(a.name, k);
+      }
+    }
+    if (existing) await existing.deleteCompendium();
     const pack = await CC.createCompendium({ name: def.name, label: def.label, type });
     let docs = def.build ? def.build(data) : data;
     if (def.folder) {
@@ -103,6 +111,12 @@ export async function importCompendia({ confirm = false } = {}) {
       docs = data.map(d => { const f = def.folder(d); return { ...d, folder: f ? byPath.get([].concat(f).join("/")) ?? null : null }; });
     }
     if (type === "Actor") artMatched += applyArtToData(docs, artIndex);
+    if (kept.size) for (const d of docs) {
+      const k = kept.get(d.name);
+      if (!k) continue;
+      if (k.img) d.img = k.img;
+      if (k.tok) d.prototypeToken = { ...(d.prototypeToken ?? {}), texture: { ...(d.prototypeToken?.texture ?? {}), src: k.tok } };
+    }
     const cls = type === "Actor" ? Actor : type === "RollTable" ? RollTable : Item;
     for (let i = 0; i < docs.length; i += 100) await cls.createDocuments(docs.slice(i, i + 100), { pack: pack.collection });
     ui.notifications.info(`${def.label}: ${docs.length} entries.`);
