@@ -733,3 +733,9 @@ body.frpg1e-gold .frpg1e input.wt-unknown::placeholder, body.frpg1e-gold .frpg1e
 
 .frpg1e .sub-note.found-note { display: block; font-size: 11px; font-style: italic; color: var(--ink-2); }
 .frpg1e .cont-now { margin: 4px 0; }
+
+/* sheet names: always dark on the sheet, and selected text stays readable (0.48.5) */
+.frpg1e .sheet-head .char-name { color: var(--ink, #1a1815) !important; background: transparent !important; min-width: 0; text-overflow: ellipsis; }
+.frpg1e .sheet-head .char-name:focus { background: rgba(255,255,255,.35) !important; }
+.frpg1e .sheet-head .char-name::selection { background: var(--rule-strong, #1a1815); color: var(--paper, #c29a3d); }
+.frpg1e .title-line { min-width: 0; }

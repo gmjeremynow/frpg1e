@@ -2,6 +2,7 @@
 
 What each version added or changed, newest first. Versions before 0.16.0 are not listed separately.
 
+- **Names easier to read (0.48.5).** The name at the top of character, NPC and monster sheets is always dark ink on the sheet, and selected text in it shows dark with light letters instead of washing out. A name too long for its field is set smaller (down to 15px) so the whole name shows; it refits as you type and when the window is resized, and hovering shows the full name.
 - **Monster art keeps your own images (0.48.4).** Apply Monster Art replaces a portrait or token image only when it is the default skull (or mystery man, or blank) or an image from the monster art folder. Anything you set by hand stays, in the book compendia, on world monsters and on placed tokens; before, the book compendia were overwritten whenever a matching "Token ..." image existed. Rebuilding the book compendia now carries hand-set monster images over to the new copies. Nothing is ever deleted.
 - **Background art (0.48.3).** The system now has its own background picture (adventurers at a ruin entrance), shown on its card in Foundry's setup screen. A world can use it by setting its Background Image to `systems/frpg1e/assets/background.webp`.
 - **Weapon proficiency list takes module weapons (0.48.2).** Modules can add weapons to the weapon proficiency drop-down with `registerWeaponNames` (API version 3); the OA modules add the OA weapons. The list is now in alphabetical order, and a name already listed in another letter case is not repeated.

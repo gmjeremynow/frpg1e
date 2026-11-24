@@ -132,6 +132,24 @@ function locationOptions(actor, item) {
   return opts.map(([value, label]) => ({ value, label, selected: value === cur }));
 }
 
+/**
+ * Keep the whole name visible in the sheet header: a name too long for its field is set in a smaller size
+ * (down to 15px), refitted as it is typed and when the window is resized.
+ */
+function fitName(input) {
+  if (!input) return;
+  const fit = () => {
+    input.style.removeProperty("font-size");
+    const base = parseFloat(getComputedStyle(input).fontSize) || 26;
+    let size = base;
+    while (size > 15 && input.scrollWidth > input.clientWidth + 1) { size -= 1; input.style.setProperty("font-size", `${size}px`, "important"); }
+    input.title = input.value;
+  };
+  fit();
+  input.addEventListener("input", fit);
+  if (globalThis.ResizeObserver) new ResizeObserver(() => fit()).observe(input.parentElement ?? input);
+}
+
 class ADnDActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
     classes: ["frpg1e", "sheet", "actor"],
@@ -189,6 +207,7 @@ class ADnDActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     super._onRender(context, options);
     mountEditors(this.element, this.actor, context);
     this.#applyTab();
+    fitName(this.element.querySelector(".sheet-head .char-name"));
     // Weapon proficiency list (system.profs.weapons): rebuild the array on change
     this.element.querySelectorAll("[data-prof-index]").forEach(el => {
       el.addEventListener("change", ev => {
