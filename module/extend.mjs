@@ -79,8 +79,12 @@ export const HIDDEN_CLASSES = new Set();
 export function hideClasses(keys) { for (const k of keys) if (k !== "custom") HIDDEN_CLASSES.add(k); }
 export function showClasses(keys) { for (const k of keys) HIDDEN_CLASSES.delete(k); }
 
+/** Weapon names a module adds to the weapon proficiency list (call during "frpg1e.init"). */
+export const EXTRA_WEAPON_NAMES = new Set();
+export function registerWeaponNames(names) { for (const n of names ?? []) if (n) EXTRA_WEAPON_NAMES.add(String(n)); }
+
 export const api = Object.freeze({
-  version: 2,
-  registerRace, hideRaces, showRaces, registerClass, registerSpellProgression, registerSpellList, registerProficiencyGroup, hideClasses, showClasses,
+  version: 3,
+  registerRace, hideRaces, showRaces, registerClass, registerSpellProgression, registerSpellList, registerProficiencyGroup, hideClasses, showClasses, registerWeaponNames,
   CLASSES, SPELL_PROGRESSION, RACE_DEFS
 });

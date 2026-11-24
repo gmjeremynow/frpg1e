@@ -1,5 +1,5 @@
 import * as Artifacts from "./artifacts.mjs";
-import { HIDDEN_CLASSES } from "./extend.mjs";
+import { HIDDEN_CLASSES, EXTRA_WEAPON_NAMES } from "./extend.mjs";
 import { CLASSES, ATTACK_MATRICES, SAVING_THROWS, THIEF_TABLE, THIEF_ARMOR, fighterAttacksPerRound, cavalierChoiceBonus, cavalierRules,
   PSI_ATTACK_MODES, PSI_DEFENSE_MODES, BODY_WEAPONRY, weaponProfCost } from "./tables.mjs";
 import * as Psi from "./psionics.mjs";
@@ -20,6 +20,10 @@ async function weaponNames() {
     const data = await (await fetch(`systems/${SYSTEM_ID}/data/weapons.json`)).json();
     WEAPON_NAMES = data.map(w => w.name);
   } catch (err) { console.warn(`${SYSTEM_ID} | weapon list not loaded`, err); WEAPON_NAMES = []; }
+  // weapons added by modules (OA and others); a name already listed in another letter case is not repeated
+  const seen = new Set(WEAPON_NAMES.map(n => n.toLowerCase()));
+  for (const n of EXTRA_WEAPON_NAMES) if (!seen.has(n.toLowerCase())) { seen.add(n.toLowerCase()); WEAPON_NAMES.push(n); }
+  WEAPON_NAMES.sort((a, b) => a.localeCompare(b));
   return WEAPON_NAMES;
 }
 import * as R from "./rules.mjs";
