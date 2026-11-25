@@ -33,7 +33,9 @@
       </div>
       {{/each}}
     </div>
-    {{else}}
+    {{/each}}
+    {{#if spellLists.length}}<p class="hint casting-notes">Casting (Gary Gygax, Dragonsfoot Q&amp;A): name the spell before initiative; a caster hit before starting it may still cast, but a hit once casting has begun ruins the spell. Casters keep their dexterity bonus to armor class while casting. A touch spell gets one attempt: miss the touch and the spell is gone. Spells are memorized all at once, once in 24 hours.</p>{{/if}}
+    {{#each spellLists}}{{else}}
     {{#unless turn}}<p class="hint empty">No spell-casting classes. Drag spells here from the Spells compendia to give a character spells anyway.</p>{{/unless}}
     {{/each}}
   

@@ -147,6 +147,16 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       this.saves[k].value = best[k].value - this.saves[k].misc - this.saves[k].class;
     }
     this.racialSave = R.racialSaveBonus(baseRace(this.details.race), this.abilities.con.value);
+    // Death and dying (world setting deathRule). PHB p.105: 0 or fewer hit points is death. DMG p.82: at 0 or below unconscious,
+    // losing 1 a round until bound, dead at -10. Gary Gygax (Dragonsfoot Q&A): dead at -10% of total hit points, rounded up.
+    let deathRule = "DMG";
+    try { deathRule = game.settings.get("frpg1e", "deathRule"); } catch (e) { /* not registered yet */ }
+    const hpNow = this.hp.value, hpMax = this.hp.max;
+    const deadAt = deathRule === "PHB" ? 0 : deathRule === "GG" ? -Math.max(1, Math.ceil(hpMax / 10)) : -10;
+    this.hp.deadAt = deadAt;
+    this.hp.state = hpMax <= 0 || hpNow > 0 ? "" : hpNow <= deadAt ? "dead" : "down";
+    this.hp.stateText = this.hp.state === "dead" ? "Dead" : this.hp.state === "down" ? `Down · dead at ${deadAt}` : "";
+    this.hp.stateTip = this.hp.state === "down" ? `Unconscious, losing 1 hit point a round until the wounds are bound; dead at ${deadAt} (setting: Death at negative hit points)` : "";
 
     // Monks: AC and movement come from the monk table
     const monk = classes.find(c => c.key === "monk");

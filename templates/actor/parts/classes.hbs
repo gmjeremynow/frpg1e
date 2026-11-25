@@ -22,6 +22,7 @@
             <span class="hint">Saves as</span>
             <select data-class-field="save">{{#each ../saveOptions}}<option value="{{value}}" {{adnd-selected value ../save}}>{{label}}</option>{{/each}}</select>
             {{#if isCustom}}<span class="hint">Hit die d</span><input class="w3" type="number" data-class-field="hitDie" data-dtype="Number" value="{{hitDie}}">{{/if}}
+            {{#if shortfall}}<div class="class-warn" title="Gary Gygax (Dragonsfoot Q&amp;A): the ability scores are needed to enter a class and to keep advancing in it.">Below the class requirement: {{shortfall}}. Keeps this level but cannot advance.</div>{{/if}}
           </td>
         </tr>
         {{else}}

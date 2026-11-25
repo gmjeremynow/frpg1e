@@ -24,6 +24,7 @@
           <span class="slash">/</span>
           <input type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number">
         </div>
+        {{#if system.hp.stateText}}<span class="hp-state {{system.hp.state}}" title="{{system.hp.stateTip}}">{{system.hp.stateText}}</span>{{/if}}
       </div>
       <div class="vital ac" title="Armor class (front). Rear: {{system.ac.rear}}. Armor type: {{system.ac.type}}">
         <span class="vital-label">AC</span>

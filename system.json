@@ -2,7 +2,7 @@
   "id": "frpg1e",
   "title": "1e FRPG (Table Edition)",
   "description": "1e Fantasy RPG, run straight from the PHB, DMG and UA tables: attack matrices, saving throw matrices, weapon vs. armor type, side initiative, turning undead, thieving abilities and spell progression. Built for a private table.",
-  "version": "0.48.10",
+  "version": "0.49.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -14,7 +14,7 @@
   ],
   "url": "https://github.com/gmjeremynow/frpg1e",
   "manifest": "https://github.com/gmjeremynow/frpg1e/releases/latest/download/system.json",
-  "download": "https://github.com/gmjeremynow/frpg1e/releases/download/v0.48.10/frpg1e.zip",
+  "download": "https://github.com/gmjeremynow/frpg1e/releases/download/v0.49.0/frpg1e.zip",
   "esmodules": [
     "frpg1e.mjs"
   ],

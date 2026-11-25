@@ -1001,7 +1001,8 @@ function wsgRow(str, pct) {
  * @returns {{ rule, key, label, move, limits, note, max }}  move: null when the rule is off; 0 when the load is too great to move
  */
 export function encumbrance({ rule = "PHB", load = 0, str = 10, pct = 0, allowance = 0, baseMove = 12 }) {
-  const scale = f => Math.max(1, Math.floor(baseMove * f));
+  // a 9" base slows 9", 7", 5", 3" (Gary Gygax, Dragonsfoot Q&A: 25% steps for the short-legged races); others scale down
+  const scale = f => Math.max(1, baseMove === 9 ? Math.round(1 + 8 * f) : Math.floor(baseMove * f));
   if (rule === "WSG") {
     const r = wsgRow(str, pct);
     const idx = load < r[0] ? 0 : r.slice(1).findIndex(hi => load <= hi) + 1;   // 0 none, 1 light ... 4 severe, 0 from findIndex -1 → handled below
@@ -1027,4 +1028,29 @@ export function encumbrance({ rule = "PHB", load = 0, str = 10, pct = 0, allowan
     };
   }
   return { rule: "off", key: "", label: "", move: null, max: null, limits: "", note: "" };
+}
+
+/**
+ * Class ability minimums (and maximums), checked on the class row: from the class descriptions in the PHB (cleric, druid,
+ * fighter, paladin, ranger, magic-user, illusionist, thief, assassin, monk, bard) and UA (cavalier, paladin, barbarian,
+ * thief-acrobat). Gary Gygax (Dragonsfoot Q&A): the scores are needed to enter a class and to keep advancing in it; a
+ * character who falls below them keeps the level reached but gains no more.
+ */
+export const CLASS_MINIMUMS = {
+  cleric: { wis: 9 }, druid: { wis: 12, cha: 15 }, fighter: { str: 9, con: 7 },
+  paladin: { str: 12, int: 9, wis: 13, con: 9, cha: 17 }, ranger: { str: 13, int: 13, wis: 14, con: 14 },
+  magicuser: { int: 9, dex: 6 }, illusionist: { int: 15, dex: 16 }, thief: { dex: 9 }, assassin: { str: 12, int: 11, dex: 12 },
+  monk: { str: 15, wis: 15, dex: 15, con: 11 }, bard: { str: 15, int: 12, wis: 15, dex: 15, con: 10, cha: 15 },
+  cavalier: { str: 15, int: 10, wis: 10, dex: 15, con: 15 }, paladinUA: { str: 15, int: 10, wis: 13, dex: 15, con: 15, cha: 17 },
+  barbarian: { str: 15, dex: 14, con: 15 }, acrobat: { str: 15, dex: 16 }
+};
+export const CLASS_MAXIMUMS = { barbarian: { wis: 16 } };
+const AB_NAMES = { str: "strength", int: "intelligence", wis: "wisdom", dex: "dexterity", con: "constitution", cha: "charisma" };
+/** Text naming the scores a character is short of for a class, or "" (a registered class may give def.minAbilities / def.maxAbilities). */
+export function classAbilityShortfall(key, def, abilities) {
+  const mins = def?.minAbilities ?? CLASS_MINIMUMS[key] ?? {}, maxs = def?.maxAbilities ?? CLASS_MAXIMUMS[key] ?? {};
+  const out = [];
+  for (const [k, v] of Object.entries(mins)) if ((abilities?.[k]?.value ?? 0) < v) out.push(`${AB_NAMES[k] ?? k} ${abilities?.[k]?.value ?? 0} (needs ${v})`);
+  for (const [k, v] of Object.entries(maxs)) if ((abilities?.[k]?.value ?? 0) > v) out.push(`${AB_NAMES[k] ?? k} ${abilities?.[k]?.value ?? 0} (most ${v})`);
+  return out.join(", ");
 }

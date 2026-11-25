@@ -230,7 +230,11 @@ export function spellSlots(classes, wisScore, extras = {}) {
     for (const sp of def.spells) {
       const slots = spellSlotsFor(sp.progression, c.level);
       // a spell entry may set wisdom: true/false (bonus spells and failure by wisdom for that list only)
-      if (sp.wisdom ?? def.wisBonusSpells ?? (classIs(c.key, "cleric") || classIs(c.key, "druid"))) {
+      // world setting druidBonusSpells: off takes the bonus spells (not spell failure) away from druids
+      let druidBonus = true;
+      try { druidBonus = game.settings.get("frpg1e", "druidBonusSpells"); } catch (e) { /* not registered yet */ }
+      const noDruidBonus = !druidBonus && classIs(c.key, "druid") && sp.wisdom === undefined && def.wisBonusSpells === undefined;
+      if (!noDruidBonus && (sp.wisdom ?? def.wisBonusSpells ?? (classIs(c.key, "cleric") || classIs(c.key, "druid")))) {
         const bonus = wisdomTable(wisScore).bonusSpells;
         for (let i = 0; i < slots.length; i++) if (slots[i] > 0) slots[i] += bonus[i + 1] ?? 0;
       }

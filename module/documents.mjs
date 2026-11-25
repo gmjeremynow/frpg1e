@@ -3,6 +3,7 @@ import { SYSTEM_ID } from "./rolls.mjs";
 import { applyPsionicCard } from "./psionics.mjs";
 import { giveTreasure } from "./treasure.mjs";
 import { artForNewMonster, tokenSize } from "./monsterart.mjs";
+import { raceBaseMove } from "./races.mjs";
 
 /* ================================================================== */
 /*  Actor                                                               */
@@ -33,14 +34,17 @@ export class ADnDActor extends Actor {
         "prototypeToken.bar1.attribute": "hp"
       });
       if (!data.system?.classes?.length) update["system.classes"] = [{ key: "fighter", level: 1, xp: 0 }];
-    } else if (this.type === "npc") {
+    }
+    // dwarves, gnomes and halflings start at a 9" base move (others 12"), unless one was given
+    if (this.type !== "monster" && data.system?.move?.base === undefined) update["system.move.base"] = raceBaseMove(data.system?.details?.race ?? "human");
+    if (this.type === "npc") {
       // NPCs start as 0-level and unlinked, so one actor can stand for several guards or townsfolk
       Object.assign(update, {
         "prototypeToken.actorLink": data.prototypeToken?.actorLink ?? false,
         "prototypeToken.disposition": data.prototypeToken?.disposition ?? CONST.TOKEN_DISPOSITIONS.NEUTRAL,
         "prototypeToken.bar1.attribute": "hp"
       });
-    } else {
+    } else if (this.type !== "character") {
       Object.assign(update, {
         "prototypeToken.disposition": CONST.TOKEN_DISPOSITIONS.HOSTILE,
         "prototypeToken.bar1.attribute": "hp"
@@ -70,6 +74,12 @@ export class ADnDActor extends Actor {
       const n = tokenSize(size);
       foundry.utils.setProperty(changes, "prototypeToken.width", n);
       foundry.utils.setProperty(changes, "prototypeToken.height", n);
+    }
+    // changing race moves a base move still at the old race's default to the new race's (9" short-legged, 12" others)
+    const newRace = changes.system?.details?.race;
+    if (this.type !== "monster" && newRace && newRace !== this.system.details?.race && changes.system?.move?.base === undefined
+        && this.system.move?.base === raceBaseMove(this.system.details?.race)) {
+      foundry.utils.setProperty(changes, "system.move.base", raceBaseMove(newRace));
     }
     // renaming the actor renames its prototype token, so tokens dropped afterwards carry the new name.
     // Characters always follow the actor's name; NPCs and monsters only when the token name still matched the old name

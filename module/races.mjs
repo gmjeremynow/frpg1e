@@ -306,7 +306,7 @@ export function comelinessAdj(raceKey, sex) {
 // Short facts for the sheet; each with its source. Full text is in the Races compendium.
 export const RACE_FACTS = {
   human: ["No class or level limits (PHB p.17-18)."],
-  dwarf: ["Infravision 60’ (PHB p.15).", "Ability adjustments: constitution +1, charisma −1 (PHB p.14).",
+  dwarf: ["Base move 9″, slowing 9″, 7″, 5″, 3″ with load: the MM's slower rates were for troop units (Gary Gygax, Dragonsfoot Q&A).", "Infravision 60’ (PHB p.15).", "Ability adjustments: constitution +1, charisma −1 (PHB p.14).",
     "Saves vs. rods, staves, wands, spells and poison: +1 per 3½ constitution (PHB p.15).", "+1 to hit half-orcs, goblins, hobgoblins, orcs; ogres, trolls, ogre magi, giants and titans −4 to hit them (PHB p.16).",
     "Mining detection: grade 75%, new construction 75%, sliding walls 66⅔%, stonework traps 50%, depth 50% (PHB p.16)."],
   "dwarf-mountain": ["As hill dwarves; higher fighter level limits (UA Table II)."],
@@ -319,7 +319,9 @@ export const RACE_FACTS = {
     "Twice the usual chance of psionic ability (UA p.10)."],
   elf: ["Infravision 60’ (PHB p.16).", "Ability adjustments: dexterity +1, constitution −1 (PHB p.14).", "90% resistance to sleep and charm (PHB p.16).",
     "+1 to hit with bows (not crossbows) and short or long swords (PHB p.16).", "Secret doors: 1 in 6 passing within 10’; searching 2 in 6 (secret), 3 in 6 (concealed) (PHB p.16).",
-    "Surprise 4 in 6 when alone and not in metal armor (2 in 6 if a door must be opened) (PHB p.16)."],
+    "Surprise 4 in 6 when alone and not in metal armor (2 in 6 if a door must be opened) (PHB p.16).",
+    "Multi-classed elves can cast magic-user spells in any armor their classes allow, but cannot use thief abilities in it; half-elves get no such break. In Gary Gygax's own campaign only elven chain allowed spell-casting (Dragonsfoot Q&A).",
+    "Optional (MM, meant for NPCs; Gary Gygax: \"no reason not to use them for PCs\"): invisible in vegetation; split-fire with a bow, moving half, shooting, then moving the other half (Dragonsfoot Q&A)."],
   "elf-gray": ["As high elves; +1 to the intelligence roll, maximum 19 for a beginning character (UA p.10)."],
   "elf-wood": ["As high elves in abilities; +1 to the strength roll (maximum 18), −1 to intelligence (UA p.10).", "Languages: elvish, common, treant, woodland mammals (UA p.10)."],
   "elf-wild": ["Elven abilities; +2 to the strength roll (maximum 18) (UA p.10).", "Deal with woodland creatures as if under animal friendship; set pits, snares and traps 90% (UA p.10).",
@@ -331,9 +333,10 @@ export const RACE_FACTS = {
     "Secret doors and silent movement as elves; dwarven detection of new construction, stonework traps, sliding walls, depth; surprised only 1 in 8 (UA p.11).",
     "Once a day: dancing lights, faerie fire, darkness 5′ radius; from 4th level detect magic, know alignment, levitate; females from 4th also clairvoyance, detect lie, suggestion, dispel magic (UA p.11).",
     "Light affects them as it does gray dwarves (UA p.11)."],
-  gnome: ["Infravision 60’ (PHB p.16).", "Saves vs. rods, staves, wands and spells: +1 per 3½ constitution (PHB p.16).",
+  gnome: ["Base move 9″, slowing 9″, 7″, 5″, 3″ with load: the MM's slower rates were for troop units (Gary Gygax, Dragonsfoot Q&A).", "Infravision 60’ (PHB p.16).", "Saves vs. rods, staves, wands and spells: +1 per 3½ constitution (PHB p.16).",
     "+1 to hit kobolds and goblins; gnolls, bugbears, ogres, trolls, ogre magi, giants, titans −4 to hit them (PHB p.17).",
-    "Detection: grade 80%, unsafe walls 70%, depth 60%, direction 50% (PHB p.16)."],
+    "Detection: grade 80%, unsafe walls 70%, depth 60%, direction 50% (PHB p.16).",
+    "Optional (MM, meant for NPCs; Gary Gygax: \"no reason not to use them for PCs\"): a saving throw bonus against poison; the MM gives the amount (Dragonsfoot Q&A)."],
   "gnome-deep": ["Infravision 12″, ultravision 3″; in bright light vision 3″ and −1 to hit (UA p.11).", "No player-character magic resistance; +2 on saves vs. poison, +3 on all other saves; immune to illusions and phantasms (UA p.11).",
     "Gnomish detection of slopes, unsafe walls, depth and direction; camouflage against natural rock 60% (UA p.11).",
     "Surprised only 1 in 12; surprise others 9 in 10 (alone or with deep gnomes, no bulky armor) (UA p.11).",
@@ -341,10 +344,12 @@ export const RACE_FACTS = {
     "Once a day: blindness, blur, change self; radiates non-detection on self (UA p.11).",
     "Non-illusionists from 6th level: summon an earth elemental once a day (d20: 1 24 HD; 2-6 16 HD; 7-10 12 HD; 11-15 8 HD; 16-18 xorn; 19-20 fails) (UA p.11).",
     "Player character deep gnomes must be male; no psionics (UA p.11)."],
-  "half-elf": ["Infravision 60’ (PHB p.17).", "30% resistance to sleep and charm (PHB p.17).", "Secret doors as elves (PHB p.17)."],
+  "half-elf": ["Infravision 60’ (PHB p.17).", "30% resistance to sleep and charm (PHB p.17).", "Secret doors as elves (PHB p.17).",
+    "Unlike elves, multi-classed half-elves cannot cast magic-user spells in armor (Gary Gygax, Dragonsfoot Q&A)."],
   "half-elf-dark": ["Drow descent: the drow disadvantages in light, none of their advantages (UA p.11)."],
-  halfling: ["Ability adjustments: strength −1, dexterity +1 (PHB p.14).", "Saves vs. rods, staves, wands, spells and poison: +1 per 3½ constitution (PHB p.17).",
-    "Infravision: stout 60’, mixed blood 30’ (PHB p.17).", "Surprise 4 in 6 when alone and not in metal armor (PHB p.17).", "Those of mixed blood count as stouts (UA p.11)."],
+  halfling: ["Base move 9″, slowing 9″, 7″, 5″, 3″ with load: the MM's slower rates were for troop units (Gary Gygax, Dragonsfoot Q&A).", "Ability adjustments: strength −1, dexterity +1 (PHB p.14).", "Saves vs. rods, staves, wands, spells and poison: +1 per 3½ constitution (PHB p.17).",
+    "Infravision: stout 60’, mixed blood 30’ (PHB p.17).", "Surprise 4 in 6 when alone and not in metal armor (PHB p.17).", "Those of mixed blood count as stouts (UA p.11).",
+    "Optional (MM, meant for NPCs; Gary Gygax: \"no reason not to use them for PCs\"): invisible in vegetation; +3 to hit with bows and slings (Dragonsfoot Q&A)."],
   "half-orc": ["Infravision 60’ (PHB p.17).", "Ability adjustments: strength +1, constitution +1, charisma −2 (PHB p.14)."]
 };
 // Sub-races whose UA entry replaces the PHB facts instead of adding to them.
@@ -409,4 +414,14 @@ export function abilityWarnings(raceKey, abilities, sex = "") {
 function extRange(range) {
   if (!range) return null;
   return Object.fromEntries(Object.entries(range).map(([k, v]) => [k, Array.isArray(v[0]) ? v : [v, v]]));
+}
+
+/**
+ * Base movement by race. Gary Gygax (Dragonsfoot Q&A): the MM rates of 6" and 9" were for troop units; an unencumbered human
+ * moves 12" and "the short-legged folk" (dwarves, gnomes, halflings) 9". Other races 12".
+ */
+export const SHORT_LEGGED = new Set(["dwarf", "gnome", "halfling"]);
+export function raceBaseMove(key) {
+  const base = RACE_DEFS[key]?.base;
+  return SHORT_LEGGED.has(base) ? 9 : 12;
 }

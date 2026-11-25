@@ -2,6 +2,15 @@
 
 What each version added or changed, newest first. Versions before 0.16.0 are not listed separately.
 
+- **Gary Gygax's clarifications (0.49.0).** Rules changes taken from Gary Gygax's answers on the Dragonsfoot forums (collected as "Gary's Clarifications"):
+  - Back stab uses the thief (or assassin) attack table, even for a multi-classed character whose other class hits more easily.
+  - Thieves back stab with hand weapons only; the attack window drops the option for a missile unless the character is an assassin.
+  - "Natural 20 critical hit, natural 1 fumble" is now off by default (Gary did not use critical hits). Worlds that already set it keep their choice.
+  - Dwarves, gnomes and halflings have a 9" base move, slowing 9", 7", 5", 3" with load. New characters get it from their race, changing race moves a base still at the old race's default, and existing dwarf, gnome and halfling characters and NPCs at 12" are moved to 9" once.
+  - New setting "Druids get wisdom bonus spells" (on by default, as the PHB errata has it; off follows Gary's later answer).
+  - New setting "Death at negative hit points": DMG (dead at -10, the default), PHB (dead at 0), or Gary's own rule (dead at -10% of total hit points, rounded up). Character and NPC sheets show "Down" or "Dead" under Hit Points.
+  - The class row warns when an ability score is below the class requirement (PHB and UA minimums; the barbarian's wisdom maximum): the character keeps the level but cannot advance.
+  - Notes added: two-weapon fighting (extra attacks for level with the main hand only), no double specialization for rangers, multi-classed elves casting in armor (not half-elves), the MM's optional elf, halfling and gnome abilities, the ranger and elf surprise bonus being for those alone or with others as stealthy, and spell-casting (interruption, dexterity bonus while casting, one try at a touch spell, memorizing once in 24 hours).
 - **NPC race box shows it opens (0.48.10).** The Race box at the bottom of the NPC tab is folded shut to save room; it now has an arrow and "click to show racial abilities and class limits", and no longer repeats its title when opened.
 - **AC label (0.48.9).** The armor class shield on character, NPC and monster sheets is headed "AC" (hover for the full armor class), so the label no longer runs past the shield. The "rear · type" line under the number stays in the wide part of the shield instead of dropping into the point.
 - **Loyalty score centred (0.48.8).** The loyalty percentage on the NPC sheet sits in the middle of its box.

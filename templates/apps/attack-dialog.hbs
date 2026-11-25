@@ -21,7 +21,7 @@
   {{#if cavalier}}<div class="row"><label><input type="checkbox" name="mounted"> Mounted (lance and weapon-of-choice bonuses{{#if humanCavalier}}; human cavaliers attack as 1 level higher{{/if}})</label></div>{{/if}}
   <div class="row col">
     <label><input type="checkbox" name="rear"> Attack from rear or unseen (+2; ignores shield and dexterity)</label>
-    {{#if thief}}<label><input type="checkbox" name="backstab"> Back stab (+4, damage multiplied)</label>{{/if}}
+    {{#if thief}}<label title="Uses the thief or assassin attack table. Thieves: hand weapons only; assassins may also back stab with a missile."><input type="checkbox" name="backstab"> Back stab (+4, damage multiplied; {{#if assassinStab}}melee or missile{{else}}hand weapons only{{/if}})</label>{{/if}}
     <label><input type="checkbox" name="helpless"> Target stunned, prone or motionless (+4)</label>
     <label><input type="checkbox" name="invisible"> Target invisible / cannot be seen (−4)</label>
   </div>

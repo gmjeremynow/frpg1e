@@ -16,6 +16,7 @@ import { api as SettingAPI } from "./module/extend.mjs";
 import { registerMagicWeaponHooks, migrateMagicWeapons } from "./module/magic-weapons.mjs";
 import { registerSpellFolderButton, buildSpellFolders } from "./module/spell-folders.mjs";
 import { applyMonsterArt, ensureArtFolder, fixMonsterTokens } from "./module/monsterart.mjs";
+import { raceBaseMove } from "./module/races.mjs";
 
 const ID = "frpg1e";
 
@@ -437,6 +438,16 @@ Hooks.once("ready", async () => {
   }
   // one-time (0.48.0): owned items whose "when found" roll already shows (charges set, or a Bag of Holding capacity) are marked
   // as found so it is never rolled again. Others keep one roll, made from Show/Use, then locked.
+  // one-time (0.49.0): dwarves, gnomes and halflings still at the old 12" base move go to 9" (Gary Gygax, Dragonsfoot Q&A)
+  if (game.settings.get(ID, "raceMoveFix") !== "1") {
+    try {
+      const ups = game.actors.filter(a => ["character", "npc"].includes(a.type) && a.system.move?.base === 12 && raceBaseMove(a.system.details?.race) === 9)
+        .map(a => ({ _id: a.id, "system.move.base": 9 }));
+      if (ups.length) await Actor.updateDocuments(ups);
+      await game.settings.set(ID, "raceMoveFix", "1");
+      if (ups.length) ui.notifications.info(`1e FRPG: ${ups.length} dwarf, gnome and halfling characters and NPCs now have a 9" base move.`);
+    } catch (e) { console.warn("frpg1e | race move fix", e); }
+  }
   if (game.settings.get(ID, "foundFlagFix") !== "1") {
     try {
       const FIND = "Determine type (when found)";
@@ -544,10 +555,22 @@ function registerSettings() {
     scope: "world", config: true, type: String, choices: { PHB: "PHB (default)", WSG: "Wilderness Survival Guide", off: "Off" }, default: "PHB",
     onChange: () => { for (const a of game.actors ?? []) { if (a.type !== "monster") { a.prepareData(); a.sheet?.rendered && a.sheet.render(); } } }
   });
+  game.settings.register(ID, "deathRule", {
+    name: "Death at negative hit points",
+    hint: "PHB p.105: dead at 0 hit points. DMG p.82: unconscious at 0, losing 1 hit point a round until bound, dead at -10. Gary Gygax's own campaign (Dragonsfoot Q&A): dead at -10% of total hit points, rounded up, so higher-level characters last longer. Shown under Hit Points on character and NPC sheets.",
+    scope: "world", config: true, type: String, choices: { DMG: "DMG: dead at -10 (default)", PHB: "PHB: dead at 0", GG: "Gary's: dead at -10% of total hit points" }, default: "DMG",
+    onChange: () => { for (const a of game.actors ?? []) { if (a.type !== "monster") { a.prepareData(); a.sheet?.rendered && a.sheet.render(); } } }
+  });
+  game.settings.register(ID, "druidBonusSpells", {
+    name: "Druids get wisdom bonus spells",
+    hint: "On: druids get bonus spells for high wisdom, as clerics do (PHB errata, Dragon #35). Off: no bonus spells for druids (Gary Gygax's later answer on Dragonsfoot: \"Short answer: No\").",
+    scope: "world", config: true, type: Boolean, default: true,
+    onChange: () => { for (const a of game.actors ?? []) { if (a.type !== "monster") { a.prepareData(); a.sheet?.rendered && a.sheet.render(); } } }
+  });
   game.settings.register(ID, "critFumble", {
     name: "Natural 20 critical hit, natural 1 fumble",
-    hint: "House rule (the PHB and DMG have none): on an attack roll a natural 20 always hits and is marked CRITICAL HIT, and a natural 1 always misses and is marked FUMBLE. The effect of either is left to the DM.",
-    scope: "world", config: true, type: Boolean, default: true
+    hint: "House rule (the PHB and DMG have none): on an attack roll a natural 20 always hits and is marked CRITICAL HIT, and a natural 1 always misses and is marked FUMBLE. The effect of either is left to the DM. Off by default: Gary Gygax did not use critical hits (Dragonsfoot Q&A).",
+    scope: "world", config: true, type: Boolean, default: false
   });
   game.settings.register(ID, "magicTables", {
     name: "Magic item tables",
@@ -570,6 +593,7 @@ function registerSettings() {
   game.settings.register(ID, "weightFill7Fix", { scope: "world", config: false, type: String, default: "" });
   game.settings.register(ID, "anythingFix", { scope: "world", config: false, type: String, default: "" });
   game.settings.register(ID, "foundFlagFix", { scope: "world", config: false, type: String, default: "" });
+  game.settings.register(ID, "raceMoveFix", { scope: "world", config: false, type: String, default: "" });
   game.settings.register(ID, "compendiaVersion", {
     scope: "world", config: false, type: String, default: ""
   });

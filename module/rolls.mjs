@@ -253,6 +253,8 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
   const canMissile = w ? ["missile", "both"].includes(w.attackType) : false;
   const canMelee = w ? ["melee", "both"].includes(w.attackType) : true;
   const thiefLevel = isChar ? Math.max(0, ...actor.system.classInfo.filter(c => c.def.backstab).map(c => c.level)) : 0;
+  // Gary Gygax (Dragonsfoot Q&A): a thief back stabs with a hand weapon only; an assassin may also do it with a missile
+  const assassinStab = isChar && actor.system.classInfo.some(c => c.def.backstab && classIs(c.key, "assassin") && c.level > 0);
   const backstabMult = isChar ? Math.max(1, ...actor.system.classInfo.filter(c => c.def.backstab && c.level > 0)
     .map(c => (typeof c.def.backstab === "function" ? c.def.backstab(c.level) : backstabMultiplier(c.level)))) : 1;
 
@@ -278,7 +280,7 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
     ammo: ammoItems[0]?.id ?? "", countThrown: thrownStack };
   if (!fast) {
     const content = await renderTemplate(`systems/${SYSTEM_ID}/templates/apps/attack-dialog.hbs`, {
-      canMelee, canMissile, both: canMelee && canMissile, thief: thiefLevel > 0, ranges: w?.missile,
+      canMelee, canMissile, both: canMelee && canMissile, thief: thiefLevel > 0 && (canMelee || assassinStab), assassinStab, ranges: w?.missile,
       cavalier: profile.cavalierLevel > 0, humanCavalier: !!profile.humanCavalier, pointBlank, pointBlankLabel, classDialog, vsOptions, magicHit: w?.magic?.hit ?? 0, ammoItems, ammoMissing, thrownStack,
       quantity: item?.system.quantity ?? 0
     });
@@ -313,6 +315,10 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
     opts = res;
   }
   const missile = opts.mode === "missile";
+  if (missile && opts.backstab && !assassinStab) opts.backstab = false;
+  // Gary Gygax (Dragonsfoot Q&A): back stab is a thief ability, so a multi-classed character uses the thief (or assassin) attack table
+  const stabEntries = opts.backstab && !profile.monster ? profile.entries.filter(e => CLASSES[e.key]?.backstab && e.matrix) : [];
+  const hitProfile = stabEntries.length ? { ...profile, entries: stabEntries } : profile;
 
   // Roll modifiers that do not depend on the target
   const mods = [];
@@ -364,7 +370,7 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
   const targets = Array.from(game.user.targets).map(t => targetDefense(t, { rear: behind })).filter(Boolean);
   const cf = critFumble(natural);
   const results = targets.map(t => {
-    const need = neededToHit(profile, t.ac, { mounted: opts.mounted });
+    const need = neededToHit(hitProfile, t.ac, { mounted: opts.mounted });
     const adj = useArmorAdj ? R.weaponArmorAdj(adjTable, t.type) : 0;
     const total = roll.total + adj;
     return { ...t, need: need.score, via: need.via, adj, adjText: adj ? signed(adj) : "", total, hit: cf.crit || (!cf.fumble && total >= need.score) };
@@ -385,7 +391,7 @@ export async function rollAttack(actor, { item = null, routine = null, fast = fa
     natural, total: roll.total, mods: mods.map(m => ({ ...m, text: signed(m.value) })),
     results,
     untargeted: !results.length,
-    bestAC: results.length || cf.fumble ? null : bestACHit(profile, roll.total, opts.mounted),
+    bestAC: results.length || cf.fumble ? null : bestACHit(hitProfile, roll.total, opts.mounted),
     crit: cf.crit, fumble: cf.fumble,
     ammoNote: ammoItem ? `${ammoItem.name}: ${ammoItem.system.quantity} left.${ammoItem.system.quantity ? "" : " That was the last one."}`
       : thrownUsed ? `${item.name}: ${item.system.quantity} left.` : (missile && key ? `No ${AMMO_KINDS[key]?.toLowerCase() ?? "ammunition"} counted.` : ""),
@@ -1626,7 +1632,8 @@ export async function rollActorSurprise(actor) {
       <span class="hint">${base.src}</span></div>
     ${barb ? `<div class="row"><label><input type="checkbox" name="familiar"> Familiar terrain (barbarian surprised 5%)</label></div>` : ""}
     ${isChar ? `<div class="row"><span class="lbl">Dexterity reaction</span><input type="number" name="dex" value="${dex}" class="w4"><span class="hint">only changes the segments lost if surprised (DMG p.62)</span></div>` : ""}
-    <p class="hint">DMG p.61: each point of the die is one segment lost. Prior detection, noise or light can rule surprise out: roll only for a side that could be surprised.</p></div>`;
+    <p class="hint">DMG p.61: each point of the die is one segment lost. Prior detection, noise or light can rule surprise out: roll only for a side that could be surprised.</p>
+    <p class="hint">A ranger's or elf's better chance to surprise others is for one alone or with others as stealthy, not a mixed party (PHB; Gary Gygax, Dragonsfoot Q&A).</p></div>`;
   const res = await DialogV2.wait({ window: { title: `Surprise: ${actor.name}` }, classes: ["frpg1e-dialog"], content, rejectClose: false,
     buttons: [{ action: "roll", label: "Roll", icon: "fa-solid fa-dice-six", default: true, callback: (ev, b) => {
       const el = b.form.elements;

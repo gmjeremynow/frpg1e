@@ -1,7 +1,7 @@
 import * as Artifacts from "./artifacts.mjs";
 import { HIDDEN_CLASSES, EXTRA_WEAPON_NAMES } from "./extend.mjs";
 import { CLASSES, ATTACK_MATRICES, SAVING_THROWS, THIEF_TABLE, THIEF_ARMOR, fighterAttacksPerRound, cavalierChoiceBonus, cavalierRules,
-  PSI_ATTACK_MODES, PSI_DEFENSE_MODES, BODY_WEAPONRY, weaponProfCost } from "./tables.mjs";
+  PSI_ATTACK_MODES, PSI_DEFENSE_MODES, BODY_WEAPONRY, weaponProfCost, classAbilityShortfall } from "./tables.mjs";
 import * as Psi from "./psionics.mjs";
 import * as MagicWeapons from "./magic-weapons.mjs";
 import * as Rolls from "./rolls.mjs";
@@ -389,7 +389,8 @@ export class CharacterSheet extends ADnDActorSheet {
     ctx.saveOptions = [{ value: "", label: "(class default)" }, ...Object.keys(SAVING_THROWS).map(value => ({ value, label: { cleric: "Cleric", fighter: "Fighter", magicuser: "Magic-User", thief: "Thief" }[value] }))];
     ctx.classes = s.classInfo.map(c => ({
       ...c, isCustom: c.key === "custom", next: c.next ? c.next.toLocaleString() : "—",
-      attacksPerRound: fighterAttacksPerRound(c.key, c.level)
+      attacksPerRound: fighterAttacksPerRound(c.key, c.level),
+      shortfall: classAbilityShortfall(c.key, c.def, s.abilities)
     }));
     ctx.exceptional = s.abilities.str.value === 18 && s.classInfo.some(c => c.def.exceptionalStr);
     ctx.ab = [
