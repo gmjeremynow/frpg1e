@@ -146,6 +146,10 @@ function fitName(input) {
     input.title = input.value;
   };
   fit();
+  // measure again once the layout has settled and the sheet's fonts have loaded (a webfont is wider than its fallback)
+  requestAnimationFrame(fit);
+  document.fonts?.ready?.then(fit);
+  document.fonts?.addEventListener?.("loadingdone", fit, { once: true });
   input.addEventListener("input", fit);
   if (globalThis.ResizeObserver) new ResizeObserver(() => fit()).observe(input.parentElement ?? input);
 }
