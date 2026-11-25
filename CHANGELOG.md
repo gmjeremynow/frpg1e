@@ -2,6 +2,7 @@
 
 What each version added or changed, newest first. Versions before 0.16.0 are not listed separately.
 
+- **AC label (0.48.9).** The armor class shield on character, NPC and monster sheets is headed "AC" (hover for the full armor class), so the label no longer runs past the shield. The "rear · type" line under the number stays in the wide part of the shield instead of dropping into the point.
 - **Loyalty score centred (0.48.8).** The loyalty percentage on the NPC sheet sits in the middle of its box.
 - **Smaller NPC header boxes (0.48.7).** On the NPC sheet the Hit Points, Armor Class and Loyalty boxes are narrower, with slightly smaller numbers, giving the name about 50 pixels more room.
 - **Long names fit after the fonts load (0.48.6).** The sheet name was sized before the sheet's own font had loaded, so a long name could still end in "...". It is now measured again once the layout settles and the fonts are in.

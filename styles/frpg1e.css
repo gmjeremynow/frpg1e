@@ -744,7 +744,7 @@ body.frpg1e-gold .frpg1e input.wt-unknown::placeholder, body.frpg1e-gold .frpg1e
 .frpg1e .npc-sheet .vitals { gap: 6px; }
 .frpg1e .npc-sheet .vital { box-sizing: border-box; min-width: 0; padding: 3px 4px 5px; }
 .frpg1e .npc-sheet .vital.hp { width: 92px; }
-.frpg1e .npc-sheet .vital.ac { width: 78px; }
+.frpg1e .npc-sheet .vital.ac { width: 72px; }
 .frpg1e .npc-sheet .vital.loyalty { width: 64px; }
 body .frpg1e .npc-sheet .vital-label { font-size: 9px !important; letter-spacing: .02em; white-space: nowrap; }
 .frpg1e .npc-sheet .hp-pair { gap: 0; }
@@ -755,3 +755,6 @@ body .frpg1e .npc-sheet .vital-label { font-size: 9px !important; letter-spacing
 .frpg1e .npc-sheet .ac-sub { font-size: 8.5px; white-space: nowrap; }
 /* loyalty score centred in its box (0.48.8) */
 .frpg1e .vital.loyalty .loyalty-roll { display: block; width: 100% !important; margin: 0 auto; text-align: center; justify-content: center; }
+/* AC shield: the "rear · type" line stays in the wide part of the shield, above the point (0.48.9) */
+.frpg1e .vital.ac { padding-bottom: 30px !important; }
+.frpg1e .vital.ac .ac-sub { display: block; font-size: 9px; line-height: 1.15; white-space: nowrap; margin-top: 1px; }
