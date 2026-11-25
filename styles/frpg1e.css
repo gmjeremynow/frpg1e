@@ -767,3 +767,5 @@ body .frpg1e .npc-sheet .vital-label { font-size: 9px !important; letter-spacing
 .frpg1e.npc details.npc-race[open] > summary::after { content: "click to hide"; }
 .frpg1e.npc details.npc-race > .box > .box-title { display: none; }
 .frpg1e.npc details.npc-race > .box { padding: 6px 14px 10px !important; }
+.frpg1e.npc details.npc-race:not([open]) { padding-bottom: 0 !important; }
+.frpg1e.npc details.npc-race:not([open]) > summary { border-bottom: none !important; margin-bottom: 0 !important; }
