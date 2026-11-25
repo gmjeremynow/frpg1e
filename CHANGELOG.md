@@ -2,6 +2,7 @@
 
 What each version added or changed, newest first. Versions before 0.16.0 are not listed separately.
 
+- **Loyalty score centred (0.48.8).** The loyalty percentage on the NPC sheet sits in the middle of its box.
 - **Smaller NPC header boxes (0.48.7).** On the NPC sheet the Hit Points, Armor Class and Loyalty boxes are narrower, with slightly smaller numbers, giving the name about 50 pixels more room.
 - **Long names fit after the fonts load (0.48.6).** The sheet name was sized before the sheet's own font had loaded, so a long name could still end in "...". It is now measured again once the layout settles and the fonts are in.
 - **Names easier to read (0.48.5).** The name at the top of character, NPC and monster sheets is always dark ink on the sheet, and selected text in it shows dark with light letters instead of washing out. A name too long for its field is set smaller (down to 15px) so the whole name shows; it refits as you type and when the window is resized, and hovering shows the full name.

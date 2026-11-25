@@ -753,3 +753,5 @@ body .frpg1e .npc-sheet .vital-label { font-size: 9px !important; letter-spacing
 .frpg1e .npc-sheet .ac-value { font-size: 22px !important; line-height: 24px; height: 26px !important; }
 .frpg1e.npc .npc-sheet .vital.loyalty .loyalty-roll, .frpg1e .npc-sheet .vital.loyalty .loyalty-roll { font-size: 20px !important; }
 .frpg1e .npc-sheet .ac-sub { font-size: 8.5px; white-space: nowrap; }
+/* loyalty score centred in its box (0.48.8) */
+.frpg1e .vital.loyalty .loyalty-roll { display: block; width: 100% !important; margin: 0 auto; text-align: center; justify-content: center; }
