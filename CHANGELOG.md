@@ -2,6 +2,7 @@
 
 What each version added or changed, newest first. Versions before 0.16.0 are not listed separately.
 
+- **No doubled weapon bonus (0.49.1).** A magic weapon whose name already carries its bonus ("Sword +1") no longer shows it twice in the Weapons list ("Sword +1 +1"). Weapons named without the bonus still show it after the name.
 - **Gary Gygax's clarifications (0.49.0).** Rules changes taken from Gary Gygax's answers on the Dragonsfoot forums (collected as "Gary's Clarifications"):
   - Back stab uses the thief (or assassin) attack table, even for a multi-classed character whose other class hits more easily.
   - Thieves back stab with hand weapons only; the attack window drops the option for a missile unless the character is an assassin.

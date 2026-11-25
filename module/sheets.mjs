@@ -417,6 +417,9 @@ export class CharacterSheet extends ADnDActorSheet {
     const items = a.items.contents.sort((x, y) => (x.sort ?? 0) - (y.sort ?? 0));
     ctx.weapons = items.filter(i => i.type === "weapon").map(i => ({
       id: i.id, name: i.name, img: i.img, s: i.system,
+      // the magic bonus is shown after the name unless the name already carries it ("Sword +1")
+      plusText: (() => { const h = Number(i.system.magic?.hit) || 0; if (!h) return ""; const p = h > 0 ? `+${h}` : `${h}`;
+        return new RegExp(`(^|\\s)${p.replace("+", "\\+")}(\\b|$)`).test(i.name) ? "" : p; })(),
       dmgText: `${i.system.damage.sm} / ${i.system.damage.l}`,
       rangeText: i.system.damage.smRange ? `${i.system.damage.smRange} / ${i.system.damage.lRange}` : "",
       missile: i.system.attackType !== "melee" && i.system.missile.short ? `${i.system.missile.short}/${i.system.missile.medium}/${i.system.missile.long}` : "",
