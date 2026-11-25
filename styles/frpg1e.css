@@ -739,3 +739,17 @@ body.frpg1e-gold .frpg1e input.wt-unknown::placeholder, body.frpg1e-gold .frpg1e
 .frpg1e .sheet-head .char-name:focus { background: rgba(255,255,255,.35) !important; }
 .frpg1e .sheet-head .char-name::selection { background: var(--rule-strong, #1a1815); color: var(--paper, #c29a3d); }
 .frpg1e .title-line { min-width: 0; }
+
+/* NPC sheet: smaller hit point, armor class and loyalty boxes, so the name has room (0.48.7) */
+.frpg1e .npc-sheet .vitals { gap: 6px; }
+.frpg1e .npc-sheet .vital { box-sizing: border-box; min-width: 0; padding: 3px 4px 5px; }
+.frpg1e .npc-sheet .vital.hp { width: 92px; }
+.frpg1e .npc-sheet .vital.ac { width: 78px; }
+.frpg1e .npc-sheet .vital.loyalty { width: 64px; }
+body .frpg1e .npc-sheet .vital-label { font-size: 9px !important; letter-spacing: .02em; white-space: nowrap; }
+.frpg1e .npc-sheet .hp-pair { gap: 0; }
+.frpg1e .npc-sheet .hp-pair input { width: 36px; font-size: 22px !important; line-height: 24px; height: 26px !important; }
+.frpg1e .npc-sheet .hp-pair .slash { font-size: 16px; }
+.frpg1e .npc-sheet .ac-value { font-size: 22px !important; line-height: 24px; height: 26px !important; }
+.frpg1e.npc .npc-sheet .vital.loyalty .loyalty-roll, .frpg1e .npc-sheet .vital.loyalty .loyalty-roll { font-size: 20px !important; }
+.frpg1e .npc-sheet .ac-sub { font-size: 8.5px; white-space: nowrap; }
