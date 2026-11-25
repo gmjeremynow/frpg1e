@@ -758,3 +758,12 @@ body .frpg1e .npc-sheet .vital-label { font-size: 9px !important; letter-spacing
 /* AC shield: the "rear · type" line stays in the wide part of the shield, above the point (0.48.9) */
 .frpg1e .vital.ac { padding-bottom: 30px !important; }
 .frpg1e .vital.ac .ac-sub { display: block; font-size: 9px; line-height: 1.15; white-space: nowrap; margin-top: 1px; }
+/* NPC race box: plainly a fold-out, without repeating its title (0.48.10) */
+.frpg1e.npc details.npc-race > summary { list-style: none; display: flex; align-items: baseline; gap: 10px; }
+.frpg1e.npc details.npc-race > summary::-webkit-details-marker { display: none; }
+.frpg1e.npc details.npc-race > summary::before { content: "\25B8"; font-size: .8em; transition: transform .15s; display: inline-block; }
+.frpg1e.npc details.npc-race[open] > summary::before { transform: rotate(90deg); }
+.frpg1e.npc details.npc-race > summary::after { content: "click to show racial abilities and class limits"; font-family: var(--adnd-font-serif); font-style: italic; text-transform: none; font-size: 13px; letter-spacing: 0; opacity: .8; }
+.frpg1e.npc details.npc-race[open] > summary::after { content: "click to hide"; }
+.frpg1e.npc details.npc-race > .box > .box-title { display: none; }
+.frpg1e.npc details.npc-race > .box { padding: 6px 14px 10px !important; }
